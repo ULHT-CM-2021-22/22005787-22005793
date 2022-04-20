@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">FireTracker</string>
+    <string name="welcome">Bem-vindo ao FireTracker</string>
+    <string name="subtitle">DOND DELL ME WHAD DO DO</string>
     <string name="fire_list">Lista de fogos</string>
     <string name="new_fire">Novo registo</string>
     <string name="idk">ALIGATOOOO</string>

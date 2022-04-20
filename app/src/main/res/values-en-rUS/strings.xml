@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FireTracker</string>
+    <string name="welcome">Welcome to FireTracker</string>
+    <string name="subtitle">DOND DELL ME WHAD DO DO</string>
+    <string name="fire_list">Fire list</string>
+    <string name="new_fire">New registration</string>
+    <string name="idk">ALIGATOOOO</string>
+    <string name="exit">Close app</string>
+</resources>
