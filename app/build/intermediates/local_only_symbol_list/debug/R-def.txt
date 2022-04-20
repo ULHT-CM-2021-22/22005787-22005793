@@ -8,6 +8,7 @@ color colorPrimary
 color colorPrimaryDark
 color green
 color orange
+color orangeDark
 color purple_200
 color purple_500
 color purple_700
@@ -16,6 +17,7 @@ color teal_200
 color teal_700
 color white
 color yellow
+drawable fogo
 drawable ic_exit
 drawable ic_fire_list
 drawable ic_fire_map
@@ -27,7 +29,12 @@ drawable lusofona
 drawable mapa
 id drawer
 id frame
-id layout
+id imageview1
+id imageview2
+id imageview3
+id imageview4
+id imageview5
+id imageview6
 id map
 id nav_IDK
 id nav_drawer
@@ -35,11 +42,6 @@ id nav_exit
 id nav_fireList
 id nav_fireMap
 id nav_newFire
-id text_1
-id text_2
-id text_3
-id text_4
-id text_5
 id toolbar
 layout activity_main
 layout fragment_fire_details

@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
         when {
             binding.drawer.isDrawerOpen(GravityCompat.START) -> binding.drawer.closeDrawer(
                 GravityCompat.START)
-            supportFragmentManager.backStackEntryCount == 1 -> finish()
+            supportFragmentManager.backStackEntryCount == 0 -> finish()
             else -> super.onBackPressed()
         }
     }
