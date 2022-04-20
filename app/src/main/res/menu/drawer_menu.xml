@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item
+            android:id="@+id/nav_fireList"
+            android:icon="@drawable/ic_fire_list"
+            android:title="@string/fire_list"/>
+        <item
+            android:id="@+id/nav_newFire"
+            android:icon="@drawable/ic_new_fire"
+            android:title="@string/new_fire"/>
+        <item
+            android:id="@+id/nav_IDK"
+            android:icon="@drawable/ic_idk"
+            android:title="@string/idk"/>
+        <item
+            android:id="@+id/nav_exit"
+            android:icon="@drawable/ic_exit"
+            android:title="@string/exit"/>
+
+    </group>
+
+</menu>
