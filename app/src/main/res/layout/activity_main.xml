@@ -271,7 +271,7 @@
                                         android:layout_below="@id/imageview4"
                                         android:layout_marginTop="0dp"
                                         android:layout_marginBottom="10dp"
-                                        android:text="4"
+                                        android:text="Elevado"
                                         android:textAlignment="center"
                                         android:textSize="18sp">
 
@@ -333,7 +333,7 @@
                                         android:layout_below="@id/imageview5"
                                         android:layout_marginTop="0dp"
                                         android:layout_marginBottom="10dp"
-                                        android:text="5"
+                                        android:text="Ka100"
                                         android:textAlignment="center"
                                         android:textSize="18sp">
 
@@ -387,7 +387,7 @@
                                         android:layout_below="@id/imageview6"
                                         android:layout_marginTop="0dp"
                                         android:layout_marginBottom="10dp"
-                                        android:text="6"
+                                        android:text="Habibi"
                                         android:textAlignment="center"
                                         android:textSize="18sp">
 
