@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "COMPATIBLE_SCREEN_MANIFEST",
+    "kind": "Directory"
+  },
+  "applicationId": "pt.ulusofona.deisi.cm2122.g22005787_22005793",
+  "variantName": "debug",
+  "elements": []
+}
