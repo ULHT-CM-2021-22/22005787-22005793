@@ -17,6 +17,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="yellow">#FFEB3B</color>
     <string name="app_name">FireTracker</string>
+    <string name="drawer_closed">Fechado</string>
+    <string name="drawer_open">Aberto</string>
     <string name="exit">Encerrar a aplicação</string>
     <string name="fire_list">Lista de fogos</string>
     <string name="fire_map">Mapa de fogos</string>

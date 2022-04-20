@@ -15,7 +15,7 @@
 12        android:allowBackup="true"
 12-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.7.0] C:\Users\Goncalo\.gradle\caches\transforms-3\234a538a20b20407a3c9b7e7a53bb83d\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+13-->[androidx.core:core:1.7.0] C:\Users\Goncalo\.gradle\caches\transforms-3\aec237d7615e5b5f19aac02e97eeb357\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
 14        android:debuggable="true"
 15        android:extractNativeLibs="false"
 16        android:icon="@mipmap/ic_launcher"
@@ -48,25 +48,25 @@
 30        </activity>
 31
 32        <provider
-32-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\441d4fc037de6fb441500e8a56b36e60\transformed\emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+32-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\1bdca88ebac9582d03a2e0b002aaa769\transformed\emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
 33            android:name="androidx.startup.InitializationProvider"
-33-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\441d4fc037de6fb441500e8a56b36e60\transformed\emoji2-1.0.0\AndroidManifest.xml:27:13-67
+33-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\1bdca88ebac9582d03a2e0b002aaa769\transformed\emoji2-1.0.0\AndroidManifest.xml:27:13-67
 34            android:authorities="pt.ulusofona.deisi.cm2122.g22005787_22005793.androidx-startup"
-34-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\441d4fc037de6fb441500e8a56b36e60\transformed\emoji2-1.0.0\AndroidManifest.xml:28:13-68
+34-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\1bdca88ebac9582d03a2e0b002aaa769\transformed\emoji2-1.0.0\AndroidManifest.xml:28:13-68
 35            android:exported="false" >
-35-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\441d4fc037de6fb441500e8a56b36e60\transformed\emoji2-1.0.0\AndroidManifest.xml:29:13-37
+35-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\1bdca88ebac9582d03a2e0b002aaa769\transformed\emoji2-1.0.0\AndroidManifest.xml:29:13-37
 36            <meta-data
-36-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\441d4fc037de6fb441500e8a56b36e60\transformed\emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+36-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\1bdca88ebac9582d03a2e0b002aaa769\transformed\emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
 37                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-37-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\441d4fc037de6fb441500e8a56b36e60\transformed\emoji2-1.0.0\AndroidManifest.xml:32:17-75
+37-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\1bdca88ebac9582d03a2e0b002aaa769\transformed\emoji2-1.0.0\AndroidManifest.xml:32:17-75
 38                android:value="androidx.startup" />
-38-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\441d4fc037de6fb441500e8a56b36e60\transformed\emoji2-1.0.0\AndroidManifest.xml:33:17-49
+38-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\1bdca88ebac9582d03a2e0b002aaa769\transformed\emoji2-1.0.0\AndroidManifest.xml:33:17-49
 39            <meta-data
-39-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Goncalo\.gradle\caches\transforms-3\46e5aed857477bc0e3c3002365c20da9\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+39-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Goncalo\.gradle\caches\transforms-3\820b2b240fd5ed0ed96ea7fe618e8d85\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
 40                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-40-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Goncalo\.gradle\caches\transforms-3\46e5aed857477bc0e3c3002365c20da9\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+40-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Goncalo\.gradle\caches\transforms-3\820b2b240fd5ed0ed96ea7fe618e8d85\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
 41                android:value="androidx.startup" />
-41-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Goncalo\.gradle\caches\transforms-3\46e5aed857477bc0e3c3002365c20da9\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+41-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Goncalo\.gradle\caches\transforms-3\820b2b240fd5ed0ed96ea7fe618e8d85\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
 42        </provider>
 43    </application>
 44

@@ -2489,6 +2489,7 @@ drawable m3_tabs_background
 drawable m3_tabs_line_indicator
 drawable m3_tabs_rounded_line_indicator
 drawable m3_tabs_transparent_background
+drawable mapa
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -2768,6 +2769,7 @@ id line3
 id linear
 id listMode
 id list_item
+id map
 id masked
 id match_constraint
 id match_parent
@@ -3123,6 +3125,10 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_fire_details
+layout fragment_fire_list
+layout fragment_fire_map
+layout fragment_fire_registration
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -3247,6 +3253,8 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
+string drawer_closed
+string drawer_open
 string error_icon_content_description
 string exit
 string exposed_dropdown_menu_content_description

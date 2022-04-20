@@ -8,4 +8,6 @@
     <string name="new_fire">New registration</string>
     <string name="idk">ALIGATOOOO</string>
     <string name="exit">Close app</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_closed">Closed</string>
 </resources>

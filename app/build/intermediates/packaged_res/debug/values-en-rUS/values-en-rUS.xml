@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">FireTracker</string>
+    <string name="drawer_closed">Closed</string>
+    <string name="drawer_open">Open</string>
     <string name="exit">Close app</string>
     <string name="fire_list">Fire\'s list</string>
     <string name="fire_map">Fire\'s map</string>
