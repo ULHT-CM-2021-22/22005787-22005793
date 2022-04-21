@@ -34,12 +34,12 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="230sp"
-                android:layout_height="20sp"
+                android:layout_width="3200sp"
+                android:layout_height="30sp"
                 android:text="@string/newRegister"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="15sp">
+                android:textSize="20sp">
 
             </TextView>
 
