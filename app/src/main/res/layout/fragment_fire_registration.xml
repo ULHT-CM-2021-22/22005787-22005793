@@ -25,7 +25,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:background="@drawable/fireregisto"
+            android:background="@drawable/fireRegisto"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
@@ -190,27 +190,18 @@
                 </TextView>
 
                 <EditText
-                    android:id="@+id/searchedTxt"
+                    android:id="@+id/plain_text_input_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:width="200dp"
+                    android:width="243dp"
                      />
-
-                <Button
-                    android:id="@+id/bSearch"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:textColor="@color/grey"
-                    android:drawableLeft="@drawable/ic_send"
-                    />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp">
+                android:layout_height="match_parent">
 
                 <Button
                     android:layout_width="match_parent"
