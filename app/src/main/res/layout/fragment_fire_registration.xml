@@ -20,16 +20,12 @@
             android:layout_height="fill_parent"
             android:orientation="vertical">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:theme="@style/ToolbarTheme" />
+
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:background="@drawable/fireRegisto"
+            android:background="@drawable/fireregisto"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 

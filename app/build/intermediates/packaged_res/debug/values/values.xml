@@ -7,6 +7,7 @@
     <color name="colorPrimary">#B50000</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="green">#4CAF50</color>
+    <color name="grey">#494645</color>
     <color name="orange">#F79139</color>
     <color name="orangeDark">#FF5722</color>
     <color name="purple_200">#FFBB86FC</color>
@@ -18,29 +19,43 @@
     <color name="white">#FFFFFFFF</color>
     <color name="yellow">#FFEB3B</color>
     <string name="app_name">FireTracker</string>
+    <string name="cc">Nº Cartão Cidadão</string>
+    <string name="district">Distrito</string>
     <string name="drawer_closed">Fechado</string>
     <string name="drawer_open">Aberto</string>
     <string name="exit">Encerrar a aplicação</string>
+    <string name="fire_average">Média de fogos na região</string>
     <string name="fire_list">Lista de fogos</string>
     <string name="fire_map">Mapa de fogos</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="idk">ALIGATOOOO</string>
+    <string name="name">Nome</string>
+    <string name="newRegister">Efetue aqui o registo do incêndio</string>
     <string name="new_fire">Novo registo</string>
+    <string name="no_list">Lista indisponível</string>
+    <string name="photo">Fotografia(Opcional)</string>
+    <string name="region">Região</string>
+    <string name="region_fires">Fogos na região</string>
+    <string name="region_risk">Risco na região</string>
+    <string name="send">Enviar</string>
     <string name="subtitle">DOND DELL ME WHAD DO DO</string>
+    <string name="time">Data e Hora</string>
+    <string name="total_fires">Nº total de fogos</string>
     <string name="welcome">Bem-vindo ao FireTracker</string>
     <style name="Theme.G22005787_22005793" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
-        <!-- Primary brand color. -->
+        
+        
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorOnBackground">@color/white</item>
-        <!-- Secondary brand color. -->
+        
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
+        
         <item name="android:statusBarColor">@color/orange</item>
-        <!-- Customize your theme here. -->
+        
     </style>
     <style name="ToolbarTheme" parent="Theme.G22005787_22005793">
         <item name="android:background">@color/orange</item>

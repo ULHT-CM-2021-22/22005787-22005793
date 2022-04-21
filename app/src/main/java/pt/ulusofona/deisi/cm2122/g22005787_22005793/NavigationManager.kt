@@ -12,6 +12,10 @@ object NavigationManager {
         transition.commit()
     }
 
+    fun goToDashboardFragment(fm: FragmentManager) {
+        placeFragment(fm, DashboardFragment())
+    }
+
     fun goToFireListFragment(fm: FragmentManager) {
         placeFragment(fm, FireListFragment())
     }

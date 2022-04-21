@@ -20,7 +20,15 @@
         "source": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\src\\main\\res\\layout\\nav_header.xml"
     },
     {
+        "merged": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_dashboard.xml",
+        "source": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\src\\main\\res\\layout\\fragment_dashboard.xml"
+    },
+    {
         "merged": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_fire_details.xml",
         "source": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\src\\main\\res\\layout\\fragment_fire_details.xml"
+    },
+    {
+        "merged": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_expression.xml",
+        "source": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\src\\main\\res\\layout\\item_expression.xml"
     }
 ]

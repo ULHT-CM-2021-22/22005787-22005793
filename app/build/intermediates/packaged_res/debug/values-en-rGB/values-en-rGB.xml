@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">FireTracker</string>
+    <string name="cc">Identification Card Nº</string>
+    <string name="district">District</string>
     <string name="drawer_closed">Closed</string>
     <string name="drawer_open">Open</string>
     <string name="exit">Close app</string>
+    <string name="fire_average">Average number of fires in the region</string>
     <string name="fire_list">Fire\'s list</string>
     <string name="fire_map">Fire\'s map</string>
     <string name="idk">ALIGATOOOO</string>
+    <string name="name">Name</string>
+    <string name="newRegister">Register the fire here</string>
     <string name="new_fire">New registration</string>
+    <string name="no_list">List unavailable</string>
+    <string name="photo">Photo(Opcional)</string>
+    <string name="region">Region</string>
+    <string name="region_fires">Region\´s fires</string>
+    <string name="region_risk">Region\´s risk</string>
+    <string name="send">Send</string>
     <string name="subtitle">DOND DELL ME WHAD DO DO</string>
+    <string name="time">Date and Time</string>
+    <string name="total_fires">Total number of fires</string>
     <string name="welcome">Welcome to FireTracker</string>
 </resources>

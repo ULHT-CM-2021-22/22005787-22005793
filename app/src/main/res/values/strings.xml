@@ -22,5 +22,7 @@
     <string name="region_risk">Risco na região</string>
     <string name="total_fires">Nº total de fogos</string>
     <string name="fire_average">Média de fogos na região</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

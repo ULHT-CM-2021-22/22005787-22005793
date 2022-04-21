@@ -4,20 +4,74 @@ package pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 import pt.ulusofona.deisi.cm2122.g22005787_22005793.R;
 
 public final class FragmentFireRegistrationBinding implements ViewBinding {
   @NonNull
   private final FrameLayout rootView;
 
-  private FragmentFireRegistrationBinding(@NonNull FrameLayout rootView) {
+  @NonNull
+  public final Button bSearch;
+
+  @NonNull
+  public final ImageView imageview10;
+
+  @NonNull
+  public final ImageView imageview11;
+
+  @NonNull
+  public final ImageView imageview12;
+
+  @NonNull
+  public final ImageView imageview13;
+
+  @NonNull
+  public final ImageView imageview14;
+
+  @NonNull
+  public final EditText plainTextInputCc;
+
+  @NonNull
+  public final EditText plainTextInputDistrict;
+
+  @NonNull
+  public final EditText plainTextInputName;
+
+  @NonNull
+  public final EditText plainTextInputTime;
+
+  @NonNull
+  public final EditText searchedTxt;
+
+  private FragmentFireRegistrationBinding(@NonNull FrameLayout rootView, @NonNull Button bSearch,
+      @NonNull ImageView imageview10, @NonNull ImageView imageview11,
+      @NonNull ImageView imageview12, @NonNull ImageView imageview13,
+      @NonNull ImageView imageview14, @NonNull EditText plainTextInputCc,
+      @NonNull EditText plainTextInputDistrict, @NonNull EditText plainTextInputName,
+      @NonNull EditText plainTextInputTime, @NonNull EditText searchedTxt) {
     this.rootView = rootView;
+    this.bSearch = bSearch;
+    this.imageview10 = imageview10;
+    this.imageview11 = imageview11;
+    this.imageview12 = imageview12;
+    this.imageview13 = imageview13;
+    this.imageview14 = imageview14;
+    this.plainTextInputCc = plainTextInputCc;
+    this.plainTextInputDistrict = plainTextInputDistrict;
+    this.plainTextInputName = plainTextInputName;
+    this.plainTextInputTime = plainTextInputTime;
+    this.searchedTxt = searchedTxt;
   }
 
   @Override
@@ -43,10 +97,81 @@ public final class FragmentFireRegistrationBinding implements ViewBinding {
 
   @NonNull
   public static FragmentFireRegistrationBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.bSearch;
+      Button bSearch = ViewBindings.findChildViewById(rootView, id);
+      if (bSearch == null) {
+        break missingId;
+      }
 
-    return new FragmentFireRegistrationBinding((FrameLayout) rootView);
+      id = R.id.imageview10;
+      ImageView imageview10 = ViewBindings.findChildViewById(rootView, id);
+      if (imageview10 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageview11;
+      ImageView imageview11 = ViewBindings.findChildViewById(rootView, id);
+      if (imageview11 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageview12;
+      ImageView imageview12 = ViewBindings.findChildViewById(rootView, id);
+      if (imageview12 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageview13;
+      ImageView imageview13 = ViewBindings.findChildViewById(rootView, id);
+      if (imageview13 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageview14;
+      ImageView imageview14 = ViewBindings.findChildViewById(rootView, id);
+      if (imageview14 == null) {
+        break missingId;
+      }
+
+      id = R.id.plain_text_input_cc;
+      EditText plainTextInputCc = ViewBindings.findChildViewById(rootView, id);
+      if (plainTextInputCc == null) {
+        break missingId;
+      }
+
+      id = R.id.plain_text_input_district;
+      EditText plainTextInputDistrict = ViewBindings.findChildViewById(rootView, id);
+      if (plainTextInputDistrict == null) {
+        break missingId;
+      }
+
+      id = R.id.plain_text_input_name;
+      EditText plainTextInputName = ViewBindings.findChildViewById(rootView, id);
+      if (plainTextInputName == null) {
+        break missingId;
+      }
+
+      id = R.id.plain_text_input_time;
+      EditText plainTextInputTime = ViewBindings.findChildViewById(rootView, id);
+      if (plainTextInputTime == null) {
+        break missingId;
+      }
+
+      id = R.id.searchedTxt;
+      EditText searchedTxt = ViewBindings.findChildViewById(rootView, id);
+      if (searchedTxt == null) {
+        break missingId;
+      }
+
+      return new FragmentFireRegistrationBinding((FrameLayout) rootView, bSearch, imageview10,
+          imageview11, imageview12, imageview13, imageview14, plainTextInputCc,
+          plainTextInputDistrict, plainTextInputName, plainTextInputTime, searchedTxt);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

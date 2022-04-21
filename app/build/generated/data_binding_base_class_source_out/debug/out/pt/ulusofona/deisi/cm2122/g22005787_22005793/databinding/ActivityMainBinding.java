@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -29,42 +28,16 @@ public final class ActivityMainBinding implements ViewBinding {
   public final FrameLayout frame;
 
   @NonNull
-  public final ImageView imageview1;
-
-  @NonNull
-  public final ImageView imageview2;
-
-  @NonNull
-  public final ImageView imageview3;
-
-  @NonNull
-  public final ImageView imageview4;
-
-  @NonNull
-  public final ImageView imageview5;
-
-  @NonNull
-  public final ImageView imageview6;
-
-  @NonNull
   public final NavigationView navDrawer;
 
   @NonNull
   public final Toolbar toolbar;
 
   private ActivityMainBinding(@NonNull DrawerLayout rootView, @NonNull DrawerLayout drawer,
-      @NonNull FrameLayout frame, @NonNull ImageView imageview1, @NonNull ImageView imageview2,
-      @NonNull ImageView imageview3, @NonNull ImageView imageview4, @NonNull ImageView imageview5,
-      @NonNull ImageView imageview6, @NonNull NavigationView navDrawer, @NonNull Toolbar toolbar) {
+      @NonNull FrameLayout frame, @NonNull NavigationView navDrawer, @NonNull Toolbar toolbar) {
     this.rootView = rootView;
     this.drawer = drawer;
     this.frame = frame;
-    this.imageview1 = imageview1;
-    this.imageview2 = imageview2;
-    this.imageview3 = imageview3;
-    this.imageview4 = imageview4;
-    this.imageview5 = imageview5;
-    this.imageview6 = imageview6;
     this.navDrawer = navDrawer;
     this.toolbar = toolbar;
   }
@@ -104,42 +77,6 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imageview1;
-      ImageView imageview1 = ViewBindings.findChildViewById(rootView, id);
-      if (imageview1 == null) {
-        break missingId;
-      }
-
-      id = R.id.imageview2;
-      ImageView imageview2 = ViewBindings.findChildViewById(rootView, id);
-      if (imageview2 == null) {
-        break missingId;
-      }
-
-      id = R.id.imageview3;
-      ImageView imageview3 = ViewBindings.findChildViewById(rootView, id);
-      if (imageview3 == null) {
-        break missingId;
-      }
-
-      id = R.id.imageview4;
-      ImageView imageview4 = ViewBindings.findChildViewById(rootView, id);
-      if (imageview4 == null) {
-        break missingId;
-      }
-
-      id = R.id.imageview5;
-      ImageView imageview5 = ViewBindings.findChildViewById(rootView, id);
-      if (imageview5 == null) {
-        break missingId;
-      }
-
-      id = R.id.imageview6;
-      ImageView imageview6 = ViewBindings.findChildViewById(rootView, id);
-      if (imageview6 == null) {
-        break missingId;
-      }
-
       id = R.id.nav_drawer;
       NavigationView navDrawer = ViewBindings.findChildViewById(rootView, id);
       if (navDrawer == null) {
@@ -152,8 +89,7 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((DrawerLayout) rootView, drawer, frame, imageview1, imageview2,
-          imageview3, imageview4, imageview5, imageview6, navDrawer, toolbar);
+      return new ActivityMainBinding((DrawerLayout) rootView, drawer, frame, navDrawer, toolbar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
