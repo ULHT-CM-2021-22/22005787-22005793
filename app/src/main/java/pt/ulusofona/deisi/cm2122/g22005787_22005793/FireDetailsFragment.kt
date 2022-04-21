@@ -28,7 +28,7 @@ class FireDetailsFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        fire?.let { (requireActivity() as AppCompatActivity).supportActionBar?.title = it.expression }
+        fire?.let { (requireActivity() as AppCompatActivity).supportActionBar?.title = it.distrito }
         val view = inflater.inflate(R.layout.fragment_fire_details, container, false)
         binding = FragmentFireDetailsBinding.bind(view)
         return binding.root

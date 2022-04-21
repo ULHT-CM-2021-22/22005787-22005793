@@ -16,8 +16,11 @@
     <string name="time">Data e Hora</string>
     <string name="photo">Fotografia(Opcional)</string>
     <string name="send">Enviar</string>
-
-
-
+    <string name="no_list">Lista indisponível</string>
+    <string name="region">Região</string>
+    <string name="region_fires">Fogos na região</string>
+    <string name="region_risk">Risco na região</string>
+    <string name="total_fires">Nº total de fogos</string>
+    <string name="fire_average">Média de fogos na região</string>
 
 </resources>

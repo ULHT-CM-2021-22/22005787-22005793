@@ -59,7 +59,7 @@
                             <androidx.cardview.widget.CardView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginRight="5dp"
+                                android:layout_marginEnd="5dp"
                                 android:layout_weight="1"
                                 android:elevation="5dp"
                                 android:gravity="center"
@@ -76,7 +76,7 @@
                                         android:id="@+id/imageview5"
                                         android:layout_width="50dp"
                                         android:layout_height="50dp"
-                                        android:layout_alignParentLeft="true"
+                                        android:layout_alignParentStart="true"
                                         android:layout_marginLeft="2dp"
                                         android:src="@drawable/ic_region">
 
@@ -86,10 +86,10 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_below="@id/imageview5"
-                                        android:layout_marginLeft="56dp"
+                                        android:layout_marginStart="56dp"
                                         android:layout_marginTop="-46dp"
                                         android:layout_marginBottom="10dp"
-                                        android:text="Região"
+                                        android:text="@string/region"
                                         android:textAlignment="center"
                                         android:textSize="15sp">
 
@@ -112,7 +112,7 @@
                             <androidx.cardview.widget.CardView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginRight="5dp"
+                                android:layout_marginEnd="5dp"
                                 android:layout_weight="1"
                                 android:elevation="5dp"
                                 android:gravity="center"
@@ -129,7 +129,7 @@
                                         android:id="@+id/imageview2"
                                         android:layout_width="50dp"
                                         android:layout_height="50dp"
-                                        android:layout_alignParentLeft="true"
+                                        android:layout_alignParentStart="true"
                                         android:src="@drawable/ic_fireplace">
 
                                     </ImageView>
@@ -141,7 +141,7 @@
                                         android:layout_marginStart="56dp"
                                         android:layout_marginTop="-46dp"
                                         android:layout_marginBottom="10dp"
-                                        android:text="Fogos na região"
+                                        android:text="@string/region_fires"
                                         android:textSize="15sp">
 
                                     </TextView>
@@ -171,7 +171,7 @@
                             <androidx.cardview.widget.CardView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginRight="5dp"
+                                android:layout_marginEnd="5dp"
                                 android:layout_weight="1"
                                 android:elevation="5dp"
                                 android:gravity="center"
@@ -188,7 +188,7 @@
                                         android:id="@+id/imageview4"
                                         android:layout_width="50dp"
                                         android:layout_height="50dp"
-                                        android:layout_alignParentLeft="true"
+                                        android:layout_alignParentStart="true"
                                         android:src="@drawable/ic_warning">
 
                                     </ImageView>
@@ -197,10 +197,10 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_below="@id/imageview4"
-                                        android:layout_marginLeft="56dp"
+                                        android:layout_marginStart="56dp"
                                         android:layout_marginTop="-46dp"
                                         android:layout_marginBottom="10dp"
-                                        android:text="Risco na região"
+                                        android:text="@string/region_risk"
                                         android:textAlignment="center"
                                         android:textSize="17sp">
 
@@ -260,7 +260,7 @@
                                         android:layout_marginStart="56dp"
                                         android:layout_marginTop="-46dp"
                                         android:layout_marginBottom="10dp"
-                                        android:text="Nº Total de fogos"
+                                        android:text="@string/total_fires"
                                         android:textSize="15sp">
 
                                     </TextView>
@@ -282,7 +282,7 @@
                             <androidx.cardview.widget.CardView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginRight="5dp"
+                                android:layout_marginEnd="5dp"
                                 android:layout_weight="1"
                                 android:elevation="5dp"
                                 android:gravity="center"
@@ -299,7 +299,7 @@
                                         android:id="@+id/imageview3"
                                         android:layout_width="50dp"
                                         android:layout_height="50dp"
-                                        android:layout_alignParentLeft="true"
+                                        android:layout_alignParentStart="true"
                                         android:src="@drawable/ic_new_fire">
 
                                     </ImageView>
@@ -308,10 +308,10 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_below="@id/imageview3"
-                                        android:layout_marginLeft="56dp"
+                                        android:layout_marginStart="56dp"
                                         android:layout_marginTop="-46dp"
                                         android:layout_marginBottom="10dp"
-                                        android:text="Média de fogos na região"
+                                        android:text="@string/fire_average"
                                         android:textAlignment="center"
                                         android:textSize="15sp">
 
