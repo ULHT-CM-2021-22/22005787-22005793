@@ -5,10 +5,230 @@
     android:layout_height="match_parent"
     tools:context=".FireRegistrationFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:theme="@style/ToolbarTheme" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/fireRegisto"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="230sp"
+                android:layout_height="20sp"
+                android:text="@string/newRegister"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="15sp">
+
+            </TextView>
+
+        </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp">
+
+                <ImageView
+                    android:id="@+id/imageview10"
+                    android:layout_width="30dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="2dp"
+                    android:src="@drawable/ic_person">
+
+                </ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name"
+                    android:textAlignment="center"
+                    android:textSize="15sp">
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/plain_text_input_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp">
+
+                <ImageView
+                    android:id="@+id/imageview11"
+                    android:layout_width="30dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="2dp"
+                    android:src="@drawable/ic_card">
+
+                </ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cc"
+                    android:textAlignment="center"
+                    android:textSize="15sp">
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/plain_text_input_cc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp">
+
+                <ImageView
+                    android:id="@+id/imageview12"
+                    android:layout_width="30dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="2dp"
+                    android:src="@drawable/ic_region">
+                </ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/district"
+                    android:textAlignment="center"
+                    android:textSize="15sp">
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/plain_text_input_district"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp">
+
+                <ImageView
+                    android:id="@+id/imageview13"
+                    android:layout_width="30dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="2dp"
+                    android:src="@drawable/ic_date">
+                </ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/time"
+                    android:textAlignment="center"
+                    android:textSize="15sp">
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/plain_text_input_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp">
+
+                <ImageView
+                    android:id="@+id/imageview14"
+                    android:layout_width="30dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="2dp"
+                    android:src="@drawable/ic_photo">
+                </ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/photo"
+                    android:textAlignment="center"
+                    android:textSize="15sp">
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/searchedTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:width="200dp"
+                     />
+
+                <Button
+                    android:id="@+id/bSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textColor="@color/grey"
+                    android:drawableLeft="@drawable/ic_send"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/send"
+                    android:textColor="@color/white"
+                    android:background="@color/grey"
+                    />
+
+
+            </LinearLayout>
+
+
+    </LinearLayout>
 
 </FrameLayout>

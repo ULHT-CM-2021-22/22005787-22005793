@@ -10,4 +10,11 @@
     <string name="exit">Close app</string>
     <string name="drawer_open">Open</string>
     <string name="drawer_closed">Closed</string>
+    <string name="newRegister">Register the fire here</string>
+    <string name="name">Name</string>
+    <string name="cc">Identification Card Nº</string>
+    <string name="district">District</string>
+    <string name="time">Date and Time</string>
+    <string name="photo">Photo(Opcional)</string>
+    <string name="send">Send</string>
 </resources>

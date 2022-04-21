@@ -9,6 +9,15 @@
     <string name="exit">Encerrar a aplicação</string>
     <string name="drawer_open">Aberto</string>
     <string name="drawer_closed">Fechado</string>
+    <string name="newRegister">Efetue aqui o registo do incêndio</string>
+    <string name="name">Nome</string>
+    <string name="cc">Nº Cartão Cidadão</string>
+    <string name="district">Distrito</string>
+    <string name="time">Data e Hora</string>
+    <string name="photo">Fotografia(Opcional)</string>
+    <string name="send">Enviar</string>
+
+
 
 
 </resources>
