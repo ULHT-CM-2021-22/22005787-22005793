@@ -14,6 +14,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        if (!screenRotated(savedInstanceState)) {
+            NavigationManager.goToDashboardFragment(supportFragmentManager)
+        }
+
 
     }
 
@@ -54,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         when {
             binding.drawer.isDrawerOpen(GravityCompat.START) -> binding.drawer.closeDrawer(
                 GravityCompat.START)
-            supportFragmentManager.backStackEntryCount == 0 -> finish()
+            supportFragmentManager.backStackEntryCount == 1 -> finish()
             else -> super.onBackPressed()
         }
     }

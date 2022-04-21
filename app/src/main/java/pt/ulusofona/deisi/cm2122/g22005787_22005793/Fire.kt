@@ -5,16 +5,41 @@ import kotlinx.parcelize.Parcelize
 import kotlinx.parcelize.RawValue
 
 @Parcelize
-data class Fire (val distrito: String,val conselho: String,val freguesia: String,
-                 val meiosOperacionais: Int,val meiosVeiculos: Int,val meiosAereos: Int,
-                 val estado: String,val data: String,val fotos: ArrayList<String>,
-                 val obs: String,  val pessoa : @RawValue Pessoa, val porConfirmar: Boolean ): Parcelable {
+data class Fire(
+    var pessoa: @RawValue Pessoa,
+    var distrito: String,
+    var data: String,
+    var fotos: ArrayList<String>
+) : Parcelable {
 
-                     constructor(pessoa : @RawValue Pessoa,distrito: String,data: String,fotos: ArrayList<String>) :
-                             this(distrito,"","",0,0,
-                                 0,"",data,fotos,"",pessoa,true)
+    var conselho: String = ""
+    var freguesia: String = ""
+    var meiosOperacionais: Int = 0
+    var meiosVeiculos: Int = 0
+    var meiosAereos: Int = 0
+    var estado = ""
+    var obs: String = ""
+    var porConfirmar: Boolean = false
 
-    fun showInf(): String{
+    constructor(
+        distrito: String, conselho: String, freguesia: String,
+        meiosOperacionais: Int, meiosVeiculos: Int, meiosAereos: Int,
+        estado: String, data: String, fotos: ArrayList<String>,
+        obs: String, pessoa: @RawValue Pessoa, porConfirmar: Boolean
+    ) :
+            this(pessoa, distrito, data, fotos) {
+        this.conselho = conselho
+        this.freguesia = freguesia
+        this.meiosOperacionais = meiosOperacionais
+        this.meiosVeiculos = meiosVeiculos
+        this.meiosAereos = meiosAereos
+        this.estado = estado
+        this.obs = obs
+        this.porConfirmar = porConfirmar
+    }
+
+
+    fun showInf(): String {
         return "Conselho -> $conselho \nFreguesia -> $freguesia \n" +
                 "Estado -> $estado \nData -> $data "
     }
