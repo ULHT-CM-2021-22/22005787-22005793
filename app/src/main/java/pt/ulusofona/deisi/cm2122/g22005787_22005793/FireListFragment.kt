@@ -15,7 +15,7 @@ import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentFireList
 
 class FireListFragment : Fragment() {
     private val model = FireModel
-    private val fires = ArrayList<Fire>()
+    private val fires = FireModel.list
     private var adapter = FireAdapter(onClick = ::onOperationClick, onLongClick = ::onOperationLongClick)
     private lateinit var binding: FragmentFireListBinding
 

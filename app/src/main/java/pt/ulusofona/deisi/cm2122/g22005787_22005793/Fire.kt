@@ -15,7 +15,8 @@ data class Fire (val distrito: String,val conselho: String,val freguesia: String
                                  0,"",data,fotos,"",pessoa,true)
 
     fun showInf(): String{
-        return "Conselho -> $conselho  Freguesia -> $freguesia  Estado -> $estado  Data -> $data "
+        return "Conselho -> $conselho \nFreguesia -> $freguesia \n" +
+                "Estado -> $estado \nData -> $data "
     }
 
 

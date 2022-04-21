@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
 <LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="135dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginBottom="10dp"
     android:orientation="horizontal">
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_height="150dp"
         android:layout_marginEnd="5dp"
         android:layout_weight="1"
         android:elevation="5dp"
@@ -26,7 +21,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/imageview1"
@@ -53,10 +48,10 @@
             <TextView
                 android:id="@+id/text_inf"
                 android:layout_width="match_parent"
-                android:layout_height="63dp"
+                android:layout_height="match_parent"
                 android:layout_below="@id/imageview1"
                 android:textAlignment="textStart"
-                android:textSize="20sp">
+                android:textSize="12sp">
 
             </TextView>
 
@@ -66,5 +61,4 @@
 
 </LinearLayout>
 
-</androidx.drawerlayout.widget.DrawerLayout>
 
