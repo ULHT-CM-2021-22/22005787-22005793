@@ -2481,6 +2481,8 @@ int drawable ic_mtrl_chip_checked_black 0x7f070071
 int drawable ic_mtrl_chip_checked_circle 0x7f070072
 int drawable ic_mtrl_chip_close_circle 0x7f070073
 int drawable ic_new_fire 0x7f070074
+int drawable ic_region 0x7f0700a6
+int drawable ic_warning 0x7f0700a7
 int drawable lusofona 0x7f070075
 int drawable m3_appbar_background 0x7f070076
 int drawable m3_popupmenu_background_overlay 0x7f070077

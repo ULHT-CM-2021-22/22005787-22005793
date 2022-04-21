@@ -2482,6 +2482,8 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_new_fire
+drawable ic_region
+drawable ic_warning
 drawable lusofona
 drawable m3_appbar_background
 drawable m3_popupmenu_background_overlay

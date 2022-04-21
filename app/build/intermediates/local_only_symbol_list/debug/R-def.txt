@@ -25,6 +25,8 @@ drawable ic_idk
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_new_fire
+drawable ic_region
+drawable ic_warning
 drawable lusofona
 drawable mapa
 id drawer

@@ -24,16 +24,16 @@
         "source": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_fire_details.xml.flat",
+        "source": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\src\\main\\res\\layout\\fragment_fire_details.xml"
     },
     {
         "merged": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_fire_details.xml.flat",
-        "source": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\src\\main\\res\\layout\\fragment_fire_details.xml"
+        "merged": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
         "merged": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_exit.xml.flat",
@@ -46,6 +46,10 @@
     {
         "merged": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_idk.xml.flat",
         "source": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\src\\main\\res\\drawable\\ic_idk.xml"
+    },
+    {
+        "merged": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_region.xml.flat",
+        "source": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\src\\main\\res\\drawable\\ic_region.xml"
     },
     {
         "merged": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.webp.flat",
@@ -86,6 +90,10 @@
     {
         "merged": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_new_fire.xml.flat",
         "source": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\src\\main\\res\\drawable\\ic_new_fire.xml"
+    },
+    {
+        "merged": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_warning.xml.flat",
+        "source": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\src\\main\\res\\drawable\\ic_warning.xml"
     },
     {
         "merged": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_fire_list.xml.flat",
