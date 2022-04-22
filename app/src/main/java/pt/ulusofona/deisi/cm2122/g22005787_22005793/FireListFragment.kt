@@ -42,7 +42,8 @@ class FireListFragment : Fragment() {
     }
 
     private fun updateHistory(fires: List<Fire>) {
-        val history = fires.map { Fire(it.pessoa,it.distrito,it.data,it.fotos) }
+        val history = fires.map { Fire(it.distrito,it.conselho,it.freguesia,it.meiosOperacionais,
+        it.meiosVeiculos,it.meiosAereos,it.estado,it.data,it.fotos,it.obs,it.pessoa,it.porConfirmar)}
         CoroutineScope(Dispatchers.Main).launch {
             showHistory(history.isNotEmpty())
             adapter.updateItems(history)
