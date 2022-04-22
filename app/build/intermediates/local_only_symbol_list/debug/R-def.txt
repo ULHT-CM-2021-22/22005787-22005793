@@ -37,7 +37,7 @@ drawable ic_send
 drawable ic_warning
 drawable lusofona
 drawable mapa
-id bSearch
+id button_region
 id drawer
 id frame
 id imageview1
@@ -59,12 +59,13 @@ id nav_fireMap
 id nav_newFire
 id plain_text_input_cc
 id plain_text_input_district
+id plain_text_input_image
 id plain_text_input_name
 id plain_text_input_time
 id rvHistory
-id searchedTxt
 id textNoHistoryAvailable
 id text_inf
+id text_region
 id text_title
 id toolbar
 layout activity_main
