@@ -208,8 +208,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="@string/send"
-                    android:textColor="@color/white"
-                    android:background="@color/grey"
+                    android:textColor="@color/black"
+                    android:background="@android:color/transparent"
                     />
 
 
