@@ -5,6 +5,7 @@
     <string name="app_name">FireTracker</string>
     <string name="cc">Identification Card Nº</string>
     <string name="click">Click to choose</string>
+    <string name="confirm">To be confirmed</string>
     <string name="county">County</string>
     <string name="district">District</string>
     <string name="drawer_closed">Closed</string>

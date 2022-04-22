@@ -2776,6 +2776,8 @@ int id imageview23 0x7f0800e6
 int id imageview24 0x7f0800e7
 int id imageview25 0x7f0800e8
 int id imageview26 0x7f0800e9
+int id imageview27 0x7f08020f
+int id imageview28 0x7f080210
 int id imageview3 0x7f0800ea
 int id imageview4 0x7f0800eb
 int id imageview5 0x7f0800ec
@@ -3009,6 +3011,7 @@ int id textSpacerNoTitle 0x7f0801cf
 int id textStart 0x7f0801d0
 int id textTop 0x7f0801d1
 int id text_air_support 0x7f080206
+int id text_cc 0x7f080211
 int id text_county 0x7f080207
 int id text_date 0x7f080208
 int id text_fire_state 0x7f080209
@@ -3020,6 +3023,7 @@ int id text_input_error_icon 0x7f0801d4
 int id text_input_start_icon 0x7f0801d5
 int id text_obs 0x7f08020c
 int id text_parish 0x7f08020d
+int id text_pessoa 0x7f080212
 int id text_regiao 0x7f0801d6
 int id text_region 0x7f0801d7
 int id text_title 0x7f0801d8
@@ -3305,6 +3309,7 @@ int string character_counter_pattern 0x7f0f0025
 int string chip_text 0x7f0f0026
 int string clear_text_end_icon_content_description 0x7f0f0027
 int string click 0x7f0f00a5
+int string confirm 0x7f0f00a6
 int string county 0x7f0f0028
 int string district 0x7f0f0029
 int string drawer_closed 0x7f0f002a

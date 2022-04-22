@@ -58,6 +58,8 @@ id imageview23
 id imageview24
 id imageview25
 id imageview26
+id imageview27
+id imageview28
 id imageview3
 id imageview4
 id imageview5
@@ -74,6 +76,7 @@ id plain_text_input_name
 id rvHistory
 id textNoHistoryAvailable
 id text_air_support
+id text_cc
 id text_county
 id text_date
 id text_fire_state
@@ -82,6 +85,7 @@ id text_foto
 id text_inf
 id text_obs
 id text_parish
+id text_pessoa
 id text_regiao
 id text_region
 id text_title
@@ -103,6 +107,7 @@ string another_info
 string app_name
 string cc
 string click
+string confirm
 string county
 string district
 string drawer_closed

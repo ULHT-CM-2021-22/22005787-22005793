@@ -2777,6 +2777,8 @@ id imageview23
 id imageview24
 id imageview25
 id imageview26
+id imageview27
+id imageview28
 id imageview3
 id imageview4
 id imageview5
@@ -3010,6 +3012,7 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id text_air_support
+id text_cc
 id text_county
 id text_date
 id text_fire_state
@@ -3021,6 +3024,7 @@ id text_input_error_icon
 id text_input_start_icon
 id text_obs
 id text_parish
+id text_pessoa
 id text_regiao
 id text_region
 id text_title
@@ -3306,6 +3310,7 @@ string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
 string click
+string confirm
 string county
 string district
 string drawer_closed

@@ -26,4 +26,5 @@
     <string name="select_region">Lisboa \n (Click to change)</string>
     <string name="inf_not_available">Information not available</string>
     <string name="click">Click to choose</string>
+    <string name="confirm">To be confirmed</string>
 </resources>

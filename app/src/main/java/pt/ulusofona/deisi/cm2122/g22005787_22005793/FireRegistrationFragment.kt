@@ -60,6 +60,7 @@ class FireRegistrationFragment : Fragment() {
             var allRight = true
             fotos.add(binding.plainTextInputImage.text.toString())
             val fire = Fire(pessoa, distrito, data, fotos)
+            fire.estado = getString(R.string.confirm)
             if (binding.plainTextInputCc.text == null || binding.plainTextInputName.text == null
                 || binding.plainTextInputCc.text.toString() == "" || binding.plainTextInputName.text.toString() == ""
                 || distrito == getString(R.string.click)

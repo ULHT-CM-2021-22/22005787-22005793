@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.coroutines.CoroutineScope
@@ -42,7 +41,7 @@ class FireListFragment : Fragment() {
     }
 
     private fun updateHistory(fires: List<Fire>) {
-        val history = fires.map { Fire(it.distrito,it.conselho,it.freguesia,it.meiosOperacionais,
+        val history = fires.map { Fire(it.distrito,it.concelho,it.freguesia,it.meiosOperacionais,
         it.meiosVeiculos,it.meiosAereos,it.estado,it.data,it.fotos,it.obs,it.pessoa,it.porConfirmar)}
         CoroutineScope(Dispatchers.Main).launch {
             showHistory(history.isNotEmpty())

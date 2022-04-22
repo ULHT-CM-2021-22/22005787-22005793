@@ -7,8 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentFireDetailsBinding
-import java.text.SimpleDateFormat
-import java.util.*
 
 
 private const val ARG_FIRE = "ARG_FIRE"
@@ -35,7 +33,7 @@ class FireDetailsFragment : Fragment() {
 
             binding.textVehicles.text = infNotAvailable(it.meiosVeiculos.toString())
             binding.textAirSupport.text= infNotAvailable(it.meiosAereos.toString())
-            binding.textCounty.text = infNotAvailable(it.conselho)
+            binding.textCounty.text = infNotAvailable(it.concelho)
             binding.textDate.text = infNotAvailable(it.data)
             binding.textFireState.text = infNotAvailable(it.estado)
             binding.textFiremen.text = infNotAvailable(it.meiosOperacionais.toString())
@@ -43,6 +41,8 @@ class FireDetailsFragment : Fragment() {
             binding.textParish.text = infNotAvailable(it.freguesia)
             binding.textObs.text = infNotAvailable(it.obs)
             binding.textRegiao.text = infNotAvailable(it.distrito)
+            binding.textPessoa.text = infNotAvailable(it.pessoa.nome)
+            binding.textCc.text = infNotAvailable(it.pessoa.cc)
 
 
         }
