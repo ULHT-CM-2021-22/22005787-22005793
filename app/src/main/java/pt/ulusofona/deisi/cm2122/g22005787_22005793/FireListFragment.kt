@@ -59,4 +59,7 @@ class FireListFragment : Fragment() {
             binding.textNoHistoryAvailable.visibility = View.VISIBLE
         }
     }
+
+
+
 }

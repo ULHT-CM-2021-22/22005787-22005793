@@ -5,19 +5,80 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 import pt.ulusofona.deisi.cm2122.g22005787_22005793.R;
 
 public final class FragmentFireDetailsBinding implements ViewBinding {
   @NonNull
   private final FrameLayout rootView;
 
-  private FragmentFireDetailsBinding(@NonNull FrameLayout rootView) {
+  @NonNull
+  public final ImageView imageview1;
+
+  @NonNull
+  public final ImageView imageview2;
+
+  @NonNull
+  public final ImageView imageview20;
+
+  @NonNull
+  public final ImageView imageview21;
+
+  @NonNull
+  public final ImageView imageview22;
+
+  @NonNull
+  public final ImageView imageview23;
+
+  @NonNull
+  public final ImageView imageview24;
+
+  @NonNull
+  public final ImageView imageview25;
+
+  @NonNull
+  public final ImageView imageview26;
+
+  @NonNull
+  public final ImageView imageview3;
+
+  @NonNull
+  public final ImageView imageview5;
+
+  @NonNull
+  public final TextView textRegiao;
+
+  @NonNull
+  public final TextView textRegion;
+
+  private FragmentFireDetailsBinding(@NonNull FrameLayout rootView, @NonNull ImageView imageview1,
+      @NonNull ImageView imageview2, @NonNull ImageView imageview20, @NonNull ImageView imageview21,
+      @NonNull ImageView imageview22, @NonNull ImageView imageview23,
+      @NonNull ImageView imageview24, @NonNull ImageView imageview25,
+      @NonNull ImageView imageview26, @NonNull ImageView imageview3, @NonNull ImageView imageview5,
+      @NonNull TextView textRegiao, @NonNull TextView textRegion) {
     this.rootView = rootView;
+    this.imageview1 = imageview1;
+    this.imageview2 = imageview2;
+    this.imageview20 = imageview20;
+    this.imageview21 = imageview21;
+    this.imageview22 = imageview22;
+    this.imageview23 = imageview23;
+    this.imageview24 = imageview24;
+    this.imageview25 = imageview25;
+    this.imageview26 = imageview26;
+    this.imageview3 = imageview3;
+    this.imageview5 = imageview5;
+    this.textRegiao = textRegiao;
+    this.textRegion = textRegion;
   }
 
   @Override
@@ -43,10 +104,93 @@ public final class FragmentFireDetailsBinding implements ViewBinding {
 
   @NonNull
   public static FragmentFireDetailsBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.imageview1;
+      ImageView imageview1 = ViewBindings.findChildViewById(rootView, id);
+      if (imageview1 == null) {
+        break missingId;
+      }
 
-    return new FragmentFireDetailsBinding((FrameLayout) rootView);
+      id = R.id.imageview2;
+      ImageView imageview2 = ViewBindings.findChildViewById(rootView, id);
+      if (imageview2 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageview20;
+      ImageView imageview20 = ViewBindings.findChildViewById(rootView, id);
+      if (imageview20 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageview21;
+      ImageView imageview21 = ViewBindings.findChildViewById(rootView, id);
+      if (imageview21 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageview22;
+      ImageView imageview22 = ViewBindings.findChildViewById(rootView, id);
+      if (imageview22 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageview23;
+      ImageView imageview23 = ViewBindings.findChildViewById(rootView, id);
+      if (imageview23 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageview24;
+      ImageView imageview24 = ViewBindings.findChildViewById(rootView, id);
+      if (imageview24 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageview25;
+      ImageView imageview25 = ViewBindings.findChildViewById(rootView, id);
+      if (imageview25 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageview26;
+      ImageView imageview26 = ViewBindings.findChildViewById(rootView, id);
+      if (imageview26 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageview3;
+      ImageView imageview3 = ViewBindings.findChildViewById(rootView, id);
+      if (imageview3 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageview5;
+      ImageView imageview5 = ViewBindings.findChildViewById(rootView, id);
+      if (imageview5 == null) {
+        break missingId;
+      }
+
+      id = R.id.text_regiao;
+      TextView textRegiao = ViewBindings.findChildViewById(rootView, id);
+      if (textRegiao == null) {
+        break missingId;
+      }
+
+      id = R.id.text_region;
+      TextView textRegion = ViewBindings.findChildViewById(rootView, id);
+      if (textRegion == null) {
+        break missingId;
+      }
+
+      return new FragmentFireDetailsBinding((FrameLayout) rootView, imageview1, imageview2,
+          imageview20, imageview21, imageview22, imageview23, imageview24, imageview25, imageview26,
+          imageview3, imageview5, textRegiao, textRegion);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

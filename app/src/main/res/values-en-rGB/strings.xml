@@ -23,13 +23,14 @@
     <string name="region_risk">Region\´s risk</string>
     <string name="total_fires">Total number of fires</string>
     <string name="fire_average">Average number of fires in the region</string>
+    <string name="select_region">Lisboa \n (Click to change)</string>
     <string name="county">County</string>
     <string name="parish">Parish</string>
-    <string name="firemen">Firemen</string>
-    <string name="vehicles">Vehicles</string>
-    <string name="air_support">Air Support</string>
-    <string name="fire_state">Fire State</string>
-    <string name="foto">Photo</string>
-    <string name="obs">Observations</string>
-    <string name="another_info">Addicional Information </string>
+    <string name="firemen">Operational means</string>
+    <string name="vehicles">Terrestrial means</string>
+    <string name="air_support">Air resources</string>
+    <string name="fire_state">Estado do incêndio</string>
+    <string name="foto">Fotos</string>
+    <string name="obs">Observações</string>
+    <string name="another_info">por mudar</string>
 </resources>

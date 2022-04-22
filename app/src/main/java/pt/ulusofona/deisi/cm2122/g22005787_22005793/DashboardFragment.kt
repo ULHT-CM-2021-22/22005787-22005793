@@ -30,14 +30,15 @@ class DashboardFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         binding.buttonRegion.setOnClickListener {
-            val colors = arrayOf("Aveiro", "Beja", "Braga", "Bragança","Castelo Branco","Coimbra",
+            val districts = arrayOf("Aveiro", "Beja", "Braga", "Bragança","Castelo Branco","Coimbra",
                 "Évora","Faro","Guarda","Leiria","Lisboa","Portalegre",
                 "Porto","Santarém","Setúbal","Viana do Castelo", "Vila Real","Viseu")
 
             val builder: android.app.AlertDialog.Builder = android.app.AlertDialog.Builder(context)
             builder.setTitle("Escolha a região")
-            builder.setItems(colors, DialogInterface.OnClickListener { dialog, which ->
-                binding.textRegion.text = colors[which]
+            builder.setItems(districts, DialogInterface.OnClickListener { dialog, which ->
+                binding.textRegion.text = districts[which]
+                binding.textRegion.textSize = 18F
             })
             builder.show()
 

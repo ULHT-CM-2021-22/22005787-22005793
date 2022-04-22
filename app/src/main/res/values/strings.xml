@@ -22,16 +22,16 @@
     <string name="region_risk">Risco na região</string>
     <string name="total_fires">Nº total de fogos</string>
     <string name="fire_average">Média de fogos na região</string>
-    <string name="county">Concelho</string>
+    <string name="select_region">Lisboa \n (Clique para alterar)</string>
+    <string name="county">Conselho</string>
     <string name="parish">Freguesia</string>
-    <string name="firemen">Bombeiros</string>
-    <string name="vehicles">Veículos</string>
-    <string name="air_support">Meios Aéreos</string>
+    <string name="firemen">Meios operacionais</string>
+    <string name="vehicles">Meios terrestres</string>
+    <string name="air_support">Meios aéreos</string>
     <string name="fire_state">Estado do incêndio</string>
-    <string name="foto">Fotografia</string>
+    <string name="foto">Fotos</string>
     <string name="obs">Observações</string>
-    <string name="another_info">Outras informações</string>
-
+    <string name="another_info">por mudar</string>
 
 
 

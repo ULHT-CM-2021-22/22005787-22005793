@@ -9,11 +9,13 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
         <RelativeLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            tools:ignore="UselessParent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -59,7 +61,7 @@
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_alignParentStart="true"
-                                android:layout_marginLeft="2dp"
+                                android:layout_marginStart="2dp"
                                 android:src="@drawable/ic_region">
 
                             </ImageView>
@@ -82,7 +84,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="63dp"
                                 android:layout_below="@id/imageview5"
-                                android:text="Clique para escolher"
+                                android:text="@string/select_region"
                                 android:textAlignment="center"
                                 android:textSize="15sp">
 
@@ -305,7 +307,7 @@
                                 android:layout_marginBottom="10dp"
                                 android:text="@string/fire_average"
                                 android:textAlignment="center"
-                                android:textSize="15sp">
+                                android:textSize="14sp">
 
                             </TextView>
 
