@@ -33,4 +33,6 @@
     <string name="foto">Fotos</string>
     <string name="obs">Observações</string>
     <string name="another_info">por mudar</string>
+    <string name="inf_not_available">Information not available</string>
+    <string name="click">Click to choose</string>
 </resources>

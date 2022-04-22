@@ -1,8 +1,19 @@
 package pt.ulusofona.deisi.cm2122.g22005787_22005793
 
 import android.os.Parcelable
+import android.provider.Settings.Global.getString
 import kotlinx.parcelize.Parcelize
 import kotlinx.parcelize.RawValue
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentFireDetailsBinding
+import java.text.SimpleDateFormat
+import java.util.*
+
 
 @Parcelize
 data class Fire(
@@ -38,10 +49,17 @@ data class Fire(
         this.porConfirmar = porConfirmar
     }
 
+    private fun infNotAvailable(view: String): String {
+        if (view == "" || view == "0") {
+            return "Informações não disponivel"
+        }
+        return view
+    }
+
 
     fun showInf(): String {
-        return "Conselho -> $conselho \nFreguesia -> $freguesia \n" +
-                "Estado -> $estado \nData -> $data "
+        return "Conselho -> ${infNotAvailable(conselho)} \nFreguesia -> ${infNotAvailable(freguesia)} \n" +
+                "Estado -> ${infNotAvailable(estado)} \nData -> ${infNotAvailable(data)}"
     }
 
 

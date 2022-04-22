@@ -73,10 +73,19 @@ id plain_text_input_image
 id plain_text_input_name
 id rvHistory
 id textNoHistoryAvailable
+id text_air_support
+id text_county
+id text_date
+id text_fire_state
+id text_firemen
+id text_foto
 id text_inf
+id text_obs
+id text_parish
 id text_regiao
 id text_region
 id text_title
+id text_vehicles
 id toolbar
 layout activity_main
 layout fragment_dashboard
@@ -93,6 +102,7 @@ string air_support
 string another_info
 string app_name
 string cc
+string click
 string county
 string district
 string drawer_closed
@@ -105,6 +115,7 @@ string fire_state
 string firemen
 string foto
 string idk
+string inf_not_available
 string name
 string newRegister
 string new_fire

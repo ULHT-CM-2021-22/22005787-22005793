@@ -10,14 +10,9 @@ import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentFireDeta
 import java.text.SimpleDateFormat
 import java.util.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
 private const val ARG_FIRE = "ARG_FIRE"
-/**
- * A simple [Fragment] subclass.
- * Use the [FireDetailsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class FireDetailsFragment : Fragment() {
     private var fire: Fire? = null
     private lateinit var binding: FragmentFireDetailsBinding
@@ -36,10 +31,28 @@ class FireDetailsFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        val sdf = SimpleDateFormat("dd/MM/yyyy - HH:mm:ss")
         fire?.let {
 
+            binding.textVehicles.text = infNotAvailable(it.meiosVeiculos.toString())
+            binding.textAirSupport.text= infNotAvailable(it.meiosAereos.toString())
+            binding.textCounty.text = infNotAvailable(it.conselho)
+            binding.textDate.text = infNotAvailable(it.data)
+            binding.textFireState.text = infNotAvailable(it.estado)
+            binding.textFiremen.text = infNotAvailable(it.meiosOperacionais.toString())
+            binding.textFoto.text = infNotAvailable(it.fotos.toString())
+            binding.textParish.text = infNotAvailable(it.freguesia)
+            binding.textObs.text = infNotAvailable(it.obs)
+            binding.textRegiao.text = infNotAvailable(it.distrito)
+
+
         }
+    }
+
+    private fun infNotAvailable(view : String):String{
+        if (view == "" || view == "0"){
+            return getString(R.string.inf_not_available)
+        }
+        return view
     }
 
     companion object {

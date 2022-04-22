@@ -112,7 +112,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/button_region"
-                    android:text="Clique para escolher"
+                    android:text="@string/click"
                     android:textColor="@color/orange"
                     android:background="@android:color/transparent"/>
 
