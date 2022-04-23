@@ -18,12 +18,28 @@ class FireListFragment : Fragment() {
     private val fires = FireModel.list
     private var adapter = FireAdapter(onClick = ::onOperationClick, onLongClick = ::onOperationLongClick)
     private lateinit var binding: FragmentFireListBinding
+   private val timer = object : CountDownTimer(20000, 1000) {
+        override fun onTick(millisUntilFinished: Long) {}
+        override fun onFinish() {
+            updateDashboard()
+        }
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         (requireActivity() as AppCompatActivity).supportActionBar?.title = getString(R.string.fire_list)
         val view = inflater.inflate(R.layout.fragment_fire_list, container, false)
         binding = FragmentFireListBinding.bind(view)
         return binding.root
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        timer.cancel()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        timer.cancel()
     }
 
     override fun onStart() {
@@ -63,12 +79,6 @@ class FireListFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        val timer = object : CountDownTimer(20000, 1000) {
-            override fun onTick(millisUntilFinished: Long) {}
-            override fun onFinish() {
-                updateDashboard()
-            }
-        }
         timer.start()
     }
 

@@ -19,6 +19,12 @@ class FireRegistrationFragment : Fragment() {
     private var fires = FireModel.list
     private var districts = FireModel.districts
     private lateinit var binding: FragmentFireRegistrationBinding
+    private val timer = object : CountDownTimer(20000, 1000) {
+        override fun onTick(millisUntilFinished: Long) {}
+        override fun onFinish() {
+            updateDashboard()
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -79,14 +85,18 @@ class FireRegistrationFragment : Fragment() {
         updateDashboard()
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        timer.cancel()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        timer.cancel()
+    }
+
     override fun onResume() {
         super.onResume()
-        val timer = object : CountDownTimer(20000, 1000) {
-            override fun onTick(millisUntilFinished: Long) {}
-            override fun onFinish() {
-                updateDashboard()
-            }
-        }
         timer.start()
     }
 

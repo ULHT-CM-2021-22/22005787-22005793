@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.coroutines.delay
 import org.eazegraph.lib.models.PieModel
 import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentChartBinding
 import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentDashboardBinding
@@ -16,6 +17,12 @@ class ChartFragment : Fragment() {
 private lateinit var binding: FragmentChartBinding
 private var districts = FireModel.districts
 private var model = FireModel
+private val timer = object : CountDownTimer(20000, 1000) {
+        override fun onTick(millisUntilFinished: Long) {}
+        override fun onFinish() {
+            updateDashboard()
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,18 +42,21 @@ private var model = FireModel
     override fun onStart() {
         super.onStart()
         updateDashboard()
-
     }
 
     override fun onResume() {
         super.onResume()
-        val timer = object : CountDownTimer(20000, 1000) {
-            override fun onTick(millisUntilFinished: Long) {}
-            override fun onFinish() {
-                updateDashboard()
-            }
-        }
         timer.start()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        timer.cancel()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        timer.cancel()
     }
 
     private fun districtsInChart(){

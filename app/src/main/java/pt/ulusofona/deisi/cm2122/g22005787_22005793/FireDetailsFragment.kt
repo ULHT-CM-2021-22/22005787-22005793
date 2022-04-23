@@ -17,6 +17,12 @@ class FireDetailsFragment : Fragment() {
     private var model = FireModel
     private var fireData: FireData? = null
     private lateinit var binding: FragmentFireDetailsBinding
+    private val timer = object : CountDownTimer(20000, 1000) {
+        override fun onTick(millisUntilFinished: Long) {}
+        override fun onFinish() {
+            updateDashboard()
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +34,16 @@ class FireDetailsFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_fire_details, container, false)
         binding = FragmentFireDetailsBinding.bind(view)
         return binding.root
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        timer.cancel()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        timer.cancel()
     }
 
     override fun onStart() {
@@ -54,12 +70,6 @@ class FireDetailsFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        val timer = object : CountDownTimer(20000, 1000) {
-            override fun onTick(millisUntilFinished: Long) {}
-            override fun onFinish() {
-                updateDashboard()
-            }
-        }
         timer.start()
     }
 

@@ -18,6 +18,12 @@ class DashboardFragment : Fragment() {
     private var districts = FireModel.districts
     private var model = FireModel
     private var actualDistrict = "Lisboa"
+    private val timer = object : CountDownTimer(20000, 1000) {
+        override fun onTick(millisUntilFinished: Long) {}
+        override fun onFinish() {
+            updateDashboard()
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,20 +51,23 @@ class DashboardFragment : Fragment() {
                 updateDashboard()
             })
             builder.show()
-            onResume()
         }
         updateDashboard()
     }
 
     override fun onResume() {
         super.onResume()
-        val timer = object : CountDownTimer(20000, 1000) {
-            override fun onTick(millisUntilFinished: Long) {}
-            override fun onFinish() {
-                updateDashboard()
-            }
-        }
         timer.start()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        timer.cancel()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        timer.cancel()
     }
 
     private fun updateDashboard() {
