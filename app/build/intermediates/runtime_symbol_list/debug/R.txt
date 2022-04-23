@@ -2836,6 +2836,7 @@ int id legacy 0x7f080103
 int id line1 0x7f080104
 int id line3 0x7f080105
 int id linear 0x7f080106
+int id linear_layout_risk 0x7f08021a
 int id listMode 0x7f080107
 int id list_item 0x7f080108
 int id map 0x7f080109
@@ -2897,7 +2898,7 @@ int id mtrl_picker_text_input_range_start 0x7f080140
 int id mtrl_picker_title_text 0x7f080141
 int id mtrl_view_tag_bottom_padding 0x7f080142
 int id multiply 0x7f080143
-int id nav_IDK 0x7f080144
+int id nav_chart 0x7f08021b
 int id nav_drawer 0x7f080145
 int id nav_exit 0x7f080146
 int id nav_fireList 0x7f080147
@@ -3359,12 +3360,14 @@ int string exit 0x7f0f0030
 int string exposed_dropdown_menu_content_description 0x7f0f0031
 int string fab_transformation_scrim_behavior 0x7f0f0032
 int string fab_transformation_sheet_behavior 0x7f0f0033
+int string fields 0x7f0f00a8
 int string fire_average 0x7f0f0034
 int string fire_list 0x7f0f0035
 int string fire_map 0x7f0f0036
 int string fire_state 0x7f0f0037
 int string firemen 0x7f0f0038
 int string foto 0x7f0f0039
+int string hello_blank_fragment 0x7f0f00aa
 int string hide_bottom_view_on_scroll_behavior 0x7f0f003a
 int string icon_content_description 0x7f0f003b
 int string idk 0x7f0f003c
@@ -3466,6 +3469,7 @@ int string photo 0x7f0f009b
 int string region 0x7f0f009c
 int string region_fires 0x7f0f009d
 int string region_risk 0x7f0f009e
+int string register 0x7f0f00a9
 int string search_menu_title 0x7f0f009f
 int string select_region 0x7f0f00a0
 int string send 0x7f0f00a1

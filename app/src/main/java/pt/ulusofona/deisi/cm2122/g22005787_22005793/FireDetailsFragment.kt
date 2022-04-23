@@ -1,6 +1,7 @@
 package pt.ulusofona.deisi.cm2122.g22005787_22005793
 
 import android.os.Bundle
+import android.os.CountDownTimer
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -45,8 +46,38 @@ class FireDetailsFragment : Fragment() {
             binding.textRegiao.text = model.infNotAvailable(it.distrito)
             binding.textPessoa.text = model.infNotAvailable(it.pessoa.nome)
             binding.textCc.text = model.infNotAvailable(it.pessoa.cc)
+            updateDashboard()
 
 
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val timer = object : CountDownTimer(20000, 1000) {
+            override fun onTick(millisUntilFinished: Long) {}
+            override fun onFinish() {
+                updateDashboard()
+            }
+        }
+        timer.start()
+    }
+
+    private fun updateDashboard() {
+        model.alterarRisco()
+        binding.riscoRegiao.text = model.risk
+        backgroundColor(model.risk)
+
+
+    }
+
+    private fun backgroundColor(risk: String) {
+        when (risk) {
+            Risk.MAXIMUM.risco -> binding.riskLayout.setBackgroundColor(resources.getColor(R.color.colorPrimary))
+            Risk.VERYHIGH.risco -> binding.riskLayout.setBackgroundColor(resources.getColor(R.color.colorPrimary))
+            Risk.HIGH.risco -> binding.riskLayout.setBackgroundColor(resources.getColor(R.color.yellow))
+            Risk.MODERATE.risco -> binding.riskLayout.setBackgroundColor(resources.getColor(R.color.green))
+            Risk.REDUCED.risco -> binding.riskLayout.setBackgroundColor(resources.getColor(R.color.green))
         }
     }
 

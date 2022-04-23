@@ -66,9 +66,10 @@ id imageview28
 id imageview3
 id imageview4
 id imageview5
+id linear_layout_risk
 id map
 id media_fogos_regiao
-id nav_IDK
+id nav_chart
 id nav_drawer
 id nav_exit
 id nav_fireList
@@ -122,12 +123,14 @@ string district
 string drawer_closed
 string drawer_open
 string exit
+string fields
 string fire_average
 string fire_list
 string fire_map
 string fire_state
 string firemen
 string foto
+string hello_blank_fragment
 string idk
 string inf_not_available
 string name
@@ -140,6 +143,7 @@ string photo
 string region
 string region_fires
 string region_risk
+string register
 string select_region
 string send
 string subtitle

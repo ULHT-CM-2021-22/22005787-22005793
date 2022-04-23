@@ -15,7 +15,7 @@
             android:icon="@drawable/ic_new_fire"
             android:title="@string/new_fire"/>
         <item
-            android:id="@+id/nav_IDK"
+            android:id="@+id/nav_chart"
             android:icon="@drawable/ic_idk"
             android:title="@string/idk"/>
         <item

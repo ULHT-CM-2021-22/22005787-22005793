@@ -97,7 +97,6 @@ object FireModel {
     }
 
     fun alterarRisco() {
-
         risk = Risk.values().random().risco
     }
 }

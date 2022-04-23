@@ -17,7 +17,7 @@
     <color name="teal_200">#B2E4FB</color>
     <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="yellow">#FFEB3B</color>
+    <color name="yellow">#FFC107</color>
     <string name="air_support">Meios aéreos</string>
     <string name="another_info">por mudar</string>
     <string name="app_name">FireTracker</string>
@@ -30,12 +30,14 @@
     <string name="drawer_closed">Fechado</string>
     <string name="drawer_open">Aberto</string>
     <string name="exit">Encerrar a aplicação</string>
+    <string name="fields">Preecha todos os campos</string>
     <string name="fire_average">Média de fogos na região</string>
     <string name="fire_list">Lista de fogos</string>
     <string name="fire_map">Mapa de fogos</string>
     <string name="fire_state">Estado do incêndio</string>
     <string name="firemen">Meios operacionais</string>
     <string name="foto">Fotos</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="idk">ALIGATOOOO</string>
     <string name="inf_not_available">Informação não disponível</string>
     <string name="name">Nome</string>
@@ -48,6 +50,7 @@
     <string name="region">Região</string>
     <string name="region_fires">Fogos na região</string>
     <string name="region_risk">Risco na região</string>
+    <string name="register">Lista atualizada</string>
     <string name="select_region">Lisboa \n (Clique para alterar)</string>
     <string name="send">Enviar</string>
     <string name="subtitle">DOND DELL ME WHAD DO DO</string>

@@ -2,6 +2,7 @@ package pt.ulusofona.deisi.cm2122.g22005787_22005793
 
 import android.content.DialogInterface
 import android.os.Bundle
+import android.os.CountDownTimer
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -66,15 +67,46 @@ class FireRegistrationFragment : Fragment() {
                 binding.plainTextInputCc.text = null
                 binding.plainTextInputName.text = null
                 binding.plainTextInputImage.text = null
-                Toast.makeText(context, "Preecha todos os campos", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, getString(R.string.fields), Toast.LENGTH_SHORT).show()
             } else {
                 model.addToHistory(fire)
                 binding.plainTextInputCc.text = null
                 binding.plainTextInputName.text = null
                 binding.plainTextInputImage.text = null
-                Toast.makeText(context, "Adicionado", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, getString(R.string.register), Toast.LENGTH_SHORT).show()
             }
+        }
+        updateDashboard()
+    }
 
+    override fun onResume() {
+        super.onResume()
+        val timer = object : CountDownTimer(20000, 1000) {
+            override fun onTick(millisUntilFinished: Long) {}
+            override fun onFinish() {
+                updateDashboard()
+            }
+        }
+        timer.start()
+    }
+
+
+
+    private fun updateDashboard() {
+        model.alterarRisco()
+        binding.riscoRegiao.text = model.risk
+        backgroundColor(model.risk)
+
+
+    }
+
+    private fun backgroundColor(risk: String) {
+        when (risk) {
+            Risk.MAXIMUM.risco -> binding.riskLayout.setBackgroundColor(resources.getColor(R.color.colorPrimary))
+            Risk.VERYHIGH.risco -> binding.riskLayout.setBackgroundColor(resources.getColor(R.color.colorPrimary))
+            Risk.HIGH.risco -> binding.riskLayout.setBackgroundColor(resources.getColor(R.color.yellow))
+            Risk.MODERATE.risco -> binding.riskLayout.setBackgroundColor(resources.getColor(R.color.green))
+            Risk.REDUCED.risco -> binding.riskLayout.setBackgroundColor(resources.getColor(R.color.green))
         }
     }
 

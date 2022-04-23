@@ -16,6 +16,10 @@ object NavigationManager {
         placeFragment(fm, DashboardFragment())
     }
 
+    fun goToChartFragment(fm: FragmentManager) {
+        placeFragment(fm, ChartFragment())
+    }
+
     fun goToFireListFragment(fm: FragmentManager) {
         placeFragment(fm, FireListFragment())
     }

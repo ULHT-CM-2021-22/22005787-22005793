@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
             R.id.nav_fireList -> NavigationManager.goToFireListFragment(supportFragmentManager)
             R.id.nav_fireMap -> NavigationManager.goToFireMapFragment(supportFragmentManager)
             R.id.nav_newFire -> NavigationManager.goToFireRegistrationFragment(supportFragmentManager)
+            R.id.nav_chart -> NavigationManager.goToChartFragment(supportFragmentManager)
             R.id.nav_exit-> finish()
         }
         binding.drawer.closeDrawer(GravityCompat.START)

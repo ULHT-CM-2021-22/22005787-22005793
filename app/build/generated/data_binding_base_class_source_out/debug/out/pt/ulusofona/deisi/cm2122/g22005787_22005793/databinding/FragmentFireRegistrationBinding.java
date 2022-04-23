@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -40,6 +42,9 @@ public final class FragmentFireRegistrationBinding implements ViewBinding {
   public final ImageView imageview14;
 
   @NonNull
+  public final ImageView imageview4;
+
+  @NonNull
   public final EditText plainTextInputCc;
 
   @NonNull
@@ -48,12 +53,19 @@ public final class FragmentFireRegistrationBinding implements ViewBinding {
   @NonNull
   public final EditText plainTextInputName;
 
+  @NonNull
+  public final TextView riscoRegiao;
+
+  @NonNull
+  public final RelativeLayout riskLayout;
+
   private FragmentFireRegistrationBinding(@NonNull FrameLayout rootView,
       @NonNull Button buttonRegion, @NonNull Button buttonSendRegistration,
       @NonNull ImageView imageview10, @NonNull ImageView imageview11,
-      @NonNull ImageView imageview12, @NonNull ImageView imageview14,
+      @NonNull ImageView imageview12, @NonNull ImageView imageview14, @NonNull ImageView imageview4,
       @NonNull EditText plainTextInputCc, @NonNull EditText plainTextInputImage,
-      @NonNull EditText plainTextInputName) {
+      @NonNull EditText plainTextInputName, @NonNull TextView riscoRegiao,
+      @NonNull RelativeLayout riskLayout) {
     this.rootView = rootView;
     this.buttonRegion = buttonRegion;
     this.buttonSendRegistration = buttonSendRegistration;
@@ -61,9 +73,12 @@ public final class FragmentFireRegistrationBinding implements ViewBinding {
     this.imageview11 = imageview11;
     this.imageview12 = imageview12;
     this.imageview14 = imageview14;
+    this.imageview4 = imageview4;
     this.plainTextInputCc = plainTextInputCc;
     this.plainTextInputImage = plainTextInputImage;
     this.plainTextInputName = plainTextInputName;
+    this.riscoRegiao = riscoRegiao;
+    this.riskLayout = riskLayout;
   }
 
   @Override
@@ -129,6 +144,12 @@ public final class FragmentFireRegistrationBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.imageview4;
+      ImageView imageview4 = ViewBindings.findChildViewById(rootView, id);
+      if (imageview4 == null) {
+        break missingId;
+      }
+
       id = R.id.plain_text_input_cc;
       EditText plainTextInputCc = ViewBindings.findChildViewById(rootView, id);
       if (plainTextInputCc == null) {
@@ -147,9 +168,21 @@ public final class FragmentFireRegistrationBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.risco_regiao;
+      TextView riscoRegiao = ViewBindings.findChildViewById(rootView, id);
+      if (riscoRegiao == null) {
+        break missingId;
+      }
+
+      id = R.id.risk_layout;
+      RelativeLayout riskLayout = ViewBindings.findChildViewById(rootView, id);
+      if (riskLayout == null) {
+        break missingId;
+      }
+
       return new FragmentFireRegistrationBinding((FrameLayout) rootView, buttonRegion,
-          buttonSendRegistration, imageview10, imageview11, imageview12, imageview14,
-          plainTextInputCc, plainTextInputImage, plainTextInputName);
+          buttonSendRegistration, imageview10, imageview11, imageview12, imageview14, imageview4,
+          plainTextInputCc, plainTextInputImage, plainTextInputName, riscoRegiao, riskLayout);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

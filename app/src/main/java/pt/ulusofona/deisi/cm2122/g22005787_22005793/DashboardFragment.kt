@@ -1,5 +1,6 @@
 package pt.ulusofona.deisi.cm2122.g22005787_22005793
 
+import android.annotation.SuppressLint
 import android.content.DialogInterface
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -16,6 +17,7 @@ class DashboardFragment : Fragment() {
     private lateinit var binding: FragmentDashboardBinding
     private var districts = FireModel.districts
     private var model = FireModel
+    private var actualDistrict = "Lisboa"
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,40 +35,50 @@ class DashboardFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         binding.buttonRegion.setOnClickListener {
-
             val builder: android.app.AlertDialog.Builder = android.app.AlertDialog.Builder(context)
             builder.setTitle(getString(R.string.choose_region))
             builder.setItems(districts, DialogInterface.OnClickListener { dialog, which ->
                 model.alterarRegiao(districts[which])
                 binding.textRegion.text = districts[which]
                 binding.textRegion.textSize = 18F
+                actualDistrict = districts[which]
                 updateDashboard()
-
             })
             builder.show()
+            onResume()
         }
         updateDashboard()
     }
 
     override fun onResume() {
         super.onResume()
-        val timer = object: CountDownTimer(20000, 1000) {
+        val timer = object : CountDownTimer(20000, 1000) {
             override fun onTick(millisUntilFinished: Long) {}
             override fun onFinish() {
                 updateDashboard()
             }
         }
         timer.start()
-
-
     }
 
-    private fun updateDashboard(){
+    private fun updateDashboard() {
+        binding.textRegion.text = actualDistrict
         binding.fogosRegiao.text = model.fogosNaRegiao()
         binding.fogosTotal.text = model.totalFogos()
         binding.mediaFogosRegiao.text = model.mediaFogosNaRegiao()
-        binding.riscoRegiao.text = model.risk
         model.alterarRisco()
+        binding.riscoRegiao.text = model.risk
+        backgroundColor(model.risk)
+    }
+
+    private fun backgroundColor(risk: String) {
+        when (risk) {
+            Risk.MAXIMUM.risco -> binding.riskLayout.setBackgroundColor(resources.getColor(R.color.colorPrimary))
+            Risk.VERYHIGH.risco -> binding.riskLayout.setBackgroundColor(resources.getColor(R.color.colorPrimary))
+            Risk.HIGH.risco -> binding.riskLayout.setBackgroundColor(resources.getColor(R.color.yellow))
+            Risk.MODERATE.risco -> binding.riskLayout.setBackgroundColor(resources.getColor(R.color.green))
+            Risk.REDUCED.risco -> binding.riskLayout.setBackgroundColor(resources.getColor(R.color.green))
+        }
     }
 
 

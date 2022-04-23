@@ -36,9 +36,9 @@
     <string name="click">Clique para escolher</string>
     <string name="confirm">Por confirmar</string>
     <string name="choose_region">Escolha a região</string>
-
-
-
+    <string name="fields">Preecha todos os campos</string>
+    <string name="register">Lista atualizada</string>
+    <string name="chart_name">Gráfico</string>
 
 
 </resources>

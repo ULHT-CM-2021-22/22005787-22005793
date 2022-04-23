@@ -4,4 +4,6 @@ enum class Risk (val risco: String) {
     REDUCED("Reduzido"), MODERATE("Moderado"), HIGH("Elevado"),
     VERYHIGH("Muito Elevado"),MAXIMUM("Máximo")
 
+
+
 }
