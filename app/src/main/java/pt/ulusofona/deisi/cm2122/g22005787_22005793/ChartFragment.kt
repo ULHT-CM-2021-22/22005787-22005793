@@ -70,103 +70,103 @@ private val timer = object : CountDownTimer(20000, 1000) {
             model.fogosNaRegiao(binding.lisboa.text.toString()).toFloat(),
             resources.getColor(R.color.black)))
 
-        binding.lisboa.append(" (" + model.fogosNaRegiao(binding.aveiro.text.toString()) + ")")
+        binding.lisboa.append(" (" + model.fogosNaRegiao(binding.lisboa.text.toString()) + ")")
 
         binding.piechart.addPieSlice(PieModel(binding.porto.text.toString(),
             model.fogosNaRegiao(binding.porto.text.toString()).toFloat(),
             resources.getColor(R.color.blue)))
 
-        binding.porto.append(" (" + model.fogosNaRegiao(binding.aveiro.text.toString()) + ")")
+        binding.porto.append(" (" + model.fogosNaRegiao(binding.porto.text.toString()) + ")")
 
         binding.piechart.addPieSlice(PieModel(binding.beja.text.toString(),
             model.fogosNaRegiao(binding.beja.text.toString()).toFloat(),
             resources.getColor(R.color.colorAccent)))
 
-        binding.beja.append(" (" + model.fogosNaRegiao(binding.aveiro.text.toString()) + ")")
+        binding.beja.append(" (" + model.fogosNaRegiao(binding.beja.text.toString()) + ")")
 
         binding.piechart.addPieSlice(PieModel(binding.braga.text.toString(),
             model.fogosNaRegiao(binding.braga.text.toString()).toFloat(),
             resources.getColor(R.color.green)))
 
-        binding.braga.append(" (" + model.fogosNaRegiao(binding.aveiro.text.toString()) + ")")
+        binding.braga.append(" (" + model.fogosNaRegiao(binding.braga.text.toString()) + ")")
 
         binding.piechart.addPieSlice(PieModel(binding.braganca.text.toString(),
             model.fogosNaRegiao(binding.braganca.text.toString()).toFloat(),
             resources.getColor(R.color.grey)))
 
-        binding.braganca.append(" (" + model.fogosNaRegiao(binding.aveiro.text.toString()) + ")")
+        binding.braganca.append(" (" + model.fogosNaRegiao(binding.braganca.text.toString()) + ")")
 
         binding.piechart.addPieSlice(PieModel(binding.casteloBranco.text.toString(),
             model.fogosNaRegiao(binding.casteloBranco.text.toString()).toFloat(),
             resources.getColor(R.color.purple_200)))
 
-        binding.casteloBranco.append(" (" + model.fogosNaRegiao(binding.aveiro.text.toString()) + ")")
+        binding.casteloBranco.append(" (" + model.fogosNaRegiao(binding.casteloBranco.text.toString()) + ")")
 
         binding.piechart.addPieSlice(PieModel(binding.coimbra.text.toString(),
             model.fogosNaRegiao(binding.coimbra.text.toString()).toFloat(),
             resources.getColor(R.color.real_green)))
 
-        binding.coimbra.append(" (" + model.fogosNaRegiao(binding.aveiro.text.toString()) + ")")
+        binding.coimbra.append(" (" + model.fogosNaRegiao(binding.coimbra.text.toString()) + ")")
 
         binding.piechart.addPieSlice(PieModel(binding.evora.text.toString(),
             model.fogosNaRegiao(binding.evora.text.toString()).toFloat(),
             resources.getColor(R.color.pink)))
 
-        binding.evora.append(" (" + model.fogosNaRegiao(binding.aveiro.text.toString()) + ")")
+        binding.evora.append(" (" + model.fogosNaRegiao(binding.evora.text.toString()) + ")")
 
         binding.piechart.addPieSlice(PieModel(binding.faro.text.toString(),
             model.fogosNaRegiao(binding.faro.text.toString()).toFloat(),
             resources.getColor(R.color.purple_500)))
 
-        binding.faro.append(" (" + model.fogosNaRegiao(binding.aveiro.text.toString()) + ")")
+        binding.faro.append(" (" + model.fogosNaRegiao(binding.faro.text.toString()) + ")")
 
         binding.piechart.addPieSlice(PieModel(binding.guarda.text.toString(),
             model.fogosNaRegiao(binding.guarda.text.toString()).toFloat(),
             resources.getColor(R.color.purple_700)))
 
-        binding.guarda.append(" (" + model.fogosNaRegiao(binding.aveiro.text.toString()) + ")")
+        binding.guarda.append(" (" + model.fogosNaRegiao(binding.guarda.text.toString()) + ")")
 
         binding.piechart.addPieSlice(PieModel(binding.leiria.text.toString(),
             model.fogosNaRegiao(binding.leiria.text.toString()).toFloat(),
             resources.getColor(R.color.colorPrimary)))
 
-        binding.leiria.append(" (" + model.fogosNaRegiao(binding.aveiro.text.toString()) + ")")
+        binding.leiria.append(" (" + model.fogosNaRegiao(binding.leiria.text.toString()) + ")")
 
         binding.piechart.addPieSlice(PieModel(binding.portalegre.text.toString(),
             model.fogosNaRegiao(binding.portalegre.text.toString()).toFloat(),
             resources.getColor(R.color.yellow)))
 
-        binding.portalegre.append(" (" + model.fogosNaRegiao(binding.aveiro.text.toString()) + ")")
+        binding.portalegre.append(" (" + model.fogosNaRegiao(binding.portalegre.text.toString()) + ")")
 
         binding.piechart.addPieSlice(PieModel(binding.santarem.text.toString(),
             model.fogosNaRegiao(binding.santarem.text.toString()).toFloat(),
             resources.getColor(R.color.brown)))
 
-        binding.santarem.append(" (" + model.fogosNaRegiao(binding.aveiro.text.toString()) + ")")
+        binding.santarem.append(" (" + model.fogosNaRegiao(binding.santarem.text.toString()) + ")")
 
         binding.piechart.addPieSlice(PieModel(binding.setubal.text.toString(),
             model.fogosNaRegiao(binding.setubal.text.toString()).toFloat(),
             resources.getColor(R.color.orange)))
 
-        binding.setubal.append(" (" + model.fogosNaRegiao(binding.aveiro.text.toString()) + ")")
+        binding.setubal.append(" (" + model.fogosNaRegiao(binding.setubal.text.toString()) + ")")
 
         binding.piechart.addPieSlice(PieModel(binding.vianaDoCastelo.text.toString(),
             model.fogosNaRegiao(binding.vianaDoCastelo.text.toString()).toFloat(),
             resources.getColor(R.color.orangeDark)))
 
-        binding.vianaDoCastelo.append(" (" + model.fogosNaRegiao(binding.aveiro.text.toString()) + ")")
+        binding.vianaDoCastelo.append(" (" + model.fogosNaRegiao(binding.vianaDoCastelo.text.toString()) + ")")
 
         binding.piechart.addPieSlice(PieModel(binding.vilaReal.text.toString(),
             model.fogosNaRegiao(binding.vilaReal.text.toString()).toFloat(),
             resources.getColor(R.color.teal_200)))
 
-        binding.vilaReal.append(" (" + model.fogosNaRegiao(binding.aveiro.text.toString()) + ")")
+        binding.vilaReal.append(" (" + model.fogosNaRegiao(binding.vilaReal.text.toString()) + ")")
 
         binding.piechart.addPieSlice(PieModel(binding.viseu.text.toString(),
             model.fogosNaRegiao(binding.viseu.text.toString()).toFloat(),
             resources.getColor(R.color.teal_700)))
 
-        binding.viseu.append(" (" + model.fogosNaRegiao(binding.aveiro.text.toString()) + ")")
+        binding.viseu.append(" (" + model.fogosNaRegiao(binding.viseu.text.toString()) + ")")
     }
 
     private fun updateDashboard() {
