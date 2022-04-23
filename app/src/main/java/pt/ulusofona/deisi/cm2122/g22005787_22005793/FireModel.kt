@@ -17,7 +17,7 @@ object FireModel {
             "Ativo", "15/11/2020 - 17:56:00", ArrayList<String>(), "Terreno muito grande",
             Pessoa("Gonçalo Matias", "46544694"), false
         ), FireData(
-            "Porto", "Vila Nova de Gaia", "Miragaia",
+            "Aveiro", "Vila Nova de Gaia", "Miragaia",
             1, 2, 3,
             "Ativo", "21/04/2022 - 17:04:21", ArrayList<String>(), "",
             Pessoa("Pinto da Costa", "0000000"), false
@@ -70,6 +70,15 @@ object FireModel {
         var count = 0
         for (fire in list) {
             if (fire.distrito == region) {
+                count++
+            }
+        }
+        return count.toString()
+    }
+    fun fogosNaRegiao(regiao: String): String {
+        var count = 0
+        for (fire in list) {
+            if (fire.distrito == regiao) {
                 count++
             }
         }

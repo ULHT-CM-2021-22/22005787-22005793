@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">FireTracker</string>
     <string name="welcome">Bem-vindo ao FireTracker</string>
-    <string name="subtitle">Projeto Computação Móvel 21/22</string>
+    <string name="subtitle">Projeto Computação Móvel 21/22 </string>
     <string name="fire_map">Mapa de fogos</string>
     <string name="fire_list">Lista de fogos</string>
     <string name="new_fire">Novo registo</string>
@@ -36,13 +36,10 @@
     <string name="click">Clique para escolher</string>
     <string name="confirm">Por confirmar</string>
     <string name="choose_region">Escolha a região</string>
-    <string name="chart">Gráfico</string>
-    <string name="fields">Preencha todos os campos</string>
-    <string name="register">Lista Atualizada</string>
+    <string name="fields">Preecha todos os campos</string>
+    <string name="register">Lista atualizada</string>
     <string name="chart_name">Gráfico</string>
-
-
-
+    <string name="chart">Gráfico</string>
 
 
 </resources>

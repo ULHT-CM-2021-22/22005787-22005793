@@ -130,6 +130,7 @@
 
                 <!--Text view to display R -->
                 <TextView
+                    android:id="@+id/aveiro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="2dp"
@@ -139,10 +140,11 @@
                     android:layout_width="15dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@color/red" />
+                    android:background="@color/colorAccent" />
 
                 <!--Text view to display R -->
                 <TextView
+                    android:id="@+id/beja"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="2dp"
@@ -158,10 +160,11 @@
                 <View
                     android:layout_width="15dp"
                     android:layout_height="20dp"
-                    android:background="@color/red" />
+                    android:background="@color/green" />
 
                 <!--Text view to display R -->
                 <TextView
+                    android:id="@+id/braga"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="2dp"
@@ -171,10 +174,11 @@
                     android:layout_width="15dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@color/red" />
+                    android:background="@color/grey" />
 
                 <!--Text view to display R -->
                 <TextView
+                    android:id="@+id/braganca"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="2dp"
@@ -190,10 +194,11 @@
                 <View
                     android:layout_width="15dp"
                     android:layout_height="20dp"
-                    android:background="@color/red" />
+                    android:background="@color/purple_200" />
 
                 <!--Text view to display R -->
                 <TextView
+                    android:id="@+id/castelo_branco"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="2dp"
@@ -203,10 +208,11 @@
                     android:layout_width="15dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@color/red" />
+                    android:background="@color/real_green" />
 
                 <!--Text view to display R -->
                 <TextView
+                    android:id="@+id/coimbra"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="2dp"
@@ -222,10 +228,11 @@
                 <View
                     android:layout_width="15dp"
                     android:layout_height="20dp"
-                    android:background="@color/red" />
+                    android:background="@color/pink" />
 
                 <!--Text view to display R -->
                 <TextView
+                    android:id="@+id/evora"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="2dp"
@@ -235,10 +242,11 @@
                     android:layout_width="15dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@color/red" />
+                    android:background="@color/purple_500" />
 
                 <!--Text view to display R -->
                 <TextView
+                    android:id="@+id/faro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="2dp"
@@ -254,10 +262,11 @@
                 <View
                     android:layout_width="15dp"
                     android:layout_height="20dp"
-                    android:background="@color/red" />
+                    android:background="@color/purple_700" />
 
                 <!--Text view to display R -->
                 <TextView
+                    android:id="@+id/guarda"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="2dp"
@@ -267,10 +276,11 @@
                     android:layout_width="15dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@color/red" />
+                    android:background="@color/colorPrimary" />
 
                 <!--Text view to display R -->
                 <TextView
+                    android:id="@+id/leiria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="2dp"
@@ -286,10 +296,11 @@
                 <View
                     android:layout_width="15dp"
                     android:layout_height="20dp"
-                    android:background="@color/red" />
+                    android:background="@color/colorPrimaryDark" />
 
                 <!--Text view to display R -->
                 <TextView
+                    android:id="@+id/lisboa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="2dp"
@@ -299,10 +310,11 @@
                     android:layout_width="15dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@color/red" />
+                    android:background="@color/yellow" />
 
                 <!--Text view to display R -->
                 <TextView
+                    android:id="@+id/portalegre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="2dp"
@@ -318,10 +330,11 @@
                 <View
                     android:layout_width="15dp"
                     android:layout_height="20dp"
-                    android:background="@color/red" />
+                    android:background="@color/blue" />
 
                 <!--Text view to display R -->
                 <TextView
+                    android:id="@+id/porto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="2dp"
@@ -331,10 +344,11 @@
                     android:layout_width="15dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@color/red" />
+                    android:background="@color/brown" />
 
                 <!--Text view to display R -->
                 <TextView
+                    android:id="@+id/santarem"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="2dp"
@@ -350,10 +364,11 @@
                 <View
                     android:layout_width="15dp"
                     android:layout_height="20dp"
-                    android:background="@color/red" />
+                    android:background="@color/orange" />
 
                 <!--Text view to display R -->
                 <TextView
+                    android:id="@+id/setubal"
                     android:layout_width="wrap_content"
                     android:layout_height="16dp"
                     android:paddingLeft="2dp"
@@ -363,10 +378,11 @@
                     android:layout_width="15dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@color/red" />
+                    android:background="@color/orangeDark" />
 
                 <!--Text view to display R -->
                 <TextView
+                    android:id="@+id/viana_do_castelo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="2dp"
@@ -382,10 +398,11 @@
                 <View
                     android:layout_width="15dp"
                     android:layout_height="20dp"
-                    android:background="@color/red" />
+                    android:background="@color/teal_200" />
 
                 <!--Text view to display R -->
                 <TextView
+                    android:id="@+id/vila_real"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="2dp"
@@ -395,10 +412,11 @@
                     android:layout_width="15dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@color/red" />
+                    android:background="@color/teal_700" />
 
                 <!--Text view to display R -->
                 <TextView
+                    android:id="@+id/viseu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="2dp"

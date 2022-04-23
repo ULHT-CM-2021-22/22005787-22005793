@@ -1782,6 +1782,7 @@ color notification_icon_bg_color
 color notification_material_background_media_default_color
 color orange
 color orangeDark
+color pink
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -1794,6 +1795,7 @@ color purple_200
 color purple_500
 color purple_700
 color radiobutton_themeable_attribute_color
+color real_green
 color red
 color ripple_material_dark
 color ripple_material_light
@@ -2523,6 +2525,7 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_new_fire
 drawable ic_person
 drawable ic_photo
+drawable ic_pie_chart
 drawable ic_planemode
 drawable ic_region
 drawable ic_send
@@ -2662,10 +2665,12 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id aveiro
 id barrier
 id baseline
 id beginOnFirstDraw
 id beginning
+id beja
 id bestChoice
 id blocking
 id bottom
@@ -2673,6 +2678,8 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id braga
+id braganca
 id buttonPanel
 id button_region
 id button_send_registration
@@ -2682,6 +2689,7 @@ id cancel_action
 id cancel_button
 id cardViewGraph
 id carryVelocity
+id castelo_branco
 id center
 id center_horizontal
 id center_vertical
@@ -2702,6 +2710,7 @@ id clip_horizontal
 id clip_vertical
 id clockwise
 id closest
+id coimbra
 id collapseActionView
 id compress
 id confirm_button
@@ -2759,10 +2768,12 @@ id endToStart
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id evora
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id fade
+id faro
 id fill
 id fill_horizontal
 id fill_vertical
@@ -2785,6 +2796,7 @@ id graph_wrap
 id group_divider
 id grouping
 id groups
+id guarda
 id guideline
 id header_title
 id hideable
@@ -2834,10 +2846,12 @@ id layout
 id left
 id leftToRight
 id legacy
+id leiria
 id line1
 id line3
 id linear
 id linear_layout_risk
+id lisboa
 id listMode
 id list_item
 id map
@@ -2945,6 +2959,8 @@ id pin
 id plain_text_input_cc
 id plain_text_input_image
 id plain_text_input_name
+id portalegre
+id porto
 id position
 id postLayout
 id progress_circular
@@ -2962,6 +2978,7 @@ id risk_layout
 id rounded
 id row_index_key
 id rvHistory
+id santarem
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -2985,6 +3002,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id setubal
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3097,11 +3115,14 @@ id unlabeled
 id up
 id useLogo
 id vertical_only
+id viana_do_castelo
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner
 id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
+id vila_real
+id viseu
 id visible
 id visible_removing_fragment_view_tag
 id west
@@ -3347,6 +3368,8 @@ string cc
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
+string chart
+string chart_name
 string chip_text
 string choose_region
 string clear_text_end_icon_content_description
@@ -3368,7 +3391,6 @@ string fire_map
 string fire_state
 string firemen
 string foto
-string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string idk

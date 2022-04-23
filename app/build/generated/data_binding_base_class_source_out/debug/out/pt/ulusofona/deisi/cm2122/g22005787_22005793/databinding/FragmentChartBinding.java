@@ -24,16 +24,55 @@ public final class FragmentChartBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
+  public final TextView aveiro;
+
+  @NonNull
+  public final TextView beja;
+
+  @NonNull
+  public final TextView braga;
+
+  @NonNull
+  public final TextView braganca;
+
+  @NonNull
   public final CardView cardViewGraph;
+
+  @NonNull
+  public final TextView casteloBranco;
+
+  @NonNull
+  public final TextView coimbra;
+
+  @NonNull
+  public final TextView evora;
+
+  @NonNull
+  public final TextView faro;
+
+  @NonNull
+  public final TextView guarda;
 
   @NonNull
   public final ImageView imageview4;
 
   @NonNull
+  public final TextView leiria;
+
+  @NonNull
   public final LinearLayout linearLayoutRisk;
 
   @NonNull
+  public final TextView lisboa;
+
+  @NonNull
   public final PieChart piechart;
+
+  @NonNull
+  public final TextView portalegre;
+
+  @NonNull
+  public final TextView porto;
 
   @NonNull
   public final TextView riscoRegiao;
@@ -41,17 +80,55 @@ public final class FragmentChartBinding implements ViewBinding {
   @NonNull
   public final RelativeLayout riskLayout;
 
-  private FragmentChartBinding(@NonNull RelativeLayout rootView, @NonNull CardView cardViewGraph,
-      @NonNull ImageView imageview4, @NonNull LinearLayout linearLayoutRisk,
-      @NonNull PieChart piechart, @NonNull TextView riscoRegiao,
-      @NonNull RelativeLayout riskLayout) {
+  @NonNull
+  public final TextView santarem;
+
+  @NonNull
+  public final TextView setubal;
+
+  @NonNull
+  public final TextView vianaDoCastelo;
+
+  @NonNull
+  public final TextView vilaReal;
+
+  @NonNull
+  public final TextView viseu;
+
+  private FragmentChartBinding(@NonNull RelativeLayout rootView, @NonNull TextView aveiro,
+      @NonNull TextView beja, @NonNull TextView braga, @NonNull TextView braganca,
+      @NonNull CardView cardViewGraph, @NonNull TextView casteloBranco, @NonNull TextView coimbra,
+      @NonNull TextView evora, @NonNull TextView faro, @NonNull TextView guarda,
+      @NonNull ImageView imageview4, @NonNull TextView leiria,
+      @NonNull LinearLayout linearLayoutRisk, @NonNull TextView lisboa, @NonNull PieChart piechart,
+      @NonNull TextView portalegre, @NonNull TextView porto, @NonNull TextView riscoRegiao,
+      @NonNull RelativeLayout riskLayout, @NonNull TextView santarem, @NonNull TextView setubal,
+      @NonNull TextView vianaDoCastelo, @NonNull TextView vilaReal, @NonNull TextView viseu) {
     this.rootView = rootView;
+    this.aveiro = aveiro;
+    this.beja = beja;
+    this.braga = braga;
+    this.braganca = braganca;
     this.cardViewGraph = cardViewGraph;
+    this.casteloBranco = casteloBranco;
+    this.coimbra = coimbra;
+    this.evora = evora;
+    this.faro = faro;
+    this.guarda = guarda;
     this.imageview4 = imageview4;
+    this.leiria = leiria;
     this.linearLayoutRisk = linearLayoutRisk;
+    this.lisboa = lisboa;
     this.piechart = piechart;
+    this.portalegre = portalegre;
+    this.porto = porto;
     this.riscoRegiao = riscoRegiao;
     this.riskLayout = riskLayout;
+    this.santarem = santarem;
+    this.setubal = setubal;
+    this.vianaDoCastelo = vianaDoCastelo;
+    this.vilaReal = vilaReal;
+    this.viseu = viseu;
   }
 
   @Override
@@ -81,9 +158,63 @@ public final class FragmentChartBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.aveiro;
+      TextView aveiro = ViewBindings.findChildViewById(rootView, id);
+      if (aveiro == null) {
+        break missingId;
+      }
+
+      id = R.id.beja;
+      TextView beja = ViewBindings.findChildViewById(rootView, id);
+      if (beja == null) {
+        break missingId;
+      }
+
+      id = R.id.braga;
+      TextView braga = ViewBindings.findChildViewById(rootView, id);
+      if (braga == null) {
+        break missingId;
+      }
+
+      id = R.id.braganca;
+      TextView braganca = ViewBindings.findChildViewById(rootView, id);
+      if (braganca == null) {
+        break missingId;
+      }
+
       id = R.id.cardViewGraph;
       CardView cardViewGraph = ViewBindings.findChildViewById(rootView, id);
       if (cardViewGraph == null) {
+        break missingId;
+      }
+
+      id = R.id.castelo_branco;
+      TextView casteloBranco = ViewBindings.findChildViewById(rootView, id);
+      if (casteloBranco == null) {
+        break missingId;
+      }
+
+      id = R.id.coimbra;
+      TextView coimbra = ViewBindings.findChildViewById(rootView, id);
+      if (coimbra == null) {
+        break missingId;
+      }
+
+      id = R.id.evora;
+      TextView evora = ViewBindings.findChildViewById(rootView, id);
+      if (evora == null) {
+        break missingId;
+      }
+
+      id = R.id.faro;
+      TextView faro = ViewBindings.findChildViewById(rootView, id);
+      if (faro == null) {
+        break missingId;
+      }
+
+      id = R.id.guarda;
+      TextView guarda = ViewBindings.findChildViewById(rootView, id);
+      if (guarda == null) {
         break missingId;
       }
 
@@ -93,15 +224,39 @@ public final class FragmentChartBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.leiria;
+      TextView leiria = ViewBindings.findChildViewById(rootView, id);
+      if (leiria == null) {
+        break missingId;
+      }
+
       id = R.id.linear_layout_risk;
       LinearLayout linearLayoutRisk = ViewBindings.findChildViewById(rootView, id);
       if (linearLayoutRisk == null) {
         break missingId;
       }
 
+      id = R.id.lisboa;
+      TextView lisboa = ViewBindings.findChildViewById(rootView, id);
+      if (lisboa == null) {
+        break missingId;
+      }
+
       id = R.id.piechart;
       PieChart piechart = ViewBindings.findChildViewById(rootView, id);
       if (piechart == null) {
+        break missingId;
+      }
+
+      id = R.id.portalegre;
+      TextView portalegre = ViewBindings.findChildViewById(rootView, id);
+      if (portalegre == null) {
+        break missingId;
+      }
+
+      id = R.id.porto;
+      TextView porto = ViewBindings.findChildViewById(rootView, id);
+      if (porto == null) {
         break missingId;
       }
 
@@ -117,8 +272,40 @@ public final class FragmentChartBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentChartBinding((RelativeLayout) rootView, cardViewGraph, imageview4,
-          linearLayoutRisk, piechart, riscoRegiao, riskLayout);
+      id = R.id.santarem;
+      TextView santarem = ViewBindings.findChildViewById(rootView, id);
+      if (santarem == null) {
+        break missingId;
+      }
+
+      id = R.id.setubal;
+      TextView setubal = ViewBindings.findChildViewById(rootView, id);
+      if (setubal == null) {
+        break missingId;
+      }
+
+      id = R.id.viana_do_castelo;
+      TextView vianaDoCastelo = ViewBindings.findChildViewById(rootView, id);
+      if (vianaDoCastelo == null) {
+        break missingId;
+      }
+
+      id = R.id.vila_real;
+      TextView vilaReal = ViewBindings.findChildViewById(rootView, id);
+      if (vilaReal == null) {
+        break missingId;
+      }
+
+      id = R.id.viseu;
+      TextView viseu = ViewBindings.findChildViewById(rootView, id);
+      if (viseu == null) {
+        break missingId;
+      }
+
+      return new FragmentChartBinding((RelativeLayout) rootView, aveiro, beja, braga, braganca,
+          cardViewGraph, casteloBranco, coimbra, evora, faro, guarda, imageview4, leiria,
+          linearLayoutRisk, lisboa, piechart, portalegre, porto, riscoRegiao, riskLayout, santarem,
+          setubal, vianaDoCastelo, vilaReal, viseu);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
