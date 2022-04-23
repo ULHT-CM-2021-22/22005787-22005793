@@ -2,6 +2,7 @@ package pt.ulusofona.deisi.cm2122.g22005787_22005793
 
 import android.content.DialogInterface
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,15 +37,36 @@ class DashboardFragment : Fragment() {
             val builder: android.app.AlertDialog.Builder = android.app.AlertDialog.Builder(context)
             builder.setTitle(getString(R.string.choose_region))
             builder.setItems(districts, DialogInterface.OnClickListener { dialog, which ->
+                model.alterarRegiao(districts[which])
                 binding.textRegion.text = districts[which]
                 binding.textRegion.textSize = 18F
+                updateDashboard()
+
             })
             builder.show()
-
         }
+        updateDashboard()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val timer = object: CountDownTimer(20000, 1000) {
+            override fun onTick(millisUntilFinished: Long) {}
+            override fun onFinish() {
+                updateDashboard()
+            }
+        }
+        timer.start()
+
+
+    }
+
+    private fun updateDashboard(){
         binding.fogosRegiao.text = model.fogosNaRegiao()
-            binding.fogosTotal.text = model.totalFogos()
-            binding.mediaFogosRegiao.text = model.mediaFogosNaRegiao()
+        binding.fogosTotal.text = model.totalFogos()
+        binding.mediaFogosRegiao.text = model.mediaFogosNaRegiao()
+        binding.riscoRegiao.text = model.risk
+        model.alterarRisco()
     }
 
 
