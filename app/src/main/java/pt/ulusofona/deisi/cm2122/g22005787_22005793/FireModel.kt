@@ -92,11 +92,8 @@ object FireModel {
     fun mediaFogosNaRegiao(): String {
         val count = fogosNaRegiao()
         val total = totalFogos()
-        val media = (count.toInt() / total.toInt()).toString()
-        if (media == "0") {
-            return "1"
-        }
-        return media
+        val media = (count.toDouble() / total.toDouble())
+        return media.toString()
     }
 
     fun alterarRegiao(regiao: String) {

@@ -1,5 +1,6 @@
 package pt.ulusofona.deisi.cm2122.g22005787_22005793
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.os.CountDownTimer
 import androidx.fragment.app.Fragment
@@ -41,11 +42,13 @@ class FireMapFragment : Fragment() {
     override fun onPause() {
         super.onPause()
         timer.cancel()
+        requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR
     }
 
     override fun onResume() {
         super.onResume()
         timer.start()
+        requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
     }
 
     override fun onDestroy() {
