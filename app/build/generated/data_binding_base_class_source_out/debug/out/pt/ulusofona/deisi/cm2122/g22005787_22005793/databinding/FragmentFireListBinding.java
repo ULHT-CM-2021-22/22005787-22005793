@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,14 +23,27 @@ public final class FragmentFireListBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
+  public final ImageView imageview4;
+
+  @NonNull
+  public final TextView riscoRegiao;
+
+  @NonNull
+  public final RelativeLayout riskLayout;
+
+  @NonNull
   public final RecyclerView rvHistory;
 
   @NonNull
   public final TextView textNoHistoryAvailable;
 
-  private FragmentFireListBinding(@NonNull FrameLayout rootView, @NonNull RecyclerView rvHistory,
-      @NonNull TextView textNoHistoryAvailable) {
+  private FragmentFireListBinding(@NonNull FrameLayout rootView, @NonNull ImageView imageview4,
+      @NonNull TextView riscoRegiao, @NonNull RelativeLayout riskLayout,
+      @NonNull RecyclerView rvHistory, @NonNull TextView textNoHistoryAvailable) {
     this.rootView = rootView;
+    this.imageview4 = imageview4;
+    this.riscoRegiao = riscoRegiao;
+    this.riskLayout = riskLayout;
     this.rvHistory = rvHistory;
     this.textNoHistoryAvailable = textNoHistoryAvailable;
   }
@@ -60,6 +75,24 @@ public final class FragmentFireListBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.imageview4;
+      ImageView imageview4 = ViewBindings.findChildViewById(rootView, id);
+      if (imageview4 == null) {
+        break missingId;
+      }
+
+      id = R.id.risco_regiao;
+      TextView riscoRegiao = ViewBindings.findChildViewById(rootView, id);
+      if (riscoRegiao == null) {
+        break missingId;
+      }
+
+      id = R.id.risk_layout;
+      RelativeLayout riskLayout = ViewBindings.findChildViewById(rootView, id);
+      if (riskLayout == null) {
+        break missingId;
+      }
+
       id = R.id.rvHistory;
       RecyclerView rvHistory = ViewBindings.findChildViewById(rootView, id);
       if (rvHistory == null) {
@@ -72,7 +105,8 @@ public final class FragmentFireListBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentFireListBinding((FrameLayout) rootView, rvHistory, textNoHistoryAvailable);
+      return new FragmentFireListBinding((FrameLayout) rootView, imageview4, riscoRegiao,
+          riskLayout, rvHistory, textNoHistoryAvailable);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -52,13 +53,17 @@ public final class FragmentDashboardBinding implements ViewBinding {
   public final TextView riscoRegiao;
 
   @NonNull
+  public final RelativeLayout riskLayout;
+
+  @NonNull
   public final TextView textRegion;
 
   private FragmentDashboardBinding(@NonNull FrameLayout rootView, @NonNull Button buttonRegion,
       @NonNull TextView fogosRegiao, @NonNull TextView fogosTotal, @NonNull ImageView imageview1,
       @NonNull ImageView imageview2, @NonNull ImageView imageview3, @NonNull ImageView imageview4,
       @NonNull ImageView imageview5, @NonNull TextView mediaFogosRegiao,
-      @NonNull TextView riscoRegiao, @NonNull TextView textRegion) {
+      @NonNull TextView riscoRegiao, @NonNull RelativeLayout riskLayout,
+      @NonNull TextView textRegion) {
     this.rootView = rootView;
     this.buttonRegion = buttonRegion;
     this.fogosRegiao = fogosRegiao;
@@ -70,6 +75,7 @@ public final class FragmentDashboardBinding implements ViewBinding {
     this.imageview5 = imageview5;
     this.mediaFogosRegiao = mediaFogosRegiao;
     this.riscoRegiao = riscoRegiao;
+    this.riskLayout = riskLayout;
     this.textRegion = textRegion;
   }
 
@@ -160,6 +166,12 @@ public final class FragmentDashboardBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.risk_layout;
+      RelativeLayout riskLayout = ViewBindings.findChildViewById(rootView, id);
+      if (riskLayout == null) {
+        break missingId;
+      }
+
       id = R.id.text_region;
       TextView textRegion = ViewBindings.findChildViewById(rootView, id);
       if (textRegion == null) {
@@ -168,7 +180,7 @@ public final class FragmentDashboardBinding implements ViewBinding {
 
       return new FragmentDashboardBinding((FrameLayout) rootView, buttonRegion, fogosRegiao,
           fogosTotal, imageview1, imageview2, imageview3, imageview4, imageview5, mediaFogosRegiao,
-          riscoRegiao, textRegion);
+          riscoRegiao, riskLayout, textRegion);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

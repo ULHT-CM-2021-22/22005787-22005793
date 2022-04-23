@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -54,7 +55,16 @@ public final class FragmentFireDetailsBinding implements ViewBinding {
   public final ImageView imageview3;
 
   @NonNull
+  public final ImageView imageview4;
+
+  @NonNull
   public final ImageView imageview5;
+
+  @NonNull
+  public final TextView riscoRegiao;
+
+  @NonNull
+  public final RelativeLayout riskLayout;
 
   @NonNull
   public final TextView textAirSupport;
@@ -97,11 +107,13 @@ public final class FragmentFireDetailsBinding implements ViewBinding {
       @NonNull ImageView imageview22, @NonNull ImageView imageview23,
       @NonNull ImageView imageview24, @NonNull ImageView imageview25,
       @NonNull ImageView imageview26, @NonNull ImageView imageview27,
-      @NonNull ImageView imageview28, @NonNull ImageView imageview3, @NonNull ImageView imageview5,
-      @NonNull TextView textAirSupport, @NonNull TextView textCc, @NonNull TextView textCounty,
-      @NonNull TextView textDate, @NonNull TextView textFireState, @NonNull TextView textFiremen,
-      @NonNull TextView textFoto, @NonNull TextView textObs, @NonNull TextView textParish,
-      @NonNull TextView textPessoa, @NonNull TextView textRegiao, @NonNull TextView textVehicles) {
+      @NonNull ImageView imageview28, @NonNull ImageView imageview3, @NonNull ImageView imageview4,
+      @NonNull ImageView imageview5, @NonNull TextView riscoRegiao,
+      @NonNull RelativeLayout riskLayout, @NonNull TextView textAirSupport,
+      @NonNull TextView textCc, @NonNull TextView textCounty, @NonNull TextView textDate,
+      @NonNull TextView textFireState, @NonNull TextView textFiremen, @NonNull TextView textFoto,
+      @NonNull TextView textObs, @NonNull TextView textParish, @NonNull TextView textPessoa,
+      @NonNull TextView textRegiao, @NonNull TextView textVehicles) {
     this.rootView = rootView;
     this.imageview2 = imageview2;
     this.imageview20 = imageview20;
@@ -114,7 +126,10 @@ public final class FragmentFireDetailsBinding implements ViewBinding {
     this.imageview27 = imageview27;
     this.imageview28 = imageview28;
     this.imageview3 = imageview3;
+    this.imageview4 = imageview4;
     this.imageview5 = imageview5;
+    this.riscoRegiao = riscoRegiao;
+    this.riskLayout = riskLayout;
     this.textAirSupport = textAirSupport;
     this.textCc = textCc;
     this.textCounty = textCounty;
@@ -222,9 +237,27 @@ public final class FragmentFireDetailsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.imageview4;
+      ImageView imageview4 = ViewBindings.findChildViewById(rootView, id);
+      if (imageview4 == null) {
+        break missingId;
+      }
+
       id = R.id.imageview5;
       ImageView imageview5 = ViewBindings.findChildViewById(rootView, id);
       if (imageview5 == null) {
+        break missingId;
+      }
+
+      id = R.id.risco_regiao;
+      TextView riscoRegiao = ViewBindings.findChildViewById(rootView, id);
+      if (riscoRegiao == null) {
+        break missingId;
+      }
+
+      id = R.id.risk_layout;
+      RelativeLayout riskLayout = ViewBindings.findChildViewById(rootView, id);
+      if (riskLayout == null) {
         break missingId;
       }
 
@@ -302,9 +335,9 @@ public final class FragmentFireDetailsBinding implements ViewBinding {
 
       return new FragmentFireDetailsBinding((FrameLayout) rootView, imageview2, imageview20,
           imageview21, imageview22, imageview23, imageview24, imageview25, imageview26, imageview27,
-          imageview28, imageview3, imageview5, textAirSupport, textCc, textCounty, textDate,
-          textFireState, textFiremen, textFoto, textObs, textParish, textPessoa, textRegiao,
-          textVehicles);
+          imageview28, imageview3, imageview4, imageview5, riscoRegiao, riskLayout, textAirSupport,
+          textCc, textCounty, textDate, textFireState, textFiremen, textFoto, textObs, textParish,
+          textPessoa, textRegiao, textVehicles);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -43,6 +43,7 @@ drawable lusofona
 drawable mapa
 id button_region
 id button_send_registration
+id cardViewGraph
 id drawer
 id fogos_regiao
 id fogos_total
@@ -73,10 +74,12 @@ id nav_exit
 id nav_fireList
 id nav_fireMap
 id nav_newFire
+id piechart
 id plain_text_input_cc
 id plain_text_input_image
 id plain_text_input_name
 id risco_regiao
+id risk_layout
 id rvHistory
 id textNoHistoryAvailable
 id text_air_support
@@ -96,6 +99,7 @@ id text_title
 id text_vehicles
 id toolbar
 layout activity_main
+layout fragment_chart
 layout fragment_dashboard
 layout fragment_fire_details
 layout fragment_fire_list
