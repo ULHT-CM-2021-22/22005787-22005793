@@ -11,6 +11,8 @@ MERGED from [com.google.android.material:material:1.5.0] C:\Users\Goncalo\.gradl
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] C:\Users\Goncalo\.gradle\caches\transforms-3\6220fde917cda44a74f97f5dbd738388\transformed\constraintlayout-2.1.3\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.4.1] C:\Users\Goncalo\.gradle\caches\transforms-3\ba512f38f0bacee7d86638331ba04ff4\transformed\appcompat-1.4.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\b97c869389cc5d8c9052b007763bb46a\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\4d2e43fee4df2f875a86cdd4651c633b\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.blackfizz:eazegraph:1.2.5l] C:\Users\Goncalo\.gradle\caches\transforms-3\ad3303adfbec8452b12179ba33a377d8\transformed\eazegraph-1.2.5l\AndroidManifest.xml:2:1-15:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\f4bf4d7849870cb3b43f118c3b4dfaba\transformed\viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\Goncalo\.gradle\caches\transforms-3\9f2d8595c2f999f56dce99dd1b21244a\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.2.4] C:\Users\Goncalo\.gradle\caches\transforms-3\06c19c4d11a9c9950655fec5d0fe967b\transformed\activity-1.2.4\AndroidManifest.xml:17:1-24:12
@@ -37,7 +39,6 @@ MERGED from [androidx.core:core:1.7.0] C:\Users\Goncalo\.gradle\caches\transform
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\659b2094d62f8bc4d9da20eb2a1c25e6\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\Goncalo\.gradle\caches\transforms-3\63edaeb26d5f1b3d2140f8bba18afe3c\transformed\lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\Goncalo\.gradle\caches\transforms-3\f583fade69ac8f10ed6c2dd86204e845\transformed\savedstate-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\4d2e43fee4df2f875a86cdd4651c633b\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.4.1] C:\Users\Goncalo\.gradle\caches\transforms-3\65d90d559e0c105233e50eb3494e89b3\transformed\lifecycle-viewmodel-2.4.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Goncalo\.gradle\caches\transforms-3\352118343ae527168a6bdccb10b42ca1\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Goncalo\.gradle\caches\transforms-3\820b2b240fd5ed0ed96ea7fe618e8d85\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:17:1-37:12
@@ -75,6 +76,8 @@ MERGED from [com.google.android.material:material:1.5.0] C:\Users\Goncalo\.gradl
 MERGED from [com.google.android.material:material:1.5.0] C:\Users\Goncalo\.gradle\caches\transforms-3\f49935e10f9d3b78438d1014426100a3\transformed\material-1.5.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] C:\Users\Goncalo\.gradle\caches\transforms-3\6220fde917cda44a74f97f5dbd738388\transformed\constraintlayout-2.1.3\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] C:\Users\Goncalo\.gradle\caches\transforms-3\6220fde917cda44a74f97f5dbd738388\transformed\constraintlayout-2.1.3\AndroidManifest.xml:9:5-20
+MERGED from [com.github.blackfizz:eazegraph:1.2.5l] C:\Users\Goncalo\.gradle\caches\transforms-3\ad3303adfbec8452b12179ba33a377d8\transformed\eazegraph-1.2.5l\AndroidManifest.xml:12:5-13:19
+MERGED from [com.github.blackfizz:eazegraph:1.2.5l] C:\Users\Goncalo\.gradle\caches\transforms-3\ad3303adfbec8452b12179ba33a377d8\transformed\eazegraph-1.2.5l\AndroidManifest.xml:12:5-13:19
 MERGED from [androidx.emoji2:emoji2:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\1bdca88ebac9582d03a2e0b002aaa769\transformed\emoji2-1.0.0\AndroidManifest.xml:25:5-35:19
 MERGED from [androidx.emoji2:emoji2:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\1bdca88ebac9582d03a2e0b002aaa769\transformed\emoji2-1.0.0\AndroidManifest.xml:25:5-35:19
 MERGED from [androidx.core:core:1.7.0] C:\Users\Goncalo\.gradle\caches\transforms-3\aec237d7615e5b5f19aac02e97eeb357\transformed\core-1.7.0\AndroidManifest.xml:24:5-89
@@ -133,6 +136,10 @@ MERGED from [androidx.appcompat:appcompat:1.4.1] C:\Users\Goncalo\.gradle\caches
 MERGED from [androidx.appcompat:appcompat:1.4.1] C:\Users\Goncalo\.gradle\caches\transforms-3\ba512f38f0bacee7d86638331ba04ff4\transformed\appcompat-1.4.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\b97c869389cc5d8c9052b007763bb46a\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\b97c869389cc5d8c9052b007763bb46a\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\4d2e43fee4df2f875a86cdd4651c633b\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\4d2e43fee4df2f875a86cdd4651c633b\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.github.blackfizz:eazegraph:1.2.5l] C:\Users\Goncalo\.gradle\caches\transforms-3\ad3303adfbec8452b12179ba33a377d8\transformed\eazegraph-1.2.5l\AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.blackfizz:eazegraph:1.2.5l] C:\Users\Goncalo\.gradle\caches\transforms-3\ad3303adfbec8452b12179ba33a377d8\transformed\eazegraph-1.2.5l\AndroidManifest.xml:8:5-10:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\f4bf4d7849870cb3b43f118c3b4dfaba\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\f4bf4d7849870cb3b43f118c3b4dfaba\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\Goncalo\.gradle\caches\transforms-3\9f2d8595c2f999f56dce99dd1b21244a\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
@@ -185,8 +192,6 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\G
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\Goncalo\.gradle\caches\transforms-3\63edaeb26d5f1b3d2140f8bba18afe3c\transformed\lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\Goncalo\.gradle\caches\transforms-3\f583fade69ac8f10ed6c2dd86204e845\transformed\savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\Goncalo\.gradle\caches\transforms-3\f583fade69ac8f10ed6c2dd86204e845\transformed\savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\4d2e43fee4df2f875a86cdd4651c633b\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\4d2e43fee4df2f875a86cdd4651c633b\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.4.1] C:\Users\Goncalo\.gradle\caches\transforms-3\65d90d559e0c105233e50eb3494e89b3\transformed\lifecycle-viewmodel-2.4.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.4.1] C:\Users\Goncalo\.gradle\caches\transforms-3\65d90d559e0c105233e50eb3494e89b3\transformed\lifecycle-viewmodel-2.4.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Goncalo\.gradle\caches\transforms-3\352118343ae527168a6bdccb10b42ca1\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41

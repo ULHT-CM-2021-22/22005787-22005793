@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -20,11 +22,24 @@ public final class FragmentFireMapBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
+  public final ImageView imageview4;
+
+  @NonNull
   public final ImageView map;
 
-  private FragmentFireMapBinding(@NonNull FrameLayout rootView, @NonNull ImageView map) {
+  @NonNull
+  public final TextView riscoRegiao;
+
+  @NonNull
+  public final RelativeLayout riskLayout;
+
+  private FragmentFireMapBinding(@NonNull FrameLayout rootView, @NonNull ImageView imageview4,
+      @NonNull ImageView map, @NonNull TextView riscoRegiao, @NonNull RelativeLayout riskLayout) {
     this.rootView = rootView;
+    this.imageview4 = imageview4;
     this.map = map;
+    this.riscoRegiao = riscoRegiao;
+    this.riskLayout = riskLayout;
   }
 
   @Override
@@ -54,13 +69,32 @@ public final class FragmentFireMapBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.imageview4;
+      ImageView imageview4 = ViewBindings.findChildViewById(rootView, id);
+      if (imageview4 == null) {
+        break missingId;
+      }
+
       id = R.id.map;
       ImageView map = ViewBindings.findChildViewById(rootView, id);
       if (map == null) {
         break missingId;
       }
 
-      return new FragmentFireMapBinding((FrameLayout) rootView, map);
+      id = R.id.risco_regiao;
+      TextView riscoRegiao = ViewBindings.findChildViewById(rootView, id);
+      if (riscoRegiao == null) {
+        break missingId;
+      }
+
+      id = R.id.risk_layout;
+      RelativeLayout riskLayout = ViewBindings.findChildViewById(rootView, id);
+      if (riskLayout == null) {
+        break missingId;
+      }
+
+      return new FragmentFireMapBinding((FrameLayout) rootView, imageview4, map, riscoRegiao,
+          riskLayout);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
