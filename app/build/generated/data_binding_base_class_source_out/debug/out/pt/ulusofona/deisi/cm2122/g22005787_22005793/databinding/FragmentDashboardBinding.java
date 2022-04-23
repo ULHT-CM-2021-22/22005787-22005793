@@ -25,6 +25,12 @@ public final class FragmentDashboardBinding implements ViewBinding {
   public final Button buttonRegion;
 
   @NonNull
+  public final TextView fogosRegiao;
+
+  @NonNull
+  public final TextView fogosTotal;
+
+  @NonNull
   public final ImageView imageview1;
 
   @NonNull
@@ -40,18 +46,30 @@ public final class FragmentDashboardBinding implements ViewBinding {
   public final ImageView imageview5;
 
   @NonNull
+  public final TextView mediaFogosRegiao;
+
+  @NonNull
+  public final TextView riscoRegiao;
+
+  @NonNull
   public final TextView textRegion;
 
   private FragmentDashboardBinding(@NonNull FrameLayout rootView, @NonNull Button buttonRegion,
-      @NonNull ImageView imageview1, @NonNull ImageView imageview2, @NonNull ImageView imageview3,
-      @NonNull ImageView imageview4, @NonNull ImageView imageview5, @NonNull TextView textRegion) {
+      @NonNull TextView fogosRegiao, @NonNull TextView fogosTotal, @NonNull ImageView imageview1,
+      @NonNull ImageView imageview2, @NonNull ImageView imageview3, @NonNull ImageView imageview4,
+      @NonNull ImageView imageview5, @NonNull TextView mediaFogosRegiao,
+      @NonNull TextView riscoRegiao, @NonNull TextView textRegion) {
     this.rootView = rootView;
     this.buttonRegion = buttonRegion;
+    this.fogosRegiao = fogosRegiao;
+    this.fogosTotal = fogosTotal;
     this.imageview1 = imageview1;
     this.imageview2 = imageview2;
     this.imageview3 = imageview3;
     this.imageview4 = imageview4;
     this.imageview5 = imageview5;
+    this.mediaFogosRegiao = mediaFogosRegiao;
+    this.riscoRegiao = riscoRegiao;
     this.textRegion = textRegion;
   }
 
@@ -88,6 +106,18 @@ public final class FragmentDashboardBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.fogos_regiao;
+      TextView fogosRegiao = ViewBindings.findChildViewById(rootView, id);
+      if (fogosRegiao == null) {
+        break missingId;
+      }
+
+      id = R.id.fogos_total;
+      TextView fogosTotal = ViewBindings.findChildViewById(rootView, id);
+      if (fogosTotal == null) {
+        break missingId;
+      }
+
       id = R.id.imageview1;
       ImageView imageview1 = ViewBindings.findChildViewById(rootView, id);
       if (imageview1 == null) {
@@ -118,14 +148,27 @@ public final class FragmentDashboardBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.media_fogos_regiao;
+      TextView mediaFogosRegiao = ViewBindings.findChildViewById(rootView, id);
+      if (mediaFogosRegiao == null) {
+        break missingId;
+      }
+
+      id = R.id.risco_regiao;
+      TextView riscoRegiao = ViewBindings.findChildViewById(rootView, id);
+      if (riscoRegiao == null) {
+        break missingId;
+      }
+
       id = R.id.text_region;
       TextView textRegion = ViewBindings.findChildViewById(rootView, id);
       if (textRegion == null) {
         break missingId;
       }
 
-      return new FragmentDashboardBinding((FrameLayout) rootView, buttonRegion, imageview1,
-          imageview2, imageview3, imageview4, imageview5, textRegion);
+      return new FragmentDashboardBinding((FrameLayout) rootView, buttonRegion, fogosRegiao,
+          fogosTotal, imageview1, imageview2, imageview3, imageview4, imageview5, mediaFogosRegiao,
+          riscoRegiao, textRegion);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
