@@ -44,6 +44,8 @@ drawable mapa
 id button_region
 id button_send_registration
 id drawer
+id fogos_regiao
+id fogos_total
 id frame
 id imageview1
 id imageview10
@@ -64,6 +66,7 @@ id imageview3
 id imageview4
 id imageview5
 id map
+id media_fogos_regiao
 id nav_IDK
 id nav_drawer
 id nav_exit
@@ -73,6 +76,7 @@ id nav_newFire
 id plain_text_input_cc
 id plain_text_input_image
 id plain_text_input_name
+id risco_regiao
 id rvHistory
 id textNoHistoryAvailable
 id text_air_support
@@ -106,6 +110,7 @@ string air_support
 string another_info
 string app_name
 string cc
+string choose_region
 string click
 string confirm
 string county

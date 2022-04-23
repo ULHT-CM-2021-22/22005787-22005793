@@ -6,10 +6,12 @@ import androidx.recyclerview.widget.RecyclerView
 import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.ItemExpressionBinding
 
 class FireAdapter (
-    private var items: List<Fire> = listOf(),
-    private val onClick: (Fire) -> Unit,
-    private val onLongClick: (Fire) -> Boolean
+    private var items: List<FireData> = listOf(),
+    private val onClick: (FireData) -> Unit,
+    private val onLongClick: (FireData) -> Boolean
     ) : RecyclerView.Adapter<FireAdapter.HistoryViewHolder>() {
+
+    val model = FireModel
 
         class HistoryViewHolder(val binding: ItemExpressionBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -24,15 +26,17 @@ class FireAdapter (
 
         override fun onBindViewHolder(holder: HistoryViewHolder, position: Int) {
             holder.binding.textTitle.text = items[position].distrito
-            holder.binding.textInf.text = items[position].showInf()
+            holder.binding.textInf.text = model.showInf(items[position])
             holder.itemView.setOnClickListener { onClick(items[position]) }
             holder.itemView.setOnLongClickListener { onLongClick(items[position]) }
         }
 
         override fun getItemCount() = items.size
 
-        fun updateItems(items: List<Fire>) {
+        fun updateItems(items: List<FireData>) {
             this.items = items
             notifyDataSetChanged()
         }
+
+
 }

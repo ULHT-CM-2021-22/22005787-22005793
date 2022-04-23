@@ -16,6 +16,7 @@ class FireRegistrationFragment : Fragment() {
 
     private val model = FireModel
     private var fires = FireModel.list
+    private var districts = FireModel.districts
     private lateinit var binding: FragmentFireRegistrationBinding
 
     override fun onCreateView(
@@ -33,14 +34,8 @@ class FireRegistrationFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         binding.buttonRegion.setOnClickListener {
-            val districts = arrayOf(
-                "Aveiro", "Beja", "Braga", "Bragança", "Castelo Branco", "Coimbra",
-                "Évora", "Faro", "Guarda", "Leiria", "Lisboa", "Portalegre",
-                "Porto", "Santarém", "Setúbal", "Viana do Castelo", "Vila Real", "Viseu"
-            )
-
             val builder: android.app.AlertDialog.Builder = android.app.AlertDialog.Builder(context)
-            builder.setTitle("Escolha a região")
+            builder.setTitle(getString(R.string.choose_region))
             builder.setItems(districts, DialogInterface.OnClickListener { dialog, which ->
                 binding.buttonRegion.text = districts[which]
             })
@@ -59,7 +54,7 @@ class FireRegistrationFragment : Fragment() {
             val fotos = ArrayList<String>()
             var allRight = true
             fotos.add(binding.plainTextInputImage.text.toString())
-            val fire = Fire(pessoa, distrito, data, fotos)
+            val fire = FireData(pessoa, distrito, data, fotos)
             fire.estado = getString(R.string.confirm)
             if (binding.plainTextInputCc.text == null || binding.plainTextInputName.text == null
                 || binding.plainTextInputCc.text.toString() == "" || binding.plainTextInputName.text.toString() == ""

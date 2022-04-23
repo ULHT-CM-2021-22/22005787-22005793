@@ -28,7 +28,7 @@ object NavigationManager {
         placeFragment(fm, FireRegistrationFragment())
     }
 
-    fun goToFireDetailsFragment(fm: FragmentManager, fire: Fire) {
-        placeFragment(fm, FireDetailsFragment.newInstance(fire))
+    fun goToFireDetailsFragment(fm: FragmentManager, fireData: FireData) {
+        placeFragment(fm, FireDetailsFragment.newInstance(fireData))
     }
 }

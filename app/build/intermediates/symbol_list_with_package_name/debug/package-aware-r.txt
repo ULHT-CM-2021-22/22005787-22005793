@@ -2739,6 +2739,8 @@ id fitToContents
 id fixed
 id flip
 id floating
+id fogos_regiao
+id fogos_total
 id forever
 id fragment_container_view_tag
 id frame
@@ -2829,6 +2831,7 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id media_actions
+id media_fogos_regiao
 id message
 id middle
 id mini
@@ -2920,6 +2923,7 @@ id right
 id rightToLeft
 id right_icon
 id right_side
+id risco_regiao
 id rounded
 id row_index_key
 id rvHistory
@@ -3308,6 +3312,7 @@ string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
 string chip_text
+string choose_region
 string clear_text_end_icon_content_description
 string click
 string confirm

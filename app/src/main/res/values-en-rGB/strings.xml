@@ -36,4 +36,5 @@
     <string name="inf_not_available">Information not available</string>
     <string name="click">Click to choose</string>
     <string name="confirm">To be confirmed</string>
+    <string name="choose_region">Choose region</string>
 </resources>

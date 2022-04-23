@@ -32,16 +32,16 @@ class FireListFragment : Fragment() {
         model.getHistory { updateHistory(it) }
     }
 
-    private fun onOperationClick(fire: Fire) {
-        NavigationManager.goToFireDetailsFragment(parentFragmentManager, fire)
+    private fun onOperationClick(fireData: FireData) {
+        NavigationManager.goToFireDetailsFragment(parentFragmentManager, fireData)
     }
 
-    private fun onOperationLongClick(fire: Fire): Boolean {
+    private fun onOperationLongClick(fireData: FireData): Boolean {
         return false
     }
 
-    private fun updateHistory(fires: List<Fire>) {
-        val history = fires.map { Fire(it.distrito,it.concelho,it.freguesia,it.meiosOperacionais,
+    private fun updateHistory(fireData: List<FireData>) {
+        val history = fireData.map { FireData(it.distrito,it.concelho,it.freguesia,it.meiosOperacionais,
         it.meiosVeiculos,it.meiosAereos,it.estado,it.data,it.fotos,it.obs,it.pessoa,it.porConfirmar)}
         CoroutineScope(Dispatchers.Main).launch {
             showHistory(history.isNotEmpty())

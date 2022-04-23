@@ -13,6 +13,8 @@ import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentDashboar
 class DashboardFragment : Fragment() {
 
     private lateinit var binding: FragmentDashboardBinding
+    private var districts = FireModel.districts
+    private var model = FireModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,12 +32,9 @@ class DashboardFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         binding.buttonRegion.setOnClickListener {
-            val districts = arrayOf("Aveiro", "Beja", "Braga", "Bragança","Castelo Branco","Coimbra",
-                "Évora","Faro","Guarda","Leiria","Lisboa","Portalegre",
-                "Porto","Santarém","Setúbal","Viana do Castelo", "Vila Real","Viseu")
 
             val builder: android.app.AlertDialog.Builder = android.app.AlertDialog.Builder(context)
-            builder.setTitle("Escolha a região")
+            builder.setTitle(getString(R.string.choose_region))
             builder.setItems(districts, DialogInterface.OnClickListener { dialog, which ->
                 binding.textRegion.text = districts[which]
                 binding.textRegion.textSize = 18F
@@ -43,6 +42,9 @@ class DashboardFragment : Fragment() {
             builder.show()
 
         }
+        binding.fogosRegiao.text = model.fogosNaRegiao()
+            binding.fogosTotal.text = model.totalFogos()
+            binding.mediaFogosRegiao.text = model.mediaFogosNaRegiao()
     }
 
 
