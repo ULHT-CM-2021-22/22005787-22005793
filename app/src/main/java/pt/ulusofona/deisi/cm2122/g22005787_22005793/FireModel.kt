@@ -2,7 +2,8 @@ package pt.ulusofona.deisi.cm2122.g22005787_22005793
 
 object FireModel {
 
-
+    var region = "Lisboa"
+    var risk = Risk.values().random().risco
     var list = arrayListOf(
         FireData(
             "Lisboa", "Sintra", "Mem Martins",
@@ -15,7 +16,7 @@ object FireModel {
             3, 4, 1,
             "Ativo", "15/11/2020 - 17:56:00", ArrayList<String>(), "Terreno muito grande",
             Pessoa("Gonçalo Matias", "46544694"), false
-        ),FireData(
+        ), FireData(
             "Porto", "Vila Nova de Gaia", "Miragaia",
             1, 2, 3,
             "Ativo", "21/04/2022 - 17:04:21", ArrayList<String>(), "",
@@ -34,11 +35,11 @@ object FireModel {
         )
     )
 
-    val districts = arrayOf("Aveiro", "Beja", "Braga", "Bragança","Castelo Branco","Coimbra",
-        "Évora","Faro","Guarda","Leiria","Lisboa","Portalegre",
-        "Porto","Santarém","Setúbal","Viana do Castelo", "Vila Real","Viseu")
-
-    var region = "Lisboa"
+    val districts = arrayOf(
+        "Aveiro", "Beja", "Braga", "Bragança", "Castelo Branco", "Coimbra",
+        "Évora", "Faro", "Guarda", "Leiria", "Lisboa", "Portalegre",
+        "Porto", "Santarém", "Setúbal", "Viana do Castelo", "Vila Real", "Viseu"
+    )
 
 
     fun getHistory(onFinished: (List<FireData>) -> Unit) {
@@ -48,7 +49,8 @@ object FireModel {
     fun addToHistory(fireData: FireData) {
         list.add(fireData)
     }
-     fun infNotAvailable(view: String): String {
+
+    fun infNotAvailable(view: String): String {
         if (view == "" || view == "0") {
             return "Informação não disponivel"
         }
@@ -56,29 +58,46 @@ object FireModel {
     }
 
     fun showInf(fireData: FireData): String {
-        return "Concelho -> ${infNotAvailable(fireData.concelho)} \nFreguesia -> ${infNotAvailable(fireData.freguesia)} \n" +
+        return "Concelho -> ${infNotAvailable(fireData.concelho)} \nFreguesia -> ${
+            infNotAvailable(
+                fireData.freguesia
+            )
+        } \n" +
                 "Estado -> ${infNotAvailable(fireData.estado)} \nData -> ${infNotAvailable(fireData.data)}"
     }
 
-    fun fogosNaRegiao():String{
+    fun fogosNaRegiao(): String {
         var count = 0
-        for (fire in list){
-            if(fire.distrito == region){
+        for (fire in list) {
+            if (fire.distrito == region) {
                 count++
             }
         }
         return count.toString()
     }
-    fun totalFogos():String{
+
+    fun totalFogos(): String {
         return list.size.toString()
     }
-    fun mediaFogosNaRegiao():String{
+
+    fun mediaFogosNaRegiao(): String {
         val count = fogosNaRegiao()
         val total = totalFogos()
         val media = (count.toInt() / total.toInt()).toString()
-        if(media == "0"){
+        if (media == "0") {
             return "1"
         }
         return media
+    }
+
+    fun alterarRegiao(regiao: String) {
+        if (regiao in districts) {
+            region = regiao
+        }
+    }
+
+    fun alterarRisco() {
+
+        risk = Risk.values().random().risco
     }
 }
