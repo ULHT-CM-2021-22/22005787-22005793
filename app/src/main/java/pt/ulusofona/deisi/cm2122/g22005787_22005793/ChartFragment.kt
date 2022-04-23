@@ -1,5 +1,6 @@
 package pt.ulusofona.deisi.cm2122.g22005787_22005793
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.os.CountDownTimer
 import androidx.fragment.app.Fragment
@@ -47,6 +48,7 @@ private val timer = object : CountDownTimer(20000, 1000) {
     override fun onResume() {
         super.onResume()
         timer.start()
+        requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
     }
 
     override fun onDestroy() {
@@ -57,6 +59,7 @@ private val timer = object : CountDownTimer(20000, 1000) {
     override fun onPause() {
         super.onPause()
         timer.cancel()
+        requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR
     }
 
     private fun districtsInChart(){

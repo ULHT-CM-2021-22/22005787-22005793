@@ -2,6 +2,7 @@ package pt.ulusofona.deisi.cm2122.g22005787_22005793
 
 import android.annotation.SuppressLint
 import android.content.DialogInterface
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.LayoutInflater
@@ -58,6 +59,7 @@ class DashboardFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         timer.start()
+        requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
     }
 
     override fun onDestroy() {
@@ -68,6 +70,7 @@ class DashboardFragment : Fragment() {
     override fun onPause() {
         super.onPause()
         timer.cancel()
+        requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR
     }
 
     private fun updateDashboard() {

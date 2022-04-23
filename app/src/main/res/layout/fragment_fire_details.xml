@@ -6,14 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".DashboardFragment">
     <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
         tools:ignore="UselessParent">
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <RelativeLayout
@@ -117,7 +116,7 @@
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"
                                     android:layout_alignParentStart="true"
-                                    android:layout_marginLeft="2dp"
+                                    android:layout_marginStart="2dp"
                                     android:src="@drawable/ic_person">
 
                                 </ImageView>
@@ -233,7 +232,7 @@
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"
                                     android:layout_alignParentStart="true"
-                                    android:layout_marginLeft="2dp"
+                                    android:layout_marginStart="2dp"
                                     android:src="@drawable/ic_region">
 
                                 </ImageView>
