@@ -330,7 +330,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/info/baseline_info_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/pie_chart/baseline_pie_chart_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -340,7 +340,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_info" />
+                            <entry key="outputName" value="ic_pie_chart" />
                             <entry key="sourceFile" value="C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793" />
                           </map>
                         </option>

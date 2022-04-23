@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">FireTracker</string>
     <string name="welcome">Welcome to FireTracker</string>
-    <string name="subtitle">DOND DELL ME WHAD DO DO</string>
+    <string name="subtitle">Mobile Programming Project 21/22</string>
     <string name="fire_map">Fire\'s map</string>
     <string name="fire_list">Fire\'s list</string>
     <string name="new_fire">New registration</string>
@@ -40,4 +40,5 @@
     <string name="fields">Fill all the fields</string>
     <string name="register">List updated</string>
     <string name="chart_name">Chart</string>
+    <string name="chart">Chart</string>
 </resources>
