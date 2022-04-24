@@ -40,6 +40,8 @@
     <string name="register">Lista atualizada</string>
     <string name="chart_name">Gráfico</string>
     <string name="chart">Gráfico</string>
+    <string name="no_permission">Não tem permissão para ler arquivos</string>
+    <string name="chosen">Escolhido</string>
 
 
 </resources>

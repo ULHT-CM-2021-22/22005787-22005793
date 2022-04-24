@@ -45,8 +45,8 @@ class FireListFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         updateDashboard()
-        binding.rvHistory.layoutManager = LinearLayoutManager(context)
-        binding.rvHistory.adapter = adapter
+        binding.fireList.layoutManager = LinearLayoutManager(context)
+        binding.fireList.adapter = adapter
         model.getHistory { updateHistory(it) }
     }
 
@@ -69,10 +69,10 @@ class FireListFragment : Fragment() {
 
     private fun showHistory(show: Boolean) {
         if (show) {
-            binding.rvHistory.visibility = View.VISIBLE
+            binding.fireList.visibility = View.VISIBLE
             binding.textNoHistoryAvailable.visibility = View.GONE
         } else {
-            binding.rvHistory.visibility = View.GONE
+            binding.fireList.visibility = View.GONE
             binding.textNoHistoryAvailable.visibility = View.VISIBLE
         }
     }

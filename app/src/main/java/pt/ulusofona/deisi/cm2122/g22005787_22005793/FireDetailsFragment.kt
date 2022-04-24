@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentFireDetailsBinding
 
@@ -14,6 +15,7 @@ private const val ARG_FIRE = "ARG_FIRE"
 
 class FireDetailsFragment : Fragment() {
 
+    private var viewM : ImageView? = null
     private var model = FireModel
     private var fireData: FireData? = null
     private lateinit var binding: FragmentFireDetailsBinding
@@ -56,7 +58,7 @@ class FireDetailsFragment : Fragment() {
             binding.textDate.text = model.infNotAvailable(it.data)
             binding.textFireState.text = model.infNotAvailable(it.estado)
             binding.textFiremen.text = model.infNotAvailable(it.meiosOperacionais.toString())
-            binding.textFoto.text = model.infNotAvailable(it.fotos.toString())
+            //binding.foto.setImageURI(it.fotos)
             binding.textParish.text = model.infNotAvailable(it.freguesia)
             binding.textObs.text = model.infNotAvailable(it.obs)
             binding.textRegiao.text = model.infNotAvailable(it.distrito)

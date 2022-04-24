@@ -208,6 +208,10 @@
         "source": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_launcher_foreground.png"
     },
     {
+        "merged": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_bombeiro_no_fogo.png.flat",
+        "source": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\src\\main\\res\\drawable-mdpi\\bombeiro_no_fogo.png"
+    },
+    {
         "merged": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_fire_registration.xml.flat",
         "source": "C:\\Users\\Goncalo\\Desktop\\Faculdade\\AndroidStudio\\g22005787-22005793\\app\\src\\main\\res\\layout\\fragment_fire_registration.xml"
     },

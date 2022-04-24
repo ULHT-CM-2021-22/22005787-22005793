@@ -41,4 +41,6 @@
     <string name="register">List updated</string>
     <string name="chart_name">Chart</string>
     <string name="chart">Chart</string>
+    <string name="no_permission">Not allowed to read files</string>
+    <string name="chosen">Chosen</string>
 </resources>

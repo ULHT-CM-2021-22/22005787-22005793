@@ -1,5 +1,6 @@
 package pt.ulusofona.deisi.cm2122.g22005787_22005793
 
+import android.net.Uri
 import android.os.Parcelable
 import kotlinx.parcelize.IgnoredOnParcel
 import kotlinx.parcelize.Parcelize
@@ -12,7 +13,7 @@ data class FireData(
     var pessoa: @RawValue Pessoa,
     var distrito: String,
     var data: String,
-    var fotos: ArrayList<String>
+    var fotos: Uri?
 ) : Parcelable {
 
     @IgnoredOnParcel
@@ -35,7 +36,7 @@ data class FireData(
     constructor(
         distrito: String, concelho: String, freguesia: String,
         meiosOperacionais: Int, meiosVeiculos: Int, meiosAereos: Int,
-        estado: String, data: String, fotos: ArrayList<String>,
+        estado: String, data: String, fotos: Uri?,
         obs: String, pessoa: @RawValue Pessoa, porConfirmar: Boolean
     ) :
             this(pessoa, distrito, data, fotos) {

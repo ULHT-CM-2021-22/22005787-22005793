@@ -75,7 +75,7 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvHistory"
+            android:id="@+id/fire_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="gone"

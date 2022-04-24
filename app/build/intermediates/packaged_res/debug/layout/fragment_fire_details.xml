@@ -728,13 +728,13 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="80dp"
+                        android:layout_height="match_parent"
                         android:layout_marginBottom="10dp"
                         android:orientation="horizontal">
 
                         <androidx.cardview.widget.CardView
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="200dp"
                             android:layout_marginEnd="5dp"
                             android:layout_weight="1"
                             android:elevation="5dp"
@@ -758,6 +758,7 @@
                                 </ImageView>
 
                                 <TextView
+                                    android:id="@+id/ee"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_below="@id/imageview26"
@@ -769,17 +770,15 @@
 
                                 </TextView>
 
-                                <TextView
-                                    android:id="@+id/text_foto"
+                                <ImageView
+                                    android:id="@+id/foto"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_below="@id/imageview26"
-                                    android:layout_marginTop="-22dp"
-                                    android:text="@string/inf_not_available"
-                                    android:textAlignment="center"
-                                    android:textSize="12sp">
+                                    android:src="@drawable/bombeiro_no_fogo"
+                                    app:layout_constraintTop_toTopOf="parent" />
 
-                                </TextView>
+
 
                             </RelativeLayout>
 

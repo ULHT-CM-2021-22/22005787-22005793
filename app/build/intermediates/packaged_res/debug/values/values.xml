@@ -27,6 +27,7 @@
     <string name="chart">Gráfico</string>
     <string name="chart_name">Gráfico</string>
     <string name="choose_region">Escolha a região</string>
+    <string name="chosen">Escolhido</string>
     <string name="click">Clique para escolher</string>
     <string name="confirm">Por confirmar</string>
     <string name="county">Conselho</string>
@@ -47,6 +48,7 @@
     <string name="newRegister">Efetue aqui o registo do incêndio</string>
     <string name="new_fire">Novo registo</string>
     <string name="no_list">Lista indisponível</string>
+    <string name="no_permission">Não tem permissão para ler arquivos</string>
     <string name="obs">Observações</string>
     <string name="parish">Freguesia</string>
     <string name="photo">Fotografia(Opcional)</string>
@@ -62,19 +64,19 @@
     <string name="vehicles">Meios terrestres</string>
     <string name="welcome">Bem-vindo ao FireTracker</string>
     <style name="Theme.G22005787_22005793" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
-        <!-- Primary brand color. -->
+        
+        
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorOnBackground">@color/white</item>
-        <!-- Secondary brand color. -->
+        
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
+        
         <item name="android:statusBarColor">@color/orange</item>
-        <!-- Customize your theme here. -->
+        
     </style>
     <style name="ToolbarTheme" parent="Theme.G22005787_22005793">
         <item name="android:background">@color/orange</item>

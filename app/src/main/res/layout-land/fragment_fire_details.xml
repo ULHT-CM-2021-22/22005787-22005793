@@ -770,7 +770,7 @@
                                 </TextView>
 
                                 <TextView
-                                    android:id="@+id/text_foto"
+                                    android:id="@+id/foto"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_below="@id/imageview26"

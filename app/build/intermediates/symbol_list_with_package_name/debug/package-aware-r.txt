@@ -2486,6 +2486,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable bombeiro_no_fogo
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -2681,6 +2682,7 @@ id bounceStart
 id braga
 id braganca
 id buttonPanel
+id button_foto
 id button_region
 id button_send_registration
 id cache_measures
@@ -2762,6 +2764,7 @@ id easeInOut
 id easeOut
 id east
 id edit_query
+id ee
 id elastic
 id end
 id endToStart
@@ -2778,6 +2781,7 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id fire_list
 id fitToContents
 id fixed
 id flip
@@ -2785,6 +2789,7 @@ id floating
 id fogos_regiao
 id fogos_total
 id forever
+id foto
 id fragment_container_view_tag
 id frame
 id frost
@@ -2814,7 +2819,7 @@ id imageview1
 id imageview10
 id imageview11
 id imageview12
-id imageview14
+id imageview13
 id imageview2
 id imageview20
 id imageview21
@@ -2957,7 +2962,6 @@ id percent
 id piechart
 id pin
 id plain_text_input_cc
-id plain_text_input_image
 id plain_text_input_name
 id portalegre
 id porto
@@ -2977,7 +2981,6 @@ id risco_regiao
 id risk_layout
 id rounded
 id row_index_key
-id rvHistory
 id santarem
 id save_non_transition_alpha
 id save_overlay_view
@@ -3074,7 +3077,6 @@ id text_county
 id text_date
 id text_fire_state
 id text_firemen
-id text_foto
 id text_inf
 id text_input_end_icon
 id text_input_error_icon
@@ -3372,6 +3374,7 @@ string chart
 string chart_name
 string chip_text
 string choose_region
+string chosen
 string clear_text_end_icon_content_description
 string click
 string confirm
@@ -3481,6 +3484,7 @@ string name
 string newRegister
 string new_fire
 string no_list
+string no_permission
 string obs
 string parish
 string password_toggle_content_description

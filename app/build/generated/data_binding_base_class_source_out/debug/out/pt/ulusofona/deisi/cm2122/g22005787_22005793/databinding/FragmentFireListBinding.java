@@ -23,6 +23,9 @@ public final class FragmentFireListBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
+  public final RecyclerView fireList;
+
+  @NonNull
   public final ImageView imageview4;
 
   @NonNull
@@ -32,19 +35,16 @@ public final class FragmentFireListBinding implements ViewBinding {
   public final RelativeLayout riskLayout;
 
   @NonNull
-  public final RecyclerView rvHistory;
-
-  @NonNull
   public final TextView textNoHistoryAvailable;
 
-  private FragmentFireListBinding(@NonNull FrameLayout rootView, @NonNull ImageView imageview4,
-      @NonNull TextView riscoRegiao, @NonNull RelativeLayout riskLayout,
-      @NonNull RecyclerView rvHistory, @NonNull TextView textNoHistoryAvailable) {
+  private FragmentFireListBinding(@NonNull FrameLayout rootView, @NonNull RecyclerView fireList,
+      @NonNull ImageView imageview4, @NonNull TextView riscoRegiao,
+      @NonNull RelativeLayout riskLayout, @NonNull TextView textNoHistoryAvailable) {
     this.rootView = rootView;
+    this.fireList = fireList;
     this.imageview4 = imageview4;
     this.riscoRegiao = riscoRegiao;
     this.riskLayout = riskLayout;
-    this.rvHistory = rvHistory;
     this.textNoHistoryAvailable = textNoHistoryAvailable;
   }
 
@@ -75,6 +75,12 @@ public final class FragmentFireListBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.fire_list;
+      RecyclerView fireList = ViewBindings.findChildViewById(rootView, id);
+      if (fireList == null) {
+        break missingId;
+      }
+
       id = R.id.imageview4;
       ImageView imageview4 = ViewBindings.findChildViewById(rootView, id);
       if (imageview4 == null) {
@@ -93,20 +99,14 @@ public final class FragmentFireListBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.rvHistory;
-      RecyclerView rvHistory = ViewBindings.findChildViewById(rootView, id);
-      if (rvHistory == null) {
-        break missingId;
-      }
-
       id = R.id.textNoHistoryAvailable;
       TextView textNoHistoryAvailable = ViewBindings.findChildViewById(rootView, id);
       if (textNoHistoryAvailable == null) {
         break missingId;
       }
 
-      return new FragmentFireListBinding((FrameLayout) rootView, imageview4, riscoRegiao,
-          riskLayout, rvHistory, textNoHistoryAvailable);
+      return new FragmentFireListBinding((FrameLayout) rootView, fireList, imageview4, riscoRegiao,
+          riskLayout, textNoHistoryAvailable);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
