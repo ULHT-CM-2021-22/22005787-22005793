@@ -14,11 +14,13 @@ A lista foi implementada como pedido, tem suporte horizontal, e pode se visualiz
 Os detalhes da lista foram também implementados como referido no enunciado, e decidimos separar algumas informações para ser mais simples consultar os dados e ter um visual mais completo.
 Acrescentamos também um ScrollView para uma melhor consulta de dados.
 ### <img src="https://github.com/ULHT-CM-2021-22/22005787-22005793/blob/main/print%20(4).jpg" height="1100" width="650">
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+### <img src="https://github.com/ULHT-CM-2021-22/22005787-22005793/blob/main/print%20(9).jpg" height="1100" width="650">
 
 Em relação ao mapa, como ainda não sabemos ter acesso ao GPS, utilizamos uma imagem do mapa de Portugal.
 ### <img src="https://github.com/ULHT-CM-2021-22/22005787-22005793/blob/main/print%20(5).jpg" height="1100" width="650">
 
-Quanto ao ecrã de novo registo, os 3 primeiros campos não se podem encontrar vazios, e utilizamos o mesmo metodo neste ecrã que foi usado na DashBoard para selecionar o distrito.
+Quanto ao ecrã de novo registo, os 3 primeiros campos não se podem encontrar vazios, utilizamos o mesmo metodo neste ecrã que foi usado na DashBoard para selecionar o distrito e para colocar uma foto basta escolher pela galeria do utilizador
 ### <img src="https://github.com/ULHT-CM-2021-22/22005787-22005793/blob/main/print%20(6).jpg" height="1100" width="650">
 
 Em relação à funcionalidade extra, decidimos por bem implementar um gráfico circular e uma legenda com os fogos ativos por distrito.
