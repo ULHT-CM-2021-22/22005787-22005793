@@ -21,24 +21,11 @@ public final class FragmentFireDetailsBinding implements ViewBinding {
   @NonNull
   private final FrameLayout rootView;
 
-  /**
-   * This binding is not available in all configurations.
-   * <p>
-   * Present:
-   * <ul>
-   *   <li>layout/</li>
-   * </ul>
-   *
-   * Absent:
-   * <ul>
-   *   <li>layout-land/</li>
-   * </ul>
-   */
-  @Nullable
+  @NonNull
   public final TextView ee;
 
   @NonNull
-  public final View foto;
+  public final ImageView foto;
 
   @NonNull
   public final ImageView imageview2;
@@ -118,8 +105,8 @@ public final class FragmentFireDetailsBinding implements ViewBinding {
   @NonNull
   public final TextView textVehicles;
 
-  private FragmentFireDetailsBinding(@NonNull FrameLayout rootView, @Nullable TextView ee,
-      @NonNull View foto, @NonNull ImageView imageview2, @NonNull ImageView imageview20,
+  private FragmentFireDetailsBinding(@NonNull FrameLayout rootView, @NonNull TextView ee,
+      @NonNull ImageView foto, @NonNull ImageView imageview2, @NonNull ImageView imageview20,
       @NonNull ImageView imageview21, @NonNull ImageView imageview22,
       @NonNull ImageView imageview23, @NonNull ImageView imageview24,
       @NonNull ImageView imageview25, @NonNull ImageView imageview26,
@@ -190,9 +177,12 @@ public final class FragmentFireDetailsBinding implements ViewBinding {
     missingId: {
       id = R.id.ee;
       TextView ee = ViewBindings.findChildViewById(rootView, id);
+      if (ee == null) {
+        break missingId;
+      }
 
       id = R.id.foto;
-      View foto = ViewBindings.findChildViewById(rootView, id);
+      ImageView foto = ViewBindings.findChildViewById(rootView, id);
       if (foto == null) {
         break missingId;
       }

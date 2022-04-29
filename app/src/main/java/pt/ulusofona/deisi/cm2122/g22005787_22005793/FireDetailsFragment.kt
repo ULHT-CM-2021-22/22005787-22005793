@@ -58,7 +58,7 @@ class FireDetailsFragment : Fragment() {
             binding.textDate.text = model.infNotAvailable(it.data)
             binding.textFireState.text = model.infNotAvailable(it.estado)
             binding.textFiremen.text = model.infNotAvailable(it.meiosOperacionais.toString())
-            //binding.foto.setImageURI(it.fotos)
+            binding.foto.setImageURI(it.fotos)
             binding.textParish.text = model.infNotAvailable(it.freguesia)
             binding.textObs.text = model.infNotAvailable(it.obs)
             binding.textRegiao.text = model.infNotAvailable(it.distrito)
