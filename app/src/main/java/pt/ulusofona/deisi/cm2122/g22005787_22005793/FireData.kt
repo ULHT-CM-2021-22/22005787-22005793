@@ -10,34 +10,34 @@ import java.util.*
 
 @Parcelize
 data class FireData(
-    var pessoa: @RawValue Pessoa,
-    var distrito: String,
-    var data: String,
+    var pessoa: @RawValue Pessoa?,
+    var distrito: String?,
+    var data: String?,
     var fotos: Uri?
 ) : Parcelable {
 
     @IgnoredOnParcel
-    var concelho: String = ""
+    var concelho: String? = null
     @IgnoredOnParcel
-    var freguesia: String = ""
+    var freguesia: String? = null
     @IgnoredOnParcel
-    var meiosOperacionais: Int = 0
+    var meiosOperacionais: String? = null
     @IgnoredOnParcel
-    var meiosVeiculos: Int = 0
+    var meiosVeiculos: String? = null
     @IgnoredOnParcel
-    var meiosAereos: Int = 0
+    var meiosAereos: String? = null
     @IgnoredOnParcel
-    var estado = ""
+    var estado: String? = null
     @IgnoredOnParcel
-    var obs: String = ""
+    var obs: String? = null
     @IgnoredOnParcel
-    var porConfirmar: Boolean = false
+    var porConfirmar: Boolean? = false
 
     constructor(
-        distrito: String, concelho: String, freguesia: String,
-        meiosOperacionais: Int, meiosVeiculos: Int, meiosAereos: Int,
-        estado: String, data: String, fotos: Uri?,
-        obs: String, pessoa: @RawValue Pessoa, porConfirmar: Boolean
+        distrito: String?, concelho: String?, freguesia: String?,
+        meiosOperacionais: String?, meiosVeiculos: String?, meiosAereos: String?,
+        estado: String?, data: String?, fotos: Uri?,
+        obs: String?, pessoa: @RawValue Pessoa?, porConfirmar: Boolean?
     ) :
             this(pessoa, distrito, data, fotos) {
         this.concelho = concelho
