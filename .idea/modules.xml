@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/g22005787_22005793.iml" filepath="$PROJECT_DIR$/.idea/modules/g22005787_22005793.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/g22005787_22005793.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/g22005787_22005793.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/g22005787_22005793.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/g22005787_22005793.app.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/g22005787_22005793.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/g22005787_22005793.app.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/g22005787_22005793.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/g22005787_22005793.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pt.ulusofona.ecati.deisi.licenciatura.cm2122.g22005787_22005793.iml" filepath="$PROJECT_DIR$/.idea/modules/pt.ulusofona.ecati.deisi.licenciatura.cm2122.g22005787_22005793.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/pt.ulusofona.ecati.deisi.licenciatura.cm2122.g22005787_22005793.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/pt.ulusofona.ecati.deisi.licenciatura.cm2122.g22005787_22005793.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/pt.ulusofona.ecati.deisi.licenciatura.cm2122.g22005787_22005793.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/pt.ulusofona.ecati.deisi.licenciatura.cm2122.g22005787_22005793.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/pt.ulusofona.ecati.deisi.licenciatura.cm2122.g22005787_22005793.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/pt.ulusofona.ecati.deisi.licenciatura.cm2122.g22005787_22005793.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/pt.ulusofona.ecati.deisi.licenciatura.cm2122.g22005787_22005793.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/pt.ulusofona.ecati.deisi.licenciatura.cm2122.g22005787_22005793.app.unitTest.iml" />
     </modules>
   </component>
 </project>
