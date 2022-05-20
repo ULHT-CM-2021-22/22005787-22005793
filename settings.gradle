@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "pt.ulusofona.ecati.deisi.licenciatura.cm2122.g22005787_22005793"
+rootProject.name = "pt.ulusofona.deisi.cm2122.g22005787_22005793"
 include ':app'

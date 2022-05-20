@@ -8,10 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.coroutines.delay
 import org.eazegraph.lib.models.PieModel
 import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentChartBinding
-import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentDashboardBinding
 
 
 class ChartFragment : Fragment() {

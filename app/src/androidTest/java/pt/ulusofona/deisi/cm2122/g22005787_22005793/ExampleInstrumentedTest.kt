@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("pt.ulusofona.deisi.cm2122.pt.ulusofona.ecati.deisi.licenciatura.cm2122.g22005787_22005793", appContext.packageName)
+        assertEquals("pt.ulusofona.deisi.cm2122.pt.ulusofona.ecati.deisi.licenciatura.cm2122.pt.ulusofona.deisi.cm2122.g22005787_22005793", appContext.packageName)
     }
 }

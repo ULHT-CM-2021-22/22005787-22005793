@@ -77,7 +77,7 @@
     <content url="file://$MODULE_DIR$/../../../app/src/androidTestDebug" />
     <orderEntry type="jdk" jdkName="Android API 31 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="pt.ulusofona.ecati.deisi.licenciatura.cm2122.g22005787_22005793.app.main" scope="TEST" />
+    <orderEntry type="module" module-name="pt.ulusofona.ecati.deisi.licenciatura.cm2122.pt.ulusofona.deisi.cm2122.g22005787_22005793.app.main" scope="TEST" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.5.2" level="project" />
@@ -171,5 +171,4 @@
     <orderEntry type="library" scope="TEST" name="Gradle: com.github.blackfizz:eazegraph:1.2.5l@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.annotation:annotation-experimental:1.1.0@aar" level="project" />
   </component>
-  <component name="TestModuleProperties" production-module="pt.ulusofona.ecati.deisi.licenciatura.cm2122.g22005787_22005793.app.main" />
 </module>

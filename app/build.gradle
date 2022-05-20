@@ -10,7 +10,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "pt.ulusofona.deisi.cm2122.pt.ulusofona.ecati.deisi.licenciatura.cm2122.g22005787_22005793"
+        applicationId "pt.ulusofona.deisi.cm2122.g22005787_22005793"
         minSdk 23
         targetSdk 31
         versionCode 1
