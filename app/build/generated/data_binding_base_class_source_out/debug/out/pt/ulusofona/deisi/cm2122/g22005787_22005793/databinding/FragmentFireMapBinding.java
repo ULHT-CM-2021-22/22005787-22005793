@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.gms.maps.MapView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -25,7 +26,7 @@ public final class FragmentFireMapBinding implements ViewBinding {
   public final ImageView imageview4;
 
   @NonNull
-  public final ImageView map;
+  public final MapView map;
 
   @NonNull
   public final TextView riscoRegiao;
@@ -34,7 +35,7 @@ public final class FragmentFireMapBinding implements ViewBinding {
   public final RelativeLayout riskLayout;
 
   private FragmentFireMapBinding(@NonNull FrameLayout rootView, @NonNull ImageView imageview4,
-      @NonNull ImageView map, @NonNull TextView riscoRegiao, @NonNull RelativeLayout riskLayout) {
+      @NonNull MapView map, @NonNull TextView riscoRegiao, @NonNull RelativeLayout riskLayout) {
     this.rootView = rootView;
     this.imageview4 = imageview4;
     this.map = map;
@@ -76,7 +77,7 @@ public final class FragmentFireMapBinding implements ViewBinding {
       }
 
       id = R.id.map;
-      ImageView map = ViewBindings.findChildViewById(rootView, id);
+      MapView map = ViewBindings.findChildViewById(rootView, id);
       if (map == null) {
         break missingId;
       }

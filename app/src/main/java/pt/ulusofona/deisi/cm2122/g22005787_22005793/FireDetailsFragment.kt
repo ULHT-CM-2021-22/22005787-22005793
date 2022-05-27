@@ -15,7 +15,6 @@ private const val ARG_FIRE = "ARG_FIRE"
 
 class FireDetailsFragment : Fragment() {
 
-    private var viewM : ImageView? = null
     private var model = FireModel
     private var fireData: FireData? = null
     private lateinit var binding: FragmentFireDetailsBinding
