@@ -76,7 +76,6 @@ class FireRegistrationFragment : Fragment() {
         Toast.makeText(this.context, R.string.no_permission, Toast.LENGTH_SHORT).show()
     }
 
-
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
