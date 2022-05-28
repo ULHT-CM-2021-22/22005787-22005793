@@ -5,6 +5,7 @@ import android.os.Parcelable
 import kotlinx.parcelize.IgnoredOnParcel
 import kotlinx.parcelize.Parcelize
 import kotlinx.parcelize.RawValue
+import java.util.*
 
 
 @Parcelize
@@ -15,6 +16,8 @@ data class FireData(
     var fotos: Uri?
 ) : Parcelable {
 
+    @IgnoredOnParcel
+    var id: String? = null
     @IgnoredOnParcel
     var concelho: String? = null
     @IgnoredOnParcel

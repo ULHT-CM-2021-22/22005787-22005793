@@ -14,8 +14,7 @@ import kotlinx.coroutines.launch
 import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentFireListBinding
 
 class FireListFragment : Fragment() {
-    private val model = FireModel
-    private val fires = FireModel.list
+    private lateinit var viewModel: FireViewModel
     private var adapter = FireAdapter(onClick = ::onOperationClick, onLongClick = ::onOperationLongClick)
     private lateinit var binding: FragmentFireListBinding
    private val timer = object : CountDownTimer(20000, 1000) {
@@ -47,7 +46,7 @@ class FireListFragment : Fragment() {
         updateDashboard()
         binding.fireList.layoutManager = LinearLayoutManager(context)
         binding.fireList.adapter = adapter
-        model.getHistory { updateHistory(it) }
+        viewModel.onGetHistory { updateHistory(it) }
     }
 
     private fun onOperationClick(fireData: FireData) {
@@ -83,9 +82,9 @@ class FireListFragment : Fragment() {
     }
 
     private fun updateDashboard() {
-        model.alterarRisco()
-        binding.riscoRegiao.text = model.risk
-        backgroundColor(model.risk)
+        viewModel.onAlterarRisco()
+        binding.riscoRegiao.text = viewModel.onGetRisk()
+        backgroundColor(viewModel.onGetRisk())
 
 
     }

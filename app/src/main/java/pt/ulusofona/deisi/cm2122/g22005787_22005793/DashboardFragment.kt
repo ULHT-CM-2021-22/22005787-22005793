@@ -15,8 +15,8 @@ import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentDashboar
 class DashboardFragment : Fragment() {
 
     private lateinit var binding: FragmentDashboardBinding
-    private var districts = FireModel.districts
-    private var model = FireModel
+    private var districts = viewModel.onGetDistricts()
+    private lateinit var viewModel: FireViewModel
     private var actualDistrict = "Lisboa"
     private val timer = object : CountDownTimer(20000, 1000) {
         override fun onTick(millisUntilFinished: Long) {}
@@ -44,7 +44,7 @@ class DashboardFragment : Fragment() {
             val builder: android.app.AlertDialog.Builder = android.app.AlertDialog.Builder(context)
             builder.setTitle(getString(R.string.choose_region))
             builder.setItems(districts, DialogInterface.OnClickListener { dialog, which ->
-                model.alterarRegiao(districts[which])
+                viewModel.onAlterarRegiao(districts[which])
                 binding.textRegion.text = districts[which]
                 binding.textRegion.textSize = 18F
                 actualDistrict = districts[which]
@@ -74,12 +74,12 @@ class DashboardFragment : Fragment() {
 
     private fun updateDashboard() {
         binding.textRegion.text = actualDistrict
-        binding.fogosRegiao.text = model.fogosNaRegiao()
-        binding.fogosTotal.text = model.totalFogos()
-        binding.mediaFogosRegiao.text = model.mediaFogosNaRegiao()
-        model.alterarRisco()
-        binding.riscoRegiao.text = model.risk
-        backgroundColor(model.risk)
+        binding.fogosRegiao.text = viewModel.onFogosNaRegiao()
+        binding.fogosTotal.text = viewModel.onTotalFogos()
+        binding.mediaFogosRegiao.text = viewModel.onMediaFogosNaRegiao()
+        viewModel.onAlterarRisco()
+        binding.riscoRegiao.text = viewModel.onGetRisk()
+        backgroundColor(viewModel.onGetRisk())
     }
 
     private fun backgroundColor(risk: String) {

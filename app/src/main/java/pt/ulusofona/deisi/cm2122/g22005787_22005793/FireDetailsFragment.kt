@@ -15,7 +15,7 @@ private const val ARG_FIRE = "ARG_FIRE"
 
 class FireDetailsFragment : Fragment() {
 
-    private var model = FireModel
+    private lateinit var viewModel: FireViewModel
     private var fireData: FireData? = null
     private lateinit var binding: FragmentFireDetailsBinding
     private val timer = object : CountDownTimer(20000, 1000) {
@@ -75,9 +75,9 @@ class FireDetailsFragment : Fragment() {
     }
 
     private fun updateDashboard() {
-        model.alterarRisco()
-        binding.riscoRegiao.text = model.risk
-        backgroundColor(model.risk)
+        viewModel.onAlterarRisco()
+        binding.riscoRegiao.text = viewModel.onGetRisk()
+        backgroundColor(viewModel.onGetRisk())
 
 
     }

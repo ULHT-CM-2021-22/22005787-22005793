@@ -23,7 +23,7 @@ class FireMapFragment : Fragment(), OnLocationChangedListener {
     private lateinit var binding: FragmentFireMapBinding
     private lateinit var geocoder: Geocoder
     private var map: GoogleMap? = null
-    private var model = FireModel
+    private lateinit var viewModel: FireViewModel
     private val timer = object : CountDownTimer(20000, 1000) {
         override fun onTick(millisUntilFinished: Long) {}
         override fun onFinish() {
@@ -86,9 +86,9 @@ class FireMapFragment : Fragment(), OnLocationChangedListener {
     }
 
     private fun updateDashboard() {
-        model.alterarRisco()
-        binding.riscoRegiao.text = model.risk
-        backgroundColor(model.risk)
+        viewModel.onAlterarRisco()
+        binding.riscoRegiao.text = viewModel.onGetRisk()
+        backgroundColor(viewModel.onGetRisk())
 
 
     }

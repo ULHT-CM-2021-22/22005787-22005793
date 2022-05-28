@@ -10,25 +10,25 @@ import com.google.android.gms.location.*
 class FusedLocation private constructor(context: Context) : LocationCallback() {
     private val TAG = FusedLocation::class.java.simpleName
 
-    // Intervalos de tempo em que a localização é verificada, 20 segundos
-    private val TIME_BETWEEN_UPDATES = 20 * 1000L
 
-    // Configurar a precisão e os tempos entre atualizações da localização
+    private val TIME_BETWEEN_UPDATES = 2 * 1000L
+
+
     private var locationRequest = LocationRequest.create().apply {
         priority = LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY
         interval = TIME_BETWEEN_UPDATES
     }
 
-    // Este atributo será utilizado para acedermos à API da Fused Location
+
     private var client = FusedLocationProviderClient(context)
 
     init {
-        // Instanciar o objeto que permite definir as configurações
+
         val locationSettingsRequest = LocationSettingsRequest.Builder()
             .addLocationRequest(locationRequest)
             .build()
 
-        // Aplicar as configurações ao serviço de localização
+
         LocationServices.getSettingsClient(context)
             .checkLocationSettings(locationSettingsRequest)
 

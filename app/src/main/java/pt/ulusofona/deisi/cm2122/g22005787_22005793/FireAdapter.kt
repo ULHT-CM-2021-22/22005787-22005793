@@ -11,8 +11,6 @@ class FireAdapter(
     private val onLongClick: (FireData) -> Boolean
 ) : RecyclerView.Adapter<FireAdapter.HistoryViewHolder>() {
 
-    val model = FireModel
-
     class HistoryViewHolder(val binding: ItemExpressionBinding) :
         RecyclerView.ViewHolder(binding.root)
 

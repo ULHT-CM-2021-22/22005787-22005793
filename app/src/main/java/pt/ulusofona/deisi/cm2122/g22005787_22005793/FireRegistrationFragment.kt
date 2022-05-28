@@ -26,9 +26,8 @@ import java.util.*
 
 class FireRegistrationFragment : Fragment() {
 
-    private val model = FireModel
-    private var fires = FireModel.list
-    private var districts = FireModel.districts
+    private lateinit var viewModel: FireViewModel
+    private var districts = viewModel.onGetDistricts()
     private lateinit var binding: FragmentFireRegistrationBinding
     private val timer = object : CountDownTimer(20000, 1000) {
         override fun onTick(millisUntilFinished: Long) {}
@@ -154,7 +153,7 @@ class FireRegistrationFragment : Fragment() {
                 imageURI = null
                 Toast.makeText(context, getString(R.string.fields), Toast.LENGTH_SHORT).show()
             } else {
-                model.addToHistory(fire)
+                viewModel.onAddToHistory(fire)
                 binding.plainTextInputCc.text = null
                 binding.plainTextInputName.text = null
                 binding.buttonFoto.text = getString(R.string.click)
