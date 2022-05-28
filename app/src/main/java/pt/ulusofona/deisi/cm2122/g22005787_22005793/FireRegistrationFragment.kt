@@ -152,7 +152,7 @@ class FireRegistrationFragment : Fragment() {
                 imageURI = null
                 Toast.makeText(context, getString(R.string.fields), Toast.LENGTH_SHORT).show()
             } else {
-                //viewModel.onAddToHistory(fire)
+                //viewModel.onAddToHistory(fire) e
                 binding.plainTextInputCc.text = null
                 binding.plainTextInputName.text = null
                 binding.buttonFoto.text = getString(R.string.click)
