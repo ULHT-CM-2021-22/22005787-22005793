@@ -152,7 +152,7 @@ class FireRegistrationFragment : Fragment() {
                 imageURI = null
                 Toast.makeText(context, getString(R.string.fields), Toast.LENGTH_SHORT).show()
             } else {
-                viewModel.onAddToHistory(fire)
+                //viewModel.onAddToHistory(fire)
                 binding.plainTextInputCc.text = null
                 binding.plainTextInputName.text = null
                 binding.buttonFoto.text = getString(R.string.click)
@@ -183,9 +183,9 @@ class FireRegistrationFragment : Fragment() {
 
 
     private fun updateDashboard() {
-        model.alterarRisco()
-        binding.riscoRegiao.text = model.risk
-        backgroundColor(model.risk)
+        viewModel.onAlterarRisco()
+        binding.riscoRegiao.text = viewModel.onGetRisk()
+        backgroundColor(viewModel.onGetRisk())
 
 
     }
