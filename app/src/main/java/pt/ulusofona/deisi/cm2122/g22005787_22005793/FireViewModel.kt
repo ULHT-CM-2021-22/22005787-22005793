@@ -10,7 +10,9 @@ class FireViewModel(application: Application) : AndroidViewModel(application) {
     private val model = FireModel(FireDatabase.getInstance(application).fireDao())
 
     fun onGetHistory(onFinished: (List<FireData>) -> Unit) {
-        model.getHistory(onFinished)
+        CoroutineScope(Dispatchers.Main).launch {
+            model.getHistory(onFinished)
+        }
     }
 
     fun onAddToHistory(onFinished: () -> Unit, fireData: FireRoom) {
