@@ -20,6 +20,9 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentFireRegistrationBinding
 import java.text.SimpleDateFormat
 import java.util.*
@@ -29,6 +32,8 @@ class FireRegistrationFragment : Fragment() {
     private lateinit var viewModel: FireViewModel
     private var districts = viewModel.onGetDistricts()
     private lateinit var binding: FragmentFireRegistrationBinding
+    private var adapter =
+        FireAdapter(onClick = ::onOperationClick, onLongClick = ::onOperationLongClick)
     private val timer = object : CountDownTimer(20000, 1000) {
         override fun onTick(millisUntilFinished: Long) {}
         override fun onFinish() {
@@ -36,43 +41,57 @@ class FireRegistrationFragment : Fragment() {
         }
     }
     private var check = false
-    private var imageURI : Uri? = null
+    private var imageURI: Uri? = null
 
+    private fun onOperationClick(fire: FireData) {
+
+    }
+
+    private fun onOperationLongClick(fire: FireData): Boolean {
+        return false
+    }
 
     private fun openGalleryForImage() {
-        val intent = Intent(Intent.ACTION_PICK,
-            MediaStore.Images.Media.INTERNAL_CONTENT_URI)
+        val intent = Intent(
+            Intent.ACTION_PICK,
+            MediaStore.Images.Media.INTERNAL_CONTENT_URI
+        )
         startImageResult.launch(intent)
     }
 
     private val startImageResult = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
-    ){ result: ActivityResult ->
-        if (result.resultCode == Activity.RESULT_OK){
+    ) { result: ActivityResult ->
+        if (result.resultCode == Activity.RESULT_OK) {
             binding.buttonFoto.text = getString(R.string.chosen)
             imageURI = result.data?.data
         }
     }
 
-    private fun initPermissions(){
-        if(!getPermission()) setPermission()
+    private fun initPermissions() {
+        if (!getPermission()) setPermission()
         else check = true
     }
 
     private fun getPermission(): Boolean =
         (ContextCompat.checkSelfPermission(
             this.requireContext(),
-            Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED)
+            Manifest.permission.READ_EXTERNAL_STORAGE
+        ) == PackageManager.PERMISSION_GRANTED)
 
-    private fun setPermission(){
+    private fun setPermission() {
         val permissionsList = listOf<String>(
             Manifest.permission.READ_EXTERNAL_STORAGE
         )
-        ActivityCompat.requestPermissions(this.requireActivity(), permissionsList.toTypedArray(), PERMISSION_CODE)
+        ActivityCompat.requestPermissions(
+            this.requireActivity(),
+            permissionsList.toTypedArray(),
+            PERMISSION_CODE
+        )
     }
 
 
-    private fun errorPermission(){
+    private fun errorPermission() {
         Toast.makeText(this.context, R.string.no_permission, Toast.LENGTH_SHORT).show()
     }
 
@@ -81,7 +100,7 @@ class FireRegistrationFragment : Fragment() {
         permissions: Array<out String>,
         grantResults: IntArray
     ) {
-        when(requestCode){
+        when (requestCode) {
             PERMISSION_CODE -> {
                 if (grantResults.isEmpty() || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
                     errorPermission()
@@ -129,15 +148,17 @@ class FireRegistrationFragment : Fragment() {
 
         binding.buttonSendRegistration.setOnClickListener {
             val distrito = binding.buttonRegion.text.toString()
-            val pessoa = Pessoa(
-                binding.plainTextInputName.text.toString(),
-                binding.plainTextInputCc.text.toString()
-            )
+            val nomePessoa = binding.plainTextInputName.text.toString()
+            val ccPessoa = binding.plainTextInputCc.text.toString()
             val sdf = SimpleDateFormat("dd/MM/yyyy - HH:mm:ss")
             val data = sdf.format(Date())
-            val fotos = imageURI
+            val fotos = null
             var allRight = true
-            val fire = FireData(pessoa, distrito, data, fotos)
+            val fire = FireData(nomePessoa,ccPessoa, distrito, data, fotos)
+            val fireRoom = FireRoom(
+                UUID.randomUUID().toString(), distrito, null, null,
+                null, null, null, getString(R.string.confirm), data, fotos, null, nomePessoa,ccPessoa, true
+            )
             fire.estado = getString(R.string.confirm)
             if (binding.plainTextInputCc.text == null || binding.plainTextInputName.text == null
                 || binding.plainTextInputCc.text.toString() == "" || binding.plainTextInputName.text.toString() == ""
@@ -152,7 +173,12 @@ class FireRegistrationFragment : Fragment() {
                 imageURI = null
                 Toast.makeText(context, getString(R.string.fields), Toast.LENGTH_SHORT).show()
             } else {
-                //viewModel.onAddToHistory(fire) e
+                viewModel.onAddToHistory({
+                    CoroutineScope(Dispatchers.Main).launch {
+                        viewModel.onGetHistory { updateHistory(it) }
+                    }
+                }, fireRoom)
+
                 binding.plainTextInputCc.text = null
                 binding.plainTextInputName.text = null
                 binding.buttonFoto.text = getString(R.string.click)
@@ -181,13 +207,24 @@ class FireRegistrationFragment : Fragment() {
     }
 
 
-
     private fun updateDashboard() {
         viewModel.onAlterarRisco()
         binding.riscoRegiao.text = viewModel.onGetRisk()
         backgroundColor(viewModel.onGetRisk())
 
 
+    }
+
+    private fun updateHistory(fires: List<FireData>) {
+        val history = fires.map {
+            FireData(
+                it.distrito, it.concelho, it.freguesia, it.meiosOperacionais, it.meiosVeiculos,
+                it.meiosAereos, it.estado, it.data, it.fotos, it.obs, it.nomePessoa,it.ccPessoa, it.porConfirmar
+            )
+        }
+        CoroutineScope(Dispatchers.Main).launch {
+            adapter.updateItems(history)
+        }
     }
 
     private fun backgroundColor(risk: String) {

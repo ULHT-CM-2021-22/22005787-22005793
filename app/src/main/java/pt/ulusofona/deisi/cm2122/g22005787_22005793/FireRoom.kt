@@ -11,7 +11,7 @@ data class FireRoom(
     @PrimaryKey val id: String = UUID.randomUUID().toString(),
     val distrito: String?, val concelho: String?, val freguesia: String?,
     val meiosOperacionais: String?, val meiosVeiculos: String?, val meiosAereos: String?,
-    val estado: String?, val data: String?, val fotos: Uri?,
-    val obs: String?, val pessoa: @RawValue Pessoa?, val porConfirmar: Boolean?
+    val estado: String?, val data: String?, val fotos: String?,
+    val obs: String?, val nomePessoa: String?, val ccPessoa: String?, val porConfirmar: Boolean?
 ) {
 }

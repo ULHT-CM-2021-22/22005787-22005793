@@ -15,8 +15,12 @@ import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentDashboar
 class DashboardFragment : Fragment() {
 
     private lateinit var binding: FragmentDashboardBinding
-    private var districts = viewModel.onGetDistricts()
     private lateinit var viewModel: FireViewModel
+    private var districts = arrayOf(
+        "Aveiro", "Beja", "Braga", "Bragança", "Castelo Branco", "Coimbra",
+        "Évora", "Faro", "Guarda", "Leiria", "Lisboa", "Portalegre",
+        "Porto", "Santarém", "Setúbal", "Viana do Castelo", "Vila Real", "Viseu"
+    )
     private var actualDistrict = "Lisboa"
     private val timer = object : CountDownTimer(20000, 1000) {
         override fun onTick(millisUntilFinished: Long) {}

@@ -10,10 +10,11 @@ import java.util.*
 
 @Parcelize
 data class FireData(
-    var pessoa: @RawValue Pessoa?,
+    var nomePessoa: String?,
+    var ccPessoa: String?,
     var distrito: String?,
     var data: String?,
-    var fotos: Uri?
+    var fotos: String?
 ) : Parcelable {
 
     @IgnoredOnParcel
@@ -38,10 +39,10 @@ data class FireData(
     constructor(
         distrito: String?, concelho: String?, freguesia: String?,
         meiosOperacionais: String?, meiosVeiculos: String?, meiosAereos: String?,
-        estado: String?, data: String?, fotos: Uri?,
-        obs: String?, pessoa: @RawValue Pessoa?, porConfirmar: Boolean?
+        estado: String?, data: String?, fotos: String?,
+        obs: String?, nomePessoa: String?,ccPessoa: String?, porConfirmar: Boolean?
     ) :
-            this(pessoa, distrito, data, fotos) {
+            this(nomePessoa,ccPessoa, distrito, data, fotos) {
         this.concelho = concelho
         this.freguesia = freguesia
         this.meiosOperacionais = meiosOperacionais

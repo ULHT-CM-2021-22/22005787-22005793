@@ -57,12 +57,12 @@ class FireDetailsFragment : Fragment() {
             binding.textDate.text = it.data ?: getString(R.string.inf_not_available)
             binding.textFireState.text = it.estado ?: getString(R.string.inf_not_available)
             binding.textFiremen.text = it.meiosOperacionais ?: getString(R.string.inf_not_available)
-            binding.foto.setImageURI(it.fotos) ?: getString(R.string.inf_not_available)
+           // binding.foto.setImageURI(it.fotos) ?: getString(R.string.inf_not_available)
             binding.textParish.text = it.freguesia ?: getString(R.string.inf_not_available)
             binding.textObs.text = it.obs ?: getString(R.string.inf_not_available)
             binding.textRegiao.text = it.distrito ?: getString(R.string.inf_not_available)
-            binding.textPessoa.text = it.pessoa?.nome ?: getString(R.string.inf_not_available)
-            binding.textCc.text = it.pessoa?.cc ?: getString(R.string.inf_not_available)
+            binding.textPessoa.text = it.nomePessoa ?: getString(R.string.inf_not_available)
+            binding.textCc.text = it.ccPessoa?: getString(R.string.inf_not_available)
             updateDashboard()
 
 

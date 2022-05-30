@@ -20,7 +20,7 @@ class FireModel (private val dao: FireDao) {
             val list = dao.getAll()
             onFinished(list.map { FireData(it.distrito,it.concelho,it.freguesia,it.meiosOperacionais
             ,it.meiosVeiculos,it.meiosAereos,it.estado,it.data,it.fotos
-            ,it.obs,it.pessoa,it.porConfirmar) })
+            ,it.obs,it.nomePessoa,it.ccPessoa,it.porConfirmar) })
         }
     }
 
