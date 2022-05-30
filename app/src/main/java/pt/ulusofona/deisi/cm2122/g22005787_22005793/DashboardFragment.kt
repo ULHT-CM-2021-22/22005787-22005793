@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentDashboardBinding
 
 
@@ -37,7 +38,7 @@ class DashboardFragment : Fragment() {
         (requireActivity() as AppCompatActivity).supportActionBar?.title =
             getString(R.string.app_name)
         val view = inflater.inflate(R.layout.fragment_dashboard, container, false)
-
+        viewModel = ViewModelProvider(this).get(FireViewModel::class.java)
         binding = FragmentDashboardBinding.bind(view)
         return binding.root
     }

@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.CameraPosition
@@ -40,6 +41,7 @@ class FireMapFragment : Fragment(), OnLocationChangedListener {
             getString(R.string.fire_map)
         val view = inflater.inflate(R.layout.fragment_fire_map, container, false)
         geocoder = Geocoder(context, Locale.getDefault())
+        viewModel = ViewModelProvider(this).get(FireViewModel::class.java)
         binding = FragmentFireMapBinding.bind(view)
         binding.map.onCreate(savedInstanceState)
         binding.map.getMapAsync {

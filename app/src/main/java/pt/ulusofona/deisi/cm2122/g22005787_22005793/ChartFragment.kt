@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import org.eazegraph.lib.models.PieModel
 import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentChartBinding
 
@@ -30,7 +31,7 @@ class ChartFragment : Fragment() {
         (requireActivity() as AppCompatActivity).supportActionBar?.title =
             getString(R.string.chart_name)
         val view = inflater.inflate(R.layout.fragment_chart, container, false)
-
+        viewModel = ViewModelProvider(this).get(FireViewModel::class.java)
         binding = FragmentChartBinding.bind(view)
         districtsInChart()
         binding.piechart.startAnimation()

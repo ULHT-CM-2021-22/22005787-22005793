@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentFireDetailsBinding
 
 
@@ -33,6 +34,7 @@ class FireDetailsFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         fireData?.let { (requireActivity() as AppCompatActivity).supportActionBar?.title = it.distrito }
         val view = inflater.inflate(R.layout.fragment_fire_details, container, false)
+        viewModel = ViewModelProvider(this).get(FireViewModel::class.java)
         binding = FragmentFireDetailsBinding.bind(view)
         return binding.root
     }

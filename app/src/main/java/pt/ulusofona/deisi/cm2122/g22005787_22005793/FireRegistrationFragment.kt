@@ -20,6 +20,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.ViewModelProvider
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -30,7 +31,11 @@ import java.util.*
 class FireRegistrationFragment : Fragment() {
 
     private lateinit var viewModel: FireViewModel
-    private var districts = viewModel.onGetDistricts()
+    private var districts = arrayOf(
+        "Aveiro", "Beja", "Braga", "Bragança", "Castelo Branco", "Coimbra",
+        "Évora", "Faro", "Guarda", "Leiria", "Lisboa", "Portalegre",
+        "Porto", "Santarém", "Setúbal", "Viana do Castelo", "Vila Real", "Viseu"
+    )
     private lateinit var binding: FragmentFireRegistrationBinding
     private var adapter =
         FireAdapter(onClick = ::onOperationClick, onLongClick = ::onOperationLongClick)
@@ -125,6 +130,7 @@ class FireRegistrationFragment : Fragment() {
         (requireActivity() as AppCompatActivity).supportActionBar?.title =
             getString(R.string.newRegister)
         val view = inflater.inflate(R.layout.fragment_fire_registration, container, false)
+        viewModel = ViewModelProvider(this).get(FireViewModel::class.java)
         binding = FragmentFireRegistrationBinding.bind(view)
         initPermissions()
         return binding.root
@@ -154,10 +160,22 @@ class FireRegistrationFragment : Fragment() {
             val data = sdf.format(Date())
             val fotos = null
             var allRight = true
-            val fire = FireData(nomePessoa,ccPessoa, distrito, data, fotos)
+            val fire = FireData(nomePessoa, ccPessoa, distrito, data, fotos)
             val fireRoom = FireRoom(
-                UUID.randomUUID().toString(), distrito, null, null,
-                null, null, null, getString(R.string.confirm), data, fotos, null, nomePessoa,ccPessoa, true
+                UUID.randomUUID().toString(),
+                distrito,
+                null,
+                null,
+                null,
+                null,
+                null,
+                getString(R.string.confirm),
+                data,
+                fotos,
+                null,
+                nomePessoa,
+                ccPessoa,
+                true
             )
             fire.estado = getString(R.string.confirm)
             if (binding.plainTextInputCc.text == null || binding.plainTextInputName.text == null
@@ -218,8 +236,19 @@ class FireRegistrationFragment : Fragment() {
     private fun updateHistory(fires: List<FireData>) {
         val history = fires.map {
             FireData(
-                it.distrito, it.concelho, it.freguesia, it.meiosOperacionais, it.meiosVeiculos,
-                it.meiosAereos, it.estado, it.data, it.fotos, it.obs, it.nomePessoa,it.ccPessoa, it.porConfirmar
+                it.distrito,
+                it.concelho,
+                it.freguesia,
+                it.meiosOperacionais,
+                it.meiosVeiculos,
+                it.meiosAereos,
+                it.estado,
+                it.data,
+                it.fotos,
+                it.obs,
+                it.nomePessoa,
+                it.ccPessoa,
+                it.porConfirmar
             )
         }
         CoroutineScope(Dispatchers.Main).launch {

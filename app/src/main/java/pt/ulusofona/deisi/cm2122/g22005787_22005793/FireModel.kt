@@ -58,7 +58,7 @@ class FireModel (private val dao: FireDao) {
     }
 
     fun totalFogos(): String {
-        var total = ""
+        var total = "0"
         CoroutineScope(Dispatchers.IO).launch {
            total = dao.getAll().size.toString()
         }
@@ -66,8 +66,8 @@ class FireModel (private val dao: FireDao) {
     }
 
     fun mediaFogosNaRegiao(): String {
-        val count = fogosNaRegiao()
-        val total = totalFogos()
+        val count: String = fogosNaRegiao()
+        val total: String = totalFogos()
         val media = (count.toDouble() / total.toDouble())
         return media.toString()
     }
