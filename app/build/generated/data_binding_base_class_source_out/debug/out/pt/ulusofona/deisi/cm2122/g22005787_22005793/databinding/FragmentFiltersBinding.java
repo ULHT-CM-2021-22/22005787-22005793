@@ -27,17 +27,21 @@ public final class FragmentFiltersBinding implements ViewBinding {
   public final Button buttonRegionFilter;
 
   @NonNull
+  public final Button buttonSubmit;
+
+  @NonNull
   public final TextView distritoFiltros;
 
   @NonNull
   public final TextView raioPretendido;
 
   private FragmentFiltersBinding(@NonNull FrameLayout rootView, @NonNull Button buttonRadiusFilter,
-      @NonNull Button buttonRegionFilter, @NonNull TextView distritoFiltros,
-      @NonNull TextView raioPretendido) {
+      @NonNull Button buttonRegionFilter, @NonNull Button buttonSubmit,
+      @NonNull TextView distritoFiltros, @NonNull TextView raioPretendido) {
     this.rootView = rootView;
     this.buttonRadiusFilter = buttonRadiusFilter;
     this.buttonRegionFilter = buttonRegionFilter;
+    this.buttonSubmit = buttonSubmit;
     this.distritoFiltros = distritoFiltros;
     this.raioPretendido = raioPretendido;
   }
@@ -81,6 +85,12 @@ public final class FragmentFiltersBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.button_submit;
+      Button buttonSubmit = ViewBindings.findChildViewById(rootView, id);
+      if (buttonSubmit == null) {
+        break missingId;
+      }
+
       id = R.id.distrito_filtros;
       TextView distritoFiltros = ViewBindings.findChildViewById(rootView, id);
       if (distritoFiltros == null) {
@@ -94,7 +104,7 @@ public final class FragmentFiltersBinding implements ViewBinding {
       }
 
       return new FragmentFiltersBinding((FrameLayout) rootView, buttonRadiusFilter,
-          buttonRegionFilter, distritoFiltros, raioPretendido);
+          buttonRegionFilter, buttonSubmit, distritoFiltros, raioPretendido);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

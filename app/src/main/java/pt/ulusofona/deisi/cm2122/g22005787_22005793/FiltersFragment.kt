@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import kotlinx.coroutines.CoroutineScope
@@ -25,7 +26,7 @@ class FiltersFragment : Fragment() {
     )
 
     private var radius = arrayOf(
-        "50", "150", "300"
+        "50km", "150km", "300km"
     )
 
     private lateinit var binding: FragmentFiltersBinding
@@ -63,9 +64,9 @@ class FiltersFragment : Fragment() {
         }
 
         binding.buttonSubmit.setOnClickListener {
-
-            //ações para o botão de submit
-
+            binding.buttonRegionFilter.text = getString(R.string.click)
+            binding.buttonRadiusFilter.text = getString(R.string.click)
+            Toast.makeText(context,"Filtros aplicados", Toast.LENGTH_SHORT).show()
         }
 
     }
