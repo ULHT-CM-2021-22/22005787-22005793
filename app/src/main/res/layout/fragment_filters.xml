@@ -10,37 +10,30 @@
         android:orientation="vertical" >
 
         <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="30dp"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/raio_pretendido"
-                android:drawableLeft="@drawable/ic_target"
-                android:layout_height="60dp"
                 android:layout_width="300dp"
-                android:text="@string/raio"
+                android:layout_height="60dp"
+                android:drawableLeft="@drawable/ic_target"
                 android:gravity="fill_vertical"
-                android:textSize="22dp"
-                />
+                android:text="@string/raio"
+                android:textSize="22dp" />
 
 
-            <CheckBox android:id="@+id/raio_50km"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/_50km"
-                android:onClick="onCheckboxClicked"/>
-            <CheckBox android:id="@+id/raio_150km"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/_150km"
-                android:onClick="onCheckboxClicked"/>
-            <CheckBox android:id="@+id/raio_300km"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/_300km"
-                android:onClick="onCheckboxClicked"/>
+            <Button
+                android:id="@+id/button_radius_filter"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:text="@string/click"
+                android:textColor="@color/orange" />
+
         </LinearLayout>
 
 
@@ -69,11 +62,29 @@
 
 
 
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/button_submit"
+                android:layout_marginTop="100dp"
+                android:text="@string/submit"
+                android:textColor="@color/orange"
+                android:background="@android:color/transparent"/>
 
 
 
         </LinearLayout>
+
+
+
 
     </LinearLayout>
 

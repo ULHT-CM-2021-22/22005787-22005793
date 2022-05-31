@@ -9,6 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentDashboardBinding
 import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentFiltersBinding
 
@@ -19,6 +22,10 @@ class FiltersFragment : Fragment() {
         "Aveiro", "Beja", "Braga", "Bragança", "Castelo Branco", "Coimbra",
         "Évora", "Faro", "Guarda", "Leiria", "Lisboa", "Portalegre",
         "Porto", "Santarém", "Setúbal", "Viana do Castelo", "Vila Real", "Viseu"
+    )
+
+    private var radius = arrayOf(
+        "50", "150", "300"
     )
 
     private lateinit var binding: FragmentFiltersBinding
@@ -45,6 +52,22 @@ class FiltersFragment : Fragment() {
             })
             builder.show()
         }
+
+        binding.buttonRadiusFilter.setOnClickListener {
+            val builder: android.app.AlertDialog.Builder = android.app.AlertDialog.Builder(context)
+            builder.setTitle(getString(R.string.raio))
+            builder.setItems(radius, DialogInterface.OnClickListener { dialog, which ->
+                binding.buttonRadiusFilter.text = radius[which]
+            })
+            builder.show()
+        }
+
+        binding.buttonSubmit.setOnClickListener {
+
+            //ações para o botão de submit
+
+        }
+
     }
 
     override fun onResume() {
@@ -59,5 +82,9 @@ class FiltersFragment : Fragment() {
     override fun onPause() {
         super.onPause()
     }
+
+
+
+
 
 }

@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -22,32 +21,24 @@ public final class FragmentFiltersBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
+  public final Button buttonRadiusFilter;
+
+  @NonNull
   public final Button buttonRegionFilter;
 
   @NonNull
   public final TextView distritoFiltros;
 
   @NonNull
-  public final CheckBox raio150km;
-
-  @NonNull
-  public final CheckBox raio300km;
-
-  @NonNull
-  public final CheckBox raio50km;
-
-  @NonNull
   public final TextView raioPretendido;
 
-  private FragmentFiltersBinding(@NonNull FrameLayout rootView, @NonNull Button buttonRegionFilter,
-      @NonNull TextView distritoFiltros, @NonNull CheckBox raio150km, @NonNull CheckBox raio300km,
-      @NonNull CheckBox raio50km, @NonNull TextView raioPretendido) {
+  private FragmentFiltersBinding(@NonNull FrameLayout rootView, @NonNull Button buttonRadiusFilter,
+      @NonNull Button buttonRegionFilter, @NonNull TextView distritoFiltros,
+      @NonNull TextView raioPretendido) {
     this.rootView = rootView;
+    this.buttonRadiusFilter = buttonRadiusFilter;
     this.buttonRegionFilter = buttonRegionFilter;
     this.distritoFiltros = distritoFiltros;
-    this.raio150km = raio150km;
-    this.raio300km = raio300km;
-    this.raio50km = raio50km;
     this.raioPretendido = raioPretendido;
   }
 
@@ -78,6 +69,12 @@ public final class FragmentFiltersBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.button_radius_filter;
+      Button buttonRadiusFilter = ViewBindings.findChildViewById(rootView, id);
+      if (buttonRadiusFilter == null) {
+        break missingId;
+      }
+
       id = R.id.button_region_filter;
       Button buttonRegionFilter = ViewBindings.findChildViewById(rootView, id);
       if (buttonRegionFilter == null) {
@@ -90,32 +87,14 @@ public final class FragmentFiltersBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.raio_150km;
-      CheckBox raio150km = ViewBindings.findChildViewById(rootView, id);
-      if (raio150km == null) {
-        break missingId;
-      }
-
-      id = R.id.raio_300km;
-      CheckBox raio300km = ViewBindings.findChildViewById(rootView, id);
-      if (raio300km == null) {
-        break missingId;
-      }
-
-      id = R.id.raio_50km;
-      CheckBox raio50km = ViewBindings.findChildViewById(rootView, id);
-      if (raio50km == null) {
-        break missingId;
-      }
-
       id = R.id.raio_pretendido;
       TextView raioPretendido = ViewBindings.findChildViewById(rootView, id);
       if (raioPretendido == null) {
         break missingId;
       }
 
-      return new FragmentFiltersBinding((FrameLayout) rootView, buttonRegionFilter, distritoFiltros,
-          raio150km, raio300km, raio50km, raioPretendido);
+      return new FragmentFiltersBinding((FrameLayout) rootView, buttonRadiusFilter,
+          buttonRegionFilter, distritoFiltros, raioPretendido);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

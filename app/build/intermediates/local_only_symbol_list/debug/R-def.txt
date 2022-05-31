@@ -53,6 +53,7 @@ id beja
 id braga
 id braganca
 id button_foto
+id button_radius_filter
 id button_region
 id button_region_filter
 id button_send_registration
@@ -106,9 +107,6 @@ id plain_text_input_cc
 id plain_text_input_name
 id portalegre
 id porto
-id raio_150km
-id raio_300km
-id raio_50km
 id raio_pretendido
 id risco_regiao
 id risk_layout

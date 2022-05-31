@@ -47,8 +47,10 @@
     <string name="_50km">50 Km</string>
     <string name="_150km">150 Km</string>
     <string name="_300km">300 Km</string>
-    <string name="raio">Introduza o raio pretendido</string>
+    <string name="raio">Escolha o raio pretendido</string>
     <string name="district_filters">Escolha um distrito</string>
+    <string name="submit">Submeter</string>
+
 
 
 
