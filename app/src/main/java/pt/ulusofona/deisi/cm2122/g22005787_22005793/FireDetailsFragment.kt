@@ -77,7 +77,7 @@ class FireDetailsFragment : Fragment() {
     }
 
     private fun updateDashboard() {
-        viewModel.onAlterarRisco()
+        viewModel.onAlterarRisco{}
         binding.riscoRegiao.text = viewModel.onGetRisk()
         backgroundColor(viewModel.onGetRisk())
 

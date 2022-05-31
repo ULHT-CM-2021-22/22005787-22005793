@@ -1590,6 +1590,9 @@
     <item quantity="one"><ns2:g id="count">%d</ns2:g> new notification</item>
     <item quantity="other"><ns2:g id="count">%d</ns2:g> new notifications</item>
   </plurals>
+    <string name="_150km">150 Km</string>
+    <string name="_300km">300 Km</string>
+    <string name="_50km">50 Km</string>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_up_description">Navigate up</string>
     <string name="abc_action_menu_overflow_description">More options</string>
@@ -1657,6 +1660,7 @@
     <string name="county">Conselho</string>
     <string name="dashboard">Dashboard</string>
     <string name="district">Distrito</string>
+    <string name="district_filters">Escolha um distrito</string>
     <string name="drawer_closed">Fechado</string>
     <string name="drawer_open">Aberto</string>
     <string name="error_icon_content_description">Error</string>
@@ -1771,6 +1775,7 @@
     <string name="path_password_eye_mask_visible" translatable="false">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_strike_through" translatable="false">M3.27,4.27 L19.74,20.74</string>
     <string name="photo">Fotografia(Opcional)</string>
+    <string name="raio">Introduza o raio pretendido</string>
     <string name="region">Região</string>
     <string name="region_fires">Fogos na região</string>
     <string name="region_risk">Risco na região</string>

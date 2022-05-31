@@ -9,6 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import org.eazegraph.lib.models.PieModel
 import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentChartBinding
 
@@ -64,186 +67,277 @@ class ChartFragment : Fragment() {
         binding.piechart.addPieSlice(
             PieModel(
                 binding.aveiro.text.toString(),
-                viewModel.onFogosNaRegiao(binding.aveiro.text.toString()).toFloat(),
+                viewModel.onFogosNaRegiao({ it.toString() }, binding.aveiro.text.toString())
+                    .toFloat(),
                 resources.getColor(R.color.red)
             )
         )
 
-        binding.aveiro.append(" (" + viewModel.onFogosNaRegiao(binding.aveiro.text.toString()) + ")")
+        binding.aveiro.append(
+            " (" + viewModel.onFogosNaRegiao(
+                {},
+                binding.aveiro.text.toString()
+            ) + ")"
+        )
 
         binding.piechart.addPieSlice(
             PieModel(
                 binding.lisboa.text.toString(),
-                viewModel.onFogosNaRegiao(binding.lisboa.text.toString()).toFloat(),
+                addSlice(binding.lisboa.text.toString()).toFloat(),
                 resources.getColor(R.color.black)
             )
         )
 
-        binding.lisboa.append(" (" + viewModel.onFogosNaRegiao(binding.lisboa.text.toString()) + ")")
+        binding.lisboa.append(
+            " (" + viewModel.onFogosNaRegiao(
+                {},
+                binding.lisboa.text.toString()
+            ) + ")"
+        )
 
         binding.piechart.addPieSlice(
             PieModel(
                 binding.porto.text.toString(),
-                viewModel.onFogosNaRegiao(binding.porto.text.toString()).toFloat(),
+                viewModel.onFogosNaRegiao({}, binding.porto.text.toString()).toFloat(),
                 resources.getColor(R.color.blue)
             )
         )
 
-        binding.porto.append(" (" + viewModel.onFogosNaRegiao(binding.porto.text.toString()) + ")")
+        binding.porto.append(
+            " (" + viewModel.onFogosNaRegiao(
+                {},
+                binding.porto.text.toString()
+            ) + ")"
+        )
 
         binding.piechart.addPieSlice(
             PieModel(
                 binding.beja.text.toString(),
-                viewModel.onFogosNaRegiao(binding.beja.text.toString()).toFloat(),
+                viewModel.onFogosNaRegiao({}, binding.beja.text.toString()).toFloat(),
                 resources.getColor(R.color.colorAccent)
             )
         )
 
-        binding.beja.append(" (" + viewModel.onFogosNaRegiao(binding.beja.text.toString()) + ")")
+        binding.beja.append(
+            " (" + viewModel.onFogosNaRegiao(
+                {},
+                binding.beja.text.toString()
+            ) + ")"
+        )
 
         binding.piechart.addPieSlice(
             PieModel(
                 binding.braga.text.toString(),
-                viewModel.onFogosNaRegiao(binding.braga.text.toString()).toFloat(),
+                viewModel.onFogosNaRegiao({}, binding.braga.text.toString()).toFloat(),
                 resources.getColor(R.color.green)
             )
         )
 
-        binding.braga.append(" (" + viewModel.onFogosNaRegiao(binding.braga.text.toString()) + ")")
+        binding.braga.append(
+            " (" + viewModel.onFogosNaRegiao(
+                {},
+                binding.braga.text.toString()
+            ) + ")"
+        )
 
         binding.piechart.addPieSlice(
             PieModel(
                 binding.braganca.text.toString(),
-                viewModel.onFogosNaRegiao(binding.braganca.text.toString()).toFloat(),
+                viewModel.onFogosNaRegiao({}, binding.braganca.text.toString()).toFloat(),
                 resources.getColor(R.color.grey)
             )
         )
 
-        binding.braganca.append(" (" + viewModel.onFogosNaRegiao(binding.braganca.text.toString()) + ")")
+        binding.braganca.append(
+            " (" + viewModel.onFogosNaRegiao(
+                {},
+                binding.braganca.text.toString()
+            ) + ")"
+        )
 
         binding.piechart.addPieSlice(
             PieModel(
                 binding.casteloBranco.text.toString(),
-                viewModel.onFogosNaRegiao(binding.casteloBranco.text.toString()).toFloat(),
+                viewModel.onFogosNaRegiao({}, binding.casteloBranco.text.toString()).toFloat(),
                 resources.getColor(R.color.purple_200)
             )
         )
 
-        binding.casteloBranco.append(" (" + viewModel.onFogosNaRegiao(binding.casteloBranco.text.toString()) + ")")
+        binding.casteloBranco.append(
+            " (" + viewModel.onFogosNaRegiao(
+                {},
+                binding.casteloBranco.text.toString()
+            ) + ")"
+        )
 
         binding.piechart.addPieSlice(
             PieModel(
                 binding.coimbra.text.toString(),
-                viewModel.onFogosNaRegiao(binding.coimbra.text.toString()).toFloat(),
+                viewModel.onFogosNaRegiao({}, binding.coimbra.text.toString()).toFloat(),
                 resources.getColor(R.color.real_green)
             )
         )
 
-        binding.coimbra.append(" (" + viewModel.onFogosNaRegiao(binding.coimbra.text.toString()) + ")")
+        binding.coimbra.append(
+            " (" + viewModel.onFogosNaRegiao(
+                {},
+                binding.coimbra.text.toString()
+            ) + ")"
+        )
 
         binding.piechart.addPieSlice(
             PieModel(
                 binding.evora.text.toString(),
-                viewModel.onFogosNaRegiao(binding.evora.text.toString()).toFloat(),
+                viewModel.onFogosNaRegiao({}, binding.evora.text.toString()).toFloat(),
                 resources.getColor(R.color.pink)
             )
         )
 
-        binding.evora.append(" (" + viewModel.onFogosNaRegiao(binding.evora.text.toString()) + ")")
+        binding.evora.append(
+            " (" + viewModel.onFogosNaRegiao(
+                {},
+                binding.evora.text.toString()
+            ) + ")"
+        )
 
         binding.piechart.addPieSlice(
             PieModel(
                 binding.faro.text.toString(),
-                viewModel.onFogosNaRegiao(binding.faro.text.toString()).toFloat(),
+                viewModel.onFogosNaRegiao({}, binding.faro.text.toString()).toFloat(),
                 resources.getColor(R.color.purple_500)
             )
         )
 
-        binding.faro.append(" (" + viewModel.onFogosNaRegiao(binding.faro.text.toString()) + ")")
+        binding.faro.append(
+            " (" + viewModel.onFogosNaRegiao(
+                {},
+                binding.faro.text.toString()
+            ) + ")"
+        )
 
         binding.piechart.addPieSlice(
             PieModel(
                 binding.guarda.text.toString(),
-                viewModel.onFogosNaRegiao(binding.guarda.text.toString()).toFloat(),
+                viewModel.onFogosNaRegiao({}, binding.guarda.text.toString()).toFloat(),
                 resources.getColor(R.color.purple_700)
             )
         )
 
-        binding.guarda.append(" (" + viewModel.onFogosNaRegiao(binding.guarda.text.toString()) + ")")
+        binding.guarda.append(
+            " (" + viewModel.onFogosNaRegiao(
+                {},
+                binding.guarda.text.toString()
+            ) + ")"
+        )
 
         binding.piechart.addPieSlice(
             PieModel(
                 binding.leiria.text.toString(),
-                viewModel.onFogosNaRegiao(binding.leiria.text.toString()).toFloat(),
+                viewModel.onFogosNaRegiao({}, binding.leiria.text.toString()).toFloat(),
                 resources.getColor(R.color.colorPrimary)
             )
         )
 
-        binding.leiria.append(" (" + viewModel.onFogosNaRegiao(binding.leiria.text.toString()) + ")")
+        binding.leiria.append(
+            " (" + viewModel.onFogosNaRegiao(
+                {},
+                binding.leiria.text.toString()
+            ) + ")"
+        )
 
         binding.piechart.addPieSlice(
             PieModel(
                 binding.portalegre.text.toString(),
-                viewModel.onFogosNaRegiao(binding.portalegre.text.toString()).toFloat(),
+                viewModel.onFogosNaRegiao({}, binding.portalegre.text.toString()).toFloat(),
                 resources.getColor(R.color.yellow)
             )
         )
 
-        binding.portalegre.append(" (" + viewModel.onFogosNaRegiao(binding.portalegre.text.toString()) + ")")
+        binding.portalegre.append(
+            " (" + viewModel.onFogosNaRegiao(
+                {},
+                binding.portalegre.text.toString()
+            ) + ")"
+        )
 
         binding.piechart.addPieSlice(
             PieModel(
                 binding.santarem.text.toString(),
-                viewModel.onFogosNaRegiao(binding.santarem.text.toString()).toFloat(),
+                viewModel.onFogosNaRegiao({}, binding.santarem.text.toString()).toFloat(),
                 resources.getColor(R.color.brown)
             )
         )
 
-        binding.santarem.append(" (" + viewModel.onFogosNaRegiao(binding.santarem.text.toString()) + ")")
+        binding.santarem.append(
+            " (" + viewModel.onFogosNaRegiao(
+                {},
+                binding.santarem.text.toString()
+            ) + ")"
+        )
 
         binding.piechart.addPieSlice(
             PieModel(
                 binding.setubal.text.toString(),
-                viewModel.onFogosNaRegiao(binding.setubal.text.toString()).toFloat(),
+                viewModel.onFogosNaRegiao({}, binding.setubal.text.toString()).toFloat(),
                 resources.getColor(R.color.orange)
             )
         )
 
-        binding.setubal.append(" (" + viewModel.onFogosNaRegiao(binding.setubal.text.toString()) + ")")
+        binding.setubal.append(
+            " (" + viewModel.onFogosNaRegiao(
+                {},
+                binding.setubal.text.toString()
+            ) + ")"
+        )
 
         binding.piechart.addPieSlice(
             PieModel(
                 binding.vianaDoCastelo.text.toString(),
-                viewModel.onFogosNaRegiao(binding.vianaDoCastelo.text.toString()).toFloat(),
+                viewModel.onFogosNaRegiao({}, binding.vianaDoCastelo.text.toString()).toFloat(),
                 resources.getColor(R.color.orangeDark)
             )
         )
 
-        binding.vianaDoCastelo.append(" (" + viewModel.onFogosNaRegiao(binding.vianaDoCastelo.text.toString()) + ")")
+        binding.vianaDoCastelo.append(
+            " (" + viewModel.onFogosNaRegiao(
+                {},
+                binding.vianaDoCastelo.text.toString()
+            ) + ")"
+        )
 
         binding.piechart.addPieSlice(
             PieModel(
                 binding.vilaReal.text.toString(),
-                viewModel.onFogosNaRegiao(binding.vilaReal.text.toString()).toFloat(),
+                viewModel.onFogosNaRegiao({}, binding.vilaReal.text.toString()).toFloat(),
                 resources.getColor(R.color.teal_200)
             )
         )
 
-        binding.vilaReal.append(" (" + viewModel.onFogosNaRegiao(binding.vilaReal.text.toString()) + ")")
+        binding.vilaReal.append(
+            " (" + viewModel.onFogosNaRegiao(
+                {},
+                binding.vilaReal.text.toString()
+            ) + ")"
+        )
 
         binding.piechart.addPieSlice(
             PieModel(
                 binding.viseu.text.toString(),
-                viewModel.onFogosNaRegiao(binding.viseu.text.toString()).toFloat(),
+                viewModel.onFogosNaRegiao({}, binding.viseu.text.toString()).toFloat(),
                 resources.getColor(R.color.teal_700)
             )
         )
 
-        binding.viseu.append(" (" + viewModel.onFogosNaRegiao(binding.viseu.text.toString()) + ")")
+        binding.viseu.append(
+            " (" + viewModel.onFogosNaRegiao(
+                {},
+                binding.viseu.text.toString()
+            ) + ")"
+        )
     }
 
     private fun updateDashboard() {
-        viewModel.onAlterarRisco()
+        viewModel.onAlterarRisco {}
         binding.riscoRegiao.text = viewModel.onGetRisk()
         backgroundColor(viewModel.onGetRisk())
     }
@@ -256,5 +350,15 @@ class ChartFragment : Fragment() {
             Risk.MODERATE.risco -> binding.riskLayout.setBackgroundColor(resources.getColor(R.color.green))
             Risk.REDUCED.risco -> binding.riskLayout.setBackgroundColor(resources.getColor(R.color.green))
         }
+    }
+
+    private fun addSlice(region: String): String {
+        var sliceName = "0"
+        viewModel.onFogosNaRegiao({
+            CoroutineScope(Dispatchers.Main).launch {
+                sliceName = it
+            }
+            },region)
+        return sliceName
     }
 }

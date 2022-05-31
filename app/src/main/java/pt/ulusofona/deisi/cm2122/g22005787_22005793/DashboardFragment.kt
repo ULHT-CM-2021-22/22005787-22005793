@@ -10,6 +10,9 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentDashboardBinding
 
 
@@ -49,7 +52,7 @@ class DashboardFragment : Fragment() {
             val builder: android.app.AlertDialog.Builder = android.app.AlertDialog.Builder(context)
             builder.setTitle(getString(R.string.choose_region))
             builder.setItems(districts, DialogInterface.OnClickListener { dialog, which ->
-                viewModel.onAlterarRegiao(districts[which])
+                viewModel.onAlterarRegiao({},districts[which])
                 binding.textRegion.text = districts[which]
                 binding.textRegion.textSize = 18F
                 actualDistrict = districts[which]
@@ -79,10 +82,24 @@ class DashboardFragment : Fragment() {
 
     private fun updateDashboard() {
         binding.textRegion.text = actualDistrict
-        binding.fogosRegiao.text = viewModel.onFogosNaRegiao()
-        binding.fogosTotal.text = viewModel.onTotalFogos()
-        binding.mediaFogosRegiao.text = viewModel.onMediaFogosNaRegiao()
-        viewModel.onAlterarRisco()
+        viewModel.onFogosNaRegiao() {
+            CoroutineScope(Dispatchers.Main).launch {
+                binding.fogosRegiao.text = it
+            }
+        }
+         viewModel.onTotalFogos(){
+             CoroutineScope(Dispatchers.Main).launch {
+                 binding.fogosTotal.text = it
+             }
+         }
+
+         viewModel.onMediaFogosNaRegiao(){
+             CoroutineScope(Dispatchers.Main).launch {
+                 binding.mediaFogosRegiao.text = it
+             }
+         }
+
+        viewModel.onAlterarRisco{}
         binding.riscoRegiao.text = viewModel.onGetRisk()
         backgroundColor(viewModel.onGetRisk())
     }

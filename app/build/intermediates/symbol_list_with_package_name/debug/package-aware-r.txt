@@ -2595,6 +2595,7 @@ drawable ic_pie_chart
 drawable ic_planemode
 drawable ic_region
 drawable ic_send
+drawable ic_target
 drawable ic_warning
 drawable lusofona
 drawable m3_appbar_background
@@ -2751,6 +2752,7 @@ id braganca
 id buttonPanel
 id button_foto
 id button_region
+id button_region_filter
 id button_send_registration
 id cache_measures
 id callMeasure
@@ -2817,6 +2819,7 @@ id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
 id disjoint
+id distrito_filtros
 id dragAnticlockwise
 id dragClockwise
 id dragDown
@@ -3043,6 +3046,10 @@ id postLayout
 id progress_circular
 id progress_horizontal
 id radio
+id raio_150km
+id raio_300km
+id raio_50km
+id raio_pretendido
 id ratio
 id rectangles
 id reverseSawtooth
@@ -3317,6 +3324,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_chart
 layout fragment_dashboard
+layout fragment_filters
 layout fragment_fire_details
 layout fragment_fire_list
 layout fragment_fire_map
@@ -3409,6 +3417,9 @@ menu example_menu2
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
+string _150km
+string _300km
+string _50km
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -3476,6 +3487,7 @@ string confirm
 string county
 string dashboard
 string district
+string district_filters
 string drawer_closed
 string drawer_open
 string error_icon_content_description
@@ -3590,6 +3602,7 @@ string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string photo
+string raio
 string region
 string region_fires
 string region_risk

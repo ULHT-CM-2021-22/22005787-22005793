@@ -49,8 +49,7 @@
     <string name="_300km">300 Km</string>
     <string name="raio">Introduza o raio pretendido</string>
     <string name="district_filters">Escolha um distrito</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 
 </resources>

@@ -23,20 +23,7 @@ public final class FragmentFireListBinding implements ViewBinding {
   @NonNull
   private final FrameLayout rootView;
 
-  /**
-   * This binding is not available in all configurations.
-   * <p>
-   * Present:
-   * <ul>
-   *   <li>layout/</li>
-   * </ul>
-   *
-   * Absent:
-   * <ul>
-   *   <li>layout-land/</li>
-   * </ul>
-   */
-  @Nullable
+  @NonNull
   public final FloatingActionButton filter;
 
   @NonNull
@@ -55,7 +42,7 @@ public final class FragmentFireListBinding implements ViewBinding {
   public final TextView textNoHistoryAvailable;
 
   private FragmentFireListBinding(@NonNull FrameLayout rootView,
-      @Nullable FloatingActionButton filter, @NonNull RecyclerView fireList,
+      @NonNull FloatingActionButton filter, @NonNull RecyclerView fireList,
       @NonNull ImageView imageview4, @NonNull TextView riscoRegiao,
       @NonNull RelativeLayout riskLayout, @NonNull TextView textNoHistoryAvailable) {
     this.rootView = rootView;
@@ -96,6 +83,9 @@ public final class FragmentFireListBinding implements ViewBinding {
     missingId: {
       id = R.id.filter;
       FloatingActionButton filter = ViewBindings.findChildViewById(rootView, id);
+      if (filter == null) {
+        break missingId;
+      }
 
       id = R.id.fire_list;
       RecyclerView fireList = ViewBindings.findChildViewById(rootView, id);

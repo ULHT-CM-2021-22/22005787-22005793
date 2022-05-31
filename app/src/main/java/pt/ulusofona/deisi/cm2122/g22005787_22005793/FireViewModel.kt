@@ -19,28 +19,28 @@ class FireViewModel(application: Application) : AndroidViewModel(application) {
         model.addToHistory(onFinished, fireData)
     }
 
-    fun onFogosNaRegiao(): String {
-        return model.fogosNaRegiao()
+    fun onFogosNaRegiao(onFinished: (String) -> Unit): String {
+        return model.fogosNaRegiao(onFinished)
     }
 
-    fun onFogosNaRegiao(regiao: String): String {
-        return model.fogosNaRegiao(regiao)
+    fun onFogosNaRegiao(onFinished: (String) -> Unit,regiao: String): String {
+        return model.fogosNaRegiao(onFinished, regiao)
     }
 
-    fun onTotalFogos(): String {
-        return model.totalFogos()
+    fun onTotalFogos(onFinished: (String) -> Unit): String {
+        return model.totalFogos(onFinished)
     }
 
-    fun onMediaFogosNaRegiao(): String {
-        return model.mediaFogosNaRegiao()
+    fun onMediaFogosNaRegiao(onFinished: (String) -> Unit): String {
+        return model.mediaFogosNaRegiao(onFinished)
     }
 
-    fun onAlterarRegiao(regiao: String) {
-        model.alterarRegiao(regiao)
+    fun onAlterarRegiao(onFinished: () -> Unit,regiao: String) {
+        model.alterarRegiao(onFinished, regiao)
     }
 
-    fun onAlterarRisco() {
-        model.alterarRisco()
+    fun onAlterarRisco(onFinished: () -> Unit) {
+        model.alterarRisco(onFinished)
     }
 
     fun onGetRisk(): String {

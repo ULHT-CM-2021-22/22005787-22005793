@@ -44,6 +44,7 @@ drawable ic_pie_chart
 drawable ic_planemode
 drawable ic_region
 drawable ic_send
+drawable ic_target
 drawable ic_warning
 drawable lusofona
 drawable mapa
@@ -53,10 +54,12 @@ id braga
 id braganca
 id button_foto
 id button_region
+id button_region_filter
 id button_send_registration
 id cardViewGraph
 id castelo_branco
 id coimbra
+id distrito_filtros
 id drawer
 id ee
 id evora
@@ -103,6 +106,10 @@ id plain_text_input_cc
 id plain_text_input_name
 id portalegre
 id porto
+id raio_150km
+id raio_300km
+id raio_50km
+id raio_pretendido
 id risco_regiao
 id risk_layout
 id santarem
@@ -129,6 +136,7 @@ id viseu
 layout activity_main
 layout fragment_chart
 layout fragment_dashboard
+layout fragment_filters
 layout fragment_fire_details
 layout fragment_fire_list
 layout fragment_fire_map
@@ -138,6 +146,9 @@ layout nav_header
 menu drawer_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
+string _150km
+string _300km
+string _50km
 string air_support
 string another_info
 string app_name
@@ -151,6 +162,7 @@ string confirm
 string county
 string dashboard
 string district
+string district_filters
 string drawer_closed
 string drawer_open
 string exit
@@ -172,6 +184,7 @@ string no_permission
 string obs
 string parish
 string photo
+string raio
 string region
 string region_fires
 string region_risk

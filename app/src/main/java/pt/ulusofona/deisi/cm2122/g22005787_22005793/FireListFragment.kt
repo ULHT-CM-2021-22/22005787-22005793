@@ -50,10 +50,8 @@ class FireListFragment : Fragment() {
         binding.fireList.layoutManager = LinearLayoutManager(context)
         binding.fireList.adapter = adapter
         viewModel.onGetHistory { updateHistory(it) }
-        binding.filter.setOnClickListener { view ->
-            Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
-                .setAction("Action", null)
-                .show()
+        binding.filter.setOnClickListener {
+            NavigationManager.goToFiltersFragment(parentFragmentManager)
         }
     }
 
@@ -90,7 +88,7 @@ class FireListFragment : Fragment() {
     }
 
     private fun updateDashboard() {
-        viewModel.onAlterarRisco()
+        viewModel.onAlterarRisco{}
         binding.riscoRegiao.text = viewModel.onGetRisk()
         backgroundColor(viewModel.onGetRisk())
 
