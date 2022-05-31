@@ -44,6 +44,13 @@
     <string name="chosen">Escolhido</string>
     <string name="dashboard">Dashboard</string>
     <string name="filters">Filtros</string>
+    <string name="_50km">50 Km</string>
+    <string name="_150km">150 Km</string>
+    <string name="_300km">300 Km</string>
+    <string name="raio">Introduza o raio pretendido</string>
+    <string name="district_filters">Escolha um distrito</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

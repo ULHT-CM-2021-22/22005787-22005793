@@ -35,4 +35,9 @@ object NavigationManager {
     fun goToFireDetailsFragment(fm: FragmentManager, fireData: FireData) {
         placeFragment(fm, FireDetailsFragment.newInstance(fireData))
     }
+
+    fun goToFiltersFragment(fm: FragmentManager) {
+        placeFragment(fm, FiltersFragment())
+    }
+
 }

@@ -50,7 +50,7 @@ class FireListFragment : Fragment() {
         binding.fireList.layoutManager = LinearLayoutManager(context)
         binding.fireList.adapter = adapter
         viewModel.onGetHistory { updateHistory(it) }
-        binding.filter?.setOnClickListener { view ->
+        binding.filter.setOnClickListener { view ->
             Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
                 .setAction("Action", null)
                 .show()
