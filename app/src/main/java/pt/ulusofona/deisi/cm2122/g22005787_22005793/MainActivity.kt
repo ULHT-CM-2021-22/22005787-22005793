@@ -57,6 +57,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun onClickNavigationItem(item: MenuItem): Boolean{
         when(item.itemId) {
+            R.id.nav_dashboard -> NavigationManager.goToDashboardFragment(supportFragmentManager)
             R.id.nav_fireList -> NavigationManager.goToFireListFragment(supportFragmentManager)
             R.id.nav_fireMap -> NavigationManager.goToFireMapFragment(supportFragmentManager)
             R.id.nav_newFire -> NavigationManager.goToFireRegistrationFragment(supportFragmentManager)

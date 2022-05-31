@@ -3,6 +3,10 @@
 
     <group>
         <item
+            android:id="@+id/nav_dashboard"
+            android:icon="@drawable/ic_dashboard"
+            android:title="@string/dashboard"/>
+        <item
             android:id="@+id/nav_fireList"
             android:icon="@drawable/ic_fire_list"
             android:title="@string/fire_list"/>

@@ -31,11 +31,13 @@
     <string name="click">Clique para escolher</string>
     <string name="confirm">Por confirmar</string>
     <string name="county">Conselho</string>
+    <string name="dashboard">Dashboard</string>
     <string name="district">Distrito</string>
     <string name="drawer_closed">Fechado</string>
     <string name="drawer_open">Aberto</string>
     <string name="exit">Encerrar a aplicação</string>
     <string name="fields">Preecha todos os campos</string>
+    <string name="filters">Filtros</string>
     <string name="fire_average">Média de fogos na região</string>
     <string name="fire_list">Lista de fogos</string>
     <string name="fire_map">Mapa de fogos</string>
@@ -64,19 +66,19 @@
     <string name="vehicles">Meios terrestres</string>
     <string name="welcome">Bem-vindo ao FireTracker</string>
     <style name="Theme.G22005787_22005793" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
-        <!-- Primary brand color. -->
+        
+        
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorOnBackground">@color/white</item>
-        <!-- Secondary brand color. -->
+        
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
+        
         <item name="android:statusBarColor">@color/orange</item>
-        <!-- Customize your theme here. -->
+        
     </style>
     <style name="ToolbarTheme" parent="Theme.G22005787_22005793">
         <item name="android:background">@color/orange</item>

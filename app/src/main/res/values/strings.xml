@@ -42,6 +42,8 @@
     <string name="chart">Gráfico</string>
     <string name="no_permission">Não tem permissão para ler arquivos</string>
     <string name="chosen">Escolhido</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="filters">Filtros</string>
 
 
 </resources>

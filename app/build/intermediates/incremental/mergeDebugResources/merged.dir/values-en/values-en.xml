@@ -11,11 +11,13 @@
     <string name="click">Click to choose</string>
     <string name="confirm">To be confirmed</string>
     <string name="county">County</string>
+    <string name="dashboard">Dashboard</string>
     <string name="district">District</string>
     <string name="drawer_closed">Closed</string>
     <string name="drawer_open">Open</string>
     <string name="exit">Close app</string>
     <string name="fields">Fill all the fields</string>
+    <string name="filters">Filters</string>
     <string name="fire_average">Average number of fires in the region</string>
     <string name="fire_list">Fire\'s list</string>
     <string name="fire_map">Fire\'s map</string>

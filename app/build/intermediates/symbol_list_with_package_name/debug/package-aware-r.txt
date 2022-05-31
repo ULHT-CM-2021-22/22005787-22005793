@@ -2568,9 +2568,11 @@ drawable googleg_standard_color_18
 drawable ic_car
 drawable ic_card
 drawable ic_clock_black_24dp
+drawable ic_dashboard
 drawable ic_date
 drawable ic_exit
 drawable ic_eye
+drawable ic_filter
 drawable ic_fire_list
 drawable ic_fire_map
 drawable ic_fireplace
@@ -2847,6 +2849,7 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id filter
 id fire_list
 id fitToContents
 id fixed
@@ -2988,6 +2991,7 @@ id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
 id nav_chart
+id nav_dashboard
 id nav_drawer
 id nav_exit
 id nav_fireList
@@ -3470,6 +3474,7 @@ string common_signin_button_text
 string common_signin_button_text_long
 string confirm
 string county
+string dashboard
 string district
 string drawer_closed
 string drawer_open
@@ -3479,6 +3484,7 @@ string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string fields
+string filters
 string fire_average
 string fire_list
 string fire_map

@@ -43,4 +43,6 @@
     <string name="chart">Chart</string>
     <string name="no_permission">Not allowed to read files</string>
     <string name="chosen">Chosen</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="filters">Filters</string>
 </resources>

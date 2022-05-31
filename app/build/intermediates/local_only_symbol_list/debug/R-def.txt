@@ -25,9 +25,11 @@ drawable fireregisto
 drawable fogo
 drawable ic_car
 drawable ic_card
+drawable ic_dashboard
 drawable ic_date
 drawable ic_exit
 drawable ic_eye
+drawable ic_filter
 drawable ic_fire_list
 drawable ic_fire_map
 drawable ic_fireplace
@@ -59,6 +61,7 @@ id drawer
 id ee
 id evora
 id faro
+id filter
 id fire_list
 id fogos_regiao
 id fogos_total
@@ -89,6 +92,7 @@ id lisboa
 id map
 id media_fogos_regiao
 id nav_chart
+id nav_dashboard
 id nav_drawer
 id nav_exit
 id nav_fireList
@@ -145,11 +149,13 @@ string chosen
 string click
 string confirm
 string county
+string dashboard
 string district
 string drawer_closed
 string drawer_open
 string exit
 string fields
+string filters
 string fire_average
 string fire_list
 string fire_map

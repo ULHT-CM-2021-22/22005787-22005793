@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -21,6 +22,22 @@ import pt.ulusofona.deisi.cm2122.g22005787_22005793.R;
 public final class FragmentFireListBinding implements ViewBinding {
   @NonNull
   private final FrameLayout rootView;
+
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout-land/</li>
+   * </ul>
+   */
+  @Nullable
+  public final FloatingActionButton filter;
 
   @NonNull
   public final RecyclerView fireList;
@@ -37,10 +54,12 @@ public final class FragmentFireListBinding implements ViewBinding {
   @NonNull
   public final TextView textNoHistoryAvailable;
 
-  private FragmentFireListBinding(@NonNull FrameLayout rootView, @NonNull RecyclerView fireList,
+  private FragmentFireListBinding(@NonNull FrameLayout rootView,
+      @Nullable FloatingActionButton filter, @NonNull RecyclerView fireList,
       @NonNull ImageView imageview4, @NonNull TextView riscoRegiao,
       @NonNull RelativeLayout riskLayout, @NonNull TextView textNoHistoryAvailable) {
     this.rootView = rootView;
+    this.filter = filter;
     this.fireList = fireList;
     this.imageview4 = imageview4;
     this.riscoRegiao = riscoRegiao;
@@ -75,6 +94,9 @@ public final class FragmentFireListBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.filter;
+      FloatingActionButton filter = ViewBindings.findChildViewById(rootView, id);
+
       id = R.id.fire_list;
       RecyclerView fireList = ViewBindings.findChildViewById(rootView, id);
       if (fireList == null) {
@@ -105,8 +127,8 @@ public final class FragmentFireListBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentFireListBinding((FrameLayout) rootView, fireList, imageview4, riscoRegiao,
-          riskLayout, textNoHistoryAvailable);
+      return new FragmentFireListBinding((FrameLayout) rootView, filter, fireList, imageview4,
+          riscoRegiao, riskLayout, textNoHistoryAvailable);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
