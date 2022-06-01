@@ -17,9 +17,11 @@ class FireRetrofit(retrofit: Retrofit): FireModel() {
     override fun getHistory(onFinished: (List<FireData>) -> Unit) {
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                val fires = service.getAll()
-                onFinished(fires.map { FireData(it.district,it.concelho,it.freguesia,it.man.toString(),
-                it.toString(),it.toString(),it.status,it.data,null,it.extra,null,null,false) })
+                val fires = service.getAll().body()?.data
+                if (fires != null) {
+                    onFinished(fires.map{ FireData(it.district,it.concelho,it.freguesia,it.man.toString(),
+                        it.toString(),it.toString(),it.status,it.data,null,it.extra,null,null,false) })
+                }
             } catch (ex: HttpException) {
                 Log.e(TAG, ex.message())
             }
