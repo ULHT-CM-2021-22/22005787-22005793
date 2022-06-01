@@ -8,7 +8,7 @@ import java.util.*
 
 @Entity(tableName = "fires")
 data class FireRoom(
-    @PrimaryKey val id: String = UUID.randomUUID().toString(),
+    @PrimaryKey val id: String,
     val distrito: String?, val concelho: String?, val freguesia: String?,
     val meiosOperacionais: String?, val meiosVeiculos: String?, val meiosAereos: String?,
     val estado: String?, val data: String?, val fotos: String?,

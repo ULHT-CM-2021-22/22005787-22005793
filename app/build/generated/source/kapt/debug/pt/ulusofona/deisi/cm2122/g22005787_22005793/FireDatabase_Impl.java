@@ -34,7 +34,7 @@ public final class FireDatabase_Impl extends FireDatabase {
 
   @Override
   protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration configuration) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(1) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(2) {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
         _db.execSQL("CREATE TABLE IF NOT EXISTS `fires` (`id` TEXT NOT NULL, `distrito` TEXT, `concelho` TEXT, `freguesia` TEXT, `meiosOperacionais` TEXT, `meiosVeiculos` TEXT, `meiosAereos` TEXT, `estado` TEXT, `data` TEXT, `fotos` TEXT, `obs` TEXT, `nomePessoa` TEXT, `ccPessoa` TEXT, `porConfirmar` INTEGER, PRIMARY KEY(`id`))");

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -30,19 +31,51 @@ public final class FragmentFiltersBinding implements ViewBinding {
   public final Button buttonSubmit;
 
   @NonNull
+  public final CheckBox checkboxADecorrer;
+
+  @NonNull
+  public final CheckBox checkboxConcluido;
+
+  @NonNull
+  public final CheckBox checkboxOpAereos;
+
+  @NonNull
+  public final CheckBox checkboxOpTerrestres;
+
+  @NonNull
+  public final CheckBox checkboxOperacionais;
+
+  @NonNull
   public final TextView distritoFiltros;
+
+  @NonNull
+  public final TextView fireState;
+
+  @NonNull
+  public final TextView meiosOperacionaisFiltros;
 
   @NonNull
   public final TextView raioPretendido;
 
   private FragmentFiltersBinding(@NonNull FrameLayout rootView, @NonNull Button buttonRadiusFilter,
       @NonNull Button buttonRegionFilter, @NonNull Button buttonSubmit,
-      @NonNull TextView distritoFiltros, @NonNull TextView raioPretendido) {
+      @NonNull CheckBox checkboxADecorrer, @NonNull CheckBox checkboxConcluido,
+      @NonNull CheckBox checkboxOpAereos, @NonNull CheckBox checkboxOpTerrestres,
+      @NonNull CheckBox checkboxOperacionais, @NonNull TextView distritoFiltros,
+      @NonNull TextView fireState, @NonNull TextView meiosOperacionaisFiltros,
+      @NonNull TextView raioPretendido) {
     this.rootView = rootView;
     this.buttonRadiusFilter = buttonRadiusFilter;
     this.buttonRegionFilter = buttonRegionFilter;
     this.buttonSubmit = buttonSubmit;
+    this.checkboxADecorrer = checkboxADecorrer;
+    this.checkboxConcluido = checkboxConcluido;
+    this.checkboxOpAereos = checkboxOpAereos;
+    this.checkboxOpTerrestres = checkboxOpTerrestres;
+    this.checkboxOperacionais = checkboxOperacionais;
     this.distritoFiltros = distritoFiltros;
+    this.fireState = fireState;
+    this.meiosOperacionaisFiltros = meiosOperacionaisFiltros;
     this.raioPretendido = raioPretendido;
   }
 
@@ -91,9 +124,51 @@ public final class FragmentFiltersBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.checkbox_aDecorrer;
+      CheckBox checkboxADecorrer = ViewBindings.findChildViewById(rootView, id);
+      if (checkboxADecorrer == null) {
+        break missingId;
+      }
+
+      id = R.id.checkbox_concluido;
+      CheckBox checkboxConcluido = ViewBindings.findChildViewById(rootView, id);
+      if (checkboxConcluido == null) {
+        break missingId;
+      }
+
+      id = R.id.checkbox_opAereos;
+      CheckBox checkboxOpAereos = ViewBindings.findChildViewById(rootView, id);
+      if (checkboxOpAereos == null) {
+        break missingId;
+      }
+
+      id = R.id.checkbox_opTerrestres;
+      CheckBox checkboxOpTerrestres = ViewBindings.findChildViewById(rootView, id);
+      if (checkboxOpTerrestres == null) {
+        break missingId;
+      }
+
+      id = R.id.checkbox_operacionais;
+      CheckBox checkboxOperacionais = ViewBindings.findChildViewById(rootView, id);
+      if (checkboxOperacionais == null) {
+        break missingId;
+      }
+
       id = R.id.distrito_filtros;
       TextView distritoFiltros = ViewBindings.findChildViewById(rootView, id);
       if (distritoFiltros == null) {
+        break missingId;
+      }
+
+      id = R.id.fireState;
+      TextView fireState = ViewBindings.findChildViewById(rootView, id);
+      if (fireState == null) {
+        break missingId;
+      }
+
+      id = R.id.meiosOperacionais_filtros;
+      TextView meiosOperacionaisFiltros = ViewBindings.findChildViewById(rootView, id);
+      if (meiosOperacionaisFiltros == null) {
         break missingId;
       }
 
@@ -104,7 +179,9 @@ public final class FragmentFiltersBinding implements ViewBinding {
       }
 
       return new FragmentFiltersBinding((FrameLayout) rootView, buttonRadiusFilter,
-          buttonRegionFilter, buttonSubmit, distritoFiltros, raioPretendido);
+          buttonRegionFilter, buttonSubmit, checkboxADecorrer, checkboxConcluido, checkboxOpAereos,
+          checkboxOpTerrestres, checkboxOperacionais, distritoFiltros, fireState,
+          meiosOperacionaisFiltros, raioPretendido);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

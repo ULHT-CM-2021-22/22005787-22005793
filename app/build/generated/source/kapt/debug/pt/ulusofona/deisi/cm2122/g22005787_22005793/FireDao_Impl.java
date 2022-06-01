@@ -135,7 +135,7 @@ public final class FireDao_Impl implements FireDao {
   }
 
   @Override
-  public Object insert(final FireRoom fire, final Continuation<? super Unit> continuation) {
+  public Object insert(final FireRoom fire, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
@@ -148,12 +148,11 @@ public final class FireDao_Impl implements FireDao {
           __db.endTransaction();
         }
       }
-    }, continuation);
+    }, arg1);
   }
 
   @Override
-  public Object insertAll(final List<FireRoom> operations,
-      final Continuation<? super Unit> continuation) {
+  public Object insertAll(final List<FireRoom> operations, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
@@ -166,11 +165,11 @@ public final class FireDao_Impl implements FireDao {
           __db.endTransaction();
         }
       }
-    }, continuation);
+    }, arg1);
   }
 
   @Override
-  public Object delete(final String id, final Continuation<? super Integer> continuation) {
+  public Object delete(final String id, final Continuation<? super Integer> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Integer>() {
       @Override
       public Integer call() throws Exception {
@@ -191,11 +190,11 @@ public final class FireDao_Impl implements FireDao {
           __preparedStmtOfDelete.release(_stmt);
         }
       }
-    }, continuation);
+    }, arg1);
   }
 
   @Override
-  public Object deleteAll(final Continuation<? super Integer> continuation) {
+  public Object deleteAll(final Continuation<? super Integer> arg0) {
     return CoroutinesRoom.execute(__db, true, new Callable<Integer>() {
       @Override
       public Integer call() throws Exception {
@@ -210,11 +209,11 @@ public final class FireDao_Impl implements FireDao {
           __preparedStmtOfDeleteAll.release(_stmt);
         }
       }
-    }, continuation);
+    }, arg0);
   }
 
   @Override
-  public Object getAll(final Continuation<? super List<FireRoom>> continuation) {
+  public Object getAll(final Continuation<? super List<FireRoom>> arg0) {
     final String _sql = "SELECT * FROM fires ORDER BY data ASC";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
@@ -335,11 +334,11 @@ public final class FireDao_Impl implements FireDao {
           _statement.release();
         }
       }
-    }, continuation);
+    }, arg0);
   }
 
   @Override
-  public Object getById(final String id, final Continuation<? super FireRoom> continuation) {
+  public Object getById(final String id, final Continuation<? super FireRoom> arg1) {
     final String _sql = "SELECT * FROM fires WHERE id = ?";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
@@ -466,7 +465,7 @@ public final class FireDao_Impl implements FireDao {
           _statement.release();
         }
       }
-    }, continuation);
+    }, arg1);
   }
 
   public static List<Class<?>> getRequiredConverters() {

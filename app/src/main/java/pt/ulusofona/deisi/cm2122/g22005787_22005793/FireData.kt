@@ -18,7 +18,7 @@ data class FireData(
 ) : Parcelable {
 
     @IgnoredOnParcel
-    var id: String? = null
+    var id: String = UUID.randomUUID().toString()
     @IgnoredOnParcel
     var concelho: String? = null
     @IgnoredOnParcel

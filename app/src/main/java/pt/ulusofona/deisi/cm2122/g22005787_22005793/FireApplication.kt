@@ -8,7 +8,7 @@ class FireApplication : Application() {
         FusedLocation.start(this)
         FireRepository.init(this,
             FireModelRoom(FireDatabase.getInstance(this).fireDao()),
-            FireRetrofit(RetrofitBuilder.getInstance("https://cm-calculadora.herokuapp.com/api/"))
+            FireRetrofit(RetrofitBuilder.getInstance("https://api-dev.fogos.pt/"))
         )
     }
 }

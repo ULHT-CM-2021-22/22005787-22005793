@@ -82,7 +82,7 @@ class FireModelRoom (private val dao: FireDao): FireModel() {
         CoroutineScope(Dispatchers.IO).launch {
             val history = operations.map {
                     FireRoom(
-                        it.id!!,
+                        it.id,
                         it.distrito,
                         it.concelho,
                         it.freguesia,

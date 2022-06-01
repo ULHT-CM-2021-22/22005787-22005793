@@ -2771,6 +2771,11 @@ id chain
 id chain2
 id chains
 id checkbox
+id checkbox_aDecorrer
+id checkbox_concluido
+id checkbox_opAereos
+id checkbox_opTerrestres
+id checkbox_operacionais
 id checked
 id chip
 id chip1
@@ -2856,6 +2861,7 @@ id fill_horizontal
 id fill_vertical
 id filled
 id filter
+id fireState
 id fire_list
 id fitToContents
 id fixed
@@ -2962,6 +2968,7 @@ id material_timepicker_view
 id material_value_index
 id media_actions
 id media_fogos_regiao
+id meiosOperacionais_filtros
 id message
 id middle
 id mini
@@ -3483,14 +3490,17 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string concluido
 string confirm
 string county
 string dashboard
+string decorrer
 string district
 string district_filters
 string drawer_closed
 string drawer_open
 string error_icon_content_description
+string estado_fogo
 string exit
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
@@ -3553,6 +3563,7 @@ string material_timepicker_minute
 string material_timepicker_pm
 string material_timepicker_select_time
 string material_timepicker_text_input_mode_description
+string meios_operacionais
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description
 string mtrl_exceed_max_badge_number_content_description
