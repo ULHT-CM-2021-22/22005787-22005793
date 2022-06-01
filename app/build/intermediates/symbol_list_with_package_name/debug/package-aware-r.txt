@@ -2573,6 +2573,7 @@ drawable ic_date
 drawable ic_exit
 drawable ic_eye
 drawable ic_filter
+drawable ic_fire
 drawable ic_fire_list
 drawable ic_fire_map
 drawable ic_fireplace

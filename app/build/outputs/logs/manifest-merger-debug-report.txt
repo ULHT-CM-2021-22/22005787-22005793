@@ -144,9 +144,9 @@ MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\Goncalo\.gradle\ca
 	android:label
 		ADDED from C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:14:9-41
 	android:roundIcon
-		ADDED from C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:15:9-54
+		ADDED from C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:15:9-46
 	android:icon
-		ADDED from C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:13:9-43
+		ADDED from C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:13:9-41
 	android:allowBackup
 		ADDED from C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:12:9-35
 	android:theme

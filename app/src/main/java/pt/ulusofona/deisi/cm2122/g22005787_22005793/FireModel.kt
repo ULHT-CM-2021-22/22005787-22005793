@@ -4,7 +4,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class FireModel(private val dao: FireDao) {
+abstract class FireModel {
 
     var region = "Lisboa"
     var risk = Risk.values().random().risco
@@ -13,74 +13,6 @@ class FireModel(private val dao: FireDao) {
         "Évora", "Faro", "Guarda", "Leiria", "Lisboa", "Portalegre",
         "Porto", "Santarém", "Setúbal", "Viana do Castelo", "Vila Real", "Viseu"
     )
-
-
-    fun getHistory(onFinished: (List<FireData>) -> Unit) {
-        CoroutineScope(Dispatchers.IO).launch {
-            val list = dao.getAll()
-            onFinished(list.map {
-                FireData(
-                    it.distrito,
-                    it.concelho,
-                    it.freguesia,
-                    it.meiosOperacionais,
-                    it.meiosVeiculos,
-                    it.meiosAereos,
-                    it.estado,
-                    it.data,
-                    it.fotos,
-                    it.obs,
-                    it.nomePessoa,
-                    it.ccPessoa,
-                    it.porConfirmar
-                )
-            })
-        }
-    }
-
-    fun addToHistory(onFinished: () -> Unit, fireData: FireRoom) {
-        CoroutineScope(Dispatchers.IO).launch {
-            dao.insert(fireData)
-            onFinished()
-        }
-
-    }
-
-
-    fun fogosNaRegiao(onFinished: (String) -> Unit): String {
-        var count = 0
-        CoroutineScope(Dispatchers.IO).launch {
-            for (fire in dao.getAll()) {
-                if (fire.distrito == region) {
-                    count++
-                }
-            }
-            onFinished(count.toString())
-        }
-        return count.toString()
-    }
-
-    fun fogosNaRegiao(onFinished: (String) -> Unit, regiao: String): String {
-        var count = 0
-        CoroutineScope(Dispatchers.IO).launch {
-            for (fire in dao.getAll()) {
-                if (fire.distrito == regiao) {
-                    count++
-                }
-            }
-            onFinished(count.toString())
-        }
-        return count.toString()
-    }
-
-    fun totalFogos(onFinished: (String) -> Unit): String {
-        var total = "0"
-        CoroutineScope(Dispatchers.IO).launch {
-            total = dao.getAll().size.toString()
-            onFinished(total)
-        }
-        return total
-    }
 
     fun mediaFogosNaRegiao(onFinished: (String) -> Unit): String {
         val count: String = fogosNaRegiao(onFinished)
@@ -100,4 +32,12 @@ class FireModel(private val dao: FireDao) {
         risk = Risk.values().random().risco
         onFinished()
     }
+
+    abstract fun getHistory(onFinished: (List<FireData>) -> Unit)
+    abstract fun addToHistory(onFinished: () -> Unit, fireData: FireRoom)
+    abstract fun fogosNaRegiao(onFinished: (String) -> Unit): String
+    abstract fun fogosNaRegiao(onFinished: (String) -> Unit, regiao: String): String
+    abstract fun totalFogos(onFinished: (String) -> Unit): String
+
+
 }

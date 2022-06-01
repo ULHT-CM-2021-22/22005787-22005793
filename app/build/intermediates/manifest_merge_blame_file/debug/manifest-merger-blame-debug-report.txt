@@ -50,12 +50,12 @@
 29-->[androidx.core:core:1.7.0] C:\Users\Goncalo\.gradle\caches\transforms-3\aec237d7615e5b5f19aac02e97eeb357\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
 30        android:debuggable="true"
 31        android:extractNativeLibs="false"
-32        android:icon="@mipmap/ic_launcher"
-32-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:13:9-43
+32        android:icon="@drawable/ic_fire"
+32-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:13:9-41
 33        android:label="@string/app_name"
 33-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:14:9-41
-34        android:roundIcon="@mipmap/ic_launcher_round"
-34-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:15:9-54
+34        android:roundIcon="@drawable/ic_fire"
+34-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:15:9-46
 35        android:supportsRtl="true"
 35-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:16:9-35
 36        android:testOnly="true"
