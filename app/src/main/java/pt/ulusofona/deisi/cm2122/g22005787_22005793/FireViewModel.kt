@@ -7,12 +7,11 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class FireViewModel(application: Application) : AndroidViewModel(application) {
-    private val model = FireModelRoom(FireDatabase.getInstance(application).fireDao())
-    private val model2 = FireRetrofit(RetrofitBuilder.getInstance("https://api-dev.fogos.pt/"))
+    private val model = FireRepository.getInstance()
 
     fun onGetHistory(onFinished: (List<FireData>) -> Unit) {
         CoroutineScope(Dispatchers.Main).launch {
-            model2.getHistory(onFinished)
+            model.getHistory(onFinished)
         }
     }
 

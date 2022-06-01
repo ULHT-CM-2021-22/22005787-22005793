@@ -33,6 +33,8 @@ public final class FireDao_Impl implements FireDao {
 
   private final SharedSQLiteStatement __preparedStmtOfDelete;
 
+  private final SharedSQLiteStatement __preparedStmtOfDeleteAll;
+
   public FireDao_Impl(RoomDatabase __db) {
     this.__db = __db;
     this.__insertionAdapterOfFireRoom = new EntityInsertionAdapter<FireRoom>(__db) {
@@ -123,6 +125,13 @@ public final class FireDao_Impl implements FireDao {
         return _query;
       }
     };
+    this.__preparedStmtOfDeleteAll = new SharedSQLiteStatement(__db) {
+      @Override
+      public String createQuery() {
+        final String _query = "DELETE FROM fires";
+        return _query;
+      }
+    };
   }
 
   @Override
@@ -133,6 +142,24 @@ public final class FireDao_Impl implements FireDao {
         __db.beginTransaction();
         try {
           __insertionAdapterOfFireRoom.insert(fire);
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, continuation);
+  }
+
+  @Override
+  public Object insertAll(final List<FireRoom> operations,
+      final Continuation<? super Unit> continuation) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      public Unit call() throws Exception {
+        __db.beginTransaction();
+        try {
+          __insertionAdapterOfFireRoom.insert(operations);
           __db.setTransactionSuccessful();
           return Unit.INSTANCE;
         } finally {
@@ -162,6 +189,25 @@ public final class FireDao_Impl implements FireDao {
         } finally {
           __db.endTransaction();
           __preparedStmtOfDelete.release(_stmt);
+        }
+      }
+    }, continuation);
+  }
+
+  @Override
+  public Object deleteAll(final Continuation<? super Integer> continuation) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Integer>() {
+      @Override
+      public Integer call() throws Exception {
+        final SupportSQLiteStatement _stmt = __preparedStmtOfDeleteAll.acquire();
+        __db.beginTransaction();
+        try {
+          final java.lang.Integer _result = _stmt.executeUpdateDelete();
+          __db.setTransactionSuccessful();
+          return _result;
+        } finally {
+          __db.endTransaction();
+          __preparedStmtOfDeleteAll.release(_stmt);
         }
       }
     }, continuation);

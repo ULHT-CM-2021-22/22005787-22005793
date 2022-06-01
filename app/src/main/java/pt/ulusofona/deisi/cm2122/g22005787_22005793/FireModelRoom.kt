@@ -3,6 +3,7 @@ package pt.ulusofona.deisi.cm2122.g22005787_22005793
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.util.*
 
 class FireModelRoom (private val dao: FireDao): FireModel() {
     override fun getHistory(onFinished: (List<FireData>) -> Unit) {
@@ -68,6 +69,38 @@ class FireModelRoom (private val dao: FireDao): FireModel() {
             onFinished(total)
         }
         return total
+    }
+
+    override fun deleteAll(onFinished: () -> Unit) {
+            CoroutineScope(Dispatchers.IO).launch {
+                dao.deleteAll()
+                onFinished()
+            }
+    }
+
+    override fun insertFires(operations: List<FireData>, onFinished: (List<FireData>) -> Unit) {
+        CoroutineScope(Dispatchers.IO).launch {
+            val history = operations.map {
+                    FireRoom(
+                        it.id!!,
+                        it.distrito,
+                        it.concelho,
+                        it.freguesia,
+                        it.meiosOperacionais,
+                        it.meiosVeiculos,
+                        it.meiosAereos,
+                        it.estado,
+                        it.data,
+                        it.fotos,
+                        it.obs,
+                        it.nomePessoa,
+                        it.ccPessoa,
+                        it.porConfirmar
+                    )
+            }
+            dao.insertAll(history)
+            onFinished(operations)
+        }
     }
 
 }

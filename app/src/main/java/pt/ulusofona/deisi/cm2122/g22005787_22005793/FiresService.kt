@@ -14,7 +14,8 @@ data class Fires(
     @SerializedName("terrain") val terrain: Int,
     @SerializedName("aerial")  val aerial: Int,
     @SerializedName("status") val status: String,
-    @SerializedName("data") val data: String,
+    @SerializedName("date") val data: String,
+    @SerializedName("hour") val hour: String,
     @SerializedName("extra")  val extra: String
 )
 

@@ -25,7 +25,7 @@ abstract class FireDatabase: RoomDatabase() {
                         .fallbackToDestructiveMigration()
                         .build()
                 }
-                return instance as  FireDatabase
+                return instance as FireDatabase
             }
         }
     }

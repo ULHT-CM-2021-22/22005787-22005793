@@ -10,6 +10,9 @@ interface FireDao {
     @Insert
     suspend fun insert(fire: FireRoom)
 
+    @Insert
+    suspend fun insertAll(operations: List<FireRoom>)
+
     @Query("SELECT * FROM fires ORDER BY data ASC")
     suspend fun getAll(): List<FireRoom>
 
@@ -18,4 +21,7 @@ interface FireDao {
 
     @Query("DELETE FROM fires WHERE id = :id")
     suspend fun delete(id: String): Int
+
+    @Query("DELETE FROM fires")
+    suspend fun deleteAll(): Int
 }

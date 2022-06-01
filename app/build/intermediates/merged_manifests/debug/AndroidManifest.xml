@@ -25,6 +25,7 @@
     </queries>
 
     <application
+        android:name="pt.ulusofona.deisi.cm2122.g22005787_22005793.FireApplication"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
