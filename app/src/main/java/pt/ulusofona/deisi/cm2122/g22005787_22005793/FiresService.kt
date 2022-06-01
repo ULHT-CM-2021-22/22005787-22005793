@@ -7,7 +7,7 @@ data class GetFiresResponse(val success : Boolean, val id: String, val district:
                                  val man: Int, val terrain: Int, val aerial: Int, val status: String,
                                  val data: String, val extra: String)
 
-
+//
 interface FiresService {
 
     @Headers("Content-Type: application/json")
