@@ -50,6 +50,10 @@
     <string name="raio">Escolha o raio pretendido</string>
     <string name="district_filters">Escolha um distrito</string>
     <string name="submit">Submeter</string>
+    <string name="meios_operacionais">Filtrar por meios operacionais</string>
+    <string name="estado_fogo">Filtrar por estado do fogo</string>
+    <string name="decorrer">A decorrer</string>
+    <string name="concluido">Concluido</string>
 
 
 

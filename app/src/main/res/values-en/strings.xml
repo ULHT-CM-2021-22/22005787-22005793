@@ -51,5 +51,9 @@
     <string name="raio">Choose the desired radius</string>
     <string name="district_filters">Pick a district</string>
     <string name="submit">Submit</string>
+    <string name="meios_operacionais">Filter by operational means</string>
+    <string name="estado_fogo">Filter by fire state</string>
+    <string name="decorrer">Running</string>
+    <string name="concluido">Concluded</string>
 
 </resources>
