@@ -22,6 +22,6 @@ interface FireDao {
     @Query("DELETE FROM fires WHERE id = :id")
     suspend fun delete(id: String): Int
 
-    @Query("DELETE FROM fires")
-    suspend fun deleteAll(): Int
+    @Query("DELETE FROM fires WHERE porConfirmar == 0")
+    suspend fun deleteAll()
 }

@@ -32,7 +32,7 @@ public final class FireData implements android.os.Parcelable {
     @org.jetbrains.annotations.Nullable()
     private java.lang.String obs;
     @org.jetbrains.annotations.Nullable()
-    private java.lang.Boolean porConfirmar = false;
+    private java.lang.Boolean porConfirmar = true;
     public static final android.os.Parcelable.Creator<pt.ulusofona.deisi.cm2122.g22005787_22005793.FireData> CREATOR = null;
     
     @org.jetbrains.annotations.NotNull()

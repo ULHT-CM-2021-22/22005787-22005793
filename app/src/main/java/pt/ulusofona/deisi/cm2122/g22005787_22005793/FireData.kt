@@ -34,7 +34,7 @@ data class FireData(
     @IgnoredOnParcel
     var obs: String? = null
     @IgnoredOnParcel
-    var porConfirmar: Boolean? = false
+    var porConfirmar: Boolean? = true
 
     constructor(
         distrito: String?, concelho: String?, freguesia: String?,

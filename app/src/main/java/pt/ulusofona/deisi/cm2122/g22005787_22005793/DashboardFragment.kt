@@ -20,6 +20,7 @@ class DashboardFragment : Fragment() {
 
     private lateinit var binding: FragmentDashboardBinding
     private lateinit var viewModel: FireViewModel
+    private var adapter = FireAdapter(onClick = ::onOperationClick, onLongClick = ::onOperationLongClick)
     private var districts = arrayOf(
         "Aveiro", "Beja", "Braga", "Bragança", "Castelo Branco", "Coimbra",
         "Évora", "Faro", "Guarda", "Leiria", "Lisboa", "Portalegre",
@@ -82,6 +83,7 @@ class DashboardFragment : Fragment() {
 
     private fun updateDashboard() {
         binding.textRegion.text = actualDistrict
+        viewModel.onGetHistory { updateHistory(it) }
         viewModel.onFogosNaRegiao() {
             CoroutineScope(Dispatchers.Main).launch {
                 binding.fogosRegiao.text = it
@@ -112,6 +114,21 @@ class DashboardFragment : Fragment() {
             Risk.MODERATE.risco -> binding.riskLayout.setBackgroundColor(resources.getColor(R.color.green))
             Risk.REDUCED.risco -> binding.riskLayout.setBackgroundColor(resources.getColor(R.color.green))
         }
+    }
+
+    private fun updateHistory(fireData: List<FireData>) {
+        val history = fireData.map { FireData(it.distrito,it.concelho,it.freguesia,it.meiosOperacionais,
+            it.meiosVeiculos,it.meiosAereos,it.estado,it.data,it.fotos,it.obs,it.nomePessoa,it.ccPessoa,it.porConfirmar)}
+        CoroutineScope(Dispatchers.Main).launch {
+            adapter.updateItems(history)
+        }
+    }
+
+    private fun onOperationClick(fireData: FireData) {
+    }
+
+    private fun onOperationLongClick(fireData: FireData): Boolean {
+        return false
     }
 
 

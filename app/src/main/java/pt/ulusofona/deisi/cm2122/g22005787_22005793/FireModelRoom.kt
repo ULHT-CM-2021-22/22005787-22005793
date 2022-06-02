@@ -6,6 +6,7 @@ import kotlinx.coroutines.launch
 import java.util.*
 
 class FireModelRoom (private val dao: FireDao): FireModel() {
+
     override fun getHistory(onFinished: (List<FireData>) -> Unit) {
         CoroutineScope(Dispatchers.IO).launch {
             val list = dao.getAll()
@@ -29,9 +30,41 @@ class FireModelRoom (private val dao: FireDao): FireModel() {
         }
     }
 
+    override fun insertFires(operations: List<FireData>, onFinished: () -> Unit) {
+        CoroutineScope(Dispatchers.IO).launch {
+            val history = operations.map {
+                FireRoom(
+                    it.id,
+                    it.distrito,
+                    it.concelho,
+                    it.freguesia,
+                    it.meiosOperacionais,
+                    it.meiosVeiculos,
+                    it.meiosAereos,
+                    it.estado,
+                    it.data,
+                    it.fotos,
+                    it.obs,
+                    it.nomePessoa,
+                    it.ccPessoa,
+                    it.porConfirmar
+                )
+            }
+            dao.insertAll(history)
+            onFinished()
+        }
+    }
+
     override fun addToHistory(onFinished: () -> Unit, fireData: FireRoom) {
         CoroutineScope(Dispatchers.IO).launch {
             dao.insert(fireData)
+            onFinished()
+        }
+    }
+
+    override fun deleteAll(onFinished: () -> Unit) {
+        CoroutineScope(Dispatchers.IO).launch {
+            dao.deleteAll()
             onFinished()
         }
     }
@@ -70,37 +103,4 @@ class FireModelRoom (private val dao: FireDao): FireModel() {
         }
         return total
     }
-
-    override fun deleteAll(onFinished: () -> Unit) {
-            CoroutineScope(Dispatchers.IO).launch {
-                dao.deleteAll()
-                onFinished()
-            }
-    }
-
-    override fun insertFires(operations: List<FireData>, onFinished: (List<FireData>) -> Unit) {
-        CoroutineScope(Dispatchers.IO).launch {
-            val history = operations.map {
-                    FireRoom(
-                        it.id,
-                        it.distrito,
-                        it.concelho,
-                        it.freguesia,
-                        it.meiosOperacionais,
-                        it.meiosVeiculos,
-                        it.meiosAereos,
-                        it.estado,
-                        it.data,
-                        it.fotos,
-                        it.obs,
-                        it.nomePessoa,
-                        it.ccPessoa,
-                        it.porConfirmar
-                    )
-            }
-            dao.insertAll(history)
-            onFinished(operations)
-        }
-    }
-
 }

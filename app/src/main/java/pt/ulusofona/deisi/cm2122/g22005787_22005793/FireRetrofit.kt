@@ -63,7 +63,7 @@ class FireRetrofit(retrofit: Retrofit) : FireModel() {
         TODO("Not yet implemented")
     }
 
-    override fun insertFires(operations: List<FireData>, onFinished: (List<FireData>) -> Unit) {
+    override fun insertFires(operations: List<FireData>, onFinished: () -> Unit) {
         throw Exception("Not implemented on web service")
     }
 
