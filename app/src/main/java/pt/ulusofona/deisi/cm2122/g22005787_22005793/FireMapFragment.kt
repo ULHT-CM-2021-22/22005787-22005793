@@ -40,15 +40,14 @@ class FireMapFragment : Fragment(), OnLocationChangedListener {
         (requireActivity() as AppCompatActivity).supportActionBar?.title =
             getString(R.string.fire_map)
         val view = inflater.inflate(R.layout.fragment_fire_map, container, false)
-        geocoder = Geocoder(context, Locale.getDefault())
-        viewModel = ViewModelProvider(this).get(FireViewModel::class.java)
         binding = FragmentFireMapBinding.bind(view)
+        geocoder = Geocoder(context, Locale.getDefault())
         binding.map.onCreate(savedInstanceState)
         binding.map.getMapAsync {
             map = it
             FusedLocation.registerListener(this)
         }
-        binding = FragmentFireMapBinding.bind(view)
+        viewModel = ViewModelProvider(this).get(FireViewModel::class.java)
         return binding.root
     }
 
@@ -78,6 +77,7 @@ class FireMapFragment : Fragment(), OnLocationChangedListener {
     override fun onResume() {
         super.onResume()
         timer.start()
+        binding.map.onResume()
         requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
     }
 

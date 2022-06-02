@@ -5,10 +5,10 @@ import android.app.Application
 class FireApplication : Application() {
     override fun onCreate() {
         super.onCreate()
-        FusedLocation.start(this)
         FireRepository.init(this,
             FireModelRoom(FireDatabase.getInstance(this).fireDao()),
             FireRetrofit(RetrofitBuilder.getInstance("https://api-dev.fogos.pt/"))
         )
+        FusedLocation.start(this)
     }
 }
