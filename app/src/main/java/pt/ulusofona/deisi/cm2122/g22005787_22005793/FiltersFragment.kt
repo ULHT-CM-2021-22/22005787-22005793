@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -18,6 +19,11 @@ import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentFiltersB
 
 
 class FiltersFragment : Fragment() {
+
+    private lateinit var viewModel: FireViewModel
+    private var adapter = FireAdapter(onClick = ::onOperationClick, onLongClick = ::onOperationLongClick)
+
+    val repository = FireRepository.getInstance()
 
     private var districts = arrayOf(
         "Aveiro", "Beja", "Braga", "Bragança", "Castelo Branco", "Coimbra",
@@ -39,6 +45,7 @@ class FiltersFragment : Fragment() {
         (requireActivity() as AppCompatActivity).supportActionBar?.title =
             getString(R.string.app_name)
         val view = inflater.inflate(R.layout.fragment_filters, container, false)
+        viewModel = ViewModelProvider(this).get(FireViewModel::class.java)
         binding = FragmentFiltersBinding.bind(view)
         return binding.root
     }
@@ -63,6 +70,10 @@ class FiltersFragment : Fragment() {
             builder.show()
         }
 
+        binding.checkboxOperacionais.setOnClickListener {
+
+        }
+
         binding.buttonSubmit.setOnClickListener {
             binding.buttonRegionFilter.text = getString(R.string.click)
             binding.buttonRadiusFilter.text = getString(R.string.click)
@@ -84,8 +95,49 @@ class FiltersFragment : Fragment() {
         super.onPause()
     }
 
+    fun onCheckboxClicked(view: View) {
+        if (view is CheckBox) {
+            val checked: Boolean = view.isChecked
+
+            when (view.id) {
+                R.id.checkbox_operacionais -> {
+                    if (checked) {
+
+                    }
+                    else {
+                        // Remove the meat
+                    }
+                }
+                R.id.checkbox_opTerrestres -> {
+                    if (checked) {
+                        // Cheese me
+                    } else {
+                        // I'm lactose intolerant
+                    }
+                }
+            }
+        }
+
+    }
 
 
+    fun onOperationClick(fireData: FireData) {
+
+    }
+
+    private fun onOperationLongClick(fireData: FireData): Boolean {
+        return false
+    }
+
+
+
+    private fun updateHistory(fireData: List<FireData>) {
+        val history = fireData.map { FireData(it.distrito,it.concelho,it.freguesia,it.meiosOperacionais,
+            it.meiosVeiculos,it.meiosAereos,it.estado,it.data,it.fotos,it.obs,it.nomePessoa,it.ccPessoa,it.porConfirmar)}
+        CoroutineScope(Dispatchers.Main).launch {
+            adapter.updateItems(history)
+        }
+    }
 
 
 }

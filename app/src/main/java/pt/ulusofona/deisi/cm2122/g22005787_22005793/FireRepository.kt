@@ -9,7 +9,7 @@ class FireRepository private constructor(
     val districts: Array<String> = local.districts
     val risk: String = local.risk
 
-    fun getHistory(onFinished: (List<FireData>) -> Unit) {
+    fun  getHistory(onFinished: (List<FireData>) -> Unit) {
         if (ConnectivityUtil.isOnline(context)) {
             remote.getHistory { history ->
                 local.deleteAll {

@@ -55,5 +55,6 @@
     <string name="estado_fogo">Filter by fire state</string>
     <string name="decorrer">Running</string>
     <string name="concluido">Concluded</string>
+    <string name="location">Location</string>
 
 </resources>
