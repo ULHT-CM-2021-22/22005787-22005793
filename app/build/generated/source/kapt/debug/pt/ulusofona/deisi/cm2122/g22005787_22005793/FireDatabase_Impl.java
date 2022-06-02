@@ -34,12 +34,12 @@ public final class FireDatabase_Impl extends FireDatabase {
 
   @Override
   protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration configuration) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(2) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(3) {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
-        _db.execSQL("CREATE TABLE IF NOT EXISTS `fires` (`id` TEXT NOT NULL, `distrito` TEXT, `concelho` TEXT, `freguesia` TEXT, `meiosOperacionais` TEXT, `meiosVeiculos` TEXT, `meiosAereos` TEXT, `estado` TEXT, `data` TEXT, `fotos` TEXT, `obs` TEXT, `nomePessoa` TEXT, `ccPessoa` TEXT, `porConfirmar` INTEGER, PRIMARY KEY(`id`))");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `fires` (`id` TEXT NOT NULL, `distrito` TEXT, `concelho` TEXT, `freguesia` TEXT, `meiosOperacionais` TEXT, `meiosVeiculos` TEXT, `meiosAereos` TEXT, `estado` TEXT, `data` TEXT, `fotos` TEXT, `obs` TEXT, `nomePessoa` TEXT, `ccPessoa` TEXT, `porConfirmar` INTEGER, `latitude` REAL NOT NULL, `longitude` REAL NOT NULL, PRIMARY KEY(`id`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '826c041a3577578ef5d521dd10f3499e')");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'e417735136610bfd1f59853948626141')");
       }
 
       @Override
@@ -83,7 +83,7 @@ public final class FireDatabase_Impl extends FireDatabase {
 
       @Override
       protected RoomOpenHelper.ValidationResult onValidateSchema(SupportSQLiteDatabase _db) {
-        final HashMap<String, TableInfo.Column> _columnsFires = new HashMap<String, TableInfo.Column>(14);
+        final HashMap<String, TableInfo.Column> _columnsFires = new HashMap<String, TableInfo.Column>(16);
         _columnsFires.put("id", new TableInfo.Column("id", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsFires.put("distrito", new TableInfo.Column("distrito", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsFires.put("concelho", new TableInfo.Column("concelho", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
@@ -98,6 +98,8 @@ public final class FireDatabase_Impl extends FireDatabase {
         _columnsFires.put("nomePessoa", new TableInfo.Column("nomePessoa", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsFires.put("ccPessoa", new TableInfo.Column("ccPessoa", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsFires.put("porConfirmar", new TableInfo.Column("porConfirmar", "INTEGER", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsFires.put("latitude", new TableInfo.Column("latitude", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsFires.put("longitude", new TableInfo.Column("longitude", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysFires = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesFires = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoFires = new TableInfo("fires", _columnsFires, _foreignKeysFires, _indicesFires);
@@ -109,7 +111,7 @@ public final class FireDatabase_Impl extends FireDatabase {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "826c041a3577578ef5d521dd10f3499e", "76b8df2fc5b122da27819d310f1f09fa");
+    }, "e417735136610bfd1f59853948626141", "0872b2b308f54720a3959742911b2cfe");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)

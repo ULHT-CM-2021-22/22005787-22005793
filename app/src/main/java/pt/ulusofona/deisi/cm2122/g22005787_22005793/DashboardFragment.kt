@@ -20,7 +20,8 @@ class DashboardFragment : Fragment() {
 
     private lateinit var binding: FragmentDashboardBinding
     private lateinit var viewModel: FireViewModel
-    private var adapter = FireAdapter(onClick = ::onOperationClick, onLongClick = ::onOperationLongClick)
+    private var adapter =
+        FireAdapter(onClick = ::onOperationClick, onLongClick = ::onOperationLongClick)
     private var districts = arrayOf(
         "Aveiro", "Beja", "Braga", "Bragança", "Castelo Branco", "Coimbra",
         "Évora", "Faro", "Guarda", "Leiria", "Lisboa", "Portalegre",
@@ -53,7 +54,7 @@ class DashboardFragment : Fragment() {
             val builder: android.app.AlertDialog.Builder = android.app.AlertDialog.Builder(context)
             builder.setTitle(getString(R.string.choose_region))
             builder.setItems(districts, DialogInterface.OnClickListener { dialog, which ->
-                viewModel.onAlterarRegiao({},districts[which])
+                viewModel.onAlterarRegiao({}, districts[which])
                 binding.textRegion.text = districts[which]
                 binding.textRegion.textSize = 18F
                 actualDistrict = districts[which]
@@ -89,19 +90,19 @@ class DashboardFragment : Fragment() {
                 binding.fogosRegiao.text = it
             }
         }
-         viewModel.onTotalFogos(){
-             CoroutineScope(Dispatchers.Main).launch {
-                 binding.fogosTotal.text = it
-             }
-         }
+        viewModel.onTotalFogos() {
+            CoroutineScope(Dispatchers.Main).launch {
+                binding.fogosTotal.text = it
+            }
+        }
 
-         viewModel.onMediaFogosNaRegiao(){
-             CoroutineScope(Dispatchers.Main).launch {
-                 binding.mediaFogosRegiao.text = it
-             }
-         }
+        viewModel.onMediaFogosNaRegiao() {
+            CoroutineScope(Dispatchers.Main).launch {
+                binding.mediaFogosRegiao.text = it
+            }
+        }
 
-        viewModel.onAlterarRisco{}
+        viewModel.onAlterarRisco {}
         binding.riscoRegiao.text = viewModel.onGetRisk()
         backgroundColor(viewModel.onGetRisk())
     }
@@ -117,8 +118,25 @@ class DashboardFragment : Fragment() {
     }
 
     private fun updateHistory(fireData: List<FireData>) {
-        val history = fireData.map { FireData(it.distrito,it.concelho,it.freguesia,it.meiosOperacionais,
-            it.meiosVeiculos,it.meiosAereos,it.estado,it.data,it.fotos,it.obs,it.nomePessoa,it.ccPessoa,it.porConfirmar)}
+        val history = fireData.map {
+            FireData(
+                it.distrito,
+                it.concelho,
+                it.freguesia,
+                it.meiosOperacionais,
+                it.meiosVeiculos,
+                it.meiosAereos,
+                it.estado,
+                it.data,
+                it.fotos,
+                it.obs,
+                it.nomePessoa,
+                it.ccPessoa,
+                it.porConfirmar,
+                it.latitude,
+                it.longitude
+            )
+        }
         CoroutineScope(Dispatchers.Main).launch {
             adapter.updateItems(history)
         }

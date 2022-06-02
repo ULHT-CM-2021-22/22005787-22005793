@@ -53,6 +53,7 @@
     <string name="foto">Fotos</string>
     <string name="idk">ALIGATOOOO</string>
     <string name="inf_not_available">Informação não disponível</string>
+    <string name="location">Localização</string>
     <string name="meios_operacionais">Filtrar por meios operacionais</string>
     <string name="name">Nome</string>
     <string name="newRegister">Efetue aqui o registo do incêndio</string>
@@ -76,19 +77,19 @@
     <string name="vehicles">Meios terrestres</string>
     <string name="welcome">Bem-vindo ao FireTracker</string>
     <style name="Theme.G22005787_22005793" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
-        <!-- Primary brand color. -->
+        
+        
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorOnBackground">@color/white</item>
-        <!-- Secondary brand color. -->
+        
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
+        
         <item name="android:statusBarColor">@color/orange</item>
-        <!-- Customize your theme here. -->
+        
     </style>
     <style name="ToolbarTheme" parent="Theme.G22005787_22005793">
         <item name="android:background">@color/orange</item>

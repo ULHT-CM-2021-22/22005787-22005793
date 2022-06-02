@@ -2576,6 +2576,7 @@ int drawable ic_fire 0x7f070085
 int drawable ic_fire_list 0x7f070086
 int drawable ic_fire_map 0x7f070087
 int drawable ic_fireplace 0x7f070088
+int drawable ic_gps 0x7f0700cd
 int drawable ic_idk 0x7f070089
 int drawable ic_info 0x7f07008a
 int drawable ic_keyboard_black_24dp 0x7f07008b
@@ -2876,6 +2877,7 @@ int id frost 0x7f0800e4
 int id ghost_view 0x7f0800e5
 int id ghost_view_holder 0x7f0800e6
 int id gone 0x7f0800e7
+int id gps 0x7f080245
 int id graph 0x7f0800e8
 int id graph_wrap 0x7f0800e9
 int id group_divider 0x7f0800ea
@@ -3169,6 +3171,7 @@ int id text_inf 0x7f080209
 int id text_input_end_icon 0x7f08020a
 int id text_input_error_icon 0x7f08020b
 int id text_input_start_icon 0x7f08020c
+int id text_loc 0x7f080246
 int id text_obs 0x7f08020d
 int id text_parish 0x7f08020e
 int id text_pessoa 0x7f08020f
@@ -3517,6 +3520,7 @@ int string icon_content_description 0x7f0f005a
 int string idk 0x7f0f005b
 int string inf_not_available 0x7f0f005c
 int string item_view_role_description 0x7f0f005d
+int string location 0x7f0f00cc
 int string m3_ref_typeface_brand_display_regular 0x7f0f005e
 int string m3_ref_typeface_brand_medium 0x7f0f005f
 int string m3_ref_typeface_brand_regular 0x7f0f0060

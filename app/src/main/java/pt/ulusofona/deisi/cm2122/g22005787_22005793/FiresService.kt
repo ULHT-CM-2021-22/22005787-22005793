@@ -7,19 +7,21 @@ import retrofit2.http.Headers
 
 data class Fires(
     @SerializedName("id") val id: String,
-    @SerializedName("district")  val district: String,
+    @SerializedName("district") val district: String,
     @SerializedName("concelho") val concelho: String,
     @SerializedName("freguesia") val freguesia: String,
     @SerializedName("man") val man: Int,
     @SerializedName("terrain") val terrain: Int,
-    @SerializedName("aerial")  val aerial: Int,
+    @SerializedName("aerial") val aerial: Int,
     @SerializedName("status") val status: String,
     @SerializedName("date") val data: String,
     @SerializedName("hour") val hour: String,
-    @SerializedName("extra")  val extra: String
+    @SerializedName("extra") val extra: String,
+    @SerializedName("lat") val lat: Double,
+    @SerializedName("lng") val lng: Double
 )
 
-class firesList: ArrayList<Fires>()
+class firesList : ArrayList<Fires>()
 
 data class GetFiresResponse(
     @SerializedName("data") val data: firesList

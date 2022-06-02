@@ -6,6 +6,7 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
+import android.location.Geocoder
 import android.net.Uri
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -28,7 +29,7 @@ import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentFireRegi
 import java.text.SimpleDateFormat
 import java.util.*
 
-class FireRegistrationFragment : Fragment() {
+class FireRegistrationFragment : Fragment(), OnLocationChangedListener {
 
     private lateinit var viewModel: FireViewModel
     private var districts = arrayOf(
@@ -37,6 +38,8 @@ class FireRegistrationFragment : Fragment() {
         "Porto", "Santarém", "Setúbal", "Viana do Castelo", "Vila Real", "Viseu"
     )
     private lateinit var binding: FragmentFireRegistrationBinding
+    var lat: Double = 0.0
+    var lng: Double = 0.0
     private var adapter =
         FireAdapter(onClick = ::onOperationClick, onLongClick = ::onOperationLongClick)
     private val timer = object : CountDownTimer(20000, 1000) {
@@ -131,10 +134,16 @@ class FireRegistrationFragment : Fragment() {
             getString(R.string.newRegister)
         val view = inflater.inflate(R.layout.fragment_fire_registration, container, false)
         viewModel = ViewModelProvider(this).get(FireViewModel::class.java)
+        FusedLocation.registerListener(this)
         binding = FragmentFireRegistrationBinding.bind(view)
         initPermissions()
         return binding.root
 
+    }
+
+    override fun onLocationChanged(latitude: Double, longitude: Double) {
+        lat = latitude
+        lng = longitude
     }
 
     override fun onStart() {
@@ -175,7 +184,9 @@ class FireRegistrationFragment : Fragment() {
                 null,
                 nomePessoa,
                 ccPessoa,
-                true
+                true,
+                lat,
+                lng
             )
             fire.estado = getString(R.string.confirm)
             if (binding.plainTextInputCc.text == null || binding.plainTextInputName.text == null
@@ -209,6 +220,7 @@ class FireRegistrationFragment : Fragment() {
 
     override fun onDestroy() {
         super.onDestroy()
+        FusedLocation.unregisterListener(this)
         timer.cancel()
     }
 
@@ -226,7 +238,7 @@ class FireRegistrationFragment : Fragment() {
 
 
     private fun updateDashboard() {
-        viewModel.onAlterarRisco{}
+        viewModel.onAlterarRisco {}
         binding.riscoRegiao.text = viewModel.onGetRisk()
         backgroundColor(viewModel.onGetRisk())
 
@@ -248,7 +260,9 @@ class FireRegistrationFragment : Fragment() {
                 it.obs,
                 it.nomePessoa,
                 it.ccPessoa,
-                it.porConfirmar
+                it.porConfirmar,
+                it.latitude,
+                it.longitude
             )
         }
         CoroutineScope(Dispatchers.Main).launch {
@@ -265,5 +279,6 @@ class FireRegistrationFragment : Fragment() {
             Risk.REDUCED.risco -> binding.riskLayout.setBackgroundColor(resources.getColor(R.color.green))
         }
     }
+
 
 }

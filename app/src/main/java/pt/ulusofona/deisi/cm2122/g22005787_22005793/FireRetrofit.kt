@@ -33,7 +33,9 @@ class FireRetrofit(retrofit: Retrofit) : FireModel() {
                             it.extra,
                             null,
                             null,
-                            false
+                            false,
+                            it.lat,
+                            it.lng
                         )
                     })
                 }

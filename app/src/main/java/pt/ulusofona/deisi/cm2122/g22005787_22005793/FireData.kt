@@ -19,20 +19,34 @@ data class FireData(
 
     @IgnoredOnParcel
     var id: String = UUID.randomUUID().toString()
+
     @IgnoredOnParcel
     var concelho: String? = null
+
+    @IgnoredOnParcel
+    var latitude: Double = 0.0
+
+    @IgnoredOnParcel
+    var longitude: Double = 0.0
+
     @IgnoredOnParcel
     var freguesia: String? = null
+
     @IgnoredOnParcel
     var meiosOperacionais: String? = null
+
     @IgnoredOnParcel
     var meiosVeiculos: String? = null
+
     @IgnoredOnParcel
     var meiosAereos: String? = null
+
     @IgnoredOnParcel
     var estado: String? = null
+
     @IgnoredOnParcel
     var obs: String? = null
+
     @IgnoredOnParcel
     var porConfirmar: Boolean? = true
 
@@ -40,9 +54,10 @@ data class FireData(
         distrito: String?, concelho: String?, freguesia: String?,
         meiosOperacionais: String?, meiosVeiculos: String?, meiosAereos: String?,
         estado: String?, data: String?, fotos: String?,
-        obs: String?, nomePessoa: String?,ccPessoa: String?, porConfirmar: Boolean?
+        obs: String?, nomePessoa: String?, ccPessoa: String?, porConfirmar: Boolean?,
+        latitude: Double, longitude: Double
     ) :
-            this(nomePessoa,ccPessoa, distrito, data, fotos) {
+            this(nomePessoa, ccPessoa, distrito, data, fotos) {
         this.concelho = concelho
         this.freguesia = freguesia
         this.meiosOperacionais = meiosOperacionais
@@ -51,6 +66,8 @@ data class FireData(
         this.estado = estado
         this.obs = obs
         this.porConfirmar = porConfirmar
+        this.latitude = latitude
+        this.longitude = longitude
     }
-
 }
+

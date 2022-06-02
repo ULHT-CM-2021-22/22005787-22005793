@@ -34,6 +34,7 @@ drawable ic_fire
 drawable ic_fire_list
 drawable ic_fire_map
 drawable ic_fireplace
+drawable ic_gps
 drawable ic_idk
 drawable ic_info
 drawable ic_launcher_background
@@ -79,6 +80,7 @@ id fogos_regiao
 id fogos_total
 id foto
 id frame
+id gps
 id guarda
 id imageview1
 id imageview10
@@ -129,6 +131,7 @@ id text_date
 id text_fire_state
 id text_firemen
 id text_inf
+id text_loc
 id text_obs
 id text_parish
 id text_pessoa
@@ -186,6 +189,7 @@ string firemen
 string foto
 string idk
 string inf_not_available
+string location
 string meios_operacionais
 string name
 string newRegister

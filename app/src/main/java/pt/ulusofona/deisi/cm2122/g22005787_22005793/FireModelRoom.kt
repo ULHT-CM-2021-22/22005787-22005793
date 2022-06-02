@@ -5,7 +5,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.util.*
 
-class FireModelRoom (private val dao: FireDao): FireModel() {
+class FireModelRoom(private val dao: FireDao) : FireModel() {
 
     override fun getHistory(onFinished: (List<FireData>) -> Unit) {
         CoroutineScope(Dispatchers.IO).launch {
@@ -24,7 +24,9 @@ class FireModelRoom (private val dao: FireDao): FireModel() {
                     it.obs,
                     it.nomePessoa,
                     it.ccPessoa,
-                    it.porConfirmar
+                    it.porConfirmar,
+                    it.latitude,
+                    it.longitude
                 )
             })
         }
@@ -47,7 +49,9 @@ class FireModelRoom (private val dao: FireDao): FireModel() {
                     it.obs,
                     it.nomePessoa,
                     it.ccPessoa,
-                    it.porConfirmar
+                    it.porConfirmar,
+                    it.latitude,
+                    it.longitude
                 )
             }
             dao.insertAll(history)

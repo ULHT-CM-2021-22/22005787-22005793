@@ -40,7 +40,7 @@ public final class FireDao_Impl implements FireDao {
     this.__insertionAdapterOfFireRoom = new EntityInsertionAdapter<FireRoom>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR ABORT INTO `fires` (`id`,`distrito`,`concelho`,`freguesia`,`meiosOperacionais`,`meiosVeiculos`,`meiosAereos`,`estado`,`data`,`fotos`,`obs`,`nomePessoa`,`ccPessoa`,`porConfirmar`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        return "INSERT OR ABORT INTO `fires` (`id`,`distrito`,`concelho`,`freguesia`,`meiosOperacionais`,`meiosVeiculos`,`meiosAereos`,`estado`,`data`,`fotos`,`obs`,`nomePessoa`,`ccPessoa`,`porConfirmar`,`latitude`,`longitude`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
       }
 
       @Override
@@ -116,6 +116,8 @@ public final class FireDao_Impl implements FireDao {
         } else {
           stmt.bindLong(14, _tmp);
         }
+        stmt.bindDouble(15, value.getLatitude());
+        stmt.bindDouble(16, value.getLongitude());
       }
     };
     this.__preparedStmtOfDelete = new SharedSQLiteStatement(__db) {
@@ -237,6 +239,8 @@ public final class FireDao_Impl implements FireDao {
           final int _cursorIndexOfNomePessoa = CursorUtil.getColumnIndexOrThrow(_cursor, "nomePessoa");
           final int _cursorIndexOfCcPessoa = CursorUtil.getColumnIndexOrThrow(_cursor, "ccPessoa");
           final int _cursorIndexOfPorConfirmar = CursorUtil.getColumnIndexOrThrow(_cursor, "porConfirmar");
+          final int _cursorIndexOfLatitude = CursorUtil.getColumnIndexOrThrow(_cursor, "latitude");
+          final int _cursorIndexOfLongitude = CursorUtil.getColumnIndexOrThrow(_cursor, "longitude");
           final List<FireRoom> _result = new ArrayList<FireRoom>(_cursor.getCount());
           while(_cursor.moveToNext()) {
             final FireRoom _item;
@@ -326,7 +330,11 @@ public final class FireDao_Impl implements FireDao {
               _tmp = _cursor.getInt(_cursorIndexOfPorConfirmar);
             }
             _tmpPorConfirmar = _tmp == null ? null : _tmp != 0;
-            _item = new FireRoom(_tmpId,_tmpDistrito,_tmpConcelho,_tmpFreguesia,_tmpMeiosOperacionais,_tmpMeiosVeiculos,_tmpMeiosAereos,_tmpEstado,_tmpData,_tmpFotos,_tmpObs,_tmpNomePessoa,_tmpCcPessoa,_tmpPorConfirmar);
+            final double _tmpLatitude;
+            _tmpLatitude = _cursor.getDouble(_cursorIndexOfLatitude);
+            final double _tmpLongitude;
+            _tmpLongitude = _cursor.getDouble(_cursorIndexOfLongitude);
+            _item = new FireRoom(_tmpId,_tmpDistrito,_tmpConcelho,_tmpFreguesia,_tmpMeiosOperacionais,_tmpMeiosVeiculos,_tmpMeiosAereos,_tmpEstado,_tmpData,_tmpFotos,_tmpObs,_tmpNomePessoa,_tmpCcPessoa,_tmpPorConfirmar,_tmpLatitude,_tmpLongitude);
             _result.add(_item);
           }
           return _result;
@@ -368,6 +376,8 @@ public final class FireDao_Impl implements FireDao {
           final int _cursorIndexOfNomePessoa = CursorUtil.getColumnIndexOrThrow(_cursor, "nomePessoa");
           final int _cursorIndexOfCcPessoa = CursorUtil.getColumnIndexOrThrow(_cursor, "ccPessoa");
           final int _cursorIndexOfPorConfirmar = CursorUtil.getColumnIndexOrThrow(_cursor, "porConfirmar");
+          final int _cursorIndexOfLatitude = CursorUtil.getColumnIndexOrThrow(_cursor, "latitude");
+          final int _cursorIndexOfLongitude = CursorUtil.getColumnIndexOrThrow(_cursor, "longitude");
           final FireRoom _result;
           if(_cursor.moveToFirst()) {
             final String _tmpId;
@@ -456,7 +466,11 @@ public final class FireDao_Impl implements FireDao {
               _tmp = _cursor.getInt(_cursorIndexOfPorConfirmar);
             }
             _tmpPorConfirmar = _tmp == null ? null : _tmp != 0;
-            _result = new FireRoom(_tmpId,_tmpDistrito,_tmpConcelho,_tmpFreguesia,_tmpMeiosOperacionais,_tmpMeiosVeiculos,_tmpMeiosAereos,_tmpEstado,_tmpData,_tmpFotos,_tmpObs,_tmpNomePessoa,_tmpCcPessoa,_tmpPorConfirmar);
+            final double _tmpLatitude;
+            _tmpLatitude = _cursor.getDouble(_cursorIndexOfLatitude);
+            final double _tmpLongitude;
+            _tmpLongitude = _cursor.getDouble(_cursorIndexOfLongitude);
+            _result = new FireRoom(_tmpId,_tmpDistrito,_tmpConcelho,_tmpFreguesia,_tmpMeiosOperacionais,_tmpMeiosVeiculos,_tmpMeiosAereos,_tmpEstado,_tmpData,_tmpFotos,_tmpObs,_tmpNomePessoa,_tmpCcPessoa,_tmpPorConfirmar,_tmpLatitude,_tmpLongitude);
           } else {
             _result = null;
           }

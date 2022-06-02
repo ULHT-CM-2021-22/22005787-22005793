@@ -21,7 +21,8 @@ import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentFiltersB
 class FiltersFragment : Fragment() {
 
     private lateinit var viewModel: FireViewModel
-    private var adapter = FireAdapter(onClick = ::onOperationClick, onLongClick = ::onOperationLongClick)
+    private var adapter =
+        FireAdapter(onClick = ::onOperationClick, onLongClick = ::onOperationLongClick)
 
     val repository = FireRepository.getInstance()
 
@@ -56,7 +57,7 @@ class FiltersFragment : Fragment() {
             val builder: android.app.AlertDialog.Builder = android.app.AlertDialog.Builder(context)
             builder.setTitle(getString(R.string.choose_region))
             builder.setItems(districts, DialogInterface.OnClickListener { dialog, which ->
-            binding.buttonRegionFilter.text = districts[which]
+                binding.buttonRegionFilter.text = districts[which]
             })
             builder.show()
         }
@@ -77,7 +78,7 @@ class FiltersFragment : Fragment() {
         binding.buttonSubmit.setOnClickListener {
             binding.buttonRegionFilter.text = getString(R.string.click)
             binding.buttonRadiusFilter.text = getString(R.string.click)
-            Toast.makeText(context,"Filtros aplicados", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Filtros aplicados", Toast.LENGTH_SHORT).show()
         }
 
     }
@@ -103,8 +104,7 @@ class FiltersFragment : Fragment() {
                 R.id.checkbox_operacionais -> {
                     if (checked) {
 
-                    }
-                    else {
+                    } else {
                         // Remove the meat
                     }
                 }
@@ -130,10 +130,26 @@ class FiltersFragment : Fragment() {
     }
 
 
-
     private fun updateHistory(fireData: List<FireData>) {
-        val history = fireData.map { FireData(it.distrito,it.concelho,it.freguesia,it.meiosOperacionais,
-            it.meiosVeiculos,it.meiosAereos,it.estado,it.data,it.fotos,it.obs,it.nomePessoa,it.ccPessoa,it.porConfirmar)}
+        val history = fireData.map {
+            FireData(
+                it.distrito,
+                it.concelho,
+                it.freguesia,
+                it.meiosOperacionais,
+                it.meiosVeiculos,
+                it.meiosAereos,
+                it.estado,
+                it.data,
+                it.fotos,
+                it.obs,
+                it.nomePessoa,
+                it.ccPessoa,
+                it.porConfirmar,
+                it.latitude,
+                it.longitude
+            )
+        }
         CoroutineScope(Dispatchers.Main).launch {
             adapter.updateItems(history)
         }

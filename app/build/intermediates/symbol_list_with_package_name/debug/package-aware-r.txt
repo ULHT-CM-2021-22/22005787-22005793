@@ -2577,6 +2577,7 @@ drawable ic_fire
 drawable ic_fire_list
 drawable ic_fire_map
 drawable ic_fireplace
+drawable ic_gps
 drawable ic_idk
 drawable ic_info
 drawable ic_keyboard_black_24dp
@@ -2877,6 +2878,7 @@ id frost
 id ghost_view
 id ghost_view_holder
 id gone
+id gps
 id graph
 id graph_wrap
 id group_divider
@@ -3170,6 +3172,7 @@ id text_inf
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
+id text_loc
 id text_obs
 id text_parish
 id text_pessoa
@@ -3518,6 +3521,7 @@ string icon_content_description
 string idk
 string inf_not_available
 string item_view_role_description
+string location
 string m3_ref_typeface_brand_display_regular
 string m3_ref_typeface_brand_medium
 string m3_ref_typeface_brand_regular
