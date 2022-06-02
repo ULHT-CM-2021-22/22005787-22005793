@@ -63,7 +63,7 @@ class FireMapFragment : Fragment(), OnLocationChangedListener {
     private fun placeCamera(latitude: Double, longitude: Double) {
         val cameraPosition = CameraPosition.Builder()
             .target(LatLng(latitude, longitude))
-            .zoom(12f)
+            .zoom(15f)
             .build()
         map?.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition))
     }
