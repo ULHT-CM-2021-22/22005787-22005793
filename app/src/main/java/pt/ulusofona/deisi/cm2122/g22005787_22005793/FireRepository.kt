@@ -22,7 +22,7 @@ class FireRepository private constructor(
             local.getHistory(onFinished)
         }
     }
-
+//
     fun addToHistory(onFinished: () -> Unit, fireData: FireRoom) {
         local.addToHistory(onFinished, fireData)
     }
