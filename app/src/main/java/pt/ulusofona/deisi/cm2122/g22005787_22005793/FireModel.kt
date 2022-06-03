@@ -28,6 +28,7 @@ abstract class FireModel {
         onFinished()
     }
 
+    abstract fun getRisk(distrito:String, onFinished: (String) -> Unit)
     abstract fun getHistory(onFinished: (List<FireData>) -> Unit)
     abstract fun addToHistory(onFinished: () -> Unit, fireData: FireRoom)
     abstract fun fogosNaRegiao(onFinished: (String) -> Unit): String

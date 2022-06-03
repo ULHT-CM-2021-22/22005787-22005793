@@ -13,6 +13,16 @@ class FireRetrofit(retrofit: Retrofit) : FireModel() {
     private val TAG = FireRetrofit::class.java.simpleName
     private val service = retrofit.create(FiresService::class.java)
 
+    override fun getRisk(distrito:String ,onFinished: (String) -> Unit) {
+        CoroutineScope(Dispatchers.IO).launch {
+           val riskRaw = service.getRisk(distrito)
+            riskRaw.message.split("-")
+            val risk = riskRaw.message.split("-")[1]
+            onFinished(risk)
+
+        }
+    }
+
 
     override fun getHistory(onFinished: (List<FireData>) -> Unit) {
         CoroutineScope(Dispatchers.IO).launch {
@@ -28,7 +38,7 @@ class FireRetrofit(retrofit: Retrofit) : FireModel() {
                             it.terrain.toString(),
                             it.aerial.toString(),
                             it.status,
-                            data = "${it.data} - ${it.hour}",
+                            data = "${it.data} / ${it.hour}",
                             null,
                             it.extra,
                             null,

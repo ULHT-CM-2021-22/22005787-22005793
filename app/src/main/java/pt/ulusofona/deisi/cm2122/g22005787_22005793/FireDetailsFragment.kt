@@ -68,8 +68,6 @@ class FireDetailsFragment : Fragment() {
             val loc = "${it.latitude} - ${it.longitude}"
             binding.textLoc.text = loc
             updateDashboard()
-
-
         }
     }
 
@@ -80,8 +78,6 @@ class FireDetailsFragment : Fragment() {
 
     private fun updateDashboard() {
         viewModel.onAlterarRisco{}
-        binding.riscoRegiao.text = viewModel.onGetRisk()
-        backgroundColor(viewModel.onGetRisk())
 
 
     }

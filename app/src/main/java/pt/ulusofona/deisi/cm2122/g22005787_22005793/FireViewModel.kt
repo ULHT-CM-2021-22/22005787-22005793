@@ -43,8 +43,8 @@ class FireViewModel(application: Application) : AndroidViewModel(application) {
         model.alterarRisco(onFinished)
     }
 
-    fun onGetRisk(): String {
-        return model.risk
+    fun onGetRisk(distrito:String ,onFinished: (String) -> Unit){
+        model.getRisk(distrito, onFinished)
     }
 
     fun onGetDistricts(): Array<String> {

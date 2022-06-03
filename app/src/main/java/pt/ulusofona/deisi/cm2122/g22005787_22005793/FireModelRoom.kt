@@ -7,6 +7,10 @@ import java.util.*
 
 class FireModelRoom(private val dao: FireDao) : FireModel() {
 
+    override fun getRisk(distrito: String, onFinished: (String) -> Unit) {
+        TODO("Not yet implemented")
+    }
+
     override fun getHistory(onFinished: (List<FireData>) -> Unit) {
         CoroutineScope(Dispatchers.IO).launch {
             val list = dao.getAll()
@@ -112,6 +116,7 @@ class FireModelRoom(private val dao: FireDao) : FireModel() {
         val count: String = fogosNaRegiao(onFinished)
         val total: String = totalFogos(onFinished)
         val media = (count.toDouble() / total.toDouble())
+        onFinished(media.toString())
         return media.toString()
     }
 }

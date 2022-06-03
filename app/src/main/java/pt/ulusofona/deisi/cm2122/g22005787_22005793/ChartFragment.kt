@@ -338,8 +338,7 @@ class ChartFragment : Fragment() {
 
     private fun updateDashboard() {
         viewModel.onAlterarRisco {}
-        binding.riscoRegiao.text = viewModel.onGetRisk()
-        backgroundColor(viewModel.onGetRisk())
+
     }
 
     private fun backgroundColor(risk: String) {

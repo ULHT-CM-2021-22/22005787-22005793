@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Headers
+import retrofit2.http.Path
 
 data class Fires(
     @SerializedName("id") val id: String,
@@ -21,6 +22,8 @@ data class Fires(
     @SerializedName("lng") val lng: Double
 )
 
+data class GetRisk(@SerializedName("data") val message: String)
+
 class firesList : ArrayList<Fires>()
 
 data class GetFiresResponse(
@@ -33,4 +36,8 @@ interface FiresService {
     @Headers("Content-Type: application/json")
     @GET("new/fires")
     suspend fun getAll(): Response<GetFiresResponse>
+
+    @Headers("Content-Type: application/json")
+    @GET("v1/risk/{district}")
+    suspend fun getRisk(@Path("district") district: String): GetRisk
 }

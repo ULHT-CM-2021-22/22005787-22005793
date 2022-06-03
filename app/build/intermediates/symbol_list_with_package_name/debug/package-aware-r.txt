@@ -2752,7 +2752,9 @@ id bounceStart
 id braga
 id braganca
 id buttonPanel
+id button_estadoFogo_filter
 id button_foto
+id button_meios_filter
 id button_radius_filter
 id button_region_filter
 id button_send_registration
@@ -2771,11 +2773,6 @@ id chain
 id chain2
 id chains
 id checkbox
-id checkbox_aDecorrer
-id checkbox_concluido
-id checkbox_opAereos
-id checkbox_opTerrestres
-id checkbox_operacionais
 id checked
 id chip
 id chip1

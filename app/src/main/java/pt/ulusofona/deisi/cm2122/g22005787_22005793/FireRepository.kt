@@ -44,6 +44,10 @@ class FireRepository private constructor(
         return local.mediaFogosNaRegiao(onFinished)
     }
 
+    fun getRisk(distrito:String ,onFinished: (String) -> Unit){
+        local.getRisk(distrito, onFinished)
+    }
+
     fun alterarRegiao(onFinished: () -> Unit, regiao: String) {
         local.alterarRegiao(onFinished, regiao)
     }

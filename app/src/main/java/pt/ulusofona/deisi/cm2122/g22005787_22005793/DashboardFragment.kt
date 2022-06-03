@@ -25,12 +25,6 @@ class DashboardFragment : Fragment(), OnLocationChangedListener {
     private lateinit var geocoder: Geocoder
     private var adapter =
         FireAdapter(onClick = ::onOperationClick, onLongClick = ::onOperationLongClick)
-    private var districts = arrayOf(
-        "Aveiro", "Beja", "Braga", "Bragança", "Castelo Branco", "Coimbra",
-        "Évora", "Faro", "Guarda", "Leiria", "Lisboa", "Portalegre",
-        "Porto", "Santarém", "Setúbal", "Viana do Castelo", "Vila Real", "Viseu"
-    )
-    private var actualDistrict = "Lisboa"
     private val timer = object : CountDownTimer(20000, 1000) {
         override fun onTick(millisUntilFinished: Long) {}
         override fun onFinish() {
@@ -95,10 +89,6 @@ class DashboardFragment : Fragment(), OnLocationChangedListener {
                 binding.mediaFogosRegiao.text = it
             }
         }
-
-        viewModel.onAlterarRisco {}
-        binding.riscoRegiao.text = viewModel.onGetRisk()
-        backgroundColor(viewModel.onGetRisk())
     }
 
     private fun backgroundColor(risk: String) {
@@ -153,6 +143,10 @@ class DashboardFragment : Fragment(), OnLocationChangedListener {
         val location = addresses.first { it.locality != null && it.locality.isNotEmpty() }
         binding.textRegion.text = location.locality
         viewModel.onAlterarRegiao({},location.locality)
+        viewModel.onGetRisk(location.locality) {
+            binding.riscoRegiao.text = it
+        }
+        backgroundColor(binding.riscoRegiao.text.toString())
     }
 
 

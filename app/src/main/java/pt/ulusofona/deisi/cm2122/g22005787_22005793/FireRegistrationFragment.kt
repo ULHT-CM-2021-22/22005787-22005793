@@ -233,10 +233,6 @@ class FireRegistrationFragment : Fragment(), OnLocationChangedListener {
 
     private fun updateDashboard() {
         viewModel.onAlterarRisco {}
-        binding.riscoRegiao.text = viewModel.onGetRisk()
-        backgroundColor(viewModel.onGetRisk())
-
-
     }
 
     private fun updateHistory(fires: List<FireData>) {

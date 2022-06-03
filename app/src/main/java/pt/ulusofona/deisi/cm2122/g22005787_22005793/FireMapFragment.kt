@@ -1,5 +1,6 @@
 package pt.ulusofona.deisi.cm2122.g22005787_22005793
 
+import android.annotation.SuppressLint
 import android.content.pm.ActivityInfo
 import android.location.Geocoder
 import android.location.Location
@@ -15,6 +16,7 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentFireMapBinding
 import java.util.*
 
@@ -32,6 +34,7 @@ class FireMapFragment : Fragment(), OnLocationChangedListener {
         }
     }
 
+    @SuppressLint("MissingPermission")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -45,6 +48,7 @@ class FireMapFragment : Fragment(), OnLocationChangedListener {
         binding.map.onCreate(savedInstanceState)
         binding.map.getMapAsync {
             map = it
+            it.isMyLocationEnabled = true
             FusedLocation.registerListener(this)
         }
         viewModel = ViewModelProvider(this).get(FireViewModel::class.java)
@@ -58,12 +62,13 @@ class FireMapFragment : Fragment(), OnLocationChangedListener {
 
     override fun onLocationChanged(latitude: Double, longitude: Double) {
         placeCamera(latitude, longitude)
+        map?.addMarker(MarkerOptions().position(LatLng(latitude,longitude)))
     }
 
     private fun placeCamera(latitude: Double, longitude: Double) {
         val cameraPosition = CameraPosition.Builder()
             .target(LatLng(latitude, longitude))
-            .zoom(15f)
+            .zoom(6f)
             .build()
         map?.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition))
     }
@@ -89,9 +94,6 @@ class FireMapFragment : Fragment(), OnLocationChangedListener {
 
     private fun updateDashboard() {
         viewModel.onAlterarRisco{}
-        binding.riscoRegiao.text = viewModel.onGetRisk()
-        backgroundColor(viewModel.onGetRisk())
-
 
     }
 
