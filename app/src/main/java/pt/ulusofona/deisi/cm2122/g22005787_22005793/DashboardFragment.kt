@@ -89,6 +89,7 @@ class DashboardFragment : Fragment(), OnLocationChangedListener {
                 binding.mediaFogosRegiao.text = it
             }
         }
+        backgroundColor(binding.riscoRegiao.text.toString())
     }
 
     private fun backgroundColor(risk: String) {
@@ -141,12 +142,12 @@ class DashboardFragment : Fragment(), OnLocationChangedListener {
     private fun placeCityName(latitude: Double, longitude: Double) {
         val addresses = geocoder.getFromLocation(latitude, longitude, 5)
         val location = addresses.first { it.locality != null && it.locality.isNotEmpty() }
-        binding.textRegion.text = location.locality
-        viewModel.onAlterarRegiao({},location.locality)
+        binding.textRegion.text = location.adminArea
+        viewModel.onAlterarRegiao({},location.adminArea)
         viewModel.onGetRisk(location.locality) {
             binding.riscoRegiao.text = it
         }
-        backgroundColor(binding.riscoRegiao.text.toString())
+
     }
 
 

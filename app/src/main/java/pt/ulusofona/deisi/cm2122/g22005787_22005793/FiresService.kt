@@ -5,6 +5,7 @@ import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 data class Fires(
     @SerializedName("id") val id: String,
@@ -22,7 +23,7 @@ data class Fires(
     @SerializedName("lng") val lng: Double
 )
 
-data class GetRisk(@SerializedName("data") val message: String)
+data class GetRisk(@SerializedName("data") val data: String)
 
 class firesList : ArrayList<Fires>()
 
@@ -38,6 +39,6 @@ interface FiresService {
     suspend fun getAll(): Response<GetFiresResponse>
 
     @Headers("Content-Type: application/json")
-    @GET("v1/risk/{district}")
-    suspend fun getRisk(@Path("district") district: String): GetRisk
+    @GET("v1/risk")
+    suspend fun getRisk(@Query("concelho") data: String): GetRisk
 }

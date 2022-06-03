@@ -15,11 +15,23 @@ class FireRetrofit(retrofit: Retrofit) : FireModel() {
 
     override fun getRisk(distrito:String ,onFinished: (String) -> Unit) {
         CoroutineScope(Dispatchers.IO).launch {
-           val riskRaw = service.getRisk(distrito)
-            riskRaw.message.split("-")
-            val risk = riskRaw.message.split("-")[1]
-            onFinished(risk)
-
+            try {
+                if (distrito == "Lisbon"){
+                    val riskRaw = service.getRisk("Lisboa")
+                    var risk = riskRaw.data
+                    risk = risk.split("-")[1]
+                    risk = risk.split(",")[0]
+                    onFinished(risk.substring(1))
+            }else {
+                    val riskRaw = service.getRisk(distrito)
+                    var risk = riskRaw.data
+                    risk = risk.split("-")[1]
+                    risk = risk.split(",")[0]
+                    onFinished(risk.substring(1))
+                }
+            } catch (ex: HttpException) {
+                Log.e(TAG, ex.message())
+            }
         }
     }
 

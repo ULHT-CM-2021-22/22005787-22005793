@@ -45,7 +45,8 @@ class FireRepository private constructor(
     }
 
     fun getRisk(distrito:String ,onFinished: (String) -> Unit){
-        local.getRisk(distrito, onFinished)
+
+        remote.getRisk(distrito, onFinished)
     }
 
     fun alterarRegiao(onFinished: () -> Unit, regiao: String) {
