@@ -56,7 +56,6 @@ id braga
 id braganca
 id button_foto
 id button_radius_filter
-id button_region
 id button_region_filter
 id button_send_registration
 id button_submit

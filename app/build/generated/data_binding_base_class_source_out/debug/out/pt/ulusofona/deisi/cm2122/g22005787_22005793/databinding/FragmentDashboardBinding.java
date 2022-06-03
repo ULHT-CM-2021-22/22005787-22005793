@@ -4,7 +4,6 @@ package pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -21,9 +20,6 @@ import pt.ulusofona.deisi.cm2122.g22005787_22005793.R;
 public final class FragmentDashboardBinding implements ViewBinding {
   @NonNull
   private final FrameLayout rootView;
-
-  @NonNull
-  public final Button buttonRegion;
 
   @NonNull
   public final TextView fogosRegiao;
@@ -58,14 +54,12 @@ public final class FragmentDashboardBinding implements ViewBinding {
   @NonNull
   public final TextView textRegion;
 
-  private FragmentDashboardBinding(@NonNull FrameLayout rootView, @NonNull Button buttonRegion,
-      @NonNull TextView fogosRegiao, @NonNull TextView fogosTotal, @NonNull ImageView imageview1,
-      @NonNull ImageView imageview2, @NonNull ImageView imageview3, @NonNull ImageView imageview4,
-      @NonNull ImageView imageview5, @NonNull TextView mediaFogosRegiao,
-      @NonNull TextView riscoRegiao, @NonNull RelativeLayout riskLayout,
-      @NonNull TextView textRegion) {
+  private FragmentDashboardBinding(@NonNull FrameLayout rootView, @NonNull TextView fogosRegiao,
+      @NonNull TextView fogosTotal, @NonNull ImageView imageview1, @NonNull ImageView imageview2,
+      @NonNull ImageView imageview3, @NonNull ImageView imageview4, @NonNull ImageView imageview5,
+      @NonNull TextView mediaFogosRegiao, @NonNull TextView riscoRegiao,
+      @NonNull RelativeLayout riskLayout, @NonNull TextView textRegion) {
     this.rootView = rootView;
-    this.buttonRegion = buttonRegion;
     this.fogosRegiao = fogosRegiao;
     this.fogosTotal = fogosTotal;
     this.imageview1 = imageview1;
@@ -106,12 +100,6 @@ public final class FragmentDashboardBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.button_region;
-      Button buttonRegion = ViewBindings.findChildViewById(rootView, id);
-      if (buttonRegion == null) {
-        break missingId;
-      }
-
       id = R.id.fogos_regiao;
       TextView fogosRegiao = ViewBindings.findChildViewById(rootView, id);
       if (fogosRegiao == null) {
@@ -178,9 +166,9 @@ public final class FragmentDashboardBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentDashboardBinding((FrameLayout) rootView, buttonRegion, fogosRegiao,
-          fogosTotal, imageview1, imageview2, imageview3, imageview4, imageview5, mediaFogosRegiao,
-          riscoRegiao, riskLayout, textRegion);
+      return new FragmentDashboardBinding((FrameLayout) rootView, fogosRegiao, fogosTotal,
+          imageview1, imageview2, imageview3, imageview4, imageview5, mediaFogosRegiao, riscoRegiao,
+          riskLayout, textRegion);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

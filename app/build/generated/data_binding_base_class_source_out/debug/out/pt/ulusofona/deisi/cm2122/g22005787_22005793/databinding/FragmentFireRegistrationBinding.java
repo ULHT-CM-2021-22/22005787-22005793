@@ -27,9 +27,6 @@ public final class FragmentFireRegistrationBinding implements ViewBinding {
   public final Button buttonFoto;
 
   @NonNull
-  public final Button buttonRegion;
-
-  @NonNull
   public final Button buttonSendRegistration;
 
   @NonNull
@@ -59,15 +56,18 @@ public final class FragmentFireRegistrationBinding implements ViewBinding {
   @NonNull
   public final RelativeLayout riskLayout;
 
+  @NonNull
+  public final TextView textRegion;
+
   private FragmentFireRegistrationBinding(@NonNull FrameLayout rootView, @NonNull Button buttonFoto,
-      @NonNull Button buttonRegion, @NonNull Button buttonSendRegistration,
-      @NonNull ImageView imageview10, @NonNull ImageView imageview11,
-      @NonNull ImageView imageview12, @NonNull ImageView imageview13, @NonNull ImageView imageview4,
+      @NonNull Button buttonSendRegistration, @NonNull ImageView imageview10,
+      @NonNull ImageView imageview11, @NonNull ImageView imageview12,
+      @NonNull ImageView imageview13, @NonNull ImageView imageview4,
       @NonNull EditText plainTextInputCc, @NonNull EditText plainTextInputName,
-      @NonNull TextView riscoRegiao, @NonNull RelativeLayout riskLayout) {
+      @NonNull TextView riscoRegiao, @NonNull RelativeLayout riskLayout,
+      @NonNull TextView textRegion) {
     this.rootView = rootView;
     this.buttonFoto = buttonFoto;
-    this.buttonRegion = buttonRegion;
     this.buttonSendRegistration = buttonSendRegistration;
     this.imageview10 = imageview10;
     this.imageview11 = imageview11;
@@ -78,6 +78,7 @@ public final class FragmentFireRegistrationBinding implements ViewBinding {
     this.plainTextInputName = plainTextInputName;
     this.riscoRegiao = riscoRegiao;
     this.riskLayout = riskLayout;
+    this.textRegion = textRegion;
   }
 
   @Override
@@ -110,12 +111,6 @@ public final class FragmentFireRegistrationBinding implements ViewBinding {
       id = R.id.button_foto;
       Button buttonFoto = ViewBindings.findChildViewById(rootView, id);
       if (buttonFoto == null) {
-        break missingId;
-      }
-
-      id = R.id.button_region;
-      Button buttonRegion = ViewBindings.findChildViewById(rootView, id);
-      if (buttonRegion == null) {
         break missingId;
       }
 
@@ -179,9 +174,15 @@ public final class FragmentFireRegistrationBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentFireRegistrationBinding((FrameLayout) rootView, buttonFoto, buttonRegion,
+      id = R.id.text_region;
+      TextView textRegion = ViewBindings.findChildViewById(rootView, id);
+      if (textRegion == null) {
+        break missingId;
+      }
+
+      return new FragmentFireRegistrationBinding((FrameLayout) rootView, buttonFoto,
           buttonSendRegistration, imageview10, imageview11, imageview12, imageview13, imageview4,
-          plainTextInputCc, plainTextInputName, riscoRegiao, riskLayout);
+          plainTextInputCc, plainTextInputName, riscoRegiao, riskLayout, textRegion);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
