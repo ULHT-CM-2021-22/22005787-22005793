@@ -21,10 +21,6 @@ import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentFiltersB
 class FiltersFragment : Fragment() {
 
     private lateinit var viewModel: FireViewModel
-    private var adapter =
-        FireAdapter(onClick = ::onOperationClick, onLongClick = ::onOperationLongClick)
-
-    val repository = FireRepository.getInstance()
 
     private var districts = arrayOf(
         "Aveiro", "Beja", "Braga", "Bragança", "Castelo Branco", "Coimbra",
@@ -34,6 +30,14 @@ class FiltersFragment : Fragment() {
 
     private var radius = arrayOf(
         "50km", "150km", "300km"
+    )
+
+    private var meios = arrayOf(
+        "Operacionais", "Meios Terrestres", "Meios Aereos"
+    )
+
+    private var estado = arrayOf(
+        "A decorrer", "Concluído"
     )
 
     private lateinit var binding: FragmentFiltersBinding
@@ -71,13 +75,29 @@ class FiltersFragment : Fragment() {
             builder.show()
         }
 
-        binding.checkboxOperacionais.setOnClickListener {
+        binding.meiosOperacionaisFiltros.setOnClickListener {
+            val builder: android.app.AlertDialog.Builder = android.app.AlertDialog.Builder(context)
+            builder.setTitle(getString(R.string.meios_operacionais))
+            builder.setItems(meios, DialogInterface.OnClickListener { dialog, which ->
+                binding.buttonRadiusFilter.text = meios[which]
+            })
+            builder.show()
+        }
 
+        binding.buttonEstadoFogoFilter.setOnClickListener {
+            val builder: android.app.AlertDialog.Builder = android.app.AlertDialog.Builder(context)
+            builder.setTitle(getString(R.string.estado_fogo))
+            builder.setItems(estado, DialogInterface.OnClickListener { dialog, which ->
+                binding.buttonRadiusFilter.text = estado[which]
+            })
+            builder.show()
         }
 
         binding.buttonSubmit.setOnClickListener {
             binding.buttonRegionFilter.text = getString(R.string.click)
             binding.buttonRadiusFilter.text = getString(R.string.click)
+            binding.buttonMeiosFilter.text = getString(R.string.click)
+            binding.buttonEstadoFogoFilter.text = getString(R.string.click)
             Toast.makeText(context, "Filtros aplicados", Toast.LENGTH_SHORT).show()
         }
 
@@ -96,64 +116,6 @@ class FiltersFragment : Fragment() {
         super.onPause()
     }
 
-    fun onCheckboxClicked(view: View) {
-        if (view is CheckBox) {
-            val checked: Boolean = view.isChecked
-
-            when (view.id) {
-                R.id.checkbox_operacionais -> {
-                    if (checked) {
-
-                    } else {
-                        // Remove the meat
-                    }
-                }
-                R.id.checkbox_opTerrestres -> {
-                    if (checked) {
-                        // Cheese me
-                    } else {
-                        // I'm lactose intolerant
-                    }
-                }
-            }
-        }
-
-    }
-
-
-    fun onOperationClick(fireData: FireData) {
-
-    }
-
-    private fun onOperationLongClick(fireData: FireData): Boolean {
-        return false
-    }
-
-
-    private fun updateHistory(fireData: List<FireData>) {
-        val history = fireData.map {
-            FireData(
-                it.distrito,
-                it.concelho,
-                it.freguesia,
-                it.meiosOperacionais,
-                it.meiosVeiculos,
-                it.meiosAereos,
-                it.estado,
-                it.data,
-                it.fotos,
-                it.obs,
-                it.nomePessoa,
-                it.ccPessoa,
-                it.porConfirmar,
-                it.latitude,
-                it.longitude
-            )
-        }
-        CoroutineScope(Dispatchers.Main).launch {
-            adapter.updateItems(history)
-        }
-    }
 
 
 }

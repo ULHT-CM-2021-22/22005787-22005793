@@ -17,8 +17,8 @@
 
             <TextView
                 android:id="@+id/raio_pretendido"
-                android:layout_width="300dp"
-                android:layout_height="60dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:drawableLeft="@drawable/ic_target"
                 android:gravity="fill_vertical"
                 android:text="@string/raio"
@@ -81,23 +81,15 @@
                 android:textSize="22dp"
                 />
 
-            <CheckBox android:id="@+id/checkbox_operacionais"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/firemen"
-                android:onClick="onCheckboxClicked"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/button_meios_filter"
+                android:text="@string/click"
+                android:textColor="@color/orange"
+                android:background="@android:color/transparent"/>
 
-            <CheckBox android:id="@+id/checkbox_opTerrestres"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/vehicles"
-                android:onClick="onCheckboxClicked"/>
 
-            <CheckBox android:id="@+id/checkbox_opAereos"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/air_support"
-                android:onClick="onCheckboxClicked"/>
 
         </LinearLayout>
 
@@ -116,17 +108,13 @@
                 android:textSize="22dp"
                 />
 
-            <CheckBox android:id="@+id/checkbox_concluido"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/decorrer"
-                android:onClick="onCheckboxClicked"/>
-
-            <CheckBox android:id="@+id/checkbox_aDecorrer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/concluido"
-                android:onClick="onCheckboxClicked"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/button_estadoFogo_filter"
+                android:text="@string/click"
+                android:textColor="@color/orange"
+                android:background="@android:color/transparent"/>
 
 
 
