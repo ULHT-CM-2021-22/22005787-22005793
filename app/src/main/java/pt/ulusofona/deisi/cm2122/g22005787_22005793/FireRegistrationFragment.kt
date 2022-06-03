@@ -40,6 +40,7 @@ class FireRegistrationFragment : Fragment(), OnLocationChangedListener {
     private lateinit var binding: FragmentFireRegistrationBinding
     var lat: Double = 0.0
     var lng: Double = 0.0
+    private lateinit var geocoder: Geocoder
     private var adapter =
         FireAdapter(onClick = ::onOperationClick, onLongClick = ::onOperationLongClick)
     private val timer = object : CountDownTimer(20000, 1000) {
@@ -135,6 +136,7 @@ class FireRegistrationFragment : Fragment(), OnLocationChangedListener {
         val view = inflater.inflate(R.layout.fragment_fire_registration, container, false)
         viewModel = ViewModelProvider(this).get(FireViewModel::class.java)
         FusedLocation.registerListener(this)
+        geocoder = Geocoder(context, Locale.getDefault())
         binding = FragmentFireRegistrationBinding.bind(view)
         initPermissions()
         return binding.root
@@ -144,25 +146,17 @@ class FireRegistrationFragment : Fragment(), OnLocationChangedListener {
     override fun onLocationChanged(latitude: Double, longitude: Double) {
         lat = latitude
         lng = longitude
+        placeCityName(latitude, longitude)
     }
 
     override fun onStart() {
         super.onStart()
-        binding.buttonRegion.setOnClickListener {
-            val builder: android.app.AlertDialog.Builder = android.app.AlertDialog.Builder(context)
-            builder.setTitle(getString(R.string.choose_region))
-            builder.setItems(districts, DialogInterface.OnClickListener { dialog, which ->
-                binding.buttonRegion.text = districts[which]
-            })
-            builder.show()
-
-        }
         binding.buttonFoto.setOnClickListener {
             openGalleryForImage()
         }
 
         binding.buttonSendRegistration.setOnClickListener {
-            val distrito = binding.buttonRegion.text.toString()
+            val distrito = binding.textRegion.text.toString()
             val nomePessoa = binding.plainTextInputName.text.toString()
             val ccPessoa = binding.plainTextInputCc.text.toString()
             val sdf = SimpleDateFormat("dd/MM/yyyy - HH:mm:ss")
@@ -278,6 +272,13 @@ class FireRegistrationFragment : Fragment(), OnLocationChangedListener {
             Risk.MODERATE.risco -> binding.riskLayout.setBackgroundColor(resources.getColor(R.color.green))
             Risk.REDUCED.risco -> binding.riskLayout.setBackgroundColor(resources.getColor(R.color.green))
         }
+    }
+
+    private fun placeCityName(latitude: Double, longitude: Double) {
+        val addresses = geocoder.getFromLocation(latitude, longitude, 5)
+        val location = addresses.first { it.locality != null && it.locality.isNotEmpty() }
+        binding.textRegion.text = location.locality
+        viewModel.onAlterarRegiao({},location.locality)
     }
 
 

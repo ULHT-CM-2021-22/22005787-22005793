@@ -61,6 +61,10 @@ class FireRetrofit(retrofit: Retrofit) : FireModel() {
         TODO("Not yet implemented")
     }
 
+    override fun mediaFogosNaRegiao(onFinished: (String) -> Unit): String {
+        TODO("Not yet implemented")
+    }
+
     override fun deleteAll(onFinished: () -> Unit) {
         TODO("Not yet implemented")
     }

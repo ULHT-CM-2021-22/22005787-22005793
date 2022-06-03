@@ -107,4 +107,11 @@ class FireModelRoom(private val dao: FireDao) : FireModel() {
         }
         return total
     }
+
+    override fun mediaFogosNaRegiao(onFinished: (String) -> Unit): String {
+        val count: String = fogosNaRegiao(onFinished)
+        val total: String = totalFogos(onFinished)
+        val media = (count.toDouble() / total.toDouble())
+        return media.toString()
+    }
 }

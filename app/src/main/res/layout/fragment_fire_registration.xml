@@ -164,12 +164,12 @@
                     android:textSize="15sp">
 
                 </TextView>
-                <Button
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/button_region"
-                    android:text="@string/click"
-                    android:textColor="@color/orange"
+                    android:id="@+id/text_region"
+                    android:textAlignment="center"
+                    android:textSize="17sp"
                     android:background="@android:color/transparent"/>
 
             </LinearLayout>

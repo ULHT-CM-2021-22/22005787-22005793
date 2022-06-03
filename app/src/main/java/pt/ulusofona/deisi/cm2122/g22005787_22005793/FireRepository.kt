@@ -14,6 +14,7 @@ class FireRepository private constructor(
             remote.getHistory { history ->
                 local.deleteAll {     // RAFAEL ALEXANDRE acho que o problema está por aí
                     local.insertFires(history) {
+                        local.getHistory(onFinished)
                         onFinished(history)
                     }
                 }
