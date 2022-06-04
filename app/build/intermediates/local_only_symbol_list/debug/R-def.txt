@@ -100,7 +100,6 @@ id leiria
 id linear_layout_risk
 id lisboa
 id map
-id media_fogos_regiao
 id meiosOperacionais_filtros
 id nav_chart
 id nav_dashboard
@@ -185,6 +184,7 @@ string firemen
 string foto
 string idk
 string inf_not_available
+string lisboa
 string location
 string meios_operacionais
 string name
@@ -196,6 +196,7 @@ string obs
 string parish
 string photo
 string raio
+string reduzido
 string region
 string region_fires
 string region_risk

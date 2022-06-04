@@ -75,11 +75,11 @@ class FiltersFragment : Fragment() {
             builder.show()
         }
 
-        binding.meiosOperacionaisFiltros.setOnClickListener {
+        binding.buttonMeiosFilter.setOnClickListener {
             val builder: android.app.AlertDialog.Builder = android.app.AlertDialog.Builder(context)
             builder.setTitle(getString(R.string.meios_operacionais))
             builder.setItems(meios, DialogInterface.OnClickListener { dialog, which ->
-                binding.buttonRadiusFilter.text = meios[which]
+                binding.buttonMeiosFilter.text = meios[which]
             })
             builder.show()
         }
@@ -88,7 +88,7 @@ class FiltersFragment : Fragment() {
             val builder: android.app.AlertDialog.Builder = android.app.AlertDialog.Builder(context)
             builder.setTitle(getString(R.string.estado_fogo))
             builder.setItems(estado, DialogInterface.OnClickListener { dialog, which ->
-                binding.buttonRadiusFilter.text = estado[which]
+                binding.buttonEstadoFogoFilter.text = estado[which]
             })
             builder.show()
         }

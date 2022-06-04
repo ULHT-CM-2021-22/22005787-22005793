@@ -33,6 +33,7 @@
     <string name="foto">Fotos</string>
     <string name="idk">ALIGATOOOO</string>
     <string name="inf_not_available">Information not available</string>
+    <string name="lisboa">Lisbon</string>
     <string name="location">Location</string>
     <string name="meios_operacionais">Filter by operational means</string>
     <string name="name">Name</string>
@@ -44,6 +45,7 @@
     <string name="parish">Parish</string>
     <string name="photo">Photo(Opcional)</string>
     <string name="raio">Choose the desired radius</string>
+    <string name="reduzido">Reduced</string>
     <string name="region">Region</string>
     <string name="region_fires">Region\´s fires</string>
     <string name="region_risk">Region\´s risk</string>

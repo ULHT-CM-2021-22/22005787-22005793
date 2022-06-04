@@ -6,141 +6,141 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="23"
-8-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml
+8-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="31" />
-9-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml
+9-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:5:5-66
-11-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:5:22-64
+11-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:5:5-66
+11-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:5:22-64
 12    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-12-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:6:5-80
-12-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:6:22-78
+12-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:6:5-80
+12-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:6:22-78
 13    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-13-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:7:5-78
-13-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:7:22-76
+13-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:7:5-78
+13-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:7:22-76
 14    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-14-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:8:5-79
-14-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:8:22-76
+14-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:8:5-79
+14-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:8:22-76
 15    <uses-permission android:name="android.permission.CAMERA" />
-15-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:9:5-64
-15-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:9:22-62
+15-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:9:5-64
+15-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:9:22-62
 16
 17    <uses-feature
-17-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Goncalo\.gradle\caches\transforms-3\4301d4b33a4daed3f86591484d3fab75\transformed\play-services-maps-18.0.2\AndroidManifest.xml:26:5-28:35
+17-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\rafs0\.gradle\caches\transforms-3\4301d4b33a4daed3f86591484d3fab75\transformed\play-services-maps-18.0.2\AndroidManifest.xml:26:5-28:35
 18        android:glEsVersion="0x00020000"
-18-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Goncalo\.gradle\caches\transforms-3\4301d4b33a4daed3f86591484d3fab75\transformed\play-services-maps-18.0.2\AndroidManifest.xml:27:9-41
+18-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\rafs0\.gradle\caches\transforms-3\4301d4b33a4daed3f86591484d3fab75\transformed\play-services-maps-18.0.2\AndroidManifest.xml:27:9-41
 19        android:required="true" />
-19-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Goncalo\.gradle\caches\transforms-3\4301d4b33a4daed3f86591484d3fab75\transformed\play-services-maps-18.0.2\AndroidManifest.xml:28:9-32
+19-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\rafs0\.gradle\caches\transforms-3\4301d4b33a4daed3f86591484d3fab75\transformed\play-services-maps-18.0.2\AndroidManifest.xml:28:9-32
 20
 21    <queries>
-21-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Goncalo\.gradle\caches\transforms-3\4301d4b33a4daed3f86591484d3fab75\transformed\play-services-maps-18.0.2\AndroidManifest.xml:30:5-34:15
+21-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\rafs0\.gradle\caches\transforms-3\4301d4b33a4daed3f86591484d3fab75\transformed\play-services-maps-18.0.2\AndroidManifest.xml:30:5-34:15
 22
 23        <!-- Needs to be explicitly declared on Android R+ -->
 24        <package android:name="com.google.android.apps.maps" />
-24-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Goncalo\.gradle\caches\transforms-3\4301d4b33a4daed3f86591484d3fab75\transformed\play-services-maps-18.0.2\AndroidManifest.xml:33:9-64
-24-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Goncalo\.gradle\caches\transforms-3\4301d4b33a4daed3f86591484d3fab75\transformed\play-services-maps-18.0.2\AndroidManifest.xml:33:18-61
+24-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\rafs0\.gradle\caches\transforms-3\4301d4b33a4daed3f86591484d3fab75\transformed\play-services-maps-18.0.2\AndroidManifest.xml:33:9-64
+24-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\rafs0\.gradle\caches\transforms-3\4301d4b33a4daed3f86591484d3fab75\transformed\play-services-maps-18.0.2\AndroidManifest.xml:33:18-61
 25    </queries>
 26
 27    <application
-27-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:11:5-32:19
+27-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:11:5-32:19
 28        android:name="pt.ulusofona.deisi.cm2122.g22005787_22005793.FireApplication"
-28-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:12:9-40
+28-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:12:9-40
 29        android:allowBackup="true"
-29-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:13:9-35
+29-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:13:9-35
 30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-30-->[androidx.core:core:1.7.0] C:\Users\Goncalo\.gradle\caches\transforms-3\aec237d7615e5b5f19aac02e97eeb357\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+30-->[androidx.core:core:1.7.0] C:\Users\rafs0\.gradle\caches\transforms-3\aec237d7615e5b5f19aac02e97eeb357\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
 31        android:debuggable="true"
 32        android:extractNativeLibs="false"
 33        android:icon="@drawable/ic_fire"
-33-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:14:9-41
+33-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:14:9-41
 34        android:label="@string/app_name"
-34-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:15:9-41
+34-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:15:9-41
 35        android:roundIcon="@drawable/ic_fire"
-35-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:16:9-46
+35-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:16:9-46
 36        android:supportsRtl="true"
-36-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:17:9-35
+36-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:17:9-35
 37        android:testOnly="true"
 38        android:theme="@style/Theme.G22005787_22005793" >
-38-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:18:9-56
+38-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:18:9-56
 39        <activity
-39-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:19:9-26:20
+39-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:19:9-26:20
 40            android:name="pt.ulusofona.deisi.cm2122.g22005787_22005793.MainActivity"
-40-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:20:13-41
+40-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:20:13-41
 41            android:exported="true" >
-41-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:21:13-36
+41-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:21:13-36
 42            <intent-filter>
-42-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:22:13-25:29
+42-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:22:13-25:29
 43                <action android:name="android.intent.action.MAIN" />
-43-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:23:17-69
-43-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:23:25-66
+43-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:23:17-69
+43-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:23:25-66
 44
 45                <category android:name="android.intent.category.LAUNCHER" />
-45-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:24:17-77
-45-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:24:27-74
+45-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:24:17-77
+45-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:24:27-74
 46            </intent-filter>
 47        </activity>
 48
 49        <meta-data
-49-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:28:9-30:70
+49-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:28:9-30:70
 50            android:name="com.google.android.geo.API_KEY"
-50-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:29:13-58
+50-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:29:13-58
 51            android:value="AIzaSyAX9SXfEjVjOyIPl69tsTGTXVvtCXZx3HA" />
-51-->C:\Users\Goncalo\Desktop\Faculdade\AndroidStudio\g22005787-22005793\app\src\main\AndroidManifest.xml:30:13-68
+51-->C:\Users\rafs0\StudioProjects\22005787-22005793_sedrftgYH\app\src\main\AndroidManifest.xml:30:13-68
 52
 53        <!-- Needs to be explicitly declared on P+ -->
 54        <uses-library
-54-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Goncalo\.gradle\caches\transforms-3\4301d4b33a4daed3f86591484d3fab75\transformed\play-services-maps-18.0.2\AndroidManifest.xml:39:9-41:40
+54-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\rafs0\.gradle\caches\transforms-3\4301d4b33a4daed3f86591484d3fab75\transformed\play-services-maps-18.0.2\AndroidManifest.xml:39:9-41:40
 55            android:name="org.apache.http.legacy"
-55-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Goncalo\.gradle\caches\transforms-3\4301d4b33a4daed3f86591484d3fab75\transformed\play-services-maps-18.0.2\AndroidManifest.xml:40:13-50
+55-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\rafs0\.gradle\caches\transforms-3\4301d4b33a4daed3f86591484d3fab75\transformed\play-services-maps-18.0.2\AndroidManifest.xml:40:13-50
 56            android:required="false" />
-56-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Goncalo\.gradle\caches\transforms-3\4301d4b33a4daed3f86591484d3fab75\transformed\play-services-maps-18.0.2\AndroidManifest.xml:41:13-37
+56-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\rafs0\.gradle\caches\transforms-3\4301d4b33a4daed3f86591484d3fab75\transformed\play-services-maps-18.0.2\AndroidManifest.xml:41:13-37
 57
 58        <activity
-58-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Goncalo\.gradle\caches\transforms-3\41bdd0c8ed852579fb0adf4972b47e43\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+58-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\rafs0\.gradle\caches\transforms-3\41bdd0c8ed852579fb0adf4972b47e43\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
 59            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-59-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Goncalo\.gradle\caches\transforms-3\41bdd0c8ed852579fb0adf4972b47e43\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+59-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\rafs0\.gradle\caches\transforms-3\41bdd0c8ed852579fb0adf4972b47e43\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:19-85
 60            android:exported="false"
-60-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Goncalo\.gradle\caches\transforms-3\41bdd0c8ed852579fb0adf4972b47e43\transformed\play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+60-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\rafs0\.gradle\caches\transforms-3\41bdd0c8ed852579fb0adf4972b47e43\transformed\play-services-base-18.0.1\AndroidManifest.xml:22:19-43
 61            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-61-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Goncalo\.gradle\caches\transforms-3\41bdd0c8ed852579fb0adf4972b47e43\transformed\play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+61-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\rafs0\.gradle\caches\transforms-3\41bdd0c8ed852579fb0adf4972b47e43\transformed\play-services-base-18.0.1\AndroidManifest.xml:21:19-78
 62
 63        <meta-data
-63-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\55b930da712cc7196ce5631dab611d19\transformed\play-services-basement-18.0.0\AndroidManifest.xml:21:9-23:69
+63-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\rafs0\.gradle\caches\transforms-3\55b930da712cc7196ce5631dab611d19\transformed\play-services-basement-18.0.0\AndroidManifest.xml:21:9-23:69
 64            android:name="com.google.android.gms.version"
-64-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\55b930da712cc7196ce5631dab611d19\transformed\play-services-basement-18.0.0\AndroidManifest.xml:22:13-58
+64-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\rafs0\.gradle\caches\transforms-3\55b930da712cc7196ce5631dab611d19\transformed\play-services-basement-18.0.0\AndroidManifest.xml:22:13-58
 65            android:value="@integer/google_play_services_version" />
-65-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\55b930da712cc7196ce5631dab611d19\transformed\play-services-basement-18.0.0\AndroidManifest.xml:23:13-66
+65-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\rafs0\.gradle\caches\transforms-3\55b930da712cc7196ce5631dab611d19\transformed\play-services-basement-18.0.0\AndroidManifest.xml:23:13-66
 66
 67        <service
-67-->[androidx.room:room-runtime:2.4.2] C:\Users\Goncalo\.gradle\caches\transforms-3\cca2cd51b36356c808e643537516e083\transformed\room-runtime-2.4.2\AndroidManifest.xml:25:9-28:40
+67-->[androidx.room:room-runtime:2.4.2] C:\Users\rafs0\.gradle\caches\transforms-3\cca2cd51b36356c808e643537516e083\transformed\room-runtime-2.4.2\AndroidManifest.xml:25:9-28:40
 68            android:name="androidx.room.MultiInstanceInvalidationService"
-68-->[androidx.room:room-runtime:2.4.2] C:\Users\Goncalo\.gradle\caches\transforms-3\cca2cd51b36356c808e643537516e083\transformed\room-runtime-2.4.2\AndroidManifest.xml:26:13-74
+68-->[androidx.room:room-runtime:2.4.2] C:\Users\rafs0\.gradle\caches\transforms-3\cca2cd51b36356c808e643537516e083\transformed\room-runtime-2.4.2\AndroidManifest.xml:26:13-74
 69            android:directBootAware="true"
-69-->[androidx.room:room-runtime:2.4.2] C:\Users\Goncalo\.gradle\caches\transforms-3\cca2cd51b36356c808e643537516e083\transformed\room-runtime-2.4.2\AndroidManifest.xml:27:13-43
+69-->[androidx.room:room-runtime:2.4.2] C:\Users\rafs0\.gradle\caches\transforms-3\cca2cd51b36356c808e643537516e083\transformed\room-runtime-2.4.2\AndroidManifest.xml:27:13-43
 70            android:exported="false" />
-70-->[androidx.room:room-runtime:2.4.2] C:\Users\Goncalo\.gradle\caches\transforms-3\cca2cd51b36356c808e643537516e083\transformed\room-runtime-2.4.2\AndroidManifest.xml:28:13-37
+70-->[androidx.room:room-runtime:2.4.2] C:\Users\rafs0\.gradle\caches\transforms-3\cca2cd51b36356c808e643537516e083\transformed\room-runtime-2.4.2\AndroidManifest.xml:28:13-37
 71
 72        <provider
-72-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\1bdca88ebac9582d03a2e0b002aaa769\transformed\emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+72-->[androidx.emoji2:emoji2:1.0.0] C:\Users\rafs0\.gradle\caches\transforms-3\1bdca88ebac9582d03a2e0b002aaa769\transformed\emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
 73            android:name="androidx.startup.InitializationProvider"
-73-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\1bdca88ebac9582d03a2e0b002aaa769\transformed\emoji2-1.0.0\AndroidManifest.xml:27:13-67
+73-->[androidx.emoji2:emoji2:1.0.0] C:\Users\rafs0\.gradle\caches\transforms-3\1bdca88ebac9582d03a2e0b002aaa769\transformed\emoji2-1.0.0\AndroidManifest.xml:27:13-67
 74            android:authorities="pt.ulusofona.deisi.cm2122.g22005787_22005793.androidx-startup"
-74-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\1bdca88ebac9582d03a2e0b002aaa769\transformed\emoji2-1.0.0\AndroidManifest.xml:28:13-68
+74-->[androidx.emoji2:emoji2:1.0.0] C:\Users\rafs0\.gradle\caches\transforms-3\1bdca88ebac9582d03a2e0b002aaa769\transformed\emoji2-1.0.0\AndroidManifest.xml:28:13-68
 75            android:exported="false" >
-75-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\1bdca88ebac9582d03a2e0b002aaa769\transformed\emoji2-1.0.0\AndroidManifest.xml:29:13-37
+75-->[androidx.emoji2:emoji2:1.0.0] C:\Users\rafs0\.gradle\caches\transforms-3\1bdca88ebac9582d03a2e0b002aaa769\transformed\emoji2-1.0.0\AndroidManifest.xml:29:13-37
 76            <meta-data
-76-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\1bdca88ebac9582d03a2e0b002aaa769\transformed\emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+76-->[androidx.emoji2:emoji2:1.0.0] C:\Users\rafs0\.gradle\caches\transforms-3\1bdca88ebac9582d03a2e0b002aaa769\transformed\emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
 77                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-77-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\1bdca88ebac9582d03a2e0b002aaa769\transformed\emoji2-1.0.0\AndroidManifest.xml:32:17-75
+77-->[androidx.emoji2:emoji2:1.0.0] C:\Users\rafs0\.gradle\caches\transforms-3\1bdca88ebac9582d03a2e0b002aaa769\transformed\emoji2-1.0.0\AndroidManifest.xml:32:17-75
 78                android:value="androidx.startup" />
-78-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Goncalo\.gradle\caches\transforms-3\1bdca88ebac9582d03a2e0b002aaa769\transformed\emoji2-1.0.0\AndroidManifest.xml:33:17-49
+78-->[androidx.emoji2:emoji2:1.0.0] C:\Users\rafs0\.gradle\caches\transforms-3\1bdca88ebac9582d03a2e0b002aaa769\transformed\emoji2-1.0.0\AndroidManifest.xml:33:17-49
 79            <meta-data
-79-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Goncalo\.gradle\caches\transforms-3\820b2b240fd5ed0ed96ea7fe618e8d85\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+79-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\rafs0\.gradle\caches\transforms-3\820b2b240fd5ed0ed96ea7fe618e8d85\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
 80                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-80-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Goncalo\.gradle\caches\transforms-3\820b2b240fd5ed0ed96ea7fe618e8d85\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+80-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\rafs0\.gradle\caches\transforms-3\820b2b240fd5ed0ed96ea7fe618e8d85\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
 81                android:value="androidx.startup" />
-81-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Goncalo\.gradle\caches\transforms-3\820b2b240fd5ed0ed96ea7fe618e8d85\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+81-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\rafs0\.gradle\caches\transforms-3\820b2b240fd5ed0ed96ea7fe618e8d85\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
 82        </provider>
 83    </application>
 84

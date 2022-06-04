@@ -2965,7 +2965,6 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id media_actions
-id media_fogos_regiao
 id meiosOperacionais_filtros
 id message
 id middle
@@ -3517,6 +3516,7 @@ string icon_content_description
 string idk
 string inf_not_available
 string item_view_role_description
+string lisboa
 string location
 string m3_ref_typeface_brand_display_regular
 string m3_ref_typeface_brand_medium
@@ -3614,6 +3614,7 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string photo
 string raio
+string reduzido
 string region
 string region_fires
 string region_risk
