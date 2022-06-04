@@ -9,7 +9,7 @@ class FireRepository private constructor(
     val districts: Array<String> = local.districts
     val risk: String = local.risk
 
-    fun  getHistory(onFinished: (List<FireData>) -> Unit) {
+    fun getHistory(onFinished: (List<FireData>) -> Unit) {
         if (ConnectivityUtil.isOnline(context)) {
             remote.getHistory { history ->
                 local.deleteAll {
@@ -40,32 +40,38 @@ class FireRepository private constructor(
         return local.totalFogos(onFinished)
     }
 
+    fun getFogosNaRegiao(onFinished: (List<FireData>) -> Unit, regiao: String) {
+        local.getFogosNaRegiao(onFinished, regiao)
+    }
+
     fun mediaFogosNaRegiao(onFinished: (String) -> Unit): String {
         return local.mediaFogosNaRegiao(onFinished)
     }
 
-    fun getRisk(distrito:String ,onFinished: (String) -> Unit){
-        remote.getRisk(distrito, onFinished)
+    fun getRisk(distrito: String, onFinished: (String) -> Unit) {
+        if (ConnectivityUtil.isOnline(context)) {
+            remote.getRisk(distrito, onFinished)
+        }
     }
 
     fun alterarRegiao(onFinished: () -> Unit, regiao: String) {
         local.alterarRegiao(onFinished, regiao)
     }
 
-    fun alterarRisco(onFinished: () -> Unit) {
-        local.alterarRisco(onFinished)
+    fun meiosOperacionais(onFinished: () -> Unit): List<FireRoom> {
+        return local.totalOperacionais(onFinished)
     }
 
-    fun meiosOperacionais(onFinished: (String) -> Unit) : List<FireRoom>{
-      return local.totalOperacionais(onFinished)
-    }
-
-    fun meiosTerrestres(onFinished: (String) -> Unit) : List<FireRoom>{
+    fun meiosTerrestres(onFinished: () -> Unit): List<FireRoom> {
         return local.totalMeiosTerrestres(onFinished)
     }
 
-    fun meiosAereos(onFinished: (String) -> Unit) : List<FireRoom>{
+    fun meiosAereos(onFinished: () -> Unit): List<FireRoom> {
         return local.totalMeiosAereos(onFinished)
+    }
+
+    fun getRegion():String{
+        return local.region
     }
 
     companion object {

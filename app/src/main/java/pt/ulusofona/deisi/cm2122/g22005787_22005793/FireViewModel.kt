@@ -27,6 +27,12 @@ class FireViewModel(application: Application) : AndroidViewModel(application) {
         return model.fogosNaRegiao(onFinished, regiao)
     }
 
+    fun getOnFogosNaRegiao(onFinished: (List<FireData>) -> Unit,regiao: String){
+        CoroutineScope(Dispatchers.Main).launch {
+            model.getFogosNaRegiao(onFinished, regiao)
+        }
+    }
+
     fun onTotalFogos(onFinished: (String) -> Unit): String {
         return model.totalFogos(onFinished)
     }
@@ -39,28 +45,24 @@ class FireViewModel(application: Application) : AndroidViewModel(application) {
         model.alterarRegiao(onFinished, regiao)
     }
 
-    fun onAlterarRisco(onFinished: () -> Unit) {
-        model.alterarRisco(onFinished)
-    }
-
     fun onGetRisk(distrito:String ,onFinished: (String) -> Unit){
         model.getRisk(distrito, onFinished)
     }
 
-    fun onGetDistricts(): Array<String> {
-        return model.districts
+    fun onGetRegiaoFilter(): String {
+        return model.getRegion()
     }
 
-    fun meiosOperacionais(onFinished: (String) -> Unit){
-        model.meiosOperacionais(onFinished)
+    fun meiosOperacionais(onFinished: () -> Unit) :List<FireRoom> {
+        return model.meiosOperacionais(onFinished)
     }
 
-    fun meiosTerrestres(onFinished: (String) -> Unit){
-        model.meiosTerrestres(onFinished)
+    fun meiosTerrestres(onFinished: () -> Unit):List<FireRoom> {
+        return model.meiosTerrestres(onFinished)
     }
 
-    fun meiosAereos(onFinished: (String) -> Unit){
-        model.meiosAereos(onFinished)
+    fun meiosAereos(onFinished: () -> Unit):List<FireRoom> {
+        return model.meiosAereos(onFinished)
     }
 
 }

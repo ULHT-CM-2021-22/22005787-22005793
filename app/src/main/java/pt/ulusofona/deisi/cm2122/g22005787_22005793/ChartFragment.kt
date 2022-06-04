@@ -337,7 +337,7 @@ class ChartFragment : Fragment() {
     }
 
     private fun updateDashboard() {
-        viewModel.onAlterarRisco {}
+
 
     }
 

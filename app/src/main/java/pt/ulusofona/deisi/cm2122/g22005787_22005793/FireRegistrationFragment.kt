@@ -232,7 +232,6 @@ class FireRegistrationFragment : Fragment(), OnLocationChangedListener {
 
 
     private fun updateDashboard() {
-        viewModel.onAlterarRisco {}
     }
 
     private fun updateHistory(fires: List<FireData>) {
@@ -273,8 +272,8 @@ class FireRegistrationFragment : Fragment(), OnLocationChangedListener {
     private fun placeCityName(latitude: Double, longitude: Double) {
         val addresses = geocoder.getFromLocation(latitude, longitude, 5)
         val location = addresses.first { it.locality != null && it.locality.isNotEmpty() }
-        binding.textRegion.text = location.locality
-        viewModel.onAlterarRegiao({},location.locality)
+        binding.textRegion.text = location.adminArea
+        viewModel.onAlterarRegiao({},location.adminArea)
     }
 
 

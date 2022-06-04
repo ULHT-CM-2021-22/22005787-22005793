@@ -77,7 +77,6 @@ class FireDetailsFragment : Fragment() {
     }
 
     private fun updateDashboard() {
-        viewModel.onAlterarRisco{}
 
 
     }

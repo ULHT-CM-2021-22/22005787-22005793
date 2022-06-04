@@ -11,7 +11,7 @@ class FusedLocation private constructor(context: Context) : LocationCallback() {
     private val TAG = FusedLocation::class.java.simpleName
 
 
-    private val TIME_BETWEEN_UPDATES = 2 * 1000L
+    private val TIME_BETWEEN_UPDATES = 10 * 1000L
 
 
     private var locationRequest = LocationRequest.create().apply {

@@ -14,25 +14,39 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentFireMapBinding
 import java.util.*
+import kotlin.collections.ArrayList
 
 
-class FireMapFragment : Fragment(), OnLocationChangedListener {
+class FireMapFragment : Fragment(), OnLocationChangedListener, GoogleMap.OnMarkerClickListener,
+    OnMapReadyCallback {
 
     private lateinit var binding: FragmentFireMapBinding
     private lateinit var geocoder: Geocoder
     private var map: GoogleMap? = null
-    private lateinit var viewModel: FireViewModel
-    private val timer = object : CountDownTimer(20000, 1000) {
-        override fun onTick(millisUntilFinished: Long) {}
-        override fun onFinish() {
-            updateDashboard()
-        }
+    private var listFires: List<FireData> = ArrayList()
+    private var adapter =
+        FireAdapter(onClick = ::onOperationClick, onLongClick = ::onOperationLongClick)
+
+    private fun onOperationLongClick(fireData: FireData): Boolean {
+        return false
     }
+
+    private fun onOperationClick(fireData: FireData) {
+        NavigationManager.goToFireDetailsFragment(parentFragmentManager, fireData)
+    }
+
+    private lateinit var viewModel: FireViewModel
+
 
     @SuppressLint("MissingPermission")
     override fun onCreateView(
@@ -57,12 +71,13 @@ class FireMapFragment : Fragment(), OnLocationChangedListener {
 
     override fun onStart() {
         super.onStart()
-        updateDashboard()
+        viewModel.onGetHistory { updateHistory(it) }
+        map?.let { onMapReady(it) }
     }
+
 
     override fun onLocationChanged(latitude: Double, longitude: Double) {
         placeCamera(latitude, longitude)
-        map?.addMarker(MarkerOptions().position(LatLng(latitude,longitude)))
     }
 
     private fun placeCamera(latitude: Double, longitude: Double) {
@@ -75,26 +90,46 @@ class FireMapFragment : Fragment(), OnLocationChangedListener {
 
     override fun onPause() {
         super.onPause()
-        timer.cancel()
         requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR
     }
 
     override fun onResume() {
         super.onResume()
-        timer.start()
         binding.map.onResume()
         requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        timer.cancel()
         FusedLocation.unregisterListener(this)
     }
 
-    private fun updateDashboard() {
-        viewModel.onAlterarRisco{}
-
+    private fun updateHistory(fireData: List<FireData>) {
+        val history = fireData.map {
+            FireData(
+                it.distrito,
+                it.concelho,
+                it.freguesia,
+                it.meiosOperacionais,
+                it.meiosVeiculos,
+                it.meiosAereos,
+                it.estado,
+                it.data,
+                it.fotos,
+                it.obs,
+                it.nomePessoa,
+                it.ccPessoa,
+                it.porConfirmar,
+                it.latitude,
+                it.longitude
+            )
+        }
+        CoroutineScope(Dispatchers.Main).launch {
+            adapter.updateItems(history)
+            for (i in history) {
+                map?.addMarker(MarkerOptions().position(LatLng(i.latitude, i.longitude)))
+            }
+        }
     }
 
     private fun backgroundColor(risk: String) {
@@ -105,6 +140,26 @@ class FireMapFragment : Fragment(), OnLocationChangedListener {
             Risk.MODERATE.risco -> binding.riskLayout.setBackgroundColor(resources.getColor(R.color.green))
             Risk.REDUCED.risco -> binding.riskLayout.setBackgroundColor(resources.getColor(R.color.green))
         }
+    }
+
+    override fun onMarkerClick(p0: Marker): Boolean {
+        viewModel.onGetHistory {
+            updateHistory(it)
+            listFires = it
+        }
+        CoroutineScope(Dispatchers.IO).launch {
+            for (i in listFires){
+                if (i.latitude == p0.position.latitude && i.longitude== p0.position.longitude ) {
+                    onOperationClick(i)
+                }
+            }
+
+        }
+        return true
+    }
+
+    override fun onMapReady(p0: GoogleMap) {
+        p0.setOnMarkerClickListener(this)
     }
 
 

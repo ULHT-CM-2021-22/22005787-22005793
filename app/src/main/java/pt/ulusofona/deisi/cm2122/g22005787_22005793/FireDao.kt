@@ -13,8 +13,11 @@ interface FireDao {
     @Insert
     suspend fun insertAll(operations: List<FireRoom>)
 
-    @Query("SELECT * FROM fires ORDER BY data ASC")
+    @Query("SELECT * FROM fires ORDER BY data DESC")
     suspend fun getAll(): List<FireRoom>
+
+    @Query("SELECT * FROM fires WHERE distrito = :distrito ORDER BY data DESC ")
+    suspend fun getFromRegion(distrito: String): List<FireRoom>
 
     @Query("SELECT * FROM fires WHERE id = :id")
     suspend fun getById(id: String): FireRoom

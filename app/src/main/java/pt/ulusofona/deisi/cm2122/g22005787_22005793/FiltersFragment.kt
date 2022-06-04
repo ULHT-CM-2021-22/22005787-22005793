@@ -21,6 +21,20 @@ import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentFiltersB
 class FiltersFragment : Fragment() {
 
     private lateinit var viewModel: FireViewModel
+    private var adapter =
+        FireAdapter(onClick = ::onOperationClick, onLongClick = ::onOperationLongClick)
+    private var filtroR = false
+    private var filtroD = false
+    private var filtroM = false
+    private var filtroE = false
+
+    private fun onOperationLongClick(fireData: FireData): Boolean {
+        return false
+    }
+
+    private fun onOperationClick(fireData: FireData) {
+
+    }
 
     private var districts = arrayOf(
         "Aveiro", "Beja", "Braga", "Bragança", "Castelo Branco", "Coimbra",
@@ -62,6 +76,7 @@ class FiltersFragment : Fragment() {
             builder.setTitle(getString(R.string.choose_region))
             builder.setItems(districts, DialogInterface.OnClickListener { dialog, which ->
                 binding.buttonRegionFilter.text = districts[which]
+                filtroD = true
             })
             builder.show()
         }
@@ -71,6 +86,7 @@ class FiltersFragment : Fragment() {
             builder.setTitle(getString(R.string.raio))
             builder.setItems(radius, DialogInterface.OnClickListener { dialog, which ->
                 binding.buttonRadiusFilter.text = radius[which]
+                filtroR = true
             })
             builder.show()
         }
@@ -80,6 +96,7 @@ class FiltersFragment : Fragment() {
             builder.setTitle(getString(R.string.meios_operacionais))
             builder.setItems(meios, DialogInterface.OnClickListener { dialog, which ->
                 binding.buttonMeiosFilter.text = meios[which]
+                filtroM = true
             })
             builder.show()
         }
@@ -89,33 +106,53 @@ class FiltersFragment : Fragment() {
             builder.setTitle(getString(R.string.estado_fogo))
             builder.setItems(estado, DialogInterface.OnClickListener { dialog, which ->
                 binding.buttonEstadoFogoFilter.text = estado[which]
+                filtroE = true
             })
             builder.show()
         }
 
         binding.buttonSubmit.setOnClickListener {
+            if (filtroM) {
+            }
+            if (filtroD) {
+                viewModel.getOnFogosNaRegiao({ updateHistory(it) },
+                binding.buttonRegionFilter.text.toString())
+                filtroD = false
+            }
             binding.buttonRegionFilter.text = getString(R.string.click)
             binding.buttonRadiusFilter.text = getString(R.string.click)
             binding.buttonMeiosFilter.text = getString(R.string.click)
             binding.buttonEstadoFogoFilter.text = getString(R.string.click)
-            viewModel.meiosOperacionais {  }
-            viewModel.meiosTerrestres {  }
-            viewModel.meiosAereos {  }
             Toast.makeText(context, "Filtros aplicados", Toast.LENGTH_SHORT).show()
+            parentFragmentManager.popBackStack()
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-    }
 
-    override fun onDestroy() {
-        super.onDestroy()
 
-    }
-
-    override fun onPause() {
-        super.onPause()
+    private fun updateHistory(fireData: List<FireData>) {
+        val history = fireData.map {
+            FireData(
+                it.distrito,
+                it.concelho,
+                it.freguesia,
+                it.meiosOperacionais,
+                it.meiosVeiculos,
+                it.meiosAereos,
+                it.estado,
+                it.data,
+                it.fotos,
+                it.obs,
+                it.nomePessoa,
+                it.ccPessoa,
+                it.porConfirmar,
+                it.latitude,
+                it.longitude
+            )
+        }
+        CoroutineScope(Dispatchers.Main).launch {
+            adapter.updateItems(history)
+        }
     }
 
 

@@ -19,12 +19,8 @@ class FireListFragment : Fragment() {
     private lateinit var viewModel: FireViewModel
     private var adapter = FireAdapter(onClick = ::onOperationClick, onLongClick = ::onOperationLongClick)
     private lateinit var binding: FragmentFireListBinding
-   private val timer = object : CountDownTimer(20000, 1000) {
-        override fun onTick(millisUntilFinished: Long) {}
-        override fun onFinish() {
-            updateDashboard()
-        }
-    }
+    private var filter = false
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         (requireActivity() as AppCompatActivity).supportActionBar?.title = getString(R.string.fire_list)
@@ -34,24 +30,21 @@ class FireListFragment : Fragment() {
         return binding.root
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        timer.cancel()
-    }
 
-    override fun onPause() {
-        super.onPause()
-        timer.cancel()
-    }
 
     override fun onStart() {
         super.onStart()
-        updateDashboard()
         binding.fireList.layoutManager = LinearLayoutManager(context)
         binding.fireList.adapter = adapter
-        viewModel.onGetHistory { updateHistory(it) }
+        if (!filter){
+            viewModel.onGetHistory { updateHistory(it) }
+        }else{
+            viewModel.getOnFogosNaRegiao({ updateHistory(it) },
+                viewModel.onGetRegiaoFilter())
+        }
         binding.filter.setOnClickListener {
             NavigationManager.goToFiltersFragment(parentFragmentManager)
+            filter = true
         }
         viewModel.onTotalFogos() {
             CoroutineScope(Dispatchers.Main).launch {
@@ -90,12 +83,8 @@ class FireListFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        timer.start()
     }
 
-    private fun updateDashboard() {
-        viewModel.onAlterarRisco {}
-    }
 
     private fun backgroundColor(risk: String) {
         when (risk) {

@@ -93,14 +93,36 @@ class FireModelRoom(private val dao: FireDao) : FireModel() {
     override fun fogosNaRegiao(onFinished: (String) -> Unit, regiao: String): String {
         var count = 0
         CoroutineScope(Dispatchers.IO).launch {
-            for (fire in dao.getAll()) {
-                if (fire.distrito == regiao) {
-                    count++
-                }
-            }
+            count = dao.getFromRegion(regiao).size
             onFinished(count.toString())
         }
         return count.toString()
+    }
+
+    override fun getFogosNaRegiao(onFinished: (List<FireData>) -> Unit, regiao: String) {
+        CoroutineScope(Dispatchers.IO).launch {
+            region = regiao
+            val list = dao.getFromRegion(regiao)
+            onFinished(list.map {
+                FireData(
+                    it.distrito,
+                    it.concelho,
+                    it.freguesia,
+                    it.meiosOperacionais,
+                    it.meiosVeiculos,
+                    it.meiosAereos,
+                    it.estado,
+                    it.data,
+                    it.fotos,
+                    it.obs,
+                    it.nomePessoa,
+                    it.ccPessoa,
+                    it.porConfirmar,
+                    it.latitude,
+                    it.longitude
+                )
+            })
+        }
     }
 
     override fun totalFogos(onFinished: (String) -> Unit): String {
@@ -112,19 +134,21 @@ class FireModelRoom(private val dao: FireDao) : FireModel() {
         return total
     }
 
-    override fun totalOperacionais(onFinished: (String) -> Unit): List<FireRoom> {
+    override fun totalOperacionais(onFinished: () -> Unit): List<FireRoom> {
         val fogos: MutableList<FireRoom> = mutableListOf()
         CoroutineScope(Dispatchers.IO).launch {
-            for ( i in 0..dao.getAll().size){
-                if (dao.getAll()[i].meiosOperacionais != "0"){
-                   fogos.add(dao.getAll()[i])
+            val fogosAtuais = dao.getAll()
+            for ( i in fogosAtuais){
+                if (i.meiosOperacionais != null || i.meiosOperacionais != "0"){
+                   fogos.add(i)
                 }
             }
         }
+        onFinished()
         return fogos
     }
 
-    override fun totalMeiosTerrestres(onFinished: (String) -> Unit): List<FireRoom> {
+    override fun totalMeiosTerrestres(onFinished: () -> Unit): List<FireRoom> {
         val fogos: MutableList<FireRoom> = mutableListOf()
         CoroutineScope(Dispatchers.IO).launch {
             for ( i in 0..dao.getAll().size){
@@ -136,7 +160,7 @@ class FireModelRoom(private val dao: FireDao) : FireModel() {
         return fogos
     }
 
-    override fun totalMeiosAereos(onFinished: (String) -> Unit): List<FireRoom> {
+    override fun totalMeiosAereos(onFinished: () -> Unit): List<FireRoom> {
         val fogos: MutableList<FireRoom> = mutableListOf()
         CoroutineScope(Dispatchers.IO).launch {
             for ( i in 0..dao.getAll().size){
