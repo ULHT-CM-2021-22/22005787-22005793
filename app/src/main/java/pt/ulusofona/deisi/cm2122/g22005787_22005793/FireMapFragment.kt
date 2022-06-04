@@ -10,15 +10,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.model.CameraPosition
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.Marker
-import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -27,8 +25,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 
-class FireMapFragment : Fragment(), OnLocationChangedListener, GoogleMap.OnMarkerClickListener,
-    OnMapReadyCallback {
+class FireMapFragment : Fragment(), OnLocationChangedListener, OnMapReadyCallback{
 
     private lateinit var binding: FragmentFireMapBinding
     private lateinit var geocoder: Geocoder
@@ -38,7 +35,8 @@ class FireMapFragment : Fragment(), OnLocationChangedListener, GoogleMap.OnMarke
         FireAdapter(onClick = ::onOperationClick, onLongClick = ::onOperationLongClick)
 
     private fun onOperationLongClick(fireData: FireData): Boolean {
-        return false
+        NavigationManager.goToFireDetailsFragment(parentFragmentManager, fireData)
+        return true
     }
 
     private fun onOperationClick(fireData: FireData) {
@@ -72,7 +70,6 @@ class FireMapFragment : Fragment(), OnLocationChangedListener, GoogleMap.OnMarke
     override fun onStart() {
         super.onStart()
         viewModel.onGetHistory { updateHistory(it) }
-        map?.let { onMapReady(it) }
     }
 
 
@@ -127,7 +124,51 @@ class FireMapFragment : Fragment(), OnLocationChangedListener, GoogleMap.OnMarke
         CoroutineScope(Dispatchers.Main).launch {
             adapter.updateItems(history)
             for (i in history) {
-                map?.addMarker(MarkerOptions().position(LatLng(i.latitude, i.longitude)))
+                when (i.estado) {
+                    "Conclusão" -> {
+                        map?.addMarker(
+                            MarkerOptions().position(LatLng(i.latitude, i.longitude)).icon(
+                                BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)
+                            )
+                        )
+                    }
+                    "Vigilância" -> {
+                        map?.addMarker(
+                            MarkerOptions().position(LatLng(i.latitude, i.longitude)).icon(
+                                BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)
+                            )
+                        )
+                    }
+                    "Em Resolução" -> {
+                        map?.addMarker(
+                            MarkerOptions().position(LatLng(i.latitude, i.longitude)).icon(
+                                BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)
+                            )
+                        )
+                    }
+                    "Em Curso" -> {
+                        map?.addMarker(
+                            MarkerOptions().position(LatLng(i.latitude, i.longitude))
+                        )
+                    }
+                    "Despacho de 1º Alerta", "Despacho" -> {
+                        map?.addMarker(
+                            MarkerOptions().position(LatLng(i.latitude, i.longitude)).icon(
+                                BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)
+                            )
+                        )
+                    }
+                    else -> {
+                        map?.addMarker(
+                            MarkerOptions().position(LatLng(i.latitude, i.longitude)).icon(
+                                BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)
+                            )
+                        )
+                    }
+                }
+                map?.setOnMarkerClickListener { marker ->
+                    onMarkerClick(marker)
+                }
             }
         }
     }
@@ -142,24 +183,21 @@ class FireMapFragment : Fragment(), OnLocationChangedListener, GoogleMap.OnMarke
         }
     }
 
-    override fun onMarkerClick(p0: Marker): Boolean {
+    private fun onMarkerClick(p0: Marker): Boolean {
         viewModel.onGetHistory {
             updateHistory(it)
             listFires = it
         }
-        CoroutineScope(Dispatchers.IO).launch {
-            for (i in listFires){
-                if (i.latitude == p0.position.latitude && i.longitude== p0.position.longitude ) {
-                    onOperationClick(i)
-                }
+        for (i in listFires) {
+            if (p0.position.latitude == i.latitude && p0.position.longitude == i.longitude) {
+                NavigationManager.goToFireDetailsFragment(parentFragmentManager, i)
             }
-
         }
         return true
     }
 
     override fun onMapReady(p0: GoogleMap) {
-        p0.setOnMarkerClickListener(this)
+        viewModel.onGetHistory { updateHistory(it) }
     }
 
 

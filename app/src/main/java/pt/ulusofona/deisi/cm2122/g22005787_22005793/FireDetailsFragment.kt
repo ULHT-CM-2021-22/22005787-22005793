@@ -65,7 +65,7 @@ class FireDetailsFragment : Fragment() {
             binding.textRegiao.text = it.distrito ?: getString(R.string.inf_not_available)
             binding.textPessoa.text = it.nomePessoa ?: getString(R.string.inf_not_available)
             binding.textCc.text = it.ccPessoa?: getString(R.string.inf_not_available)
-            val loc = "${it.latitude} - ${it.longitude}"
+            val loc = "${it.latitude} / ${it.longitude}"
             binding.textLoc.text = loc
             updateDashboard()
         }

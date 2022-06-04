@@ -1,6 +1,8 @@
 package pt.ulusofona.deisi.cm2122.g22005787_22005793
 
 import android.Manifest
+import android.content.Context
+import android.os.BatteryManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -13,6 +15,8 @@ import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.ActivityMainBind
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
