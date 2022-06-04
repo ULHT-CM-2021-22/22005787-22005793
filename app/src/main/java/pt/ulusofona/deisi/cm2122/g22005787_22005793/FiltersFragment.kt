@@ -98,7 +98,7 @@ class FiltersFragment : Fragment() {
             binding.buttonRadiusFilter.text = getString(R.string.click)
             binding.buttonMeiosFilter.text = getString(R.string.click)
             binding.buttonEstadoFogoFilter.text = getString(R.string.click)
-            viewModel.meiosOperacionais { }
+            viewModel.meiosOperacionais {  }
             viewModel.meiosTerrestres {  }
             viewModel.meiosAereos {  }
             Toast.makeText(context, "Filtros aplicados", Toast.LENGTH_SHORT).show()

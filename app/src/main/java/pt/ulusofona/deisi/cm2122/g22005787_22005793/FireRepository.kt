@@ -12,7 +12,7 @@ class FireRepository private constructor(
     fun  getHistory(onFinished: (List<FireData>) -> Unit) {
         if (ConnectivityUtil.isOnline(context)) {
             remote.getHistory { history ->
-                local.deleteAll {     // RAFAEL ALEXANDRE acho que o problema está por aí
+                local.deleteAll {
                     local.insertFires(history) {
                         local.getHistory(onFinished)
                         onFinished(history)

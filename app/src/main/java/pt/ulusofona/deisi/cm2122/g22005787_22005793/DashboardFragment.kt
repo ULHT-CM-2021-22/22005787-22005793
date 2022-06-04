@@ -133,7 +133,7 @@ class DashboardFragment : Fragment(), OnLocationChangedListener {
         val location = addresses.first { it.locality != null && it.locality.isNotEmpty() }
         binding.textRegion.text = location.adminArea
         viewModel.onAlterarRegiao({},location.adminArea)
-        viewModel.onGetRisk(location.locality) {
+        viewModel.onGetRisk(location.adminArea) {
             binding.riscoRegiao.text = it
         }
 
