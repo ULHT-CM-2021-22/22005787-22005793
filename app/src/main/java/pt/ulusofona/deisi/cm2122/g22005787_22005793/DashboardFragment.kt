@@ -78,17 +78,6 @@ class DashboardFragment : Fragment(), OnLocationChangedListener {
                 binding.fogosRegiao.text = it
             }
         }
-        viewModel.onTotalFogos() {
-            CoroutineScope(Dispatchers.Main).launch {
-                binding.fogosTotal.text = it
-            }
-        }
-
-        viewModel.onMediaFogosNaRegiao() {
-            CoroutineScope(Dispatchers.Main).launch {
-                binding.mediaFogosRegiao.text = it
-            }
-        }
         backgroundColor(binding.riscoRegiao.text.toString())
     }
 

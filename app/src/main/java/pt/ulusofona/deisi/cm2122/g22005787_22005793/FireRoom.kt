@@ -14,5 +14,7 @@ data class FireRoom(
     val estado: String?, val data: String?, val fotos: String?,
     val obs: String?, val nomePessoa: String?, val ccPessoa: String?, val porConfirmar: Boolean?,
     val latitude: Double, val longitude: Double
-) {
+)
+
+{
 }

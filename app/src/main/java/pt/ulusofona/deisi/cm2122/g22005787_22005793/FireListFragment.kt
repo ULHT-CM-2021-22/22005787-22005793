@@ -53,6 +53,11 @@ class FireListFragment : Fragment() {
         binding.filter.setOnClickListener {
             NavigationManager.goToFiltersFragment(parentFragmentManager)
         }
+        viewModel.onTotalFogos() {
+            CoroutineScope(Dispatchers.Main).launch {
+                binding.fogosTotal.text = it
+            }
+        }
     }
 
     private fun onOperationClick(fireData: FireData) {

@@ -56,5 +56,7 @@
     <string name="decorrer">Running</string>
     <string name="concluido">Concluded</string>
     <string name="location">Location</string>
+    <string name="lisboa">Lisbon</string>
+    <string name="reduzido">Reduced</string>
 
 </resources>

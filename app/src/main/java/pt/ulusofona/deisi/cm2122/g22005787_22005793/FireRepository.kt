@@ -45,7 +45,6 @@ class FireRepository private constructor(
     }
 
     fun getRisk(distrito:String ,onFinished: (String) -> Unit){
-
         remote.getRisk(distrito, onFinished)
     }
 
@@ -55,6 +54,18 @@ class FireRepository private constructor(
 
     fun alterarRisco(onFinished: () -> Unit) {
         local.alterarRisco(onFinished)
+    }
+
+    fun meiosOperacionais(onFinished: (String) -> Unit) : List<FireRoom>{
+      return local.totalOperacionais(onFinished)
+    }
+
+    fun meiosTerrestres(onFinished: (String) -> Unit) : List<FireRoom>{
+        return local.totalMeiosTerrestres(onFinished)
+    }
+
+    fun meiosAereos(onFinished: (String) -> Unit) : List<FireRoom>{
+        return local.totalMeiosAereos(onFinished)
     }
 
     companion object {

@@ -34,9 +34,13 @@ abstract class FireModel {
     abstract fun fogosNaRegiao(onFinished: (String) -> Unit): String
     abstract fun fogosNaRegiao(onFinished: (String) -> Unit, regiao: String): String
     abstract fun totalFogos(onFinished: (String) -> Unit): String
+    abstract fun totalOperacionais(onFinished: (String) -> Unit): List<FireRoom>
+    abstract fun totalMeiosTerrestres(onFinished: (String) -> Unit): List<FireRoom>
+    abstract fun totalMeiosAereos(onFinished: (String) -> Unit): List<FireRoom>
     abstract fun mediaFogosNaRegiao(onFinished: (String) -> Unit): String
     abstract fun deleteAll(onFinished: () -> Unit)
     abstract fun insertFires(operations: List<FireData>, onFinished: () -> Unit)
+
 
 
 }

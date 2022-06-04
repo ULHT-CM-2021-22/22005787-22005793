@@ -112,6 +112,42 @@ class FireModelRoom(private val dao: FireDao) : FireModel() {
         return total
     }
 
+    override fun totalOperacionais(onFinished: (String) -> Unit): List<FireRoom> {
+        val fogos: MutableList<FireRoom> = mutableListOf()
+        CoroutineScope(Dispatchers.IO).launch {
+            for ( i in 0..dao.getAll().size){
+                if (dao.getAll()[i].meiosOperacionais != "0"){
+                   fogos.add(dao.getAll()[i])
+                }
+            }
+        }
+        return fogos
+    }
+
+    override fun totalMeiosTerrestres(onFinished: (String) -> Unit): List<FireRoom> {
+        val fogos: MutableList<FireRoom> = mutableListOf()
+        CoroutineScope(Dispatchers.IO).launch {
+            for ( i in 0..dao.getAll().size){
+                if (dao.getAll()[i].meiosVeiculos != "0"){
+                    fogos.add(dao.getAll()[i])
+                }
+            }
+        }
+        return fogos
+    }
+
+    override fun totalMeiosAereos(onFinished: (String) -> Unit): List<FireRoom> {
+        val fogos: MutableList<FireRoom> = mutableListOf()
+        CoroutineScope(Dispatchers.IO).launch {
+            for ( i in 0..dao.getAll().size){
+                if (dao.getAll()[i].meiosAereos != "0"){
+                    fogos.add(dao.getAll()[i])
+                }
+            }
+        }
+        return fogos
+    }
+
     override fun mediaFogosNaRegiao(onFinished: (String) -> Unit): String {
         val count: String = fogosNaRegiao(onFinished)
         val total: String = totalFogos(onFinished)

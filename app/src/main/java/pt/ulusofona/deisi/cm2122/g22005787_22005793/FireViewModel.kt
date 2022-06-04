@@ -50,4 +50,17 @@ class FireViewModel(application: Application) : AndroidViewModel(application) {
     fun onGetDistricts(): Array<String> {
         return model.districts
     }
+
+    fun meiosOperacionais(onFinished: (String) -> Unit){
+        model.meiosOperacionais(onFinished)
+    }
+
+    fun meiosTerrestres(onFinished: (String) -> Unit){
+        model.meiosTerrestres(onFinished)
+    }
+
+    fun meiosAereos(onFinished: (String) -> Unit){
+        model.meiosAereos(onFinished)
+    }
+
 }
