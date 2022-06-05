@@ -1,17 +1,20 @@
 package pt.ulusofona.deisi.cm2122.g22005787_22005793
 
 import android.Manifest
+import android.app.UiModeManager
 import android.content.Context
 import android.os.BatteryManager
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
 import com.fondesa.kpermissions.allGranted
 import com.fondesa.kpermissions.extension.permissionsBuilder
 import com.fondesa.kpermissions.extension.send
 import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -45,6 +48,23 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
         setSupportActionBar(binding.toolbar)
         setupDrawerMenu()
+        autonomia()
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        autonomia()
+    }
+
+    private fun autonomia(){
+        val bm = applicationContext.getSystemService(BATTERY_SERVICE) as BatteryManager
+        val batLevel:Int = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
+        if (batLevel <= 20) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else{
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+        }
     }
 
     private fun setupDrawerMenu(){

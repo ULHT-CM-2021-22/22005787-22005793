@@ -3,12 +3,14 @@ package pt.ulusofona.deisi.cm2122.g22005787_22005793
 import android.content.DialogInterface
 import android.content.pm.ActivityInfo
 import android.location.Geocoder
+import android.os.BatteryManager
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import kotlinx.coroutines.CoroutineScope
@@ -88,6 +90,7 @@ class DashboardFragment : Fragment(), OnLocationChangedListener {
             Risk.HIGH.risco -> binding.riskLayout.setBackgroundColor(resources.getColor(R.color.yellow))
             Risk.MODERATE.risco -> binding.riskLayout.setBackgroundColor(resources.getColor(R.color.green))
             Risk.REDUCED.risco -> binding.riskLayout.setBackgroundColor(resources.getColor(R.color.green))
+
         }
     }
 
@@ -136,6 +139,14 @@ class DashboardFragment : Fragment(), OnLocationChangedListener {
         viewModel.onGetRisk(location.adminArea) {
             binding.riscoRegiao.text = it
         }
+        val bm = requireActivity().applicationContext.getSystemService(AppCompatActivity.BATTERY_SERVICE) as BatteryManager
+        val batLevel:Int = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
+        if (batLevel <= 20) {
+            binding.riskLayout.setBackgroundColor(resources.getColor(R.color.grey))
+        } else {
+            backgroundColor(binding.riscoRegiao.text.toString())
+        }
+
 
     }
 
