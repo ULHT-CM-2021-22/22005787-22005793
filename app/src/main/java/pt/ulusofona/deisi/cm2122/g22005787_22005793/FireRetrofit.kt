@@ -83,6 +83,18 @@ class FireRetrofit(retrofit: Retrofit) : FireModel() {
         TODO("Not yet implemented")
     }
 
+    override fun getFogosMeiosVeiculos(onFinished: (List<FireData>) -> Unit) {
+        TODO("Not yet implemented")
+    }
+
+    override fun getFogosMeiosAereos(onFinished: (List<FireData>) -> Unit) {
+        TODO("Not yet implemented")
+    }
+
+    override fun getFogosMeiosOperacionais(onFinished: (List<FireData>) -> Unit) {
+        TODO("Not yet implemented")
+    }
+
     override fun totalFogos(onFinished: (String) -> Unit): String {
         TODO("Not yet implemented")
     }

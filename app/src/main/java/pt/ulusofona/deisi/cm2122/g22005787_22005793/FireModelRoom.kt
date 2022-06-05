@@ -101,7 +101,86 @@ class FireModelRoom(private val dao: FireDao) : FireModel() {
     override fun getFogosNaRegiao(onFinished: (List<FireData>) -> Unit, regiao: String) {
         CoroutineScope(Dispatchers.IO).launch {
             region = regiao
+            typeFilter = "R"
             val list = dao.getFromRegion(regiao)
+            onFinished(list.map {
+                FireData(
+                    it.distrito,
+                    it.concelho,
+                    it.freguesia,
+                    it.meiosOperacionais,
+                    it.meiosVeiculos,
+                    it.meiosAereos,
+                    it.estado,
+                    it.data,
+                    it.fotos,
+                    it.obs,
+                    it.nomePessoa,
+                    it.ccPessoa,
+                    it.porConfirmar,
+                    it.latitude,
+                    it.longitude
+                )
+            })
+        }
+    }
+
+    override fun getFogosMeiosVeiculos(onFinished: (List<FireData>) -> Unit) {
+        CoroutineScope(Dispatchers.IO).launch {
+            typeFilter = "MV"
+            val list = dao.getMeiosVeiculos()
+            onFinished(list.map {
+                FireData(
+                    it.distrito,
+                    it.concelho,
+                    it.freguesia,
+                    it.meiosOperacionais,
+                    it.meiosVeiculos,
+                    it.meiosAereos,
+                    it.estado,
+                    it.data,
+                    it.fotos,
+                    it.obs,
+                    it.nomePessoa,
+                    it.ccPessoa,
+                    it.porConfirmar,
+                    it.latitude,
+                    it.longitude
+                )
+            })
+        }
+    }
+
+    override fun getFogosMeiosAereos(onFinished: (List<FireData>) -> Unit) {
+        CoroutineScope(Dispatchers.IO).launch {
+            typeFilter = "MA"
+            val list = dao.getmeiosAereos()
+            onFinished(list.map {
+                FireData(
+                    it.distrito,
+                    it.concelho,
+                    it.freguesia,
+                    it.meiosOperacionais,
+                    it.meiosVeiculos,
+                    it.meiosAereos,
+                    it.estado,
+                    it.data,
+                    it.fotos,
+                    it.obs,
+                    it.nomePessoa,
+                    it.ccPessoa,
+                    it.porConfirmar,
+                    it.latitude,
+                    it.longitude
+                )
+            })
+        }
+    }
+
+    override fun getFogosMeiosOperacionais(onFinished: (List<FireData>) -> Unit) {
+        CoroutineScope(Dispatchers.IO).launch {
+            typeFilter = "MO"
+            val list = dao.getMeiosOperacionais()
             onFinished(list.map {
                 FireData(
                     it.distrito,

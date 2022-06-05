@@ -53,16 +53,20 @@ class FireViewModel(application: Application) : AndroidViewModel(application) {
         return model.getRegion()
     }
 
-    fun meiosOperacionais(onFinished: () -> Unit) :List<FireRoom> {
-        return model.meiosOperacionais(onFinished)
+    fun meiosOperacionais(onFinished: (List<FireData>) -> Unit){
+        return model.getFogosMeiosOperacionais(onFinished)
     }
 
-    fun meiosTerrestres(onFinished: () -> Unit):List<FireRoom> {
-        return model.meiosTerrestres(onFinished)
+    fun getFilter():String{
+        return model.getFilter()
     }
 
-    fun meiosAereos(onFinished: () -> Unit):List<FireRoom> {
-        return model.meiosAereos(onFinished)
+    fun meiosTerrestres(onFinished: (List<FireData>) -> Unit) {
+        return model.getFogosMeiosVeiculos(onFinished)
+    }
+
+    fun meiosAereos(onFinished: (List<FireData>) -> Unit) {
+        return model.getFogosMeiosAereos(onFinished)
     }
 
 }

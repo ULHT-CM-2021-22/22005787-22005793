@@ -2629,6 +2629,7 @@ int drawable mtrl_popupmenu_background 0x7f0700ba
 int drawable mtrl_popupmenu_background_overlay 0x7f0700bb
 int drawable mtrl_tabs_default_indicator 0x7f0700bc
 int drawable navigation_empty_icon 0x7f0700bd
+int drawable no_photo 0x7f0700ce
 int drawable notification_action_background 0x7f0700be
 int drawable notification_bg 0x7f0700bf
 int drawable notification_bg_low 0x7f0700c0

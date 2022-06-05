@@ -8,6 +8,7 @@ class FireRepository private constructor(
 ) {
     val districts: Array<String> = local.districts
     val risk: String = local.risk
+    val typeFilter = local.typeFilter
 
     fun getHistory(onFinished: (List<FireData>) -> Unit) {
         if (ConnectivityUtil.isOnline(context)) {
@@ -58,20 +59,24 @@ class FireRepository private constructor(
         local.alterarRegiao(onFinished, regiao)
     }
 
-    fun meiosOperacionais(onFinished: () -> Unit): List<FireRoom> {
-        return local.totalOperacionais(onFinished)
-    }
-
-    fun meiosTerrestres(onFinished: () -> Unit): List<FireRoom> {
-        return local.totalMeiosTerrestres(onFinished)
-    }
-
-    fun meiosAereos(onFinished: () -> Unit): List<FireRoom> {
-        return local.totalMeiosAereos(onFinished)
-    }
-
-    fun getRegion():String{
+    fun getRegion(): String {
         return local.region
+    }
+
+    fun getFilter(): String {
+        return local.typeFilter
+    }
+
+    fun getFogosMeiosVeiculos(onFinished: (List<FireData>) -> Unit) {
+        return local.getFogosMeiosVeiculos(onFinished)
+    }
+
+    fun getFogosMeiosAereos(onFinished: (List<FireData>) -> Unit) {
+        return local.getFogosMeiosAereos(onFinished)
+    }
+
+    fun getFogosMeiosOperacionais(onFinished: (List<FireData>) -> Unit) {
+        return local.getFogosMeiosOperacionais(onFinished)
     }
 
     companion object {

@@ -837,7 +837,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_below="@id/imageview26"
-                                    android:src="@drawable/bombeiro_no_fogo"
+                                    android:src="@drawable/no_photo"
                                     app:layout_constraintTop_toTopOf="parent" />
 
 

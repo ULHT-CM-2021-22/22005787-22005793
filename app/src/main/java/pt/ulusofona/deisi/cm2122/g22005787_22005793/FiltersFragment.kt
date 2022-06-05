@@ -113,10 +113,24 @@ class FiltersFragment : Fragment() {
 
         binding.buttonSubmit.setOnClickListener {
             if (filtroM) {
+                when (binding.buttonMeiosFilter.text.toString()) {
+                    "Operacionais" -> {
+                        viewModel.meiosOperacionais { updateHistory(it) }
+                    }
+                    "Meios Terrestres" -> {
+                        viewModel.meiosTerrestres { updateHistory(it) }
+                    }
+                    "Meios Aereos" -> {
+                        viewModel.meiosAereos { updateHistory(it) }
+                    }
+                }
+                filtroM = false
             }
             if (filtroD) {
-                viewModel.getOnFogosNaRegiao({ updateHistory(it) },
-                binding.buttonRegionFilter.text.toString())
+                viewModel.getOnFogosNaRegiao(
+                    { updateHistory(it) },
+                    binding.buttonRegionFilter.text.toString()
+                )
                 filtroD = false
             }
             binding.buttonRegionFilter.text = getString(R.string.click)
@@ -127,7 +141,6 @@ class FiltersFragment : Fragment() {
             parentFragmentManager.popBackStack()
         }
     }
-
 
 
     private fun updateHistory(fireData: List<FireData>) {
@@ -154,7 +167,6 @@ class FiltersFragment : Fragment() {
             adapter.updateItems(history)
         }
     }
-
 
 
 }

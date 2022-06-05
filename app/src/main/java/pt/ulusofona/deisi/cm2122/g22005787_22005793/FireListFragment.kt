@@ -50,10 +50,27 @@ class FireListFragment : Fragment(), OnLocationChangedListener {
         if (!filter) {
             viewModel.onGetHistory { updateHistory(it) }
         } else {
-            viewModel.getOnFogosNaRegiao(
-                { updateHistory(it) },
-                viewModel.onGetRegiaoFilter()
-            )
+            when (viewModel.getFilter()) {
+                "MA" -> {
+                    viewModel.meiosAereos { updateHistory(it) }
+                }
+                "MV" -> {
+                    viewModel.meiosTerrestres { updateHistory(it) }
+                }
+                "MO" -> {
+                    viewModel.meiosOperacionais { updateHistory(it) }
+                }
+                "R" -> {
+                    viewModel.getOnFogosNaRegiao(
+                        { updateHistory(it) },
+                        viewModel.onGetRegiaoFilter()
+                    )
+                }
+                else->{
+                    viewModel.onGetHistory { updateHistory(it) }
+                }
+            }
+
         }
         binding.filter.setOnClickListener {
             NavigationManager.goToFiltersFragment(parentFragmentManager)

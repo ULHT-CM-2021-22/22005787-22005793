@@ -485,33 +485,388 @@ public final class FireDao_Impl implements FireDao {
   }
 
   @Override
-  public Object getFromRegionCount(final String distrito,
-      final Continuation<? super Integer> continuation) {
-    final String _sql = "SELECT COUNT (*) FROM fires WHERE distrito = ?";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
-    int _argIndex = 1;
-    if (distrito == null) {
-      _statement.bindNull(_argIndex);
-    } else {
-      _statement.bindString(_argIndex, distrito);
-    }
+  public Object getMeiosOperacionais(final Continuation<? super List<FireRoom>> continuation) {
+    final String _sql = "SELECT * FROM fires WHERE meiosOperacionais > 0 ";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
-    return CoroutinesRoom.execute(__db, false, _cancellationSignal, new Callable<Integer>() {
+    return CoroutinesRoom.execute(__db, false, _cancellationSignal, new Callable<List<FireRoom>>() {
       @Override
-      public Integer call() throws Exception {
+      public List<FireRoom> call() throws Exception {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
         try {
-          final Integer _result;
-          if(_cursor.moveToFirst()) {
+          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+          final int _cursorIndexOfDistrito = CursorUtil.getColumnIndexOrThrow(_cursor, "distrito");
+          final int _cursorIndexOfConcelho = CursorUtil.getColumnIndexOrThrow(_cursor, "concelho");
+          final int _cursorIndexOfFreguesia = CursorUtil.getColumnIndexOrThrow(_cursor, "freguesia");
+          final int _cursorIndexOfMeiosOperacionais = CursorUtil.getColumnIndexOrThrow(_cursor, "meiosOperacionais");
+          final int _cursorIndexOfMeiosVeiculos = CursorUtil.getColumnIndexOrThrow(_cursor, "meiosVeiculos");
+          final int _cursorIndexOfMeiosAereos = CursorUtil.getColumnIndexOrThrow(_cursor, "meiosAereos");
+          final int _cursorIndexOfEstado = CursorUtil.getColumnIndexOrThrow(_cursor, "estado");
+          final int _cursorIndexOfData = CursorUtil.getColumnIndexOrThrow(_cursor, "data");
+          final int _cursorIndexOfFotos = CursorUtil.getColumnIndexOrThrow(_cursor, "fotos");
+          final int _cursorIndexOfObs = CursorUtil.getColumnIndexOrThrow(_cursor, "obs");
+          final int _cursorIndexOfNomePessoa = CursorUtil.getColumnIndexOrThrow(_cursor, "nomePessoa");
+          final int _cursorIndexOfCcPessoa = CursorUtil.getColumnIndexOrThrow(_cursor, "ccPessoa");
+          final int _cursorIndexOfPorConfirmar = CursorUtil.getColumnIndexOrThrow(_cursor, "porConfirmar");
+          final int _cursorIndexOfLatitude = CursorUtil.getColumnIndexOrThrow(_cursor, "latitude");
+          final int _cursorIndexOfLongitude = CursorUtil.getColumnIndexOrThrow(_cursor, "longitude");
+          final List<FireRoom> _result = new ArrayList<FireRoom>(_cursor.getCount());
+          while(_cursor.moveToNext()) {
+            final FireRoom _item;
+            final String _tmpId;
+            if (_cursor.isNull(_cursorIndexOfId)) {
+              _tmpId = null;
+            } else {
+              _tmpId = _cursor.getString(_cursorIndexOfId);
+            }
+            final String _tmpDistrito;
+            if (_cursor.isNull(_cursorIndexOfDistrito)) {
+              _tmpDistrito = null;
+            } else {
+              _tmpDistrito = _cursor.getString(_cursorIndexOfDistrito);
+            }
+            final String _tmpConcelho;
+            if (_cursor.isNull(_cursorIndexOfConcelho)) {
+              _tmpConcelho = null;
+            } else {
+              _tmpConcelho = _cursor.getString(_cursorIndexOfConcelho);
+            }
+            final String _tmpFreguesia;
+            if (_cursor.isNull(_cursorIndexOfFreguesia)) {
+              _tmpFreguesia = null;
+            } else {
+              _tmpFreguesia = _cursor.getString(_cursorIndexOfFreguesia);
+            }
+            final String _tmpMeiosOperacionais;
+            if (_cursor.isNull(_cursorIndexOfMeiosOperacionais)) {
+              _tmpMeiosOperacionais = null;
+            } else {
+              _tmpMeiosOperacionais = _cursor.getString(_cursorIndexOfMeiosOperacionais);
+            }
+            final String _tmpMeiosVeiculos;
+            if (_cursor.isNull(_cursorIndexOfMeiosVeiculos)) {
+              _tmpMeiosVeiculos = null;
+            } else {
+              _tmpMeiosVeiculos = _cursor.getString(_cursorIndexOfMeiosVeiculos);
+            }
+            final String _tmpMeiosAereos;
+            if (_cursor.isNull(_cursorIndexOfMeiosAereos)) {
+              _tmpMeiosAereos = null;
+            } else {
+              _tmpMeiosAereos = _cursor.getString(_cursorIndexOfMeiosAereos);
+            }
+            final String _tmpEstado;
+            if (_cursor.isNull(_cursorIndexOfEstado)) {
+              _tmpEstado = null;
+            } else {
+              _tmpEstado = _cursor.getString(_cursorIndexOfEstado);
+            }
+            final String _tmpData;
+            if (_cursor.isNull(_cursorIndexOfData)) {
+              _tmpData = null;
+            } else {
+              _tmpData = _cursor.getString(_cursorIndexOfData);
+            }
+            final String _tmpFotos;
+            if (_cursor.isNull(_cursorIndexOfFotos)) {
+              _tmpFotos = null;
+            } else {
+              _tmpFotos = _cursor.getString(_cursorIndexOfFotos);
+            }
+            final String _tmpObs;
+            if (_cursor.isNull(_cursorIndexOfObs)) {
+              _tmpObs = null;
+            } else {
+              _tmpObs = _cursor.getString(_cursorIndexOfObs);
+            }
+            final String _tmpNomePessoa;
+            if (_cursor.isNull(_cursorIndexOfNomePessoa)) {
+              _tmpNomePessoa = null;
+            } else {
+              _tmpNomePessoa = _cursor.getString(_cursorIndexOfNomePessoa);
+            }
+            final String _tmpCcPessoa;
+            if (_cursor.isNull(_cursorIndexOfCcPessoa)) {
+              _tmpCcPessoa = null;
+            } else {
+              _tmpCcPessoa = _cursor.getString(_cursorIndexOfCcPessoa);
+            }
+            final Boolean _tmpPorConfirmar;
             final Integer _tmp;
-            if (_cursor.isNull(0)) {
+            if (_cursor.isNull(_cursorIndexOfPorConfirmar)) {
               _tmp = null;
             } else {
-              _tmp = _cursor.getInt(0);
+              _tmp = _cursor.getInt(_cursorIndexOfPorConfirmar);
             }
-            _result = _tmp;
-          } else {
-            _result = null;
+            _tmpPorConfirmar = _tmp == null ? null : _tmp != 0;
+            final double _tmpLatitude;
+            _tmpLatitude = _cursor.getDouble(_cursorIndexOfLatitude);
+            final double _tmpLongitude;
+            _tmpLongitude = _cursor.getDouble(_cursorIndexOfLongitude);
+            _item = new FireRoom(_tmpId,_tmpDistrito,_tmpConcelho,_tmpFreguesia,_tmpMeiosOperacionais,_tmpMeiosVeiculos,_tmpMeiosAereos,_tmpEstado,_tmpData,_tmpFotos,_tmpObs,_tmpNomePessoa,_tmpCcPessoa,_tmpPorConfirmar,_tmpLatitude,_tmpLongitude);
+            _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+          _statement.release();
+        }
+      }
+    }, continuation);
+  }
+
+  @Override
+  public Object getmeiosAereos(final Continuation<? super List<FireRoom>> continuation) {
+    final String _sql = "SELECT * FROM fires WHERE meiosAereos > 0 ";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
+    return CoroutinesRoom.execute(__db, false, _cancellationSignal, new Callable<List<FireRoom>>() {
+      @Override
+      public List<FireRoom> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+          final int _cursorIndexOfDistrito = CursorUtil.getColumnIndexOrThrow(_cursor, "distrito");
+          final int _cursorIndexOfConcelho = CursorUtil.getColumnIndexOrThrow(_cursor, "concelho");
+          final int _cursorIndexOfFreguesia = CursorUtil.getColumnIndexOrThrow(_cursor, "freguesia");
+          final int _cursorIndexOfMeiosOperacionais = CursorUtil.getColumnIndexOrThrow(_cursor, "meiosOperacionais");
+          final int _cursorIndexOfMeiosVeiculos = CursorUtil.getColumnIndexOrThrow(_cursor, "meiosVeiculos");
+          final int _cursorIndexOfMeiosAereos = CursorUtil.getColumnIndexOrThrow(_cursor, "meiosAereos");
+          final int _cursorIndexOfEstado = CursorUtil.getColumnIndexOrThrow(_cursor, "estado");
+          final int _cursorIndexOfData = CursorUtil.getColumnIndexOrThrow(_cursor, "data");
+          final int _cursorIndexOfFotos = CursorUtil.getColumnIndexOrThrow(_cursor, "fotos");
+          final int _cursorIndexOfObs = CursorUtil.getColumnIndexOrThrow(_cursor, "obs");
+          final int _cursorIndexOfNomePessoa = CursorUtil.getColumnIndexOrThrow(_cursor, "nomePessoa");
+          final int _cursorIndexOfCcPessoa = CursorUtil.getColumnIndexOrThrow(_cursor, "ccPessoa");
+          final int _cursorIndexOfPorConfirmar = CursorUtil.getColumnIndexOrThrow(_cursor, "porConfirmar");
+          final int _cursorIndexOfLatitude = CursorUtil.getColumnIndexOrThrow(_cursor, "latitude");
+          final int _cursorIndexOfLongitude = CursorUtil.getColumnIndexOrThrow(_cursor, "longitude");
+          final List<FireRoom> _result = new ArrayList<FireRoom>(_cursor.getCount());
+          while(_cursor.moveToNext()) {
+            final FireRoom _item;
+            final String _tmpId;
+            if (_cursor.isNull(_cursorIndexOfId)) {
+              _tmpId = null;
+            } else {
+              _tmpId = _cursor.getString(_cursorIndexOfId);
+            }
+            final String _tmpDistrito;
+            if (_cursor.isNull(_cursorIndexOfDistrito)) {
+              _tmpDistrito = null;
+            } else {
+              _tmpDistrito = _cursor.getString(_cursorIndexOfDistrito);
+            }
+            final String _tmpConcelho;
+            if (_cursor.isNull(_cursorIndexOfConcelho)) {
+              _tmpConcelho = null;
+            } else {
+              _tmpConcelho = _cursor.getString(_cursorIndexOfConcelho);
+            }
+            final String _tmpFreguesia;
+            if (_cursor.isNull(_cursorIndexOfFreguesia)) {
+              _tmpFreguesia = null;
+            } else {
+              _tmpFreguesia = _cursor.getString(_cursorIndexOfFreguesia);
+            }
+            final String _tmpMeiosOperacionais;
+            if (_cursor.isNull(_cursorIndexOfMeiosOperacionais)) {
+              _tmpMeiosOperacionais = null;
+            } else {
+              _tmpMeiosOperacionais = _cursor.getString(_cursorIndexOfMeiosOperacionais);
+            }
+            final String _tmpMeiosVeiculos;
+            if (_cursor.isNull(_cursorIndexOfMeiosVeiculos)) {
+              _tmpMeiosVeiculos = null;
+            } else {
+              _tmpMeiosVeiculos = _cursor.getString(_cursorIndexOfMeiosVeiculos);
+            }
+            final String _tmpMeiosAereos;
+            if (_cursor.isNull(_cursorIndexOfMeiosAereos)) {
+              _tmpMeiosAereos = null;
+            } else {
+              _tmpMeiosAereos = _cursor.getString(_cursorIndexOfMeiosAereos);
+            }
+            final String _tmpEstado;
+            if (_cursor.isNull(_cursorIndexOfEstado)) {
+              _tmpEstado = null;
+            } else {
+              _tmpEstado = _cursor.getString(_cursorIndexOfEstado);
+            }
+            final String _tmpData;
+            if (_cursor.isNull(_cursorIndexOfData)) {
+              _tmpData = null;
+            } else {
+              _tmpData = _cursor.getString(_cursorIndexOfData);
+            }
+            final String _tmpFotos;
+            if (_cursor.isNull(_cursorIndexOfFotos)) {
+              _tmpFotos = null;
+            } else {
+              _tmpFotos = _cursor.getString(_cursorIndexOfFotos);
+            }
+            final String _tmpObs;
+            if (_cursor.isNull(_cursorIndexOfObs)) {
+              _tmpObs = null;
+            } else {
+              _tmpObs = _cursor.getString(_cursorIndexOfObs);
+            }
+            final String _tmpNomePessoa;
+            if (_cursor.isNull(_cursorIndexOfNomePessoa)) {
+              _tmpNomePessoa = null;
+            } else {
+              _tmpNomePessoa = _cursor.getString(_cursorIndexOfNomePessoa);
+            }
+            final String _tmpCcPessoa;
+            if (_cursor.isNull(_cursorIndexOfCcPessoa)) {
+              _tmpCcPessoa = null;
+            } else {
+              _tmpCcPessoa = _cursor.getString(_cursorIndexOfCcPessoa);
+            }
+            final Boolean _tmpPorConfirmar;
+            final Integer _tmp;
+            if (_cursor.isNull(_cursorIndexOfPorConfirmar)) {
+              _tmp = null;
+            } else {
+              _tmp = _cursor.getInt(_cursorIndexOfPorConfirmar);
+            }
+            _tmpPorConfirmar = _tmp == null ? null : _tmp != 0;
+            final double _tmpLatitude;
+            _tmpLatitude = _cursor.getDouble(_cursorIndexOfLatitude);
+            final double _tmpLongitude;
+            _tmpLongitude = _cursor.getDouble(_cursorIndexOfLongitude);
+            _item = new FireRoom(_tmpId,_tmpDistrito,_tmpConcelho,_tmpFreguesia,_tmpMeiosOperacionais,_tmpMeiosVeiculos,_tmpMeiosAereos,_tmpEstado,_tmpData,_tmpFotos,_tmpObs,_tmpNomePessoa,_tmpCcPessoa,_tmpPorConfirmar,_tmpLatitude,_tmpLongitude);
+            _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+          _statement.release();
+        }
+      }
+    }, continuation);
+  }
+
+  @Override
+  public Object getMeiosVeiculos(final Continuation<? super List<FireRoom>> continuation) {
+    final String _sql = "SELECT * FROM fires WHERE meiosVeiculos > 0 ";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
+    return CoroutinesRoom.execute(__db, false, _cancellationSignal, new Callable<List<FireRoom>>() {
+      @Override
+      public List<FireRoom> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+          final int _cursorIndexOfDistrito = CursorUtil.getColumnIndexOrThrow(_cursor, "distrito");
+          final int _cursorIndexOfConcelho = CursorUtil.getColumnIndexOrThrow(_cursor, "concelho");
+          final int _cursorIndexOfFreguesia = CursorUtil.getColumnIndexOrThrow(_cursor, "freguesia");
+          final int _cursorIndexOfMeiosOperacionais = CursorUtil.getColumnIndexOrThrow(_cursor, "meiosOperacionais");
+          final int _cursorIndexOfMeiosVeiculos = CursorUtil.getColumnIndexOrThrow(_cursor, "meiosVeiculos");
+          final int _cursorIndexOfMeiosAereos = CursorUtil.getColumnIndexOrThrow(_cursor, "meiosAereos");
+          final int _cursorIndexOfEstado = CursorUtil.getColumnIndexOrThrow(_cursor, "estado");
+          final int _cursorIndexOfData = CursorUtil.getColumnIndexOrThrow(_cursor, "data");
+          final int _cursorIndexOfFotos = CursorUtil.getColumnIndexOrThrow(_cursor, "fotos");
+          final int _cursorIndexOfObs = CursorUtil.getColumnIndexOrThrow(_cursor, "obs");
+          final int _cursorIndexOfNomePessoa = CursorUtil.getColumnIndexOrThrow(_cursor, "nomePessoa");
+          final int _cursorIndexOfCcPessoa = CursorUtil.getColumnIndexOrThrow(_cursor, "ccPessoa");
+          final int _cursorIndexOfPorConfirmar = CursorUtil.getColumnIndexOrThrow(_cursor, "porConfirmar");
+          final int _cursorIndexOfLatitude = CursorUtil.getColumnIndexOrThrow(_cursor, "latitude");
+          final int _cursorIndexOfLongitude = CursorUtil.getColumnIndexOrThrow(_cursor, "longitude");
+          final List<FireRoom> _result = new ArrayList<FireRoom>(_cursor.getCount());
+          while(_cursor.moveToNext()) {
+            final FireRoom _item;
+            final String _tmpId;
+            if (_cursor.isNull(_cursorIndexOfId)) {
+              _tmpId = null;
+            } else {
+              _tmpId = _cursor.getString(_cursorIndexOfId);
+            }
+            final String _tmpDistrito;
+            if (_cursor.isNull(_cursorIndexOfDistrito)) {
+              _tmpDistrito = null;
+            } else {
+              _tmpDistrito = _cursor.getString(_cursorIndexOfDistrito);
+            }
+            final String _tmpConcelho;
+            if (_cursor.isNull(_cursorIndexOfConcelho)) {
+              _tmpConcelho = null;
+            } else {
+              _tmpConcelho = _cursor.getString(_cursorIndexOfConcelho);
+            }
+            final String _tmpFreguesia;
+            if (_cursor.isNull(_cursorIndexOfFreguesia)) {
+              _tmpFreguesia = null;
+            } else {
+              _tmpFreguesia = _cursor.getString(_cursorIndexOfFreguesia);
+            }
+            final String _tmpMeiosOperacionais;
+            if (_cursor.isNull(_cursorIndexOfMeiosOperacionais)) {
+              _tmpMeiosOperacionais = null;
+            } else {
+              _tmpMeiosOperacionais = _cursor.getString(_cursorIndexOfMeiosOperacionais);
+            }
+            final String _tmpMeiosVeiculos;
+            if (_cursor.isNull(_cursorIndexOfMeiosVeiculos)) {
+              _tmpMeiosVeiculos = null;
+            } else {
+              _tmpMeiosVeiculos = _cursor.getString(_cursorIndexOfMeiosVeiculos);
+            }
+            final String _tmpMeiosAereos;
+            if (_cursor.isNull(_cursorIndexOfMeiosAereos)) {
+              _tmpMeiosAereos = null;
+            } else {
+              _tmpMeiosAereos = _cursor.getString(_cursorIndexOfMeiosAereos);
+            }
+            final String _tmpEstado;
+            if (_cursor.isNull(_cursorIndexOfEstado)) {
+              _tmpEstado = null;
+            } else {
+              _tmpEstado = _cursor.getString(_cursorIndexOfEstado);
+            }
+            final String _tmpData;
+            if (_cursor.isNull(_cursorIndexOfData)) {
+              _tmpData = null;
+            } else {
+              _tmpData = _cursor.getString(_cursorIndexOfData);
+            }
+            final String _tmpFotos;
+            if (_cursor.isNull(_cursorIndexOfFotos)) {
+              _tmpFotos = null;
+            } else {
+              _tmpFotos = _cursor.getString(_cursorIndexOfFotos);
+            }
+            final String _tmpObs;
+            if (_cursor.isNull(_cursorIndexOfObs)) {
+              _tmpObs = null;
+            } else {
+              _tmpObs = _cursor.getString(_cursorIndexOfObs);
+            }
+            final String _tmpNomePessoa;
+            if (_cursor.isNull(_cursorIndexOfNomePessoa)) {
+              _tmpNomePessoa = null;
+            } else {
+              _tmpNomePessoa = _cursor.getString(_cursorIndexOfNomePessoa);
+            }
+            final String _tmpCcPessoa;
+            if (_cursor.isNull(_cursorIndexOfCcPessoa)) {
+              _tmpCcPessoa = null;
+            } else {
+              _tmpCcPessoa = _cursor.getString(_cursorIndexOfCcPessoa);
+            }
+            final Boolean _tmpPorConfirmar;
+            final Integer _tmp;
+            if (_cursor.isNull(_cursorIndexOfPorConfirmar)) {
+              _tmp = null;
+            } else {
+              _tmp = _cursor.getInt(_cursorIndexOfPorConfirmar);
+            }
+            _tmpPorConfirmar = _tmp == null ? null : _tmp != 0;
+            final double _tmpLatitude;
+            _tmpLatitude = _cursor.getDouble(_cursorIndexOfLatitude);
+            final double _tmpLongitude;
+            _tmpLongitude = _cursor.getDouble(_cursorIndexOfLongitude);
+            _item = new FireRoom(_tmpId,_tmpDistrito,_tmpConcelho,_tmpFreguesia,_tmpMeiosOperacionais,_tmpMeiosVeiculos,_tmpMeiosAereos,_tmpEstado,_tmpData,_tmpFotos,_tmpObs,_tmpNomePessoa,_tmpCcPessoa,_tmpPorConfirmar,_tmpLatitude,_tmpLongitude);
+            _result.add(_item);
           }
           return _result;
         } finally {

@@ -13,6 +13,8 @@ abstract class FireModel {
         "Évora", "Faro", "Guarda", "Leiria", "Lisboa", "Portalegre",
         "Porto", "Santarém", "Setúbal", "Viana do Castelo", "Vila Real", "Viseu"
     )
+    var typeFilter = ""
+
 
 
 
@@ -30,6 +32,9 @@ abstract class FireModel {
     abstract fun fogosNaRegiao(onFinished: (String) -> Unit): String
     abstract fun fogosNaRegiao(onFinished: (String) -> Unit, regiao: String)
     abstract fun getFogosNaRegiao(onFinished: (List<FireData>) -> Unit, regiao: String)
+    abstract fun getFogosMeiosVeiculos(onFinished: (List<FireData>) -> Unit)
+    abstract fun getFogosMeiosAereos(onFinished: (List<FireData>) -> Unit)
+    abstract fun getFogosMeiosOperacionais(onFinished: (List<FireData>) -> Unit)
     abstract fun totalFogos(onFinished: (String) -> Unit): String
     abstract fun totalOperacionais(onFinished: () -> Unit): List<FireRoom>
     abstract fun totalMeiosTerrestres(onFinished: () -> Unit): List<FireRoom>
