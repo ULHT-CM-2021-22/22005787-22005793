@@ -1,7 +1,8 @@
 # Projeto FireTracker - Computação Móvel 21/22
 
 Este projeto baseia se numa aplicação para registar incêndios, consultar os incêndios, visualizar o mapa e as respetivas zonas de perigo.
-Começando pela DashBoard, apresentamos algumas estatísticas sobre o distrito escolhido pelo utilizador, como se pode visualizar pelos prints(como ainda não sabemos lidar com o GPS, utilizamos Lisboa como predefinição)
+Começando pela DashBoard, apresentamos algumas estatísticas sobre o distrito onde se encontra o utilizador, como se pode visualizar pelos prints.
+O distrito é calculado através de geolocalização.
 
 ### <img src="https://github.com/ULHT-CM-2021-22/22005787-22005793/blob/main/print(1).jpg" height="1100" width="650">
 
@@ -14,10 +15,10 @@ Acrescentamos também um ScrollView para uma melhor consulta de dados.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### <img src="https://github.com/ULHT-CM-2021-22/22005787-22005793/blob/main/print(9).jpg" height="1100" width="650">
 
-Em relação ao mapa, como ainda não sabemos ter acesso ao GPS, utilizamos uma imagem do mapa de Portugal.
+Em relação ao mapa, utilizamos o mapa do GoogleMaps, os fogos são apresentados com marcadores em que a cor muda consoante o seu estado.
 ### <img src="https://github.com/ULHT-CM-2021-22/22005787-22005793/blob/main/print(3).jpg" height="1100" width="650">
 
-Quanto ao ecrã de novo registo, os 3 primeiros campos não se podem encontrar vazios, utilizamos o mesmo metodo neste ecrã que foi usado na DashBoard para selecionar o distrito e para colocar uma foto basta escolher pela galeria do utilizador
+Quanto ao ecrã de novo registo, os 3 primeiros campos não se podem encontrar vazios,o distrito é calculado como na Dashboard, poupando tempo ao utilizador quando preeche o registo e para colocar uma foto basta escolher pela galeria do utilizador
 ### <img src="https://github.com/ULHT-CM-2021-22/22005787-22005793/blob/main/print(6).jpg" height="1100" width="650">
 
 Em relação à funcionalidade extra, decidimos por bem implementar um gráfico circular e uma legenda com os fogos ativos por distrito.
@@ -30,13 +31,17 @@ Acrescentamos um header, com o símbolo da Universidade.
 Adicionamos também um botão para encerrar a aplicação.
 ### <img src="https://github.com/ULHT-CM-2021-22/22005787-22005793/blob/main/print(2).jpg" height="1100" width="650">
 
+Em relação aos filtros, é possível filtrar os fogos por distrito, por meios utilizados(se os meios foram utilizados) e por raio de incidência(não está a funcionar).
+
 ### <img src="https://github.com/ULHT-CM-2021-22/22005787-22005793/blob/main/print(4).jpg" height="1100" width="650">
 
 
 
 Assim como foi proposto, o risco de zona atualiza o texto e a cor a cada 20 segundos, como é visivel nas imagens anteriores.
-O risco atualiza conforme se muda de região e ao fim dos tais 20 segundos.
 
+Em relação á autonomia da aplicação, quando o telemovél tem menos de 20% de bateria, o risco passa a ter a cor cinzenta e a aplicação ativa o Dark Mode. 
+
+Link do video -> https://youtu.be/eAseKg_v5HU
 
 Quanto à auto-avaliação, achamos que o projeto se encontra com qualidade de realização para um 14.
 
