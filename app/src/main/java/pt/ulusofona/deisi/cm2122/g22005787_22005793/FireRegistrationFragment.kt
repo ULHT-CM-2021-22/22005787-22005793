@@ -8,6 +8,7 @@ import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
 import android.location.Geocoder
 import android.net.Uri
+import android.os.BatteryManager
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.provider.MediaStore
@@ -43,12 +44,6 @@ class FireRegistrationFragment : Fragment(), OnLocationChangedListener {
     private lateinit var geocoder: Geocoder
     private var adapter =
         FireAdapter(onClick = ::onOperationClick, onLongClick = ::onOperationLongClick)
-    private val timer = object : CountDownTimer(20000, 1000) {
-        override fun onTick(millisUntilFinished: Long) {}
-        override fun onFinish() {
-            updateDashboard()
-        }
-    }
     private var check = false
     private var imageURI: Uri? = null
 
@@ -215,18 +210,15 @@ class FireRegistrationFragment : Fragment(), OnLocationChangedListener {
     override fun onDestroy() {
         super.onDestroy()
         FusedLocation.unregisterListener(this)
-        timer.cancel()
     }
 
     override fun onPause() {
         super.onPause()
-        timer.cancel()
         requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR
     }
 
     override fun onResume() {
         super.onResume()
-        timer.start()
         requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
     }
 
@@ -269,11 +261,22 @@ class FireRegistrationFragment : Fragment(), OnLocationChangedListener {
         }
     }
 
+
     private fun placeCityName(latitude: Double, longitude: Double) {
         val addresses = geocoder.getFromLocation(latitude, longitude, 5)
         val location = addresses.first { it.locality != null && it.locality.isNotEmpty() }
-        binding.textRegion.text = location.adminArea
         viewModel.onAlterarRegiao({},location.adminArea)
+        binding.textRegion.text = location.adminArea
+        viewModel.onGetRisk(location.adminArea) {
+            binding.riscoRegiao.text = it
+        }
+        val bm = requireActivity().applicationContext.getSystemService(AppCompatActivity.BATTERY_SERVICE) as BatteryManager
+        val batLevel:Int = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
+        if (batLevel <= 20) {
+            binding.riskLayout.setBackgroundColor(resources.getColor(R.color.grey))
+        } else {
+            backgroundColor(binding.riscoRegiao.text.toString())
+        }
     }
 
 

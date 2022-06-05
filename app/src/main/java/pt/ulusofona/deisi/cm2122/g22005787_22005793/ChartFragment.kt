@@ -1,6 +1,8 @@
 package pt.ulusofona.deisi.cm2122.g22005787_22005793
 
 import android.content.pm.ActivityInfo
+import android.location.Geocoder
+import android.os.BatteryManager
 import android.os.Bundle
 import android.os.CountDownTimer
 import androidx.fragment.app.Fragment
@@ -14,17 +16,13 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.eazegraph.lib.models.PieModel
 import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentChartBinding
+import java.util.*
 
 
-class ChartFragment : Fragment() {
+class ChartFragment : Fragment(), OnLocationChangedListener {
     private lateinit var binding: FragmentChartBinding
     private lateinit var viewModel: FireViewModel
-    private val timer = object : CountDownTimer(20000, 1000) {
-        override fun onTick(millisUntilFinished: Long) {}
-        override fun onFinish() {
-            updateDashboard()
-        }
-    }
+    private lateinit var geocoder: Geocoder
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,6 +34,8 @@ class ChartFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_chart, container, false)
         viewModel = ViewModelProvider(this).get(FireViewModel::class.java)
         binding = FragmentChartBinding.bind(view)
+        geocoder = Geocoder(context, Locale.getDefault())
+        FusedLocation.registerListener(this)
         districtsInChart()
         binding.piechart.startAnimation()
         return binding.root
@@ -48,19 +48,34 @@ class ChartFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        timer.start()
         requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        timer.cancel()
+        FusedLocation.unregisterListener(this)
     }
 
     override fun onPause() {
         super.onPause()
-        timer.cancel()
+
         requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR
+    }
+
+    private fun placeCityName(latitude: Double, longitude: Double) {
+        val addresses = geocoder.getFromLocation(latitude, longitude, 5)
+        val location = addresses.first { it.locality != null && it.locality.isNotEmpty() }
+        viewModel.onAlterarRegiao({},location.adminArea)
+        viewModel.onGetRisk(location.adminArea) {
+            binding.riscoRegiao.text = it
+        }
+        val bm = requireActivity().applicationContext.getSystemService(AppCompatActivity.BATTERY_SERVICE) as BatteryManager
+        val batLevel:Int = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
+        if (batLevel <= 20) {
+            binding.riskLayout.setBackgroundColor(resources.getColor(R.color.grey))
+        } else {
+            backgroundColor(binding.riscoRegiao.text.toString())
+        }
     }
 
     private fun districtsInChart() {
@@ -359,5 +374,9 @@ class ChartFragment : Fragment() {
             }
             },region)
         return sliceName
+    }
+
+    override fun onLocationChanged(latitude: Double, longitude: Double) {
+        placeCityName(latitude, longitude)
     }
 }

@@ -1,5 +1,7 @@
 package pt.ulusofona.deisi.cm2122.g22005787_22005793
 
+import android.location.Geocoder
+import android.os.BatteryManager
 import android.os.Bundle
 import android.os.CountDownTimer
 import androidx.fragment.app.Fragment
@@ -10,21 +12,17 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import pt.ulusofona.deisi.cm2122.g22005787_22005793.databinding.FragmentFireDetailsBinding
+import java.util.*
 
 
 private const val ARG_FIRE = "ARG_FIRE"
 
-class FireDetailsFragment : Fragment() {
+class FireDetailsFragment : Fragment(), OnLocationChangedListener {
 
     private lateinit var viewModel: FireViewModel
     private var fireData: FireData? = null
     private lateinit var binding: FragmentFireDetailsBinding
-    private val timer = object : CountDownTimer(20000, 1000) {
-        override fun onTick(millisUntilFinished: Long) {}
-        override fun onFinish() {
-            updateDashboard()
-        }
-    }
+    private lateinit var geocoder: Geocoder
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,17 +34,20 @@ class FireDetailsFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_fire_details, container, false)
         viewModel = ViewModelProvider(this).get(FireViewModel::class.java)
         binding = FragmentFireDetailsBinding.bind(view)
+        geocoder = Geocoder(context, Locale.getDefault())
+        FusedLocation.registerListener(this)
         return binding.root
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        timer.cancel()
+        FusedLocation.unregisterListener(this)
+
     }
 
     override fun onPause() {
         super.onPause()
-        timer.cancel()
+
     }
 
     override fun onStart() {
@@ -73,12 +74,28 @@ class FireDetailsFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        timer.start()
+
     }
 
     private fun updateDashboard() {
 
 
+    }
+
+    private fun placeCityName(latitude: Double, longitude: Double) {
+        val addresses = geocoder.getFromLocation(latitude, longitude, 5)
+        val location = addresses.first { it.locality != null && it.locality.isNotEmpty() }
+        viewModel.onAlterarRegiao({},location.adminArea)
+        viewModel.onGetRisk(location.adminArea) {
+            binding.riscoRegiao.text = it
+        }
+        val bm = requireActivity().applicationContext.getSystemService(AppCompatActivity.BATTERY_SERVICE) as BatteryManager
+        val batLevel:Int = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
+        if (batLevel <= 20) {
+            binding.riskLayout.setBackgroundColor(resources.getColor(R.color.grey))
+        } else {
+            backgroundColor(binding.riscoRegiao.text.toString())
+        }
     }
 
     private fun backgroundColor(risk: String) {
@@ -99,5 +116,9 @@ class FireDetailsFragment : Fragment() {
                     putParcelable(ARG_FIRE, fireData)
                 }
             }
+    }
+
+    override fun onLocationChanged(latitude: Double, longitude: Double) {
+        placeCityName(latitude, longitude)
     }
 }

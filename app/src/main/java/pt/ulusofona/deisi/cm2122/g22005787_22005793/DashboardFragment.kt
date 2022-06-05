@@ -27,12 +27,7 @@ class DashboardFragment : Fragment(), OnLocationChangedListener {
     private lateinit var geocoder: Geocoder
     private var adapter =
         FireAdapter(onClick = ::onOperationClick, onLongClick = ::onOperationLongClick)
-    private val timer = object : CountDownTimer(20000, 1000) {
-        override fun onTick(millisUntilFinished: Long) {}
-        override fun onFinish() {
-            updateDashboard()
-        }
-    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -43,9 +38,10 @@ class DashboardFragment : Fragment(), OnLocationChangedListener {
             getString(R.string.app_name)
         val view = inflater.inflate(R.layout.fragment_dashboard, container, false)
         geocoder = Geocoder(context, Locale.getDefault())
+        FusedLocation.registerListener(this)
         viewModel = ViewModelProvider(this).get(FireViewModel::class.java)
         binding = FragmentDashboardBinding.bind(view)
-        FusedLocation.registerListener(this)
+
         updateDashboard()
         return binding.root
     }
@@ -57,19 +53,16 @@ class DashboardFragment : Fragment(), OnLocationChangedListener {
 
     override fun onResume() {
         super.onResume()
-        timer.start()
         requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
     }
 
     override fun onDestroy() {
         super.onDestroy()
         FusedLocation.unregisterListener(this)
-        timer.cancel()
     }
 
     override fun onPause() {
         super.onPause()
-        timer.cancel()
         requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR
     }
 
@@ -146,8 +139,6 @@ class DashboardFragment : Fragment(), OnLocationChangedListener {
         } else {
             backgroundColor(binding.riscoRegiao.text.toString())
         }
-
-
     }
 
 

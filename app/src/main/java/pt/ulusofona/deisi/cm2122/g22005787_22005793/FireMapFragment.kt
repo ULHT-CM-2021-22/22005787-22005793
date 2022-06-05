@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.pm.ActivityInfo
 import android.location.Geocoder
 import android.location.Location
+import android.os.BatteryManager
 import android.os.Bundle
 import android.os.CountDownTimer
 import androidx.fragment.app.Fragment
@@ -75,6 +76,7 @@ class FireMapFragment : Fragment(), OnLocationChangedListener, OnMapReadyCallbac
 
     override fun onLocationChanged(latitude: Double, longitude: Double) {
         placeCamera(latitude, longitude)
+        placeCityName(latitude, longitude)
     }
 
     private fun placeCamera(latitude: Double, longitude: Double) {
@@ -198,6 +200,22 @@ class FireMapFragment : Fragment(), OnLocationChangedListener, OnMapReadyCallbac
 
     override fun onMapReady(p0: GoogleMap) {
         viewModel.onGetHistory { updateHistory(it) }
+    }
+
+    private fun placeCityName(latitude: Double, longitude: Double) {
+        val addresses = geocoder.getFromLocation(latitude, longitude, 5)
+        val location = addresses.first { it.locality != null && it.locality.isNotEmpty() }
+        viewModel.onAlterarRegiao({},location.adminArea)
+        viewModel.onGetRisk(location.adminArea) {
+            binding.riscoRegiao.text = it
+        }
+        val bm = requireActivity().applicationContext.getSystemService(AppCompatActivity.BATTERY_SERVICE) as BatteryManager
+        val batLevel:Int = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
+        if (batLevel <= 20) {
+            binding.riskLayout.setBackgroundColor(resources.getColor(R.color.grey))
+        } else {
+            backgroundColor(binding.riscoRegiao.text.toString())
+        }
     }
 
 

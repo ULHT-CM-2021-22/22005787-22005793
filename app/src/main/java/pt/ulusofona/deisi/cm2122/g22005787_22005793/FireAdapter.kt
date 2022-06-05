@@ -25,10 +25,11 @@ class FireAdapter(
 
     override fun onBindViewHolder(holder: HistoryViewHolder, position: Int) {
         holder.binding.textTitle.text = items[position].distrito
-        holder.binding.textInf.text = "Concelho -> ${items[position].concelho}" +
-                " \nFreguesia -> ${items[position].freguesia} \n" +
-                "Estado -> ${items[position].estado}" +
-                " \nData -> ${items[position].data}"
+        holder.binding.textInf.text =
+            "Concelho -> ${items[position].concelho ?: "Informação não disponível"}" +
+                    " \nFreguesia -> ${items[position].freguesia ?: "Informação não disponível"} \n" +
+                    "Estado -> ${items[position].estado ?: "Informação não disponível"}" +
+                    " \nData -> ${items[position].data ?: "Informação não disponível"}"
         holder.itemView.setOnClickListener { onClick(items[position]) }
         holder.itemView.setOnLongClickListener { onLongClick(items[position]) }
     }
