@@ -60,7 +60,7 @@
     <string name="name">Nome</string>
     <string name="newRegister">Efetue aqui o registo do incêndio</string>
     <string name="new_fire">Novo registo</string>
-    <string name="no_list">Lista indisponível</string>
+    <string name="no_list">Não existem fogos</string>
     <string name="no_permission">Não tem permissão para ler arquivos</string>
     <string name="obs">Observações</string>
     <string name="parish">Freguesia</string>

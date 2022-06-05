@@ -28,6 +28,7 @@ import kotlin.collections.ArrayList
 
 class FireMapFragment : Fragment(), OnLocationChangedListener, OnMapReadyCallback{
 
+    private lateinit var viewModel: FireViewModel
     private lateinit var binding: FragmentFireMapBinding
     private lateinit var geocoder: Geocoder
     private var map: GoogleMap? = null
@@ -44,7 +45,7 @@ class FireMapFragment : Fragment(), OnLocationChangedListener, OnMapReadyCallbac
         NavigationManager.goToFireDetailsFragment(parentFragmentManager, fireData)
     }
 
-    private lateinit var viewModel: FireViewModel
+
 
 
     @SuppressLint("MissingPermission")

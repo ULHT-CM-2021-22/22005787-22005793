@@ -40,7 +40,7 @@
     <string name="name">Name</string>
     <string name="newRegister">Register the fire here</string>
     <string name="new_fire">New registration</string>
-    <string name="no_list">List unavailable</string>
+    <string name="no_list">There are no fires</string>
     <string name="no_permission">Not allowed to read files</string>
     <string name="obs">Observações</string>
     <string name="parish">Parish</string>
