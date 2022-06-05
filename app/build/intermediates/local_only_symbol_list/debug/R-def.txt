@@ -50,6 +50,7 @@ drawable ic_target
 drawable ic_warning
 drawable lusofona
 drawable mapa
+drawable no_photo
 id aveiro
 id beja
 id braga
@@ -176,6 +177,7 @@ string estado_fogo
 string exit
 string fields
 string filters
+string filtros_aplicados
 string fire_average
 string fire_list
 string fire_map

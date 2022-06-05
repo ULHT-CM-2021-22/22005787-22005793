@@ -25,6 +25,7 @@
     <string name="exit">Close app</string>
     <string name="fields">Fill all the fields</string>
     <string name="filters">Filters</string>
+    <string name="filtros_aplicados">Applied filters</string>
     <string name="fire_average">Average number of fires in the region</string>
     <string name="fire_list">Fire\'s list</string>
     <string name="fire_map">Fire\'s map</string>

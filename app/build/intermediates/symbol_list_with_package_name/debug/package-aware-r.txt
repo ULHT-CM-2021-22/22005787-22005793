@@ -2630,6 +2630,7 @@ drawable mtrl_popupmenu_background
 drawable mtrl_popupmenu_background_overlay
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
+drawable no_photo
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -3505,6 +3506,7 @@ string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string fields
 string filters
+string filtros_aplicados
 string fire_average
 string fire_list
 string fire_map

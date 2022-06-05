@@ -17,7 +17,7 @@
     <string name="time">Date and Time</string>
     <string name="photo">Photo(Opcional)</string>
     <string name="send">Send</string>
-    <string name="no_list">List unavailable</string>
+    <string name="no_list">There are no fires</string>
     <string name="region">Region</string>
     <string name="region_fires">Region\´s fires</string>
     <string name="region_risk">Region\´s risk</string>
@@ -58,5 +58,6 @@
     <string name="location">Location</string>
     <string name="lisboa">Lisbon</string>
     <string name="reduzido">Reduced</string>
+    <string name="filtros_aplicados">Applied filters</string>
 
 </resources>

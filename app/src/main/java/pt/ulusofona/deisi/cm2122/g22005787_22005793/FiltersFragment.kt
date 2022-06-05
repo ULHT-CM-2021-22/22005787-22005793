@@ -126,7 +126,7 @@ class FiltersFragment : Fragment() {
                 }
                 filtroM = false
             }
-            if (filtroD) {
+           else if (filtroD) {
                 viewModel.getOnFogosNaRegiao(
                     { updateHistory(it) },
                     binding.buttonRegionFilter.text.toString()
@@ -137,7 +137,7 @@ class FiltersFragment : Fragment() {
             binding.buttonRadiusFilter.text = getString(R.string.click)
             binding.buttonMeiosFilter.text = getString(R.string.click)
             binding.buttonEstadoFogoFilter.text = getString(R.string.click)
-            Toast.makeText(context, "Filtros aplicados", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, getString(R.string.filtros_aplicados), Toast.LENGTH_SHORT).show()
             parentFragmentManager.popBackStack()
         }
     }
