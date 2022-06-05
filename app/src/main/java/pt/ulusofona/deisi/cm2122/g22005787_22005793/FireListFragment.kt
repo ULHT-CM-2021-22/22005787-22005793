@@ -20,14 +20,20 @@ import java.util.*
 
 class FireListFragment : Fragment(), OnLocationChangedListener {
     private lateinit var viewModel: FireViewModel
-    private var adapter = FireAdapter(onClick = ::onOperationClick, onLongClick = ::onOperationLongClick)
+    private var adapter =
+        FireAdapter(onClick = ::onOperationClick, onLongClick = ::onOperationLongClick)
     private lateinit var binding: FragmentFireListBinding
     private lateinit var geocoder: Geocoder
     private var filter = false
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        (requireActivity() as AppCompatActivity).supportActionBar?.title = getString(R.string.fire_list)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        (requireActivity() as AppCompatActivity).supportActionBar?.title =
+            getString(R.string.fire_list)
         val view = inflater.inflate(R.layout.fragment_fire_list, container, false)
         viewModel = ViewModelProvider(this).get(FireViewModel::class.java)
         binding = FragmentFireListBinding.bind(view)
@@ -37,16 +43,17 @@ class FireListFragment : Fragment(), OnLocationChangedListener {
     }
 
 
-
     override fun onStart() {
         super.onStart()
         binding.fireList.layoutManager = LinearLayoutManager(context)
         binding.fireList.adapter = adapter
-        if (!filter){
+        if (!filter) {
             viewModel.onGetHistory { updateHistory(it) }
-        }else{
-            viewModel.getOnFogosNaRegiao({ updateHistory(it) },
-                viewModel.onGetRegiaoFilter())
+        } else {
+            viewModel.getOnFogosNaRegiao(
+                { updateHistory(it) },
+                viewModel.onGetRegiaoFilter()
+            )
         }
         binding.filter.setOnClickListener {
             NavigationManager.goToFiltersFragment(parentFragmentManager)
@@ -57,8 +64,9 @@ class FireListFragment : Fragment(), OnLocationChangedListener {
                 binding.fogosTotal.text = it
             }
         }
-        val bm = requireActivity().applicationContext.getSystemService(AppCompatActivity.BATTERY_SERVICE) as BatteryManager
-        val batLevel:Int = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
+        val bm =
+            requireActivity().applicationContext.getSystemService(AppCompatActivity.BATTERY_SERVICE) as BatteryManager
+        val batLevel: Int = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
         if (batLevel <= 20) {
             binding.riskLayout.setBackgroundColor(resources.getColor(R.color.grey))
         } else {
@@ -75,9 +83,25 @@ class FireListFragment : Fragment(), OnLocationChangedListener {
     }
 
     private fun updateHistory(fireData: List<FireData>) {
-        val history = fireData.map { FireData(it.distrito,it.concelho,it.freguesia,it.meiosOperacionais,
-        it.meiosVeiculos,it.meiosAereos,it.estado,it.data,it.fotos,it.obs,it.nomePessoa,it.ccPessoa,it.porConfirmar,
-        it.latitude,it.longitude)}
+        val history = fireData.map {
+            FireData(
+                it.distrito,
+                it.concelho,
+                it.freguesia,
+                it.meiosOperacionais,
+                it.meiosVeiculos,
+                it.meiosAereos,
+                it.estado,
+                it.data,
+                it.fotos,
+                it.obs,
+                it.nomePessoa,
+                it.ccPessoa,
+                it.porConfirmar,
+                it.latitude,
+                it.longitude
+            )
+        }
         CoroutineScope(Dispatchers.Main).launch {
             showHistory(history.isNotEmpty())
             adapter.updateItems(history)
@@ -96,8 +120,9 @@ class FireListFragment : Fragment(), OnLocationChangedListener {
 
     override fun onResume() {
         super.onResume()
-        val bm = requireActivity().applicationContext.getSystemService(AppCompatActivity.BATTERY_SERVICE) as BatteryManager
-        val batLevel:Int = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
+        val bm =
+            requireActivity().applicationContext.getSystemService(AppCompatActivity.BATTERY_SERVICE) as BatteryManager
+        val batLevel: Int = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
         if (batLevel <= 20) {
             binding.riskLayout.setBackgroundColor(resources.getColor(R.color.grey))
         } else {
@@ -119,12 +144,13 @@ class FireListFragment : Fragment(), OnLocationChangedListener {
     private fun placeCityName(latitude: Double, longitude: Double) {
         val addresses = geocoder.getFromLocation(latitude, longitude, 5)
         val location = addresses.first { it.locality != null && it.locality.isNotEmpty() }
-        viewModel.onAlterarRegiao({},location.adminArea)
+        viewModel.onAlterarRegiao({}, location.adminArea)
         viewModel.onGetRisk(location.adminArea) {
             binding.riscoRegiao.text = it
         }
-        val bm = requireActivity().applicationContext.getSystemService(AppCompatActivity.BATTERY_SERVICE) as BatteryManager
-        val batLevel:Int = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
+        val bm =
+            requireActivity().applicationContext.getSystemService(AppCompatActivity.BATTERY_SERVICE) as BatteryManager
+        val batLevel: Int = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
         if (batLevel <= 20) {
             binding.riskLayout.setBackgroundColor(resources.getColor(R.color.grey))
         } else {
@@ -140,7 +166,6 @@ class FireListFragment : Fragment(), OnLocationChangedListener {
         super.onDestroy()
         FusedLocation.unregisterListener(this)
     }
-
 
 
 }

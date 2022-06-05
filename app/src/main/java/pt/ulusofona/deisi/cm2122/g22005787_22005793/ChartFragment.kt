@@ -82,7 +82,6 @@ class ChartFragment : Fragment(), OnLocationChangedListener {
 
     override fun onPause() {
         super.onPause()
-
         requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR
     }
 
@@ -122,6 +121,9 @@ class ChartFragment : Fragment(), OnLocationChangedListener {
             " (${region.toInt()})"
         )
 
+
+        viewModel.getOnFogosNaRegiao({ updateHistory(it) },
+            binding.lisboa.text.toString())
 
         viewModel.onGetHistory { region = addSlice(it, binding.lisboa.text.toString()).toFloat() }
         binding.piechart.addPieSlice(
