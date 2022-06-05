@@ -205,6 +205,13 @@ class FireRegistrationFragment : Fragment(), OnLocationChangedListener {
             }
         }
         updateDashboard()
+        val bm = requireActivity().applicationContext.getSystemService(AppCompatActivity.BATTERY_SERVICE) as BatteryManager
+        val batLevel:Int = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
+        if (batLevel <= 20) {
+            binding.riskLayout.setBackgroundColor(resources.getColor(R.color.grey))
+        } else {
+            backgroundColor(binding.riscoRegiao.text.toString())
+        }
     }
 
     override fun onDestroy() {
@@ -220,6 +227,13 @@ class FireRegistrationFragment : Fragment(), OnLocationChangedListener {
     override fun onResume() {
         super.onResume()
         requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        val bm = requireActivity().applicationContext.getSystemService(AppCompatActivity.BATTERY_SERVICE) as BatteryManager
+        val batLevel:Int = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
+        if (batLevel <= 20) {
+            binding.riskLayout.setBackgroundColor(resources.getColor(R.color.grey))
+        } else {
+            backgroundColor(binding.riscoRegiao.text.toString())
+        }
     }
 
 

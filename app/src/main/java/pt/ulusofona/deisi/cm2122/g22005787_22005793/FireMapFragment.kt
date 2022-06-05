@@ -71,6 +71,13 @@ class FireMapFragment : Fragment(), OnLocationChangedListener, OnMapReadyCallbac
     override fun onStart() {
         super.onStart()
         viewModel.onGetHistory { updateHistory(it) }
+        val bm = requireActivity().applicationContext.getSystemService(AppCompatActivity.BATTERY_SERVICE) as BatteryManager
+        val batLevel:Int = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
+        if (batLevel <= 20) {
+            binding.riskLayout.setBackgroundColor(resources.getColor(R.color.grey))
+        } else {
+            backgroundColor(binding.riscoRegiao.text.toString())
+        }
     }
 
 
@@ -96,6 +103,13 @@ class FireMapFragment : Fragment(), OnLocationChangedListener, OnMapReadyCallbac
         super.onResume()
         binding.map.onResume()
         requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        val bm = requireActivity().applicationContext.getSystemService(AppCompatActivity.BATTERY_SERVICE) as BatteryManager
+        val batLevel:Int = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
+        if (batLevel <= 20) {
+            binding.riskLayout.setBackgroundColor(resources.getColor(R.color.grey))
+        } else {
+            backgroundColor(binding.riscoRegiao.text.toString())
+        }
     }
 
     override fun onDestroy() {
