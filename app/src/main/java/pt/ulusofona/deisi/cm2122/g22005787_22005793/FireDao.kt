@@ -19,6 +19,9 @@ interface FireDao {
     @Query("SELECT * FROM fires WHERE distrito = :distrito ORDER BY data DESC ")
     suspend fun getFromRegion(distrito: String): List<FireRoom>
 
+    @Query("SELECT COUNT (*) FROM fires WHERE distrito = :distrito")
+    suspend fun getFromRegionCount(distrito: String): Int
+
     @Query("SELECT * FROM fires WHERE id = :id")
     suspend fun getById(id: String): FireRoom
 

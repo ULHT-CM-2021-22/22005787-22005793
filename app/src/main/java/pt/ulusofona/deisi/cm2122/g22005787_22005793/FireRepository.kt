@@ -32,7 +32,7 @@ class FireRepository private constructor(
         return local.fogosNaRegiao(onFinished)
     }
 
-    fun fogosNaRegiao(onFinished: (String) -> Unit, regiao: String): String {
+    fun fogosNaRegiao(onFinished: (String) -> Unit, regiao: String) {
         return local.fogosNaRegiao(onFinished, regiao)
     }
 

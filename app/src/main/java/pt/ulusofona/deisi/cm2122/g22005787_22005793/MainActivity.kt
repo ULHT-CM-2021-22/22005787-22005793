@@ -36,8 +36,6 @@ class MainActivity : AppCompatActivity() {
                 finish()
             }
         }
-
-
     }
 
     private fun screenRotated(savedInstanceState: Bundle?): Boolean {

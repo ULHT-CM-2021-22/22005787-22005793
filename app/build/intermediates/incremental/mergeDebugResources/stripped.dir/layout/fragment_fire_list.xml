@@ -26,6 +26,7 @@
                 android:layout_weight="1"
                 android:elevation="5dp"
                 android:gravity="center"
+                android:backgroundTint="@color/green"
                 android:orientation="vertical"
                 app:cardCornerRadius="4dp"
                 app:cardMaxElevation="5dp"
@@ -62,6 +63,7 @@
                         android:id="@+id/risco_regiao"
                         android:layout_width="match_parent"
                         android:layout_height="63dp"
+                        android:text="Reduzido"
                         android:layout_below="@id/imageview4"
                         android:textAlignment="center"
                         android:textSize="15sp">

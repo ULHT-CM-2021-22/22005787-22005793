@@ -75,7 +75,7 @@ class FireRetrofit(retrofit: Retrofit) : FireModel() {
         TODO("Not yet implemented")
     }
 
-    override fun fogosNaRegiao(onFinished: (String) -> Unit, regiao: String): String {
+    override fun fogosNaRegiao(onFinished: (String) -> Unit, regiao: String){
         TODO("Not yet implemented")
     }
 

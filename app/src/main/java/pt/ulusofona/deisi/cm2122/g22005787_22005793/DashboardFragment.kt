@@ -41,7 +41,6 @@ class DashboardFragment : Fragment(), OnLocationChangedListener {
         FusedLocation.registerListener(this)
         viewModel = ViewModelProvider(this).get(FireViewModel::class.java)
         binding = FragmentDashboardBinding.bind(view)
-
         updateDashboard()
         return binding.root
     }

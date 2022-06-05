@@ -23,7 +23,7 @@ class FireViewModel(application: Application) : AndroidViewModel(application) {
         return model.fogosNaRegiao(onFinished)
     }
 
-    fun onFogosNaRegiao(onFinished: (String) -> Unit,regiao: String): String {
+    fun onFogosNaRegiao(onFinished: (String) -> Unit,regiao: String) {
         return model.fogosNaRegiao(onFinished, regiao)
     }
 

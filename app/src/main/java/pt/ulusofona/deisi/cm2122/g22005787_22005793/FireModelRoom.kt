@@ -90,13 +90,12 @@ class FireModelRoom(private val dao: FireDao) : FireModel() {
         return count.toString()
     }
 
-    override fun fogosNaRegiao(onFinished: (String) -> Unit, regiao: String): String {
+    override fun fogosNaRegiao(onFinished: (String) -> Unit, regiao: String) {
         var count = 0
         CoroutineScope(Dispatchers.IO).launch {
             count = dao.getFromRegion(regiao).size
             onFinished(count.toString())
         }
-        return count.toString()
     }
 
     override fun getFogosNaRegiao(onFinished: (List<FireData>) -> Unit, regiao: String) {

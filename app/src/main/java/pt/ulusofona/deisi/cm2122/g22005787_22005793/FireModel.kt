@@ -28,7 +28,7 @@ abstract class FireModel {
     abstract fun getHistory(onFinished: (List<FireData>) -> Unit)
     abstract fun addToHistory(onFinished: () -> Unit, fireData: FireRoom)
     abstract fun fogosNaRegiao(onFinished: (String) -> Unit): String
-    abstract fun fogosNaRegiao(onFinished: (String) -> Unit, regiao: String): String
+    abstract fun fogosNaRegiao(onFinished: (String) -> Unit, regiao: String)
     abstract fun getFogosNaRegiao(onFinished: (List<FireData>) -> Unit, regiao: String)
     abstract fun totalFogos(onFinished: (String) -> Unit): String
     abstract fun totalOperacionais(onFinished: () -> Unit): List<FireRoom>

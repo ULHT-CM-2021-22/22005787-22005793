@@ -24,6 +24,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginEnd="5dp"
                 android:layout_weight="1"
+                android:backgroundTint="@color/green"
                 android:elevation="5dp"
                 android:gravity="center"
                 android:orientation="vertical"
@@ -62,6 +63,7 @@
                         android:id="@+id/risco_regiao"
                         android:layout_width="match_parent"
                         android:layout_height="63dp"
+                        android:text="Reduzido"
                         android:layout_below="@id/imageview4"
                         android:textAlignment="center"
                         android:textSize="15sp">
